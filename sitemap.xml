@@ -333,13 +333,6 @@
   </url>
   
   <url>
-    <loc>http://www.luckyzmj.cn/tags/Java-IO/</loc>
-    <lastmod>2022-06-17</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://www.luckyzmj.cn/tags/jQuery-CSS3/</loc>
     <lastmod>2022-06-17</lastmod>
     <changefreq>daily</changefreq>
@@ -348,6 +341,13 @@
   
   <url>
     <loc>http://www.luckyzmj.cn/tags/%E7%B2%92%E5%AD%90%E7%89%B9%E6%95%88/</loc>
+    <lastmod>2022-06-17</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.luckyzmj.cn/tags/Java-IO/</loc>
     <lastmod>2022-06-17</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -363,14 +363,14 @@
   </url>
   
   <url>
-    <loc>http://www.luckyzmj.cn/categories/%E6%8A%80%E6%9C%AF/</loc>
+    <loc>http://www.luckyzmj.cn/categories/%E5%89%8D%E7%AB%AF%E7%AF%87/</loc>
     <lastmod>2022-06-17</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://www.luckyzmj.cn/categories/%E5%89%8D%E7%AB%AF%E7%AF%87/</loc>
+    <loc>http://www.luckyzmj.cn/categories/%E6%8A%80%E6%9C%AF/</loc>
     <lastmod>2022-06-17</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
