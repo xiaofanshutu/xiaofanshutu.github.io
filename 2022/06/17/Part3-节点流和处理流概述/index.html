@@ -6,7 +6,7 @@
   <!-- <meta name="baidu-site-verification" content="LukfTcyXmC" /> -->
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">about | 月球上的番薯兔</title>
+  <title itemprop="name">月球上的番薯兔</title>
   
     <link rel="shortcut icon" href="/images/favicon.ico">
   
@@ -300,32 +300,268 @@
 
       
       <!-- body -->
-        <div class="pattern-center-blank"></div>
-  
-  <div class="pattern-center ">
-    <div class="pattern-attachment-img">
-      <img src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/banner/about.jpg" class="lazyload" onerror="imgError(this,3)"
-        style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;">
-    </div>
-    <header class="pattern-header ">
-      <h1 class="entry-title">
-        关于</h1>
-      <span class="post-meta-item-icon">
-        <i class="iconfont icon-attention"></i>
-      </span>
-      <span class="post-meta-item-text">本页共<span id="busuanzi_value_page_pv"> </span>次阅读
-      </span>
-    </header>
-  </div>
-  
-  <div id="content" class="site-content">
-    <article class="post-item post-301 page type-page status-publish has-post-thumbnail hentry">
-      
-      <!-- .entry-content -->
-      
+      <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/cungudafa/cdn/css/sharejs.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+<div class="pattern-center-blank"></div>
 
+<div id="content" class="site-content">
+  <div id="primary" class="content-area">
+    <main id="main" class="site-main" role="main">
+      <article id="post-1"
+        class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+        <div class="toc"></div>
+        <!--<div class="toc-entry-content">  -->
+        <!--套嵌目录使用（主要为了支援评论）-->
+        
+        <div class="entry-content">
+          <p>@<a href="%E7%9B%AE%E5%BD%95">TOC</a></p>
+<h1 id="节点流"><a href="#节点流" class="headerlink" title="节点流"></a>节点流</h1><table>
+<thead>
+<tr>
+<th>分类</th>
+<th>字节输入流</th>
+<th>字节输出流</th>
+<th>字符输入流</th>
+<th>字符输出流</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>抽象基类</td>
+<td>InputStream</td>
+<td>OutputStream</td>
+<td>Reader</td>
+<td>Writer</td>
+</tr>
+<tr>
+<td>访问文件</td>
+<td>FileInputStream</td>
+<td>FileOutputStream</td>
+<td>FileReader</td>
+<td>FileWriter</td>
+</tr>
+<tr>
+<td>访问数组</td>
+<td>ByteArrayInputStream</td>
+<td>ByteArrayOutputStream</td>
+<td>CharArrayReader</td>
+<td>CharArrayWriter</td>
+</tr>
+<tr>
+<td>访问管道</td>
+<td>PipedInputStream</td>
+<td>PipedOutputStream</td>
+<td>PipedReader</td>
+<td>PipedWriter</td>
+</tr>
+<tr>
+<td>访问字符串</td>
+<td></td>
+<td></td>
+<td>StringReader</td>
+<td>StringWriter</td>
+</tr>
+</tbody></table>
+<p><img src="https://gitee.com/xiaofanshutugoon/cloudimage/raw/master/img/snipaste_20220426_131128.png"></p>
+<p><img src="https://gitee.com/xiaofanshutugoon/cloudimage/raw/master/img/snipaste_20220426_123855.png"></p>
+<p><img src="https://gitee.com/xiaofanshutugoon/cloudimage/raw/master/img/snipaste_20220426_123835.png"></p>
+<p><img src="https://gitee.com/xiaofanshutugoon/cloudimage/raw/master/img/snipaste_20220426_123822.png"></p>
+<p><img src="https://gitee.com/xiaofanshutugoon/cloudimage/raw/master/img/snipaste_20220426_123811.png"></p>
+<h1 id="处理流"><a href="#处理流" class="headerlink" title="处理流"></a>处理流</h1><table>
+<thead>
+<tr>
+<th>分类</th>
+<th>字节输入流</th>
+<th>字节输出流</th>
+<th>字符输入流</th>
+<th>字符输出流</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>抽象基类</td>
+<td>InputStream</td>
+<td>OutputStream</td>
+<td>Reader</td>
+<td>Writer</td>
+</tr>
+<tr>
+<td>对象流</td>
+<td>ObjectInputStream</td>
+<td>ObjectOutputStream</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>文件流</td>
+<td>FileInputStream</td>
+<td>FileOutputStream</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>转换流</td>
+<td></td>
+<td></td>
+<td>InputStreamReader</td>
+<td>OutputStreamWriter</td>
+</tr>
+<tr>
+<td>打印流</td>
+<td></td>
+<td>PrintStream</td>
+<td></td>
+<td>PrintWriter</td>
+</tr>
+<tr>
+<td></td>
+<td>（父）FilterInputStream</td>
+<td>（父）FilterOutputStream</td>
+<td>（父）FilterReader</td>
+<td>FilterWriter</td>
+</tr>
+<tr>
+<td>推回输入流</td>
+<td>（子）PushbackInputStream</td>
+<td></td>
+<td>（子）PushbackReader</td>
+<td></td>
+</tr>
+<tr>
+<td>特殊流</td>
+<td>（子）DataInputStream</td>
+<td>（子）DataOutputStream</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>缓冲流</td>
+<td>（子）BufferedInputStream</td>
+<td>（子）BufferedOutputStream</td>
+<td>BufferedReader</td>
+<td>BufferedWriter</td>
+</tr>
+</tbody></table>
+<p><img src="https://gitee.com/xiaofanshutugoon/cloudimage/raw/master/img/snipaste_20220426_143011.png"></p>
+<p><img src="https://gitee.com/xiaofanshutugoon/cloudimage/raw/master/img/snipaste_20220426_125248.png"></p>
+<p><img src="https://gitee.com/xiaofanshutugoon/cloudimage/raw/master/img/snipaste_20220426_125305.png"></p>
+<p><img src="https://gitee.com/xiaofanshutugoon/cloudimage/raw/master/img/snipaste_20220426_125319.png"></p>
+<p><img src="https://gitee.com/xiaofanshutugoon/cloudimage/raw/master/img/snipaste_20220426_125336.png"></p>
+<h1 id="节点流和处理流的区别和联系"><a href="#节点流和处理流的区别和联系" class="headerlink" title="节点流和处理流的区别和联系"></a>节点流和处理流的区别和联系</h1><ol>
+<li>节点流是底层流/低级流，直接跟数据源相关。</li>
+<li>处理流既可以消除不同节点流的实现差异，也可以提供更方便的方法来完成输入输出。</li>
+<li>处理流也叫包装流，它可以对节点流进行包装。使用了修饰器设计模式，不会直接与数据源相连。</li>
+</ol>
 
-      <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+        </div>
+
+        <!-- .entry-content -->
+        <div class="single-reward">
+          <div class="reward-open">赏
+            <div class="reward-main">
+              <ul class="reward-row">
+                <li class="alipay-code"><img src="https://cdn.jsdelivr.net/gh/xiaofanshutu/myBlogPic@main/cdn/img/custom/donate/AliPay.jpg"></li>
+                <li class="wechat-code"><img src="https://cdn.jsdelivr.net/gh/xiaofanshutu/myBlogPic@main/cdn/img/custom/donate/WeChatPay.png"></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent">
+        </div>
+        <!-- 评分 -->
+        <div class="single-reward">
+          
+          <!-- 五星评分 -->
+<div id="wpac-rating"></div>
+<script type="text/javascript">
+wpac_init = window.wpac_init || [];
+wpac_init.push({widget: 'Rating', id: 23889});
+(function() {
+    if ('WIDGETPACK_LOADED' in window) return;
+    WIDGETPACK_LOADED = true;
+    var mc = document.createElement('script');
+    mc.type = 'text/javascript';
+    mc.async = true;
+    mc.src = 'https://embed.widgetpack.com/widget.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+})();
+</script>
+<!-- <a target="_blank" rel="noopener" href="https://widgetpack.com" class="wpac-cr">Star Rating WIDGET PACK</a> -->
+          
+        </div>
+        <!-- 自定义署名方式 -->
+        <footer class="post-footer">
+          <div class="post-lincenses" style="color: #ff9966;">
+            欢迎转载，转载时请注明来源哦！
+            <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" style="color: #ff9966;" target="_blank"
+              rel="nofollow">
+              <i class="fa fa-creative-commons" aria-hidden="true"></i>ncsa4.0</a>
+          </div>
+          
+          <div class="post-tags" style="color: #a39391">
+            <span><i class="fa fa-tags"></i>
+              
+            </span>
+            <span>
+              <i class="iconfont icon-file"></i>
+              
+            </span>
+          </div>
+          
+          <div class="post-share" >
+            <div class="social-share sharehidden share-component"></div>
+            <i class="iconfont show-share icon-forward"></i>
+          </div>
+        </footer><!-- .entry-footer -->
+        <!-- <div class="tag-cloud">
+          <div class="tag-cloud-title">
+          </div>
+          <div class="tag-cloud-tags">
+            <a href="/tags/Java-IO/" style="font-size: 10px; color: #f06966">Java IO</a>
+          </div>
+        </div> -->
+      </article>
+      <!-- #post-## -->
+      <div class="toc" style="background: none;"></div>
+      <section class="post-squares nextprev">
+        
+        
+        <div class="post-nepre half previous">
+          
+            <a href="/Java-IO" rel="prev">
+              <div class="background">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src=""
+                  style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)"
+                  src="">
+              </div>
+              <span class="label">Previous Post</span>
+              <div class="info">
+                <h3>Java-IO</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+          
+          
+          
+          <div class="post-nepre half next">
+            
+              <a href="/2022/06/16/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/" rel="next">
+                <div class="background">
+                  <img class="lazyload" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src=""
+                    style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;"
+                    onerror="imgError(this,3)" src="">
+                </div>
+                <span class="label">Next Post</span>
+                <div class="info">
+                  <h3>我的第一篇文章</h3>
+                  <hr>
+                </div>
+              </a>
+            </div>
+            
+      </section>
+      <!-- 加密文章隐藏评论 -->
+      <section class="comment" >
+        <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
 <div id="gitalk-container" class="comment"></div> 
 <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
 <script src="/js/md5.min.js"></script>
@@ -342,37 +578,17 @@
 gitalk.render('gitalk-container') 
 </script>
 
-      <div class="single-reward">
-        <div class="reward-open">赏
-          <div class="reward-main">
-            <ul class="reward-row">
-              <li class="alipay-code"><img src="https://cdn.jsdelivr.net/gh/xiaofanshutu/myBlogPic@main/cdn/img/custom/donate/AliPay.jpg"></li>
-              <li class="wechat-code"><img src="https://cdn.jsdelivr.net/gh/xiaofanshutu/myBlogPic@main/cdn/img/custom/donate/WeChatPay.png"></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent">
-      </div>
-      <footer class="post-footer">
-        <div class="post-lincenses" style="color: #ff9966;">
-          欢迎转载，转载时请注明来源哦！
-          <br>
-          <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow">
-            <i class="fa fa-creative-commons" aria-hidden="true"></i>知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>
-        </div>
-        <div class="post-tags">
-        </div>
-        <div class="post-share">
-          <div class="social-share sharehidden share-component"></div>
-          <i class="iconfont show-share icon-forward"></i>
-        </div>
-      </footer><!-- .entry-footer -->
-    </article>
-    <!-- #post-## -->
-    
+      </section>
+      <!-- 加密文章隐藏作者信息 -->
+      
+    </main><!-- #main -->
   </div><!-- #primary -->
-  </div>
+</div>
+
+
+<!--评论配置-->
+
+
 
       <!-- body.end -->
     </div>
