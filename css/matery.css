@@ -33,12 +33,22 @@
     }
 }
 
+/*
 body {
     background-color: #eaeaea;
     margin: 0;
     color: #34495e;
     overflow-x: hidden;
     overflow-y: auto;
+}
+*/
+
+body {
+    /* background-color: #eaeaea; */
+    background: linear-gradient(60deg, rgba(255, 165, 150, 0.5) 5%, rgba(0, 228, 255, 0.35)) 0% 0% / cover, url("https://cdn.jsdelivr.net/gh/xiaofanshutu/myBlogPic@main/matery/img/galleries/1.jpg"), url("https://cdn.jsdelivr.net/gh/xiaofanshutu/myBlogPic@main/matery/img/galleries/8.jpg"), url("https://cdn.jsdelivr.net/gh/xiaofanshutu/myBlogPic@main/matery/img/galleries/11.jpg"), url("https://cdn.jsdelivr.net/gh/xiaofanshutu/myBlogPic@main/matery/img/galleries/13.jpg"), url("https://cdn.jsdelivr.net/gh/xiaofanshutu/myBlogPic@main/matery/img/galleries/18.jpg"), url("https://cdn.jsdelivr.net/gh/xiaofanshutu/myBlogPic@main/matery/img/galleries/9.jpg"), url("https://cdn.jsdelivr.net/gh/xiaofanshutu/myBlogPic@main/matery/img/galleries/32.jpg"), url("https://cdn.jsdelivr.net/gh/xiaofanshutu/myBlogPic@main/matery/img/galleries/3.jpg") 0px 0px;
+    background-attachment: fixed;
+    margin: 0;
+    color: #7F95D1;
 }
 
 h1 {
@@ -580,6 +590,18 @@ header .go-back i {
     animation: rainbow 60s infinite;
 }
 
+.bg-cover:before {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    display: block;
+    left: 0;
+    top: 0;
+    content: "";
+}
+
+/*
 .bg-cover:before,
 .bg-cover:after {
     position: absolute;
@@ -591,6 +613,7 @@ header .go-back i {
     top: 0;
     content: "";
 }
+*/
 
 .bg-cover .container {
     position: relative;
@@ -1906,7 +1929,8 @@ footer .copy-right {
 }
 
 .center-caption {
-    color: #525f7f;
+    /*color: #525f7f;*/
+    color: #7F95D1;
     padding: 5px;
     border-bottom: 1px solid #d9d9d9;
 }
@@ -2182,3 +2206,18 @@ body.dark header .side-nav .menu-list .m-nav-show
 body.dark .aplayer{background: #2f3742!important;}
 body.dark img, body.dark strong {
     filter: brightness(.7);
+
+/* 滚动条 */
+::-webkit-scrollbar-thumb {
+    background-color: #FF2A68;
+    background-image: -webkit-linear-gradient(45deg,rgba(255,255,255,.4) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.4) 50%,rgba(255,255,255,.4) 75%,transparent 75%,transparent);
+    border-radius: 3em;
+}
+::-webkit-scrollbar-track {
+    background-color: #ffcacaff;
+    border-radius: 3em;
+}
+::-webkit-scrollbar {
+    width: 8px;
+    height: 15px;
+}
