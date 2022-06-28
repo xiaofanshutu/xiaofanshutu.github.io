@@ -454,7 +454,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/xiaofanshutu/myBlogPic@main/matery/img/galleries/10.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/xiaofanshutu/myBlogPic@main/matery/img/galleries/23.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -580,8 +580,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Java-IO/">
-                                <span class="chip bg-color">Java IO</span>
+                            <a href="/tags/Java%E9%9B%86%E5%90%88/">
+                                <span class="chip bg-color">Java集合</span>
                             </a>
                         
                     </div>
@@ -605,7 +605,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-04-28
+                    2022-05-03
                 </div>
                 
 
@@ -619,14 +619,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    404
+                    615
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    3 分
                 </div>
                 
 
@@ -644,107 +644,154 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="普通方法读取配置文件"><a href="#普通方法读取配置文件" class="headerlink" title="普通方法读取配置文件"></a>普通方法读取配置文件</h1><p>配置文件内容</p>
-<pre class="line-numbers language-properties" data-language="properties"><code class="language-properties"><span class="token attr-name">name</span><span class="token punctuation">=</span><span class="token attr-value">DB01</span>
-<span class="token attr-name">pwd</span><span class="token punctuation">=</span><span class="token attr-value">130.133.13.14</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+                <h1 id="Properties基本介绍"><a href="#Properties基本介绍" class="headerlink" title="Properties基本介绍"></a>Properties基本介绍</h1><p><img src="https://s2.loli.net/2022/06/28/ybhpoHv2LOxGzWU.png"></p>
+<p>Properties可以用于从*.properties中加载数据到Properties类对象，进行数据的读取和修改。</p>
+<p>工作中*.properties通常作为配置文件。</p>
+<h1 id="Properties用法"><a href="#Properties用法" class="headerlink" title="Properties用法"></a>Properties用法</h1><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Properties_</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">Properties</span> properties <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Properties</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//1.put</span>
+        <span class="token comment">//不能存null key或者null value。 public class Properties extends Hashtable&lt;Object,Object&gt;</span>
+        <span class="token comment">//properties.put(null, "null key");</span>
+        <span class="token comment">//properties.put("null value", null);//Exception in thread "main" java.lang.NullPointerException</span>
+        properties<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"1001"</span><span class="token punctuation">,</span> <span class="token string">"jack"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//Exception in thread "main" java.lang.NullPointerException</span>
+        properties<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"1001"</span><span class="token punctuation">,</span> <span class="token string">"lucky"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//相同的key，后一个value会替换前一个value。</span>
+        properties<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"1002"</span><span class="token punctuation">,</span> <span class="token string">"cara"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        properties<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"1003"</span><span class="token punctuation">,</span> <span class="token string">"ada"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"=====put====="</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>properties<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment">//2.get</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"=====get====="</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>properties<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">"1001"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment">//3.getProperty(String key)</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"=====getProperty(String key)====="</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>properties<span class="token punctuation">.</span><span class="token function">getProperty</span><span class="token punctuation">(</span><span class="token string">"1002"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment">//4.getProperty(String key, String defaultValue)</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"=====getProperty(String key, String defaultValue)====="</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>properties<span class="token punctuation">.</span><span class="token function">getProperty</span><span class="token punctuation">(</span><span class="token string">"1005"</span><span class="token punctuation">,</span> <span class="token string">"user not exists"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment">//3.remove</span>
+        properties<span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span><span class="token string">"1003"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"=====remove====="</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>properties<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">=</span>put<span class="token operator">==</span><span class="token operator">==</span><span class="token operator">=</span>
+<span class="token punctuation">{</span><span class="token number">1003</span><span class="token operator">=</span>ada<span class="token punctuation">,</span> <span class="token number">1002</span><span class="token operator">=</span>cara<span class="token punctuation">,</span> <span class="token number">1001</span><span class="token operator">=</span>lucky<span class="token punctuation">}</span>
+<span class="token operator">==</span><span class="token operator">==</span><span class="token operator">=</span>get<span class="token operator">==</span><span class="token operator">==</span><span class="token operator">=</span>
+lucky
+<span class="token operator">==</span><span class="token operator">==</span><span class="token operator">=</span><span class="token function">getProperty</span><span class="token punctuation">(</span><span class="token class-name">String</span> key<span class="token punctuation">)</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">=</span>
+cara
+<span class="token operator">==</span><span class="token operator">==</span><span class="token operator">=</span><span class="token function">getProperty</span><span class="token punctuation">(</span><span class="token class-name">String</span> key<span class="token punctuation">,</span> <span class="token class-name">String</span> defaultValue<span class="token punctuation">)</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">=</span>
+user not exists
+<span class="token operator">==</span><span class="token operator">==</span><span class="token operator">=</span>remove<span class="token operator">==</span><span class="token operator">==</span><span class="token operator">=</span>
+<span class="token punctuation">{</span><span class="token number">1002</span><span class="token operator">=</span>cara<span class="token punctuation">,</span> <span class="token number">1001</span><span class="token operator">=</span>lucky<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>io<span class="token punctuation">.</span></span><span class="token class-name">BufferedReader</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>io<span class="token punctuation">.</span></span><span class="token class-name">FileReader</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>io<span class="token punctuation">.</span></span><span class="token class-name">IOException</span><span class="token punctuation">;</span>
+<h1 id="Properties源码剖析"><a href="#Properties源码剖析" class="headerlink" title="Properties源码剖析"></a>Properties源码剖析</h1><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token class-name">Properties</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Properties01</span> <span class="token punctuation">{</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">IOException</span> <span class="token punctuation">{</span>
-        <span class="token class-name">BufferedReader</span> bufferedReader <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">BufferedReader</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">FileReader</span><span class="token punctuation">(</span><span class="token string">"src\\sql.properties"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token class-name">String</span> content<span class="token punctuation">;</span>
-        <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>content <span class="token operator">=</span> bufferedReader<span class="token punctuation">.</span><span class="token function">readLine</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            <span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> stars <span class="token operator">=</span> content<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">"="</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>stars<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token string">": "</span> <span class="token operator">+</span> stars<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token class-name">Properties</span><span class="token punctuation">(</span><span class="token class-name">Properties</span> defaults<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>defaults <span class="token operator">=</span> defaults<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+
+
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token class-name">Hashtable</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">(</span><span class="token number">11</span><span class="token punctuation">,</span> <span class="token number">0.75f</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+
+
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">synchronized</span> <span class="token class-name">V</span> <span class="token function">put</span><span class="token punctuation">(</span><span class="token class-name">K</span> key<span class="token punctuation">,</span> <span class="token class-name">V</span> value<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// Make sure the value is not null</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>value <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">NullPointerException</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">// Makes sure the key is not already in the hashtable.</span>
+    <span class="token class-name">Entry</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token operator">?</span><span class="token punctuation">,</span><span class="token operator">?</span><span class="token punctuation">&gt;</span></span> tab<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> table<span class="token punctuation">;</span>
+    <span class="token keyword">int</span> hash <span class="token operator">=</span> key<span class="token punctuation">.</span><span class="token function">hashCode</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> index <span class="token operator">=</span> <span class="token punctuation">(</span>hash <span class="token operator">&amp;</span> <span class="token number">0x7FFFFFFF</span><span class="token punctuation">)</span> <span class="token operator">%</span> tab<span class="token punctuation">.</span>length<span class="token punctuation">;</span>
+    <span class="token annotation punctuation">@SuppressWarnings</span><span class="token punctuation">(</span><span class="token string">"unchecked"</span><span class="token punctuation">)</span>
+    <span class="token class-name">Entry</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">K</span><span class="token punctuation">,</span><span class="token class-name">V</span><span class="token punctuation">&gt;</span></span> entry <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token class-name">Entry</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">K</span><span class="token punctuation">,</span><span class="token class-name">V</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">)</span>tab<span class="token punctuation">[</span>index<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token punctuation">;</span> entry <span class="token operator">!=</span> <span class="token keyword">null</span> <span class="token punctuation">;</span> entry <span class="token operator">=</span> entry<span class="token punctuation">.</span>next<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">//如果要插入的的key的hash值和准备插入的table索引位置的对象的hash值一样，并且equals方法相等，那么就执行替换操作</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>entry<span class="token punctuation">.</span>hash <span class="token operator">==</span> hash<span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> entry<span class="token punctuation">.</span>key<span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token class-name">V</span> old <span class="token operator">=</span> entry<span class="token punctuation">.</span>value<span class="token punctuation">;</span>
+            entry<span class="token punctuation">.</span>value <span class="token operator">=</span> value<span class="token punctuation">;</span><span class="token comment">//替换</span>
+            <span class="token keyword">return</span> old<span class="token punctuation">;</span>
         <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">name<span class="token operator">:</span> DB01
-pwd<span class="token operator">:</span> <span class="token number">130.133</span><span class="token number">.13</span><span class="token number">.14</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-
-
-<h1 id="Properties类基本介绍"><a href="#Properties类基本介绍" class="headerlink" title="Properties类基本介绍"></a>Properties类基本介绍</h1><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Properties</span>
-<span class="token keyword">extends</span> <span class="token class-name">Hashtable</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Object</span><span class="token punctuation">,</span><span class="token class-name">Object</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+    <span class="token function">addEntry</span><span class="token punctuation">(</span>hash<span class="token punctuation">,</span> key<span class="token punctuation">,</span> value<span class="token punctuation">,</span> index<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 
-<p><img src="https://s2.loli.net/2022/06/17/CTOFgNRdPG2Bkr3.png"></p>
-<h1 id="Properties类常用方法"><a href="#Properties类常用方法" class="headerlink" title="Properties类常用方法"></a>Properties类常用方法</h1><h2 id="Properties类读取配置文件"><a href="#Properties类读取配置文件" class="headerlink" title="Properties类读取配置文件"></a>Properties类读取配置文件</h2><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>io<span class="token punctuation">.</span></span><span class="token class-name">FileReader</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>io<span class="token punctuation">.</span></span><span class="token class-name">IOException</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span></span><span class="token class-name">Properties</span><span class="token punctuation">;</span>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">private</span> <span class="token keyword">void</span> <span class="token function">addEntry</span><span class="token punctuation">(</span><span class="token keyword">int</span> hash<span class="token punctuation">,</span> <span class="token class-name">K</span> key<span class="token punctuation">,</span> <span class="token class-name">V</span> value<span class="token punctuation">,</span> <span class="token keyword">int</span> index<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    modCount<span class="token operator">++</span><span class="token punctuation">;</span>
 
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Properties02</span> <span class="token punctuation">{</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">IOException</span> <span class="token punctuation">{</span>
-        <span class="token class-name">Properties</span> properties <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Properties</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        properties<span class="token punctuation">.</span><span class="token function">load</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">FileReader</span><span class="token punctuation">(</span><span class="token string">"src\\sql.properties"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>properties<span class="token punctuation">.</span><span class="token function">getProperty</span><span class="token punctuation">(</span><span class="token string">"name"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>properties<span class="token punctuation">.</span><span class="token function">getProperty</span><span class="token punctuation">(</span><span class="token string">"pwd"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">Entry</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token operator">?</span><span class="token punctuation">,</span><span class="token operator">?</span><span class="token punctuation">&gt;</span></span> tab<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> table<span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>count <span class="token operator">&gt;=</span> threshold<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// Rehash the table if the threshold is exceeded</span>
+        <span class="token comment">//如果table中的数据大于等于临界值，就会扩容</span>
+        <span class="token function">rehash</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        tab <span class="token operator">=</span> table<span class="token punctuation">;</span>
+        hash <span class="token operator">=</span> key<span class="token punctuation">.</span><span class="token function">hashCode</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        index <span class="token operator">=</span> <span class="token punctuation">(</span>hash <span class="token operator">&amp;</span> <span class="token number">0x7FFFFFFF</span><span class="token punctuation">)</span> <span class="token operator">%</span> tab<span class="token punctuation">.</span>length<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">DB01
-<span class="token number">130.133</span><span class="token number">.13</span><span class="token number">.14</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+    <span class="token comment">// Creates the new entry.</span>
+    <span class="token annotation punctuation">@SuppressWarnings</span><span class="token punctuation">(</span><span class="token string">"unchecked"</span><span class="token punctuation">)</span>
+    <span class="token class-name">Entry</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">K</span><span class="token punctuation">,</span><span class="token class-name">V</span><span class="token punctuation">&gt;</span></span> e <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token class-name">Entry</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">K</span><span class="token punctuation">,</span><span class="token class-name">V</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">)</span> tab<span class="token punctuation">[</span>index<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    tab<span class="token punctuation">[</span>index<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Entry</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span>hash<span class="token punctuation">,</span> key<span class="token punctuation">,</span> value<span class="token punctuation">,</span> e<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    count<span class="token operator">++</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 
-<h2 id="Properties类添加新的key-value到配置文件"><a href="#Properties类添加新的key-value到配置文件" class="headerlink" title="Properties类添加新的key-value到配置文件"></a>Properties类添加新的key-value到配置文件</h2><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>io<span class="token punctuation">.</span></span><span class="token class-name">FileReader</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>io<span class="token punctuation">.</span></span><span class="token class-name">FileWriter</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>io<span class="token punctuation">.</span></span><span class="token class-name">IOException</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span></span><span class="token class-name">Properties</span><span class="token punctuation">;</span>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">protected</span> <span class="token keyword">void</span> <span class="token function">rehash</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">int</span> oldCapacity <span class="token operator">=</span> table<span class="token punctuation">.</span>length<span class="token punctuation">;</span>
+    <span class="token class-name">Entry</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token operator">?</span><span class="token punctuation">,</span><span class="token operator">?</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">[</span><span class="token punctuation">]</span> oldMap <span class="token operator">=</span> table<span class="token punctuation">;</span>
 
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Properties03</span> <span class="token punctuation">{</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">IOException</span> <span class="token punctuation">{</span>
-        <span class="token class-name">Properties</span> properties <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Properties</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        properties<span class="token punctuation">.</span><span class="token function">load</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">FileReader</span><span class="token punctuation">(</span><span class="token string">"src\\sql.properties"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        properties<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"通过程序添加的key"</span><span class="token punctuation">,</span> <span class="token string">"通过程序添加的value"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        properties<span class="token punctuation">.</span><span class="token function">store</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">FileWriter</span><span class="token punctuation">(</span><span class="token string">"src\\sql.properties"</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        properties<span class="token punctuation">.</span><span class="token function">list</span><span class="token punctuation">(</span><span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// overflow-conscious code</span>
+    <span class="token comment">//2*oldCapacity + 1</span>
+    <span class="token keyword">int</span> newCapacity <span class="token operator">=</span> <span class="token punctuation">(</span>oldCapacity <span class="token operator">&lt;&lt;</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>newCapacity <span class="token operator">-</span> MAX_ARRAY_SIZE <span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>oldCapacity <span class="token operator">==</span> MAX_ARRAY_SIZE<span class="token punctuation">)</span>
+            <span class="token comment">// Keep running with MAX_ARRAY_SIZE buckets</span>
+            <span class="token keyword">return</span><span class="token punctuation">;</span>
+        newCapacity <span class="token operator">=</span> MAX_ARRAY_SIZE<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    <span class="token class-name">Entry</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token operator">?</span><span class="token punctuation">,</span><span class="token operator">?</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">[</span><span class="token punctuation">]</span> newMap <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Entry</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token operator">?</span><span class="token punctuation">,</span><span class="token operator">?</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">[</span>newCapacity<span class="token punctuation">]</span><span class="token punctuation">;</span>
 
+    modCount<span class="token operator">++</span><span class="token punctuation">;</span>
+    <span class="token comment">//计算新的临界值</span>
+    threshold <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span><span class="token class-name">Math</span><span class="token punctuation">.</span><span class="token function">min</span><span class="token punctuation">(</span>newCapacity <span class="token operator">*</span> loadFactor<span class="token punctuation">,</span> MAX_ARRAY_SIZE <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    table <span class="token operator">=</span> newMap<span class="token punctuation">;</span>
 
+    <span class="token comment">//遍历旧数据，将原来的值再放到新的map上</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> oldCapacity <span class="token punctuation">;</span> i<span class="token operator">--</span> <span class="token operator">&gt;</span> <span class="token number">0</span> <span class="token punctuation">;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token class-name">Entry</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">K</span><span class="token punctuation">,</span><span class="token class-name">V</span><span class="token punctuation">&gt;</span></span> old <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token class-name">Entry</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">K</span><span class="token punctuation">,</span><span class="token class-name">V</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">)</span>oldMap<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token punctuation">;</span> old <span class="token operator">!=</span> <span class="token keyword">null</span> <span class="token punctuation">;</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token class-name">Entry</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">K</span><span class="token punctuation">,</span><span class="token class-name">V</span><span class="token punctuation">&gt;</span></span> e <span class="token operator">=</span> old<span class="token punctuation">;</span>
+            old <span class="token operator">=</span> old<span class="token punctuation">.</span>next<span class="token punctuation">;</span>
 
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token operator">--</span> listing properties <span class="token operator">--</span>
-name<span class="token operator">=</span>DB01
-通过程序添加的key<span class="token operator">=</span>通过程序添加的value
-pwd<span class="token operator">=</span><span class="token number">130.133</span><span class="token number">.13</span><span class="token number">.14</span>
-charset<span class="token operator">=</span>utf8<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>double check: 检查local file，新的key-value添加成功</p>
-<p><img src="https://s2.loli.net/2022/06/17/O5oszN1Cwti8uWS.png"></p>
-<p>这里记录一个小插曲，测试的时候，用IDEA打开这个配置文件的时候，出现了乱码。</p>
-<p><img src="https://s2.loli.net/2022/06/17/l9wHvQ1NFPJaVoq.png"></p>
-<p>上面这个问题的解决办法如下：</p>
-<p>File-&gt;Setting</p>
-<p><img src="https://s2.loli.net/2022/06/17/AumqwQnH16fdJpb.png"></p>
-<p><img src="https://s2.loli.net/2022/06/17/RgYjSt6KIdul9km.png"></p>
-<h2 id="Properties类读取配置文件，并且修改某一个key-value"><a href="#Properties类读取配置文件，并且修改某一个key-value" class="headerlink" title="Properties类读取配置文件，并且修改某一个key-value"></a>Properties类读取配置文件，并且修改某一个key-value</h2><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>io<span class="token punctuation">.</span></span><span class="token class-name">FileReader</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>io<span class="token punctuation">.</span></span><span class="token class-name">FileWriter</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>io<span class="token punctuation">.</span></span><span class="token class-name">IOException</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span></span><span class="token class-name">Properties</span><span class="token punctuation">;</span>
-
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Properties03</span> <span class="token punctuation">{</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">IOException</span> <span class="token punctuation">{</span>
-        <span class="token class-name">Properties</span> properties <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Properties</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        properties<span class="token punctuation">.</span><span class="token function">load</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">FileReader</span><span class="token punctuation">(</span><span class="token string">"src\\sql.properties"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        properties<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"name"</span><span class="token punctuation">,</span> <span class="token string">"DB02"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        properties<span class="token punctuation">.</span><span class="token function">store</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">FileWriter</span><span class="token punctuation">(</span><span class="token string">"src\\sql.properties"</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        properties<span class="token punctuation">.</span><span class="token function">list</span><span class="token punctuation">(</span><span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">int</span> index <span class="token operator">=</span> <span class="token punctuation">(</span>e<span class="token punctuation">.</span>hash <span class="token operator">&amp;</span> <span class="token number">0x7FFFFFFF</span><span class="token punctuation">)</span> <span class="token operator">%</span> newCapacity<span class="token punctuation">;</span>
+            e<span class="token punctuation">.</span>next <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token class-name">Entry</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">K</span><span class="token punctuation">,</span><span class="token class-name">V</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">)</span>newMap<span class="token punctuation">[</span>index<span class="token punctuation">]</span><span class="token punctuation">;</span>
+            newMap<span class="token punctuation">[</span>index<span class="token punctuation">]</span> <span class="token operator">=</span> e<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-
-
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token operator">--</span> listing properties <span class="token operator">--</span>
-name<span class="token operator">=</span><span class="token class-name">DB02</span>
-pwd<span class="token operator">=</span><span class="token number">130.133</span><span class="token number">.13</span><span class="token number">.14</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
                 
             </div>
@@ -809,8 +856,8 @@ pwd<span class="token operator">=</span><span class="token number">130.133</span
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Java-IO/">
-                                    <span class="chip bg-color">Java IO</span>
+                                <a href="/tags/Java%E9%9B%86%E5%90%88/">
+                                    <span class="chip bg-color">Java集合</span>
                                 </a>
                             
                         </div>
@@ -854,29 +901,28 @@ pwd<span class="token operator">=</span><span class="token number">130.133</span
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/c89e3217.html">
+                <a href="/posts/5977455.html">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/xiaofanshutu/myBlogPic@main/matery/img/galleries/10.jpg" class="responsive-img" alt="Properties">
+                        <img src="https://cdn.jsdelivr.net/gh/xiaofanshutu/myBlogPic@main/matery/img/galleries/25.jpg" class="responsive-img" alt="TreeMap">
                         
-                        <span class="card-title">Properties</span>
+                        <span class="card-title">TreeMap</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Properties
+                            TreeMap
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-28
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-05-05
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -889,12 +935,11 @@ pwd<span class="token operator">=</span><span class="token number">130.133</span
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Java-IO/">
-                        <span class="chip bg-color">Java IO</span>
+                    <a href="/tags/Java%E9%9B%86%E5%90%88/">
+                        <span class="chip bg-color">Java集合</span>
                     </a>
                     
                 </div>
@@ -908,23 +953,23 @@ pwd<span class="token operator">=</span><span class="token number">130.133</span
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/64434a88.html">
+                <a href="/posts/702efb32.html">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/xiaofanshutu/myBlogPic@main/matery/img/galleries/2.jpg" class="responsive-img" alt="IO流原理以及流的分类">
+                        <img src="https://cdn.jsdelivr.net/gh/xiaofanshutu/myBlogPic@main/matery/img/galleries/24.jpg" class="responsive-img" alt="TreeSet">
                         
-                        <span class="card-title">IO流原理以及流的分类</span>
+                        <span class="card-title">TreeSet</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            IO流原理以及流的分类
+                            TreeSet
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-28
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-05-03
                             </span>
                         <span class="publish-author">
                             
@@ -941,8 +986,8 @@ pwd<span class="token operator">=</span><span class="token number">130.133</span
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Java-IO/">
-                        <span class="chip bg-color">Java IO</span>
+                    <a href="/tags/Java%E9%9B%86%E5%90%88/">
+                        <span class="chip bg-color">Java集合</span>
                     </a>
                     
                 </div>
@@ -1182,7 +1227,7 @@ pwd<span class="token operator">=</span><span class="token number">130.133</span
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">3.6k</span>&nbsp;字
+                class="white-color">21.5k</span>&nbsp;字
             
             
             
