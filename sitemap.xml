@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://xiaofanshutu.github.io/posts/fb60fea1.html</loc>
+    
+    <lastmod>2022-06-30</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://xiaofanshutu.github.io/posts/30256478.html</loc>
     
     <lastmod>2022-06-30</lastmod>
@@ -66,13 +73,6 @@
   
   <url>
     <loc>https://xiaofanshutu.github.io/posts/66c016fb.html</loc>
-    
-    <lastmod>2022-06-29</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://xiaofanshutu.github.io/posts/fb60fea1.html</loc>
     
     <lastmod>2022-06-29</lastmod>
     
@@ -396,14 +396,14 @@
   </url>
   
   <url>
-    <loc>https://xiaofanshutu.github.io/tags/Java-%E5%9F%BA%E7%A1%80/</loc>
+    <loc>https://xiaofanshutu.github.io/tags/Java-Web/</loc>
     <lastmod>2022-06-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://xiaofanshutu.github.io/tags/Java-Web/</loc>
+    <loc>https://xiaofanshutu.github.io/tags/Java-%E5%9F%BA%E7%A1%80/</loc>
     <lastmod>2022-06-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -461,14 +461,14 @@
   </url>
   
   <url>
-    <loc>https://xiaofanshutu.github.io/categories/JVM/</loc>
+    <loc>https://xiaofanshutu.github.io/categories/Java%E5%85%B6%E4%BB%96/</loc>
     <lastmod>2022-06-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://xiaofanshutu.github.io/categories/Java%E5%85%B6%E4%BB%96/</loc>
+    <loc>https://xiaofanshutu.github.io/categories/JVM/</loc>
     <lastmod>2022-06-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
