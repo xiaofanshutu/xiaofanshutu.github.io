@@ -237,14 +237,28 @@
   </url>
   
   <url>
-    <loc>https://xiaofanshutu.github.io/categories/Java%E5%9F%BA%E7%A1%80/</loc>
+    <loc>https://xiaofanshutu.github.io/categories/HTML5/</loc>
     <lastmod>2023-04-29</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://xiaofanshutu.github.io/categories/HTML5/</loc>
+    <loc>https://xiaofanshutu.github.io/categories/Java-IO/</loc>
+    <lastmod>2023-04-29</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xiaofanshutu.github.io/categories/Java-Web/</loc>
+    <lastmod>2023-04-29</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xiaofanshutu.github.io/categories/Java%E5%9F%BA%E7%A1%80/</loc>
     <lastmod>2023-04-29</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -272,13 +286,6 @@
   </url>
   
   <url>
-    <loc>https://xiaofanshutu.github.io/categories/Java-IO/</loc>
-    <lastmod>2023-04-29</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://xiaofanshutu.github.io/categories/%E5%85%AB%E8%82%A1%E6%96%87/</loc>
     <lastmod>2023-04-29</lastmod>
     <changefreq>daily</changefreq>
@@ -287,13 +294,6 @@
   
   <url>
     <loc>https://xiaofanshutu.github.io/categories/SpringBoot/</loc>
-    <lastmod>2023-04-29</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://xiaofanshutu.github.io/categories/Java-Web/</loc>
     <lastmod>2023-04-29</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
