@@ -2,14 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://xiaofanshutu.github.io/posts/fc27ae96.html</loc>
+    <loc>https://xiaofanshutu.github.io/posts/df2849ec.html</loc>
     
     <lastmod>2023-04-29</lastmod>
     
   </url>
   
   <url>
-    <loc>https://xiaofanshutu.github.io/posts/df2849ec.html</loc>
+    <loc>https://xiaofanshutu.github.io/posts/fc27ae96.html</loc>
     
     <lastmod>2023-04-29</lastmod>
     
@@ -237,6 +237,13 @@
   </url>
   
   <url>
+    <loc>https://xiaofanshutu.github.io/categories/Java%E5%9F%BA%E7%A1%80/</loc>
+    <lastmod>2023-04-29</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://xiaofanshutu.github.io/categories/HTML5/</loc>
     <lastmod>2023-04-29</lastmod>
     <changefreq>daily</changefreq>
@@ -245,27 +252,6 @@
   
   <url>
     <loc>https://xiaofanshutu.github.io/categories/Javascript/</loc>
-    <lastmod>2023-04-29</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://xiaofanshutu.github.io/categories/Java-IO/</loc>
-    <lastmod>2023-04-29</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://xiaofanshutu.github.io/categories/Java%E5%9F%BA%E7%A1%80/</loc>
-    <lastmod>2023-04-29</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://xiaofanshutu.github.io/categories/Java-Web/</loc>
     <lastmod>2023-04-29</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -286,6 +272,13 @@
   </url>
   
   <url>
+    <loc>https://xiaofanshutu.github.io/categories/Java-IO/</loc>
+    <lastmod>2023-04-29</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://xiaofanshutu.github.io/categories/%E5%85%AB%E8%82%A1%E6%96%87/</loc>
     <lastmod>2023-04-29</lastmod>
     <changefreq>daily</changefreq>
@@ -293,14 +286,21 @@
   </url>
   
   <url>
-    <loc>https://xiaofanshutu.github.io/categories/Java%E9%9B%86%E5%90%88%E6%A1%86%E6%9E%B6/</loc>
+    <loc>https://xiaofanshutu.github.io/categories/SpringBoot/</loc>
     <lastmod>2023-04-29</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://xiaofanshutu.github.io/categories/SpringBoot/</loc>
+    <loc>https://xiaofanshutu.github.io/categories/Java-Web/</loc>
+    <lastmod>2023-04-29</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xiaofanshutu.github.io/categories/Java%E9%9B%86%E5%90%88%E6%A1%86%E6%9E%B6/</loc>
     <lastmod>2023-04-29</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
