@@ -41,7 +41,7 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/xiaofanshutu/typora2022/main/image-20221220140941250.png">
 <meta property="og:image" content="c:/Users/winner/Desktop/Freemarker_readme-master/images/image-20221220140941250.png">
 <meta property="article:published_time" content="2023-07-26T13:15:01.077Z">
-<meta property="article:modified_time" content="2023-07-26T13:29:10.669Z">
+<meta property="article:modified_time" content="2023-07-26T13:35:56.861Z">
 <meta property="article:author" content="bambi">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/xiaofanshutu/typora2022/main/Freemarker.jpg">
@@ -224,7 +224,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2023-07-26 21:15:01 / 修改时间：21:29:10" itemprop="dateCreated datePublished" datetime="2023-07-26T21:15:01+08:00">2023-07-26</time>
+              <time title="创建时间：2023-07-26 21:15:01 / 修改时间：21:35:56" itemprop="dateCreated datePublished" datetime="2023-07-26T21:15:01+08:00">2023-07-26</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -265,36 +265,36 @@
 <a id="more"></a>
 
 <p>代码：<a target="_blank" rel="noopener" href="https://gitee.com/hhgs_admin/freemarkerdemo">https://gitee.com/hhgs_admin/freemarkerdemo</a></p>
-<h2 id="1-主要内容"><a href="#1-主要内容" class="headerlink" title="1,主要内容"></a>1,主要内容</h2><p><img src="https://raw.githubusercontent.com/xiaofanshutu/typora2022/main/image-20221220113258424.png"></p>
-<h2 id="2-概述"><a href="#2-概述" class="headerlink" title="2.概述"></a>2.概述</h2><h3 id="2-1-FreeMarker概念："><a href="#2-1-FreeMarker概念：" class="headerlink" title="2.1.FreeMarker概念："></a>2.1.FreeMarker概念：</h3><p>FreeMarker是一个模板引擎，一个基于模板生成文本输出的通用工具，使用纯Java编写。<br> FreeMarker被设计用来生成HTML Web页面，特别是基于MVC模式的应用程序<br> 虽然FreeMarker具有一些编程的能力，但通常由Java程序准备要显示的数据，由FreeMarker生成页面，通过模板显示准备的数据：</p>
+<h2 id="主要内容"><a href="#主要内容" class="headerlink" title="主要内容"></a>主要内容</h2><p><img src="https://raw.githubusercontent.com/xiaofanshutu/typora2022/main/image-20221220113258424.png"></p>
+<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><h3 id="FreeMarker概念："><a href="#FreeMarker概念：" class="headerlink" title="FreeMarker概念："></a>FreeMarker概念：</h3><p>FreeMarker是一个模板引擎，一个基于模板生成文本输出的通用工具，使用纯Java编写。<br> FreeMarker被设计用来生成HTML Web页面，特别是基于MVC模式的应用程序<br> 虽然FreeMarker具有一些编程的能力，但通常由Java程序准备要显示的数据，由FreeMarker生成页面，通过模板显示准备的数据：</p>
 <p><img src="https://raw.githubusercontent.com/xiaofanshutu/typora2022/main/image-20221220112938384.png"></p>
 <p>FreeMarker不是一个Web应用框架，而适合作为Web应用框架一个组件。<br> FreeMarker与容器无关，因为它并不知道HTTP或Servlet；FreeMarker同样可以应用于非Web应用程序环境。<br> FreeMarker更适合作为Model2框架（如Struts）的视图组件，你也可以在模板中使用JSP标记库。<br> FreeMarker是免费的。</p>
-<h3 id="2-2-FreeMarker特性"><a href="#2-2-FreeMarker特性" class="headerlink" title="2.2.FreeMarker特性"></a>2.2.FreeMarker特性</h3><h4 id="2-2-1-通用目标"><a href="#2-2-1-通用目标" class="headerlink" title="2.2.1.通用目标"></a>2.2.1.通用目标</h4><p>能够生成各种文本：HTML、XML、RTF、Java源代码等等</p>
+<h3 id="FreeMarker特性"><a href="#FreeMarker特性" class="headerlink" title="FreeMarker特性"></a>FreeMarker特性</h3><h4 id="通用目标"><a href="#通用目标" class="headerlink" title="通用目标"></a>通用目标</h4><p>能够生成各种文本：HTML、XML、RTF、Java源代码等等</p>
 <p>易于嵌入到你的产品中：轻量级；不需要Servlet环境</p>
 <p>插件式模板载入器：可以从任何源载入模板，如本地文件、数据库等等</p>
 <p>你可以按你所需生成文本：保存到本地文件；作为Email发送；从Web应用程序发送它返回给Web浏览器</p>
-<h4 id="2-2-2-强大的模板语言"><a href="#2-2-2-强大的模板语言" class="headerlink" title="2.2.2.强大的模板语言"></a>2.2.2.强大的模板语言</h4><p>所有常用的指令：include、if/elseif/else、循环结构</p>
+<h4 id="强大的模板语言"><a href="#强大的模板语言" class="headerlink" title="强大的模板语言"></a>强大的模板语言</h4><p>所有常用的指令：include、if/elseif/else、循环结构</p>
 <p>在模板中创建和改变变量</p>
 <p>几乎在任何地方都可以使用复杂表达式来指定值</p>
 <p>命名的宏，可以具有位置参数和嵌套内容</p>
 <p>名字空间有助于建立和维护可重用的宏库，或者将一个大工程分成模块，而不必担心名字冲突</p>
 <p>输出转换块：在嵌套模板片段生成输出时，转换HTML转义、压缩、语法高亮等等；你可以定义自己的转换</p>
-<h4 id="2-2-3-通用数据模型"><a href="#2-2-3-通用数据模型" class="headerlink" title="2.2.3.通用数据模型"></a>2.2.3.通用数据模型</h4><p>FreeMarker不是直接反射到Java对象，Java对象通过插件式对象封装，以变量方式在模板中显示</p>
+<h4 id="通用数据模型"><a href="#通用数据模型" class="headerlink" title="通用数据模型"></a>通用数据模型</h4><p>FreeMarker不是直接反射到Java对象，Java对象通过插件式对象封装，以变量方式在模板中显示</p>
 <p>你可以使用抽象（接口）方式表示对象（JavaBean、XML文档、SQL查询结果集等等），告诉模板开发者使用方法，使其不受技术细节的打扰</p>
-<h4 id="2-2-4-为Web准备"><a href="#2-2-4-为Web准备" class="headerlink" title="2.2.4.为Web准备"></a>2.2.4.为Web准备</h4><p>在模板语言中内建处理典型Web相关任务（如HTML转义）的结构</p>
+<h4 id="为Web准备"><a href="#为Web准备" class="headerlink" title="为Web准备"></a>为Web准备</h4><p>在模板语言中内建处理典型Web相关任务（如HTML转义）的结构</p>
 <p>能够集成到Model2 Web应用框架中作为JSP的替代</p>
 <p>支持JSP标记库</p>
 <p>为MVC模式设计：分离可视化设计和应用程序逻辑；分离页面设计员和程序员</p>
-<h4 id="2-2-5-智能的国际化和本地化"><a href="#2-2-5-智能的国际化和本地化" class="headerlink" title="2.2.5. 智能的国际化和本地化"></a>2.2.5. 智能的国际化和本地化</h4><p>字符集智能化（内部使用UNICODE）</p>
+<h4 id="智能的国际化和本地化"><a href="#智能的国际化和本地化" class="headerlink" title="智能的国际化和本地化"></a>智能的国际化和本地化</h4><p>字符集智能化（内部使用UNICODE）</p>
 <p>数字格式本地化敏感</p>
 <p>日期和时间格式本地化敏感</p>
 <p>非US字符集可以用作标识（如变量名）</p>
 <p>多种不同语言的相同模板</p>
-<h4 id="2-2-6-强大的XML处理能力"><a href="#2-2-6-强大的XML处理能力" class="headerlink" title="2.2.6.强大的XML处理能力"></a>2.2.6.强大的XML处理能力</h4><p>&lt;#recurse&gt; 和&lt;#visit&gt;指令（2.3版本）用于递归遍历XML树。在模板中清楚和直觉的访问XML对象模型。开源论坛 <a target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=http://www.oschina.net/p/jforum">JForum</a>  就是使用了 FreeMarker 做为页面模板。</p>
-<h3 id="2-3-FreeMarker环境搭建"><a href="#2-3-FreeMarker环境搭建" class="headerlink" title="2.3.FreeMarker环境搭建"></a>2.3.FreeMarker环境搭建</h3><h4 id="2-3-1-新建Maven-Web项目"><a href="#2-3-1-新建Maven-Web项目" class="headerlink" title="2.3.1.新建Maven Web项目"></a>2.3.1.新建Maven Web项目</h4><p><img src="https://raw.githubusercontent.com/xiaofanshutu/typora2022/main/image-20221220115027425.png"></p>
+<h4 id="强大的XML处理能力"><a href="#强大的XML处理能力" class="headerlink" title="强大的XML处理能力"></a>强大的XML处理能力</h4><p>&lt;#recurse&gt; 和&lt;#visit&gt;指令（2.3版本）用于递归遍历XML树。在模板中清楚和直觉的访问XML对象模型。开源论坛 <a target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=http://www.oschina.net/p/jforum">JForum</a>  就是使用了 FreeMarker 做为页面模板。</p>
+<h3 id="FreeMarker环境搭建"><a href="#FreeMarker环境搭建" class="headerlink" title="FreeMarker环境搭建"></a>FreeMarker环境搭建</h3><h4 id="新建Maven-Web项目"><a href="#新建Maven-Web项目" class="headerlink" title="新建Maven Web项目"></a>新建Maven Web项目</h4><p><img src="https://raw.githubusercontent.com/xiaofanshutu/typora2022/main/image-20221220115027425.png"></p>
 <p><img src="https://raw.githubusercontent.com/xiaofanshutu/typora2022/main/image-20221220115100050.png"></p>
 <p><img src="C:\Users\winner\Desktop\Freemarker_readme-master\images\image-20221220115121387.png"></p>
-<h4 id="2-3-2-配置坐标依赖和部署插件"><a href="#2-3-2-配置坐标依赖和部署插件" class="headerlink" title="2.3.2.配置坐标依赖和部署插件"></a>2.3.2.配置坐标依赖和部署插件</h4><pre class="line-numbers language-xml" data-language="xml"><code class="language-xml"><span class="token prolog">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<h4 id="配置坐标依赖和部署插件"><a href="#配置坐标依赖和部署插件" class="headerlink" title="配置坐标依赖和部署插件"></a>配置坐标依赖和部署插件</h4><pre class="line-numbers language-xml" data-language="xml"><code class="language-xml"><span class="token prolog">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
 
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>project</span> <span class="token attr-name">xmlns</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://maven.apache.org/POM/4.0.0<span class="token punctuation">"</span></span> <span class="token attr-name"><span class="token namespace">xmlns:</span>xsi</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://www.w3.org/2001/XMLSchema-instance<span class="token punctuation">"</span></span>
   <span class="token attr-name"><span class="token namespace">xsi:</span>schemaLocation</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
@@ -359,7 +359,7 @@
 
 
 
-<h4 id="2-3-3-修改配置文君web-xml"><a href="#2-3-3-修改配置文君web-xml" class="headerlink" title="2.3.3.修改配置文君web.xml"></a>2.3.3.修改配置文君web.xml</h4><pre class="line-numbers language-xml" data-language="xml"><code class="language-xml"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">web-app</span> <span class="token name">PUBLIC</span>
+<h4 id="修改配置文君web-xml"><a href="#修改配置文君web-xml" class="headerlink" title="修改配置文君web.xml"></a>修改配置文君web.xml</h4><pre class="line-numbers language-xml" data-language="xml"><code class="language-xml"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">web-app</span> <span class="token name">PUBLIC</span>
  <span class="token string">"-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"</span>
  <span class="token string">"http://java.sun.com/dtd/web-app_2_3.dtd"</span> <span class="token punctuation">&gt;</span></span>
 
@@ -391,7 +391,7 @@
 
 
 
-<h4 id="2-3-4-编写Servlet文件"><a href="#2-3-4-编写Servlet文件" class="headerlink" title="2.3.4.编写Servlet文件"></a>2.3.4.编写Servlet文件</h4><p><img src="https://raw.githubusercontent.com/xiaofanshutu/typora2022/main/image-20221220133846118.png"></p>
+<h4 id="编写Servlet文件"><a href="#编写Servlet文件" class="headerlink" title="编写Servlet文件"></a>编写Servlet文件</h4><p><img src="https://raw.githubusercontent.com/xiaofanshutu/typora2022/main/image-20221220133846118.png"></p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">org<span class="token punctuation">.</span>example<span class="token punctuation">.</span>controller</span><span class="token punctuation">;</span>
 
 <span class="token keyword">import</span> <span class="token namespace">javax<span class="token punctuation">.</span>servlet<span class="token punctuation">.</span></span><span class="token class-name">ServletException</span><span class="token punctuation">;</span>
@@ -416,7 +416,7 @@
 
 
 
-<h4 id="2-3-5-新建模板文件ftl"><a href="#2-3-5-新建模板文件ftl" class="headerlink" title="2.3.5.新建模板文件ftl"></a>2.3.5.新建模板文件ftl</h4><pre class="line-numbers language-freemarker" data-language="freemarker"><code class="language-freemarker">&lt;!--
+<h4 id="新建模板文件ftl"><a href="#新建模板文件ftl" class="headerlink" title="新建模板文件ftl"></a>新建模板文件ftl</h4><pre class="line-numbers language-freemarker" data-language="freemarker"><code class="language-freemarker">&lt;!--
 html注释
     在浏览器中可以看到的注释
 --&gt;
@@ -433,10 +433,10 @@ ${msg}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></sp
 
 
 <p><img src="https://raw.githubusercontent.com/xiaofanshutu/typora2022/main/image-20221220133900337.png"></p>
-<h4 id="2-3-6-启动项目"><a href="#2-3-6-启动项目" class="headerlink" title="2.3.6.启动项目"></a>2.3.6.启动项目</h4><p><img src="https://raw.githubusercontent.com/xiaofanshutu/typora2022/main/image-20221220134022464.png"></p>
-<h4 id="2-3-7-访问项目"><a href="#2-3-7-访问项目" class="headerlink" title="2.3.7.访问项目"></a>2.3.7.访问项目</h4><p><img src="https://raw.githubusercontent.com/xiaofanshutu/typora2022/main/image-20221220135551509.png"></p>
-<h2 id="3-FreeMarker数据类型"><a href="#3-FreeMarker数据类型" class="headerlink" title="3.FreeMarker数据类型"></a>3.FreeMarker数据类型</h2><p><img src="https://raw.githubusercontent.com/xiaofanshutu/typora2022/main/image-20221220140217641.png"></p>
-<h3 id="3-1-布尔类型"><a href="#3-1-布尔类型" class="headerlink" title="3.1.布尔类型"></a>3.1.布尔类型</h3><p>1.在Servlet中设置布尔类型的数据</p>
+<h4 id="启动项目"><a href="#启动项目" class="headerlink" title="启动项目"></a>启动项目</h4><p><img src="https://raw.githubusercontent.com/xiaofanshutu/typora2022/main/image-20221220134022464.png"></p>
+<h4 id="访问项目"><a href="#访问项目" class="headerlink" title="访问项目"></a>访问项目</h4><p><img src="https://raw.githubusercontent.com/xiaofanshutu/typora2022/main/image-20221220135551509.png"></p>
+<h2 id="FreeMarker数据类型"><a href="#FreeMarker数据类型" class="headerlink" title="FreeMarker数据类型"></a>FreeMarker数据类型</h2><p><img src="https://raw.githubusercontent.com/xiaofanshutu/typora2022/main/image-20221220140217641.png"></p>
+<h3 id="布尔类型"><a href="#布尔类型" class="headerlink" title="布尔类型"></a>布尔类型</h3><p>1.在Servlet中设置布尔类型的数据</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">//布尔类型</span>
 request<span class="token punctuation">.</span><span class="token function">setAttribute</span><span class="token punctuation">(</span><span class="token string">"flag"</span><span class="token punctuation">,</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
@@ -455,7 +455,7 @@ ${flag?string("yes","no")} <span class="token tag"><span class="token tag"><span
 <p><img src="https://raw.githubusercontent.com/xiaofanshutu/typora2022/main/image-20221220140924570.png"></p>
 <p><img src="https://raw.githubusercontent.com/xiaofanshutu/typora2022/main/image-20221220140941250.png"></p>
 <p><img src="C:\Users\winner\Desktop\Freemarker_readme-master\images\image-20221220140941250.png"></p>
-<h3 id="3-2-日期类型"><a href="#3-2-日期类型" class="headerlink" title="3.2.日期类型"></a>3.2.日期类型</h3><p>1.在Servlet中设置日期类型的数据</p>
+<h3 id="日期类型"><a href="#日期类型" class="headerlink" title="日期类型"></a>日期类型</h3><p>1.在Servlet中设置日期类型的数据</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">//日期类型</span>
 request<span class="token punctuation">.</span><span class="token function">setAttribute</span><span class="token punctuation">(</span><span class="token string">"createDate"</span><span class="token punctuation">,</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
@@ -482,7 +482,7 @@ ${createDate?string("yyyy年MM月dd日 HH:mm:ss")} <span class="token tag"><span
 
 
 
-<h3 id="3-3-数值类型"><a href="#3-3-数值类型" class="headerlink" title="3.3.数值类型"></a>3.3.数值类型</h3><p>1.在Servlet中设置数值类型的数据</p>
+<h3 id="数值类型"><a href="#数值类型" class="headerlink" title="数值类型"></a>数值类型</h3><p>1.在Servlet中设置数值类型的数据</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">//数值类型</span>
 request<span class="token punctuation">.</span><span class="token function">setAttribute</span><span class="token punctuation">(</span><span class="token string">"age"</span><span class="token punctuation">,</span><span class="token number">18</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//数值类型</span>
 request<span class="token punctuation">.</span><span class="token function">setAttribute</span><span class="token punctuation">(</span><span class="token string">"salary"</span><span class="token punctuation">,</span><span class="token number">100000</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//数值类型</span>
@@ -513,7 +513,7 @@ ${avg?string["0.##"]} <span class="token tag"><span class="token tag"><span clas
 
 
 
-<h3 id="3-4-字符串类型"><a href="#3-4-字符串类型" class="headerlink" title="3.4.字符串类型"></a>3.4.字符串类型</h3><p>1.在Servlet中设置字符串类型的数据</p>
+<h3 id="字符串类型"><a href="#字符串类型" class="headerlink" title="字符串类型"></a>字符串类型</h3><p>1.在Servlet中设置字符串类型的数据</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">//字符串类型</span>
 request<span class="token punctuation">.</span><span class="token function">setAttribute</span><span class="token punctuation">(</span><span class="token string">"msg"</span><span class="token punctuation">,</span><span class="token string">"hello"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 request<span class="token punctuation">.</span><span class="token function">setAttribute</span><span class="token punctuation">(</span><span class="token string">"msg2"</span><span class="token punctuation">,</span><span class="token string">"freemarker "</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
@@ -604,7 +604,7 @@ ${(str1??)?string}<span class="token tag"><span class="token tag"><span class="t
 
 
 
-<h3 id="3-5-sequence类型"><a href="#3-5-sequence类型" class="headerlink" title="3.5.sequence类型"></a>3.5.sequence类型</h3><p>1.在Servlet中设置序列类型的数据</p>
+<h3 id="sequence类型"><a href="#sequence类型" class="headerlink" title="sequence类型"></a>sequence类型</h3><p>1.在Servlet中设置序列类型的数据</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">// 序列类型 （数组、List、Set）</span>
 <span class="token comment">// 数组操作</span>
 <span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> stars <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">{</span><span class="token string">"周杰伦"</span><span class="token punctuation">,</span><span class="token string">"林俊杰"</span><span class="token punctuation">,</span><span class="token string">"陈奕迅"</span><span class="token punctuation">,</span><span class="token string">"五月天"</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
@@ -681,7 +681,7 @@ request<span class="token punctuation">.</span><span class="token function">setA
 
 
 
-<h3 id="3-6-hash类型"><a href="#3-6-hash类型" class="headerlink" title="3.6.hash类型"></a>3.6.hash类型</h3><p>1.在Servlet中设置hash类型的数据</p>
+<h3 id="hash类型"><a href="#hash类型" class="headerlink" title="hash类型"></a>hash类型</h3><p>1.在Servlet中设置hash类型的数据</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">// Map操作</span>
 <span class="token class-name">Map</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">,</span><span class="token class-name">String</span><span class="token punctuation">&gt;</span></span> cityMap <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashMap</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 cityMap<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"sh"</span><span class="token punctuation">,</span><span class="token string">"上海"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -712,7 +712,7 @@ request<span class="token punctuation">.</span><span class="token function">setA
 
 
 
-<h2 id="4-FreeMarker常见指令"><a href="#4-FreeMarker常见指令" class="headerlink" title="4.FreeMarker常见指令"></a>4.FreeMarker常见指令</h2><h3 id="4-1、assign-自定义变量指令"><a href="#4-1、assign-自定义变量指令" class="headerlink" title="4.1、assign 自定义变量指令"></a>4.1、assign 自定义变量指令</h3><p>使用 assign 指令你可以创建一个新的变量， 或者替换一个已经存在的变量。</p>
+<h2 id="FreeMarker常见指令"><a href="#FreeMarker常见指令" class="headerlink" title="FreeMarker常见指令"></a>FreeMarker常见指令</h2><h3 id="assign-自定义变量指令"><a href="#assign-自定义变量指令" class="headerlink" title="assign 自定义变量指令"></a>assign 自定义变量指令</h3><p>使用 assign 指令你可以创建一个新的变量， 或者替换一个已经存在的变量。</p>
 <pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>#--</span>
     <span class="token attr-name">assign</span> <span class="token attr-name">自定义变量指令</span>
         <span class="token attr-name">语法：</span>
@@ -726,7 +726,7 @@ ${num} -- ${names?join(",")}<span aria-hidden="true" class="line-numbers-rows"><
 
 
 
-<h3 id="4-2、if-elseif-else-逻辑判断指令"><a href="#4-2、if-elseif-else-逻辑判断指令" class="headerlink" title="4.2、if elseif else 逻辑判断指令"></a>4.2、if elseif else 逻辑判断指令</h3><p>可以使用 if ， elseif 和 else 指令来条件判断是否满足某些条件。</p>
+<h3 id="if-elseif-else-逻辑判断指令"><a href="#if-elseif-else-逻辑判断指令" class="headerlink" title="if elseif else 逻辑判断指令"></a>if elseif else 逻辑判断指令</h3><p>可以使用 if ， elseif 和 else 指令来条件判断是否满足某些条件。</p>
 <pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h5</span><span class="token punctuation">&gt;</span></span> 2. if, else, elseif 逻辑判断指令<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h5</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>#assign</span> <span class="token attr-name">score</span> <span class="token attr-value"><span class="token punctuation attr-equals">=</span> 60</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>#if</span> <span class="token attr-name">score</span> <span class="token attr-name">lt</span> <span class="token attr-name">60</span> <span class="token punctuation">&gt;</span></span>
@@ -754,7 +754,7 @@ ${num} -- ${names?join(",")}<span aria-hidden="true" class="line-numbers-rows"><
 
 
 
-<h3 id="4-3、list-遍历指令"><a href="#4-3、list-遍历指令" class="headerlink" title="4.3、list 遍历指令"></a>4.3、list 遍历指令</h3><p>可以使用 list 指令来对序列进行遍历。</p>
+<h3 id="list-遍历指令"><a href="#list-遍历指令" class="headerlink" title="list 遍历指令"></a>list 遍历指令</h3><p>可以使用 list 指令来对序列进行遍历。</p>
 <pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h5</span><span class="token punctuation">&gt;</span></span>3. list指令<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h5</span><span class="token punctuation">&gt;</span></span>
 &lt;#assign users = ["张三","李四","王五"]&gt;
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>#list</span> <span class="token attr-name">users</span> <span class="token attr-name">as</span> <span class="token attr-name">user</span><span class="token punctuation">&gt;</span></span>
@@ -778,7 +778,7 @@ ${num} -- ${names?join(",")}<span aria-hidden="true" class="line-numbers-rows"><
 
 
 
-<h3 id="4-4、macro-自定义指令"><a href="#4-4、macro-自定义指令" class="headerlink" title="4.4、macro 自定义指令"></a>4.4、macro 自定义指令</h3><p>可以使用 macro 指令来自定义一些自定义指令。</p>
+<h3 id="macro-自定义指令"><a href="#macro-自定义指令" class="headerlink" title="macro 自定义指令"></a>macro 自定义指令</h3><p>可以使用 macro 指令来自定义一些自定义指令。</p>
 <pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>#--</span>
     <span class="token attr-name">macro</span> <span class="token attr-name">自定义指令</span> <span class="token attr-name">（宏）</span>
         <span class="token attr-name">1.</span> <span class="token attr-name">基本使用</span>
@@ -845,7 +845,7 @@ ${num} -- ${names?join(",")}<span aria-hidden="true" class="line-numbers-rows"><
 
 
 
-<h3 id="4-5、nested-占位指令"><a href="#4-5、nested-占位指令" class="headerlink" title="4.5、nested 占位指令"></a>4.5、nested 占位指令</h3><p>nested 指令执行自定义指令开始和结束标签中间的模板片段。嵌套的片段可以包含模板中任意合法的内容。</p>
+<h3 id="nested-占位指令"><a href="#nested-占位指令" class="headerlink" title="nested 占位指令"></a>nested 占位指令</h3><p>nested 指令执行自定义指令开始和结束标签中间的模板片段。嵌套的片段可以包含模板中任意合法的内容。</p>
 <pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>#--</span>
     <span class="token attr-name">nested</span> <span class="token attr-name">占位指令</span>
         <span class="token attr-name">nested</span> <span class="token attr-name">相当于占位符,一般结合macro指令一起使用。</span>
@@ -860,9 +860,9 @@ ${num} -- ${names?join(",")}<span aria-hidden="true" class="line-numbers-rows"><
 
 
 
-<h3 id="4-6、import-导入指令"><a href="#4-6、import-导入指令" class="headerlink" title="4.6、import 导入指令"></a>4.6、import 导入指令</h3><p>import 指令可以引入一个库。也就是说，它创建一个新的命名空间， 然后在那个命名空间中执行给定路径的模</p>
+<h3 id="import-导入指令"><a href="#import-导入指令" class="headerlink" title="import 导入指令"></a>import 导入指令</h3><p>import 指令可以引入一个库。也就是说，它创建一个新的命名空间， 然后在那个命名空间中执行给定路径的模</p>
 <p>板。可以使用引入的空间中的指令。</p>
-<h4 id="1）、创建commons-ftl文件"><a href="#1）、创建commons-ftl文件" class="headerlink" title="1）、创建commons.ftl文件"></a>1）、创建commons.ftl文件</h4><pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>#macro</span> <span class="token attr-name">cfb</span><span class="token punctuation">&gt;</span></span>
+<h4 id="创建commons-ftl文件"><a href="#创建commons-ftl文件" class="headerlink" title="创建commons.ftl文件"></a>创建commons.ftl文件</h4><pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>#macro</span> <span class="token attr-name">cfb</span><span class="token punctuation">&gt;</span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>#list</span> <span class="token attr-name">1..9</span> <span class="token attr-name">as</span> <span class="token attr-name">i</span><span class="token punctuation">&gt;</span></span>
         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>#list</span> <span class="token attr-name">1..i</span> <span class="token attr-name">as</span> <span class="token attr-name">j</span><span class="token punctuation">&gt;</span></span>
            ${j}*${i}=${j*i}<span class="token entity named-entity" title="&nbsp;">&amp;nbsp;</span>
@@ -874,12 +874,12 @@ ${num} -- ${names?join(",")}<span aria-hidden="true" class="line-numbers-rows"><
 
 
 <p>在其他ftl页面中通过import导入commons.ftl的命名空间，使用该命名空间中的指令</p>
-<h4 id="2）、创建test-ftl文件"><a href="#2）、创建test-ftl文件" class="headerlink" title="2）、创建test.ftl文件"></a>2）、创建test.ftl文件</h4><pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>#--</span> <span class="token attr-name">导入命名空间</span> <span class="token attr-name">--</span><span class="token punctuation">&gt;</span></span>
+<h4 id="创建test-ftl文件"><a href="#创建test-ftl文件" class="headerlink" title="创建test.ftl文件"></a>创建test.ftl文件</h4><pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>#--</span> <span class="token attr-name">导入命名空间</span> <span class="token attr-name">--</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>#import</span> <span class="token attr-name">"commons.ftl"</span> <span class="token attr-name">as</span> <span class="token attr-name">common</span><span class="token punctuation">&gt;</span></span> 
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>#--</span> <span class="token attr-name">使用命名空间中的指令</span> <span class="token attr-name">--</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>@common.cfb</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>@common.cfb</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h4 id="3）、创建Controller"><a href="#3）、创建Controller" class="headerlink" title="3）、创建Controller"></a>3）、创建Controller</h4><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">org<span class="token punctuation">.</span>example<span class="token punctuation">.</span>controller</span><span class="token punctuation">;</span>
+<h4 id="创建Controller"><a href="#创建Controller" class="headerlink" title="创建Controller"></a>创建Controller</h4><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">org<span class="token punctuation">.</span>example<span class="token punctuation">.</span>controller</span><span class="token punctuation">;</span>
 
 <span class="token keyword">import</span> <span class="token namespace">javax<span class="token punctuation">.</span>servlet<span class="token punctuation">.</span></span><span class="token class-name">ServletException</span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> <span class="token namespace">javax<span class="token punctuation">.</span>servlet<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span></span><span class="token class-name">WebServlet</span><span class="token punctuation">;</span>
@@ -908,7 +908,7 @@ ${num} -- ${names?join(",")}<span aria-hidden="true" class="line-numbers-rows"><
 
 
 
-<h3 id="4-7、include-包含指令"><a href="#4-7、include-包含指令" class="headerlink" title="4.7、include 包含指令"></a>4.7、include 包含指令</h3><p>可以使用 include 指令在你的模板中插入另外一个 FreeMarker 模板文件 。 被包含模板的输出格式是在 include</p>
+<h3 id="include-包含指令"><a href="#include-包含指令" class="headerlink" title="include 包含指令"></a>include 包含指令</h3><p>可以使用 include 指令在你的模板中插入另外一个 FreeMarker 模板文件 。 被包含模板的输出格式是在 include</p>
 <p>标签出现的位置插入的。 被包含的文件和包含它的模板共享变量，就像是被复制粘贴进去的一样。</p>
 <pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>#--包含指令(引入其他页面文件)</span> <span class="token attr-name">include--</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>#--html文件--</span><span class="token punctuation">&gt;</span></span>
@@ -920,8 +920,8 @@ ${num} -- ${names?join(",")}<span aria-hidden="true" class="line-numbers-rows"><
 
 
 
-<h2 id="5-FreeMarker页面静态化"><a href="#5-FreeMarker页面静态化" class="headerlink" title="5.FreeMarker页面静态化"></a>5.FreeMarker页面静态化</h2><p>通过上述介绍可知 Freemarker 是一种基于模板的、用来生成输出文本的通用工具,所以 我们必须要定制符合自己业务的模板，然后生成自己的 html 页面。Freemarker 是通过 freemarker.template.Confifiguration 这个对象对模板进行加载的（它也处理创建和缓存预 解析模板的工作），然后我们通过 getTemplate 方法获得你想要的模板，有一点要记住 freemarker.template.Confifiguration 在你整个应用必须保证唯一实例。</p>
-<h3 id="1、定义模板"><a href="#1、定义模板" class="headerlink" title="1、定义模板"></a>1、定义模板</h3><p>创建news.ftl模板文件</p>
+<h2 id="FreeMarker页面静态化"><a href="#FreeMarker页面静态化" class="headerlink" title="FreeMarker页面静态化"></a>FreeMarker页面静态化</h2><p>通过上述介绍可知 Freemarker 是一种基于模板的、用来生成输出文本的通用工具,所以 我们必须要定制符合自己业务的模板，然后生成自己的 html 页面。Freemarker 是通过 freemarker.template.Confifiguration 这个对象对模板进行加载的（它也处理创建和缓存预 解析模板的工作），然后我们通过 getTemplate 方法获得你想要的模板，有一点要记住 freemarker.template.Confifiguration 在你整个应用必须保证唯一实例。</p>
+<h3 id="定义模板"><a href="#定义模板" class="headerlink" title="定义模板"></a>定义模板</h3><p>创建news.ftl模板文件</p>
 <pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token name">doctype</span> <span class="token name">html</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">&gt;</span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
@@ -945,7 +945,7 @@ ${num} -- ${names?join(",")}<span aria-hidden="true" class="line-numbers-rows"><
 
 
 
-<h3 id="2、加载模板"><a href="#2、加载模板" class="headerlink" title="2、加载模板"></a>2、加载模板</h3><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>xxxx<span class="token punctuation">.</span>servlet</span><span class="token punctuation">;</span>
+<h3 id="加载模板"><a href="#加载模板" class="headerlink" title="加载模板"></a>加载模板</h3><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>xxxx<span class="token punctuation">.</span>servlet</span><span class="token punctuation">;</span>
 
 <span class="token keyword">import</span> <span class="token namespace">freemarker<span class="token punctuation">.</span>template<span class="token punctuation">.</span></span><span class="token class-name">Configuration</span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> <span class="token namespace">freemarker<span class="token punctuation">.</span>template<span class="token punctuation">.</span></span><span class="token class-name">Template</span><span class="token punctuation">;</span>
@@ -1017,10 +1017,10 @@ ${num} -- ${names?join(",")}<span aria-hidden="true" class="line-numbers-rows"><
 
 
 
-<h2 id="3、生成对应的html文件"><a href="#3、生成对应的html文件" class="headerlink" title="3、生成对应的html文件"></a>3、生成对应的html文件</h2><p>浏览器地址栏输入：</p>
+<h2 id="生成对应的html文件"><a href="#生成对应的html文件" class="headerlink" title="生成对应的html文件"></a>生成对应的html文件</h2><p>浏览器地址栏输入：</p>
 <p><a target="_blank" rel="noopener" href="http://localhost:8989/news">http://localhost:8989/news</a></p>
 <p>生成的文件存放在当前项目的webapp目录下的html目录中。</p>
-<h2 id="6-FreeMarker运算符"><a href="#6-FreeMarker运算符" class="headerlink" title="6.FreeMarker运算符"></a>6.FreeMarker运算符</h2><h2 id="1、算术运算符"><a href="#1、算术运算符" class="headerlink" title="1、算术运算符"></a>1、算术运算符</h2><pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token comment">&lt;!--
+<h2 id="FreeMarker运算符"><a href="#FreeMarker运算符" class="headerlink" title="FreeMarker运算符"></a>FreeMarker运算符</h2><h2 id="算术运算符"><a href="#算术运算符" class="headerlink" title="算术运算符"></a>算术运算符</h2><pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token comment">&lt;!--
     算术运算
         +、-、*、/、%
 --&gt;</span>
@@ -1035,12 +1035,12 @@ ${"hello" + "," + "freemarker"}<span aria-hidden="true" class="line-numbers-rows
 
 
 
-<h2 id="2、逻辑运算符"><a href="#2、逻辑运算符" class="headerlink" title="2、逻辑运算符"></a>2、逻辑运算符</h2><pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>#--</span>
+<h2 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h2><pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>#--</span>
     <span class="token attr-name">逻辑运算符</span>
      <span class="token attr-name">&amp;&amp;、||、!</span>
 <span class="token attr-name">--</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="3、比较运算符"><a href="#3、比较运算符" class="headerlink" title="3、比较运算符"></a>3、比较运算符</h2><pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>#--</span>
+<h2 id="比较运算符"><a href="#比较运算符" class="headerlink" title="比较运算符"></a>比较运算符</h2><pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>#--</span>
     <span class="token attr-name">比较运算符</span>
         <span class="token punctuation">&gt;</span></span> (gt): 大于号，推荐使用 gt
         &lt; (lt)： 小于号，推荐使用 lt
@@ -1052,7 +1052,7 @@ ${"hello" + "," + "freemarker"}<span aria-hidden="true" class="line-numbers-rows
 
 
 
-<h2 id="4、空值运算符"><a href="#4、空值运算符" class="headerlink" title="4、空值运算符"></a>4、空值运算符</h2><pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>#--</span>
+<h2 id="空值运算符"><a href="#空值运算符" class="headerlink" title="空值运算符"></a>空值运算符</h2><pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>#--</span>
     <span class="token attr-name">空值运算符</span>
      <span class="token attr-name">1.</span> <span class="token attr-name"><span class="token namespace">??:</span>判断是否为空，返回布尔类型</span>
         <span class="token attr-name">如果不为空返回</span> <span class="token attr-name">false，</span> <span class="token attr-name">如果为空返回</span> <span class="token attr-name">true，不能直接输出</span>
@@ -1155,7 +1155,7 @@ ${"hello" + "," + "freemarker"}<span aria-hidden="true" class="line-numbers-rows
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E4%B8%BB%E8%A6%81%E5%86%85%E5%AE%B9"><span class="nav-number">1.</span> <span class="nav-text">1,主要内容</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E6%A6%82%E8%BF%B0"><span class="nav-number">2.</span> <span class="nav-text">2.概述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-FreeMarker%E6%A6%82%E5%BF%B5%EF%BC%9A"><span class="nav-number">2.1.</span> <span class="nav-text">2.1.FreeMarker概念：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-FreeMarker%E7%89%B9%E6%80%A7"><span class="nav-number">2.2.</span> <span class="nav-text">2.2.FreeMarker特性</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-1-%E9%80%9A%E7%94%A8%E7%9B%AE%E6%A0%87"><span class="nav-number">2.2.1.</span> <span class="nav-text">2.2.1.通用目标</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-2-%E5%BC%BA%E5%A4%A7%E7%9A%84%E6%A8%A1%E6%9D%BF%E8%AF%AD%E8%A8%80"><span class="nav-number">2.2.2.</span> <span class="nav-text">2.2.2.强大的模板语言</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-3-%E9%80%9A%E7%94%A8%E6%95%B0%E6%8D%AE%E6%A8%A1%E5%9E%8B"><span class="nav-number">2.2.3.</span> <span class="nav-text">2.2.3.通用数据模型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-4-%E4%B8%BAWeb%E5%87%86%E5%A4%87"><span class="nav-number">2.2.4.</span> <span class="nav-text">2.2.4.为Web准备</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-5-%E6%99%BA%E8%83%BD%E7%9A%84%E5%9B%BD%E9%99%85%E5%8C%96%E5%92%8C%E6%9C%AC%E5%9C%B0%E5%8C%96"><span class="nav-number">2.2.5.</span> <span class="nav-text">2.2.5. 智能的国际化和本地化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-6-%E5%BC%BA%E5%A4%A7%E7%9A%84XML%E5%A4%84%E7%90%86%E8%83%BD%E5%8A%9B"><span class="nav-number">2.2.6.</span> <span class="nav-text">2.2.6.强大的XML处理能力</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-FreeMarker%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA"><span class="nav-number">2.3.</span> <span class="nav-text">2.3.FreeMarker环境搭建</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-1-%E6%96%B0%E5%BB%BAMaven-Web%E9%A1%B9%E7%9B%AE"><span class="nav-number">2.3.1.</span> <span class="nav-text">2.3.1.新建Maven Web项目</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-2-%E9%85%8D%E7%BD%AE%E5%9D%90%E6%A0%87%E4%BE%9D%E8%B5%96%E5%92%8C%E9%83%A8%E7%BD%B2%E6%8F%92%E4%BB%B6"><span class="nav-number">2.3.2.</span> <span class="nav-text">2.3.2.配置坐标依赖和部署插件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-3-%E4%BF%AE%E6%94%B9%E9%85%8D%E7%BD%AE%E6%96%87%E5%90%9Bweb-xml"><span class="nav-number">2.3.3.</span> <span class="nav-text">2.3.3.修改配置文君web.xml</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-4-%E7%BC%96%E5%86%99Servlet%E6%96%87%E4%BB%B6"><span class="nav-number">2.3.4.</span> <span class="nav-text">2.3.4.编写Servlet文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-5-%E6%96%B0%E5%BB%BA%E6%A8%A1%E6%9D%BF%E6%96%87%E4%BB%B6ftl"><span class="nav-number">2.3.5.</span> <span class="nav-text">2.3.5.新建模板文件ftl</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-6-%E5%90%AF%E5%8A%A8%E9%A1%B9%E7%9B%AE"><span class="nav-number">2.3.6.</span> <span class="nav-text">2.3.6.启动项目</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-7-%E8%AE%BF%E9%97%AE%E9%A1%B9%E7%9B%AE"><span class="nav-number">2.3.7.</span> <span class="nav-text">2.3.7.访问项目</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-FreeMarker%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-number">3.</span> <span class="nav-text">3.FreeMarker数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-%E5%B8%83%E5%B0%94%E7%B1%BB%E5%9E%8B"><span class="nav-number">3.1.</span> <span class="nav-text">3.1.布尔类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-%E6%97%A5%E6%9C%9F%E7%B1%BB%E5%9E%8B"><span class="nav-number">3.2.</span> <span class="nav-text">3.2.日期类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-%E6%95%B0%E5%80%BC%E7%B1%BB%E5%9E%8B"><span class="nav-number">3.3.</span> <span class="nav-text">3.3.数值类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-4-%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%B1%BB%E5%9E%8B"><span class="nav-number">3.4.</span> <span class="nav-text">3.4.字符串类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-5-sequence%E7%B1%BB%E5%9E%8B"><span class="nav-number">3.5.</span> <span class="nav-text">3.5.sequence类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-6-hash%E7%B1%BB%E5%9E%8B"><span class="nav-number">3.6.</span> <span class="nav-text">3.6.hash类型</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-FreeMarker%E5%B8%B8%E8%A7%81%E6%8C%87%E4%BB%A4"><span class="nav-number">4.</span> <span class="nav-text">4.FreeMarker常见指令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1%E3%80%81assign-%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8F%98%E9%87%8F%E6%8C%87%E4%BB%A4"><span class="nav-number">4.1.</span> <span class="nav-text">4.1、assign 自定义变量指令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2%E3%80%81if-elseif-else-%E9%80%BB%E8%BE%91%E5%88%A4%E6%96%AD%E6%8C%87%E4%BB%A4"><span class="nav-number">4.2.</span> <span class="nav-text">4.2、if elseif else 逻辑判断指令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-3%E3%80%81list-%E9%81%8D%E5%8E%86%E6%8C%87%E4%BB%A4"><span class="nav-number">4.3.</span> <span class="nav-text">4.3、list 遍历指令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-4%E3%80%81macro-%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8C%87%E4%BB%A4"><span class="nav-number">4.4.</span> <span class="nav-text">4.4、macro 自定义指令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-5%E3%80%81nested-%E5%8D%A0%E4%BD%8D%E6%8C%87%E4%BB%A4"><span class="nav-number">4.5.</span> <span class="nav-text">4.5、nested 占位指令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-6%E3%80%81import-%E5%AF%BC%E5%85%A5%E6%8C%87%E4%BB%A4"><span class="nav-number">4.6.</span> <span class="nav-text">4.6、import 导入指令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1%EF%BC%89%E3%80%81%E5%88%9B%E5%BB%BAcommons-ftl%E6%96%87%E4%BB%B6"><span class="nav-number">4.6.1.</span> <span class="nav-text">1）、创建commons.ftl文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2%EF%BC%89%E3%80%81%E5%88%9B%E5%BB%BAtest-ftl%E6%96%87%E4%BB%B6"><span class="nav-number">4.6.2.</span> <span class="nav-text">2）、创建test.ftl文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3%EF%BC%89%E3%80%81%E5%88%9B%E5%BB%BAController"><span class="nav-number">4.6.3.</span> <span class="nav-text">3）、创建Controller</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-7%E3%80%81include-%E5%8C%85%E5%90%AB%E6%8C%87%E4%BB%A4"><span class="nav-number">4.7.</span> <span class="nav-text">4.7、include 包含指令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-FreeMarker%E9%A1%B5%E9%9D%A2%E9%9D%99%E6%80%81%E5%8C%96"><span class="nav-number">5.</span> <span class="nav-text">5.FreeMarker页面静态化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1%E3%80%81%E5%AE%9A%E4%B9%89%E6%A8%A1%E6%9D%BF"><span class="nav-number">5.1.</span> <span class="nav-text">1、定义模板</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2%E3%80%81%E5%8A%A0%E8%BD%BD%E6%A8%A1%E6%9D%BF"><span class="nav-number">5.2.</span> <span class="nav-text">2、加载模板</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3%E3%80%81%E7%94%9F%E6%88%90%E5%AF%B9%E5%BA%94%E7%9A%84html%E6%96%87%E4%BB%B6"><span class="nav-number">6.</span> <span class="nav-text">3、生成对应的html文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-FreeMarker%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">7.</span> <span class="nav-text">6.FreeMarker运算符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1%E3%80%81%E7%AE%97%E6%9C%AF%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">8.</span> <span class="nav-text">1、算术运算符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2%E3%80%81%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">9.</span> <span class="nav-text">2、逻辑运算符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3%E3%80%81%E6%AF%94%E8%BE%83%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">10.</span> <span class="nav-text">3、比较运算符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4%E3%80%81%E7%A9%BA%E5%80%BC%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">11.</span> <span class="nav-text">4、空值运算符</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BB%E8%A6%81%E5%86%85%E5%AE%B9"><span class="nav-number">1.</span> <span class="nav-text">主要内容</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A6%82%E8%BF%B0"><span class="nav-number">2.</span> <span class="nav-text">概述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#FreeMarker%E6%A6%82%E5%BF%B5%EF%BC%9A"><span class="nav-number">2.1.</span> <span class="nav-text">FreeMarker概念：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#FreeMarker%E7%89%B9%E6%80%A7"><span class="nav-number">2.2.</span> <span class="nav-text">FreeMarker特性</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%80%9A%E7%94%A8%E7%9B%AE%E6%A0%87"><span class="nav-number">2.2.1.</span> <span class="nav-text">通用目标</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BC%BA%E5%A4%A7%E7%9A%84%E6%A8%A1%E6%9D%BF%E8%AF%AD%E8%A8%80"><span class="nav-number">2.2.2.</span> <span class="nav-text">强大的模板语言</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%80%9A%E7%94%A8%E6%95%B0%E6%8D%AE%E6%A8%A1%E5%9E%8B"><span class="nav-number">2.2.3.</span> <span class="nav-text">通用数据模型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%BAWeb%E5%87%86%E5%A4%87"><span class="nav-number">2.2.4.</span> <span class="nav-text">为Web准备</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%99%BA%E8%83%BD%E7%9A%84%E5%9B%BD%E9%99%85%E5%8C%96%E5%92%8C%E6%9C%AC%E5%9C%B0%E5%8C%96"><span class="nav-number">2.2.5.</span> <span class="nav-text">智能的国际化和本地化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BC%BA%E5%A4%A7%E7%9A%84XML%E5%A4%84%E7%90%86%E8%83%BD%E5%8A%9B"><span class="nav-number">2.2.6.</span> <span class="nav-text">强大的XML处理能力</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#FreeMarker%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA"><span class="nav-number">2.3.</span> <span class="nav-text">FreeMarker环境搭建</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%96%B0%E5%BB%BAMaven-Web%E9%A1%B9%E7%9B%AE"><span class="nav-number">2.3.1.</span> <span class="nav-text">新建Maven Web项目</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E5%9D%90%E6%A0%87%E4%BE%9D%E8%B5%96%E5%92%8C%E9%83%A8%E7%BD%B2%E6%8F%92%E4%BB%B6"><span class="nav-number">2.3.2.</span> <span class="nav-text">配置坐标依赖和部署插件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9%E9%85%8D%E7%BD%AE%E6%96%87%E5%90%9Bweb-xml"><span class="nav-number">2.3.3.</span> <span class="nav-text">修改配置文君web.xml</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BC%96%E5%86%99Servlet%E6%96%87%E4%BB%B6"><span class="nav-number">2.3.4.</span> <span class="nav-text">编写Servlet文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%96%B0%E5%BB%BA%E6%A8%A1%E6%9D%BF%E6%96%87%E4%BB%B6ftl"><span class="nav-number">2.3.5.</span> <span class="nav-text">新建模板文件ftl</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%90%AF%E5%8A%A8%E9%A1%B9%E7%9B%AE"><span class="nav-number">2.3.6.</span> <span class="nav-text">启动项目</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AE%BF%E9%97%AE%E9%A1%B9%E7%9B%AE"><span class="nav-number">2.3.7.</span> <span class="nav-text">访问项目</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FreeMarker%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-number">3.</span> <span class="nav-text">FreeMarker数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%83%E5%B0%94%E7%B1%BB%E5%9E%8B"><span class="nav-number">3.1.</span> <span class="nav-text">布尔类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%97%A5%E6%9C%9F%E7%B1%BB%E5%9E%8B"><span class="nav-number">3.2.</span> <span class="nav-text">日期类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E5%80%BC%E7%B1%BB%E5%9E%8B"><span class="nav-number">3.3.</span> <span class="nav-text">数值类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%B1%BB%E5%9E%8B"><span class="nav-number">3.4.</span> <span class="nav-text">字符串类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sequence%E7%B1%BB%E5%9E%8B"><span class="nav-number">3.5.</span> <span class="nav-text">sequence类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hash%E7%B1%BB%E5%9E%8B"><span class="nav-number">3.6.</span> <span class="nav-text">hash类型</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FreeMarker%E5%B8%B8%E8%A7%81%E6%8C%87%E4%BB%A4"><span class="nav-number">4.</span> <span class="nav-text">FreeMarker常见指令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#assign-%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8F%98%E9%87%8F%E6%8C%87%E4%BB%A4"><span class="nav-number">4.1.</span> <span class="nav-text">assign 自定义变量指令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#if-elseif-else-%E9%80%BB%E8%BE%91%E5%88%A4%E6%96%AD%E6%8C%87%E4%BB%A4"><span class="nav-number">4.2.</span> <span class="nav-text">if elseif else 逻辑判断指令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#list-%E9%81%8D%E5%8E%86%E6%8C%87%E4%BB%A4"><span class="nav-number">4.3.</span> <span class="nav-text">list 遍历指令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#macro-%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8C%87%E4%BB%A4"><span class="nav-number">4.4.</span> <span class="nav-text">macro 自定义指令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#nested-%E5%8D%A0%E4%BD%8D%E6%8C%87%E4%BB%A4"><span class="nav-number">4.5.</span> <span class="nav-text">nested 占位指令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#import-%E5%AF%BC%E5%85%A5%E6%8C%87%E4%BB%A4"><span class="nav-number">4.6.</span> <span class="nav-text">import 导入指令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%9B%E5%BB%BAcommons-ftl%E6%96%87%E4%BB%B6"><span class="nav-number">4.6.1.</span> <span class="nav-text">创建commons.ftl文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%9B%E5%BB%BAtest-ftl%E6%96%87%E4%BB%B6"><span class="nav-number">4.6.2.</span> <span class="nav-text">创建test.ftl文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%9B%E5%BB%BAController"><span class="nav-number">4.6.3.</span> <span class="nav-text">创建Controller</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#include-%E5%8C%85%E5%90%AB%E6%8C%87%E4%BB%A4"><span class="nav-number">4.7.</span> <span class="nav-text">include 包含指令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FreeMarker%E9%A1%B5%E9%9D%A2%E9%9D%99%E6%80%81%E5%8C%96"><span class="nav-number">5.</span> <span class="nav-text">FreeMarker页面静态化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89%E6%A8%A1%E6%9D%BF"><span class="nav-number">5.1.</span> <span class="nav-text">定义模板</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8A%A0%E8%BD%BD%E6%A8%A1%E6%9D%BF"><span class="nav-number">5.2.</span> <span class="nav-text">加载模板</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%9F%E6%88%90%E5%AF%B9%E5%BA%94%E7%9A%84html%E6%96%87%E4%BB%B6"><span class="nav-number">6.</span> <span class="nav-text">生成对应的html文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FreeMarker%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">7.</span> <span class="nav-text">FreeMarker运算符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%97%E6%9C%AF%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">8.</span> <span class="nav-text">算术运算符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">9.</span> <span class="nav-text">逻辑运算符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AF%94%E8%BE%83%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">10.</span> <span class="nav-text">比较运算符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A9%BA%E5%80%BC%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">11.</span> <span class="nav-text">空值运算符</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -1214,12 +1214,12 @@ ${"hello" + "," + "freemarker"}<span aria-hidden="true" class="line-numbers-rows
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">268k</span>
+    <span title="站点总字数">280k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">4:04</span>
+    <span title="站点阅读时长">4:14</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
   </div>
