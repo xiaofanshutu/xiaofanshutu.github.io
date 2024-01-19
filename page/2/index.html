@@ -183,6 +183,244 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://xiaofanshutu.github.io/posts/81e7b834.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://cdn.jsdelivr.net/gh/xiaofanshutu/typora2022@main/202211181843479.png">
+      <meta itemprop="name" content="bambi">
+      <meta itemprop="description" content="hellofromtheotherside">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="halla">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/81e7b834.html" class="post-title-link" itemprop="url">Java网络编程</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2023-04-29 09:07:41" itemprop="dateCreated datePublished" datetime="2023-04-29T09:07:41+08:00">2023-04-29</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2024-01-18 07:40:13" itemprop="dateModified" datetime="2024-01-18T07:40:13+08:00">2024-01-18</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">Java基础</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.1k</span> 字
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <a id="more"></a>
+
+<h1 id="网络编程"><a href="#网络编程" class="headerlink" title="网络编程"></a>网络编程</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><ul>
+<li>计算机网络：计算机网络是指将地理位置不同的具有独立功能的多台计算机及其外部设备，通过通信线路连接起来，在网络操作系统，网络管理软件及网络通信协议的管理和协调下，实现资源共享和信息传递的计算机系统。</li>
+<li>网络编程的目的：传播交流信息，数据交换</li>
+<li>想要实现网络编程需要什么？：IP和端口号</li>
+</ul>
+<h3 id="网络编程-1"><a href="#网络编程-1" class="headerlink" title="网络编程"></a>网络编程</h3><p>C/S 最新类的机器人</p>
+<h3 id="Java-Web"><a href="#Java-Web" class="headerlink" title="Java Web"></a>Java Web</h3><p>B/S</p>
+<h2 id="网络通信的要素"><a href="#网络通信的要素" class="headerlink" title="网络通信的要素"></a>网络通信的要素</h2><ul>
+<li>如何实现网络通信？<ul>
+<li>地址<ul>
+<li>IP</li>
+<li>端口号</li>
+</ul>
+</li>
+<li>规则：网络通信的协议</li>
+</ul>
+</li>
+</ul>
+<p>小结：</p>
+<ol>
+<li>网络编程中的两个主要问题<ul>
+<li>如何准确定位到网络上的一台或者多台主机</li>
+<li>找到主机之后如何进行通信</li>
+</ul>
+</li>
+<li>网络编程中的要素：<ul>
+<li>IP和端口号</li>
+<li>网络通信协议UDP/TCP</li>
+</ul>
+</li>
+<li>万物皆对象</li>
+</ol>
+<h2 id="IP"><a href="#IP" class="headerlink" title="IP"></a>IP</h2><ul>
+<li>唯一定位一台网络上的计算机</li>
+<li>127.0.0.1： 本机localhost</li>
+<li>ip地址的分类<ul>
+<li>IPV4/IPV6<ul>
+<li>IPV4：127.0.0.1，4个字节组成，每一个字节0~255，全球总共42亿个，30亿在北美，亚洲只有4亿。2011年用尽了。</li>
+<li>IPV6：128位，8个无符号整数</li>
+</ul>
+</li>
+<li>公网（互联网）/ 私网（局域网）<ul>
+<li>ABCD类地址</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>域名</li>
+</ul>
+<h3 id="练习：测试InetAddress的常用方法"><a href="#练习：测试InetAddress的常用方法" class="headerlink" title="练习：测试InetAddress的常用方法"></a>练习：测试InetAddress的常用方法</h3><h2 id="端口"><a href="#端口" class="headerlink" title="端口"></a>端口</h2><p>端口表示计算机上的一个程序的进程</p>
+<ul>
+<li><p>不同的进程有不同的端口号，用来区分软件</p>
+</li>
+<li><p>0~65535</p>
+<ul>
+<li>TCP/UDP: 65535*2。tcp:80 udp:80  单个协议下，端口号不能冲突</li>
+</ul>
+</li>
+<li><p>分类</p>
+<ul>
+<li>公有端口： 0~1023<ul>
+<li>HTTP: 80</li>
+<li>HTTPS: 443</li>
+<li>FTP: 21</li>
+<li>Telent: 23</li>
+</ul>
+</li>
+<li>程序注册端口：1024~49151，分配用户或者程序<ul>
+<li>Tomcat: 8080</li>
+<li>MySQL: 3306</li>
+<li>Oracle: 1521</li>
+</ul>
+</li>
+<li>动态/私有：49152~65535</li>
+</ul>
+</li>
+<li><p>小技巧</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment">#查看所有的端口</span>
+<span class="token function">netstat</span> -ano
+
+<span class="token comment">#查看指定端口</span>
+<span class="token function">netstat</span> -ano<span class="token operator">|</span>findStr <span class="token string">"7890"</span>
+
+<span class="token comment">#查看指定端口的进程</span>
+tasklist<span class="token operator">|</span>findStr <span class="token string">"3972"</span>
+
+<span class="token comment">#打开任务管理器的快捷键 Ctrl + Shift + Esc</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+
+
+</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/xiaofanshutu/typora2022/main/202211191729112.png"></p>
+<p><img src="https://raw.githubusercontent.com/xiaofanshutu/typora2022/main/202211191730674.png"></p>
+<p><img src="https://raw.githubusercontent.com/xiaofanshutu/typora2022/main/202211191730885.png"></p>
+<p><img src="https://raw.githubusercontent.com/xiaofanshutu/typora2022/main/202211191730548.png"></p>
+<p><img src="https://raw.githubusercontent.com/xiaofanshutu/typora2022/main/202211191730878.png"></p>
+<ul>
+<li><p>端口映射</p>
+<p><img src="https://raw.githubusercontent.com/xiaofanshutu/typora2022/main/202211191736292.png"></p>
+</li>
+</ul>
+<h3 id="练习：学习InetSocketAddress常用方法"><a href="#练习：学习InetSocketAddress常用方法" class="headerlink" title="练习：学习InetSocketAddress常用方法"></a>练习：学习InetSocketAddress常用方法</h3><h2 id="通信协议"><a href="#通信协议" class="headerlink" title="通信协议"></a>通信协议</h2><p>协议就是一种约定</p>
+<h3 id="TCP-IP协议簇"><a href="#TCP-IP协议簇" class="headerlink" title="TCP/IP协议簇"></a>TCP/IP协议簇</h3><p>重要：</p>
+<p>TCP：用户传输协议</p>
+<p>UDP：用户数据报协议</p>
+<p>有名的协议：</p>
+<p>TCP：</p>
+<p>IP：网络互连协议</p>
+<h3 id="TCP-IP参考模型"><a href="#TCP-IP参考模型" class="headerlink" title="TCP/IP参考模型"></a>TCP/IP参考模型</h3><p><img src="https://raw.githubusercontent.com/xiaofanshutu/typora2022/main/202211191741115.png"></p>
+<h3 id="TCP-UDP对比"><a href="#TCP-UDP对比" class="headerlink" title="TCP/UDP对比"></a>TCP/UDP对比</h3><ul>
+<li><p>TCP：打电话</p>
+<ul>
+<li><p>连接，稳定</p>
+</li>
+<li><p>三次握手，四次挥手</p>
+<pre class="line-numbers language-none"><code class="language-none">最少需要三次，保证稳定连接
+A:你瞅啥？
+B:瞅你咋地？
+A:干一场
+
+A:我要走了
+B:你真的要走了吗？
+B:你真的真的要走了吗？
+A:我真的要走了<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="https://raw.githubusercontent.com/xiaofanshutu/typora2022/main/202211191750706.png"></p>
+</li>
+</ul>
+</li>
+</ul>
+<p>  <img src="https://raw.githubusercontent.com/xiaofanshutu/typora2022/main/202211191751731.png"></p>
+<ul>
+<li><p>客户端，服务端</p>
+</li>
+<li><p>传输完成，释放连接，效率低</p>
+</li>
+<li><p>UDP：发短信</p>
+<ul>
+<li>不连接，不稳定</li>
+<li>客户端，服务端：没有明确的界限</li>
+<li>不管有没有准备好，都可以发给你</li>
+<li>导弹</li>
+<li>DDOS：洪水攻击（饱和攻击）</li>
+</ul>
+</li>
+</ul>
+<h2 id=""><a href="#" class="headerlink" title=""></a></h2>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://xiaofanshutu.github.io/posts/a541262a.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2704,244 +2942,6 @@ debug=true<span aria-hidden="true" class="line-numbers-rows"><span></span><span>
 <p><img src="https://raw.githubusercontent.com/xiaofanshutu/typora2022/main/202210091752792.png"></p>
 <h2 id="添加，修改与删除员工"><a href="#添加，修改与删除员工" class="headerlink" title="添加，修改与删除员工"></a>添加，修改与删除员工</h2><h2 id="错误处理"><a href="#错误处理" class="headerlink" title="错误处理"></a>错误处理</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/wang_luwei/article/details/123652585">https://blog.csdn.net/wang_luwei/article/details/123652585</a></p>
 
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://xiaofanshutu.github.io/posts/81e7b834.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://cdn.jsdelivr.net/gh/xiaofanshutu/typora2022@main/202211181843479.png">
-      <meta itemprop="name" content="bambi">
-      <meta itemprop="description" content="hellofromtheotherside">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="halla">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/81e7b834.html" class="post-title-link" itemprop="url">Java网络编程</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2023-04-29 09:07:41" itemprop="dateCreated datePublished" datetime="2023-04-29T09:07:41+08:00">2023-04-29</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-01-18 07:40:13" itemprop="dateModified" datetime="2024-01-18T07:40:13+08:00">2024-01-18</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">Java基础</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>1.1k</span> 字
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <a id="more"></a>
-
-<h1 id="网络编程"><a href="#网络编程" class="headerlink" title="网络编程"></a>网络编程</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><ul>
-<li>计算机网络：计算机网络是指将地理位置不同的具有独立功能的多台计算机及其外部设备，通过通信线路连接起来，在网络操作系统，网络管理软件及网络通信协议的管理和协调下，实现资源共享和信息传递的计算机系统。</li>
-<li>网络编程的目的：传播交流信息，数据交换</li>
-<li>想要实现网络编程需要什么？：IP和端口号</li>
-</ul>
-<h3 id="网络编程-1"><a href="#网络编程-1" class="headerlink" title="网络编程"></a>网络编程</h3><p>C/S 最新类的机器人</p>
-<h3 id="Java-Web"><a href="#Java-Web" class="headerlink" title="Java Web"></a>Java Web</h3><p>B/S</p>
-<h2 id="网络通信的要素"><a href="#网络通信的要素" class="headerlink" title="网络通信的要素"></a>网络通信的要素</h2><ul>
-<li>如何实现网络通信？<ul>
-<li>地址<ul>
-<li>IP</li>
-<li>端口号</li>
-</ul>
-</li>
-<li>规则：网络通信的协议</li>
-</ul>
-</li>
-</ul>
-<p>小结：</p>
-<ol>
-<li>网络编程中的两个主要问题<ul>
-<li>如何准确定位到网络上的一台或者多台主机</li>
-<li>找到主机之后如何进行通信</li>
-</ul>
-</li>
-<li>网络编程中的要素：<ul>
-<li>IP和端口号</li>
-<li>网络通信协议UDP/TCP</li>
-</ul>
-</li>
-<li>万物皆对象</li>
-</ol>
-<h2 id="IP"><a href="#IP" class="headerlink" title="IP"></a>IP</h2><ul>
-<li>唯一定位一台网络上的计算机</li>
-<li>127.0.0.1： 本机localhost</li>
-<li>ip地址的分类<ul>
-<li>IPV4/IPV6<ul>
-<li>IPV4：127.0.0.1，4个字节组成，每一个字节0~255，全球总共42亿个，30亿在北美，亚洲只有4亿。2011年用尽了。</li>
-<li>IPV6：128位，8个无符号整数</li>
-</ul>
-</li>
-<li>公网（互联网）/ 私网（局域网）<ul>
-<li>ABCD类地址</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>域名</li>
-</ul>
-<h3 id="练习：测试InetAddress的常用方法"><a href="#练习：测试InetAddress的常用方法" class="headerlink" title="练习：测试InetAddress的常用方法"></a>练习：测试InetAddress的常用方法</h3><h2 id="端口"><a href="#端口" class="headerlink" title="端口"></a>端口</h2><p>端口表示计算机上的一个程序的进程</p>
-<ul>
-<li><p>不同的进程有不同的端口号，用来区分软件</p>
-</li>
-<li><p>0~65535</p>
-<ul>
-<li>TCP/UDP: 65535*2。tcp:80 udp:80  单个协议下，端口号不能冲突</li>
-</ul>
-</li>
-<li><p>分类</p>
-<ul>
-<li>公有端口： 0~1023<ul>
-<li>HTTP: 80</li>
-<li>HTTPS: 443</li>
-<li>FTP: 21</li>
-<li>Telent: 23</li>
-</ul>
-</li>
-<li>程序注册端口：1024~49151，分配用户或者程序<ul>
-<li>Tomcat: 8080</li>
-<li>MySQL: 3306</li>
-<li>Oracle: 1521</li>
-</ul>
-</li>
-<li>动态/私有：49152~65535</li>
-</ul>
-</li>
-<li><p>小技巧</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment">#查看所有的端口</span>
-<span class="token function">netstat</span> -ano
-
-<span class="token comment">#查看指定端口</span>
-<span class="token function">netstat</span> -ano<span class="token operator">|</span>findStr <span class="token string">"7890"</span>
-
-<span class="token comment">#查看指定端口的进程</span>
-tasklist<span class="token operator">|</span>findStr <span class="token string">"3972"</span>
-
-<span class="token comment">#打开任务管理器的快捷键 Ctrl + Shift + Esc</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-
-
-</li>
-</ul>
-<p><img src="https://raw.githubusercontent.com/xiaofanshutu/typora2022/main/202211191729112.png"></p>
-<p><img src="https://raw.githubusercontent.com/xiaofanshutu/typora2022/main/202211191730674.png"></p>
-<p><img src="https://raw.githubusercontent.com/xiaofanshutu/typora2022/main/202211191730885.png"></p>
-<p><img src="https://raw.githubusercontent.com/xiaofanshutu/typora2022/main/202211191730548.png"></p>
-<p><img src="https://raw.githubusercontent.com/xiaofanshutu/typora2022/main/202211191730878.png"></p>
-<ul>
-<li><p>端口映射</p>
-<p><img src="https://raw.githubusercontent.com/xiaofanshutu/typora2022/main/202211191736292.png"></p>
-</li>
-</ul>
-<h3 id="练习：学习InetSocketAddress常用方法"><a href="#练习：学习InetSocketAddress常用方法" class="headerlink" title="练习：学习InetSocketAddress常用方法"></a>练习：学习InetSocketAddress常用方法</h3><h2 id="通信协议"><a href="#通信协议" class="headerlink" title="通信协议"></a>通信协议</h2><p>协议就是一种约定</p>
-<h3 id="TCP-IP协议簇"><a href="#TCP-IP协议簇" class="headerlink" title="TCP/IP协议簇"></a>TCP/IP协议簇</h3><p>重要：</p>
-<p>TCP：用户传输协议</p>
-<p>UDP：用户数据报协议</p>
-<p>有名的协议：</p>
-<p>TCP：</p>
-<p>IP：网络互连协议</p>
-<h3 id="TCP-IP参考模型"><a href="#TCP-IP参考模型" class="headerlink" title="TCP/IP参考模型"></a>TCP/IP参考模型</h3><p><img src="https://raw.githubusercontent.com/xiaofanshutu/typora2022/main/202211191741115.png"></p>
-<h3 id="TCP-UDP对比"><a href="#TCP-UDP对比" class="headerlink" title="TCP/UDP对比"></a>TCP/UDP对比</h3><ul>
-<li><p>TCP：打电话</p>
-<ul>
-<li><p>连接，稳定</p>
-</li>
-<li><p>三次握手，四次挥手</p>
-<pre class="line-numbers language-none"><code class="language-none">最少需要三次，保证稳定连接
-A:你瞅啥？
-B:瞅你咋地？
-A:干一场
-
-A:我要走了
-B:你真的要走了吗？
-B:你真的真的要走了吗？
-A:我真的要走了<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p><img src="https://raw.githubusercontent.com/xiaofanshutu/typora2022/main/202211191750706.png"></p>
-</li>
-</ul>
-</li>
-</ul>
-<p>  <img src="https://raw.githubusercontent.com/xiaofanshutu/typora2022/main/202211191751731.png"></p>
-<ul>
-<li><p>客户端，服务端</p>
-</li>
-<li><p>传输完成，释放连接，效率低</p>
-</li>
-<li><p>UDP：发短信</p>
-<ul>
-<li>不连接，不稳定</li>
-<li>客户端，服务端：没有明确的界限</li>
-<li>不管有没有准备好，都可以发给你</li>
-<li>导弹</li>
-<li>DDOS：洪水攻击（饱和攻击）</li>
-</ul>
-</li>
-</ul>
-<h2 id=""><a href="#" class="headerlink" title=""></a></h2>
       
     </div>
 
