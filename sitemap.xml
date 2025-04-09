@@ -4,28 +4,28 @@
   <url>
     <loc>https://xiaofanshutu.github.io/posts/0.html</loc>
     
-    <lastmod>2025-01-04</lastmod>
+    <lastmod>2025-04-09</lastmod>
     
   </url>
   
   <url>
     <loc>https://xiaofanshutu.github.io/posts/0.html</loc>
     
-    <lastmod>2024-11-22</lastmod>
+    <lastmod>2025-04-09</lastmod>
     
   </url>
   
   <url>
     <loc>https://xiaofanshutu.github.io/posts/0.html</loc>
     
-    <lastmod>2024-11-21</lastmod>
+    <lastmod>2025-04-09</lastmod>
     
   </url>
   
   <url>
     <loc>https://xiaofanshutu.github.io/posts/0.html</loc>
     
-    <lastmod>2024-11-20</lastmod>
+    <lastmod>2025-04-09</lastmod>
     
   </url>
   
@@ -321,6 +321,13 @@
   </url>
   
   <url>
+    <loc>https://xiaofanshutu.github.io/categories/%E6%96%B0%E6%8A%80%E6%9C%AFFreeMarker/</loc>
+    <lastmod>2025-04-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://xiaofanshutu.github.io/categories/HTML5/</loc>
     <lastmod>2025-04-09</lastmod>
     <changefreq>daily</changefreq>
@@ -335,7 +342,7 @@
   </url>
   
   <url>
-    <loc>https://xiaofanshutu.github.io/categories/%E6%96%B0%E6%8A%80%E6%9C%AFFreeMarker/</loc>
+    <loc>https://xiaofanshutu.github.io/categories/Javascript/</loc>
     <lastmod>2025-04-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -343,13 +350,6 @@
   
   <url>
     <loc>https://xiaofanshutu.github.io/categories/Java/</loc>
-    <lastmod>2025-04-09</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://xiaofanshutu.github.io/categories/Javascript/</loc>
     <lastmod>2025-04-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
