@@ -2,28 +2,28 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://xiaofanshutu.github.io/posts/0.html</loc>
+    <loc>https://xiaofanshutu.github.io/posts/424232bd.html</loc>
     
     <lastmod>2025-04-09</lastmod>
     
   </url>
   
   <url>
-    <loc>https://xiaofanshutu.github.io/posts/0.html</loc>
+    <loc>https://xiaofanshutu.github.io/posts/6c92115f.html</loc>
     
     <lastmod>2025-04-09</lastmod>
     
   </url>
   
   <url>
-    <loc>https://xiaofanshutu.github.io/posts/0.html</loc>
+    <loc>https://xiaofanshutu.github.io/posts/13006ff7.html</loc>
     
     <lastmod>2025-04-09</lastmod>
     
   </url>
   
   <url>
-    <loc>https://xiaofanshutu.github.io/posts/0.html</loc>
+    <loc>https://xiaofanshutu.github.io/posts/358c4d47.html</loc>
     
     <lastmod>2025-04-09</lastmod>
     
@@ -321,7 +321,14 @@
   </url>
   
   <url>
-    <loc>https://xiaofanshutu.github.io/categories/%E6%96%B0%E6%8A%80%E6%9C%AFFreeMarker/</loc>
+    <loc>https://xiaofanshutu.github.io/categories/Spring/</loc>
+    <lastmod>2025-04-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xiaofanshutu.github.io/categories/Spring6/</loc>
     <lastmod>2025-04-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -335,7 +342,21 @@
   </url>
   
   <url>
+    <loc>https://xiaofanshutu.github.io/categories/%E6%96%B0%E6%8A%80%E6%9C%AFFreeMarker/</loc>
+    <lastmod>2025-04-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://xiaofanshutu.github.io/categories/Java-IO/</loc>
+    <lastmod>2025-04-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xiaofanshutu.github.io/categories/Java-Web/</loc>
     <lastmod>2025-04-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -349,13 +370,6 @@
   </url>
   
   <url>
-    <loc>https://xiaofanshutu.github.io/categories/Java/</loc>
-    <lastmod>2025-04-09</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://xiaofanshutu.github.io/categories/Java%E5%9F%BA%E7%A1%80/</loc>
     <lastmod>2025-04-09</lastmod>
     <changefreq>daily</changefreq>
@@ -363,7 +377,7 @@
   </url>
   
   <url>
-    <loc>https://xiaofanshutu.github.io/categories/Java-Web/</loc>
+    <loc>https://xiaofanshutu.github.io/categories/Java/</loc>
     <lastmod>2025-04-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
