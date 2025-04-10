@@ -19,26 +19,25 @@
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
   
-    <meta name="description" content="通过如下代码，来分析几个开发原则（OCP开闭原则和DIP依赖倒置原则） 代码结构 1.Test类12345678910package com.xu.spring6.client;import com.xu.spring6.web.UserAction;public class Test {    public static void main(String[] args) {        Use">
+    <meta name="description" content="日期日期类 java.util.Date123public Date() {    this(System.currentTimeMillis());}  123public Date(long date) {    fastTime &#x3D; date;}      日期格式化类 SimpleDateFormat日期转字符串字符串转日期日历类 java.util.Calendar获取当前时间的日历对象">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Spring">
-<meta property="og:url" content="https://xiaofanshutu.github.io/posts/6c92115f.html">
+<meta property="og:title" content="常用类_日期">
+<meta property="og:url" content="https://xiaofanshutu.github.io/posts/4f0359c2.html">
 <meta property="og:site_name" content="yubiii">
-<meta property="og:description" content="通过如下代码，来分析几个开发原则（OCP开闭原则和DIP依赖倒置原则） 代码结构 1.Test类12345678910package com.xu.spring6.client;import com.xu.spring6.web.UserAction;public class Test {    public static void main(String[] args) {        Use">
+<meta property="og:description" content="日期日期类 java.util.Date123public Date() {    this(System.currentTimeMillis());}  123public Date(long date) {    fastTime &#x3D; date;}      日期格式化类 SimpleDateFormat日期转字符串字符串转日期日历类 java.util.Calendar获取当前时间的日历对象">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://raw.githubusercontent.com/growingbambi/typora/master/image-20241120221417503.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/growingbambi/typora/master/image-20241120223531143.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/growingbambi/typora/master/image-20241120223937975.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/growingbambi/typora/master/image-20241120224101643.png">
-<meta property="article:published_time" content="2025-04-09T09:59:01.293Z">
-<meta property="article:modified_time" content="2025-04-09T10:24:39.383Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250409224631266.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250409224610367.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250409215455705.png">
+<meta property="article:published_time" content="2025-04-09T13:56:08.600Z">
+<meta property="article:modified_time" content="2025-04-10T00:06:25.819Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/growingbambi/typora/master/image-20241120221417503.png">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250409224631266.png">
   
   
   
-  <title>Spring - yubiii</title>
+  <title>常用类_日期 - yubiii</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -207,7 +206,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Spring"></span>
+            <span id="subtitle" data-typed-text="常用类_日期"></span>
           
         </div>
 
@@ -218,8 +217,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-04-09 17:59" pubdate>
-          2025年4月9日 下午
+        <time datetime="2025-04-09 21:56" pubdate>
+          2025年4月9日 晚上
         </time>
       </span>
     
@@ -230,7 +229,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          639 字
+          603 字
         
       </span>
     
@@ -278,47 +277,138 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">Spring</h1>
+            <h1 id="seo-header">常用类_日期</h1>
             
             
               <div class="markdown-body">
                 
-                <p>通过如下代码，来分析几个开发原则（OCP开闭原则和DIP依赖倒置原则）</p>
-<h1 id="代码结构"><a href="#代码结构" class="headerlink" title="代码结构"></a>代码结构</h1><p><img src="https://raw.githubusercontent.com/growingbambi/typora/master/image-20241120221417503.png" srcset="/img/loading.gif" lazyload alt="image-20241120221417503"></p>
-<h2 id="1-Test类"><a href="#1-Test类" class="headerlink" title="1.Test类"></a>1.Test类</h2><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">package</span> com.xu.spring6.client;<br><br><span class="hljs-keyword">import</span> com.xu.spring6.web.UserAction;<br><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Test</span> </span>{<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{<br>        UserAction userAction = <span class="hljs-keyword">new</span> UserAction();<br>        userAction.deleteUser();<br>    }<br>}<br></code></pre></td></tr></tbody></table></figure>
+                <h1 id="日期"><a href="#日期" class="headerlink" title="日期"></a>日期</h1><h2 id="日期类-java-util-Date"><a href="#日期类-java-util-Date" class="headerlink" title="日期类 java.util.Date"></a>日期类 java.util.Date</h2><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Date</span><span class="hljs-params">()</span> </span>{<br>    <span class="hljs-keyword">this</span>(System.currentTimeMillis());<br>}<br></code></pre></td></tr></tbody></table></figure>
 
-<h2 id="2-UserAction类"><a href="#2-UserAction类" class="headerlink" title="2.UserAction类"></a>2.UserAction类</h2><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">package</span> com.xu.spring6.web;<br><br><span class="hljs-keyword">import</span> com.xu.spring6.service.UserService;<br><span class="hljs-keyword">import</span> com.xu.spring6.service.impl.UserServiceImpl;<br><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">UserAction</span> </span>{<br>    <span class="hljs-keyword">private</span> UserService userService = <span class="hljs-keyword">new</span> UserServiceImpl();<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">deleteUser</span><span class="hljs-params">()</span></span>{<br>        userService.deleteUser();<br>    }<br>}<br></code></pre></td></tr></tbody></table></figure>
-
-<h2 id="3-UserService接口和UserServiceImpl实现类"><a href="#3-UserService接口和UserServiceImpl实现类" class="headerlink" title="3.UserService接口和UserServiceImpl实现类"></a>3.UserService接口和UserServiceImpl实现类</h2><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">package</span> com.xu.spring6.service;<br><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">UserService</span> </span>{<br>    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">deleteUser</span><span class="hljs-params">()</span></span>;<br>}<br></code></pre></td></tr></tbody></table></figure>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Date</span><span class="hljs-params">(<span class="hljs-keyword">long</span> date)</span> </span>{<br>    fastTime = date;<br>}<br></code></pre></td></tr></tbody></table></figure>
 
 
 
-<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">package</span> com.xu.spring6.service.impl;<br><br><span class="hljs-keyword">import</span> com.xu.spring6.dao.UserDao;<br><span class="hljs-keyword">import</span> com.xu.spring6.dao.impl.UserDaoImplForMySQL;<br><span class="hljs-keyword">import</span> com.xu.spring6.service.UserService;<br><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">UserServiceImpl</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">UserService</span> </span>{<br>    <span class="hljs-keyword">private</span> UserDao userDao = <span class="hljs-keyword">new</span> UserDaoImplForMySQL();<br><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">deleteUser</span><span class="hljs-params">()</span> </span>{<br>        userDao.deleteUser();<br>    }<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+
+<h2 id="日期格式化类-SimpleDateFormat"><a href="#日期格式化类-SimpleDateFormat" class="headerlink" title="日期格式化类 SimpleDateFormat"></a>日期格式化类 SimpleDateFormat</h2><h3 id="日期转字符串"><a href="#日期转字符串" class="headerlink" title="日期转字符串"></a>日期转字符串</h3><h3 id="字符串转日期"><a href="#字符串转日期" class="headerlink" title="字符串转日期"></a>字符串转日期</h3><h2 id="日历类-java-util-Calendar"><a href="#日历类-java-util-Calendar" class="headerlink" title="日历类 java.util.Calendar"></a>日历类 java.util.Calendar</h2><h3 id="获取当前时间的日历对象"><a href="#获取当前时间的日历对象" class="headerlink" title="获取当前时间的日历对象"></a>获取当前时间的日历对象</h3><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//Gets a calendar using the default time zone and locale.</span><br>Calendar instance = Calendar.getInstance();<br>System.out.println(instance);<br></code></pre></td></tr></tbody></table></figure>
 
 
 
-<h2 id="4-UserDao接口和UserDaoImplForMySQL实现类"><a href="#4-UserDao接口和UserDaoImplForMySQL实现类" class="headerlink" title="4.UserDao接口和UserDaoImplForMySQL实现类"></a>4.UserDao接口和UserDaoImplForMySQL实现类</h2><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">package</span> com.xu.spring6.dao;<br><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">UserDao</span> </span>{<br>    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">deleteUser</span><span class="hljs-params">()</span></span>;<br>}<br></code></pre></td></tr></tbody></table></figure>
-
-<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">package</span> com.xu.spring6.dao.impl;<br><br><span class="hljs-keyword">import</span> com.xu.spring6.dao.UserDao;<br><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">UserDaoImplForMySQL</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">UserDao</span> </span>{<br><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">deleteUser</span><span class="hljs-params">()</span> </span>{<br>        System.out.println(<span class="hljs-string">"正在删除用户信息~"</span>);<br>    }<br>}<br></code></pre></td></tr></tbody></table></figure>
-
-
-
-<h1 id="分析上述代码存在问题"><a href="#分析上述代码存在问题" class="headerlink" title="分析上述代码存在问题"></a>分析上述代码存在问题</h1><p>UserAction类中用到了private UserService userService = <strong>new UserServiceImpl();</strong></p>
-<p>UserServiceImpl实现类中用到了private UserDao userDao = <strong>new UserDaoImplForMySQL();</strong></p>
-<p>如果现在，我想从MySQL（UserDaoImplForMySQL）切换到Oracle（UserDaoImplForOracle），那么我就必须修改UserServiceImpl类的代码，将声明成员变量userDao的代码改为如下：</p>
-<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">private</span> UserDao userDao = <span class="hljs-keyword">new</span> UserDaoImplForOracle();<br></code></pre></td></tr></tbody></table></figure>
+<p>结果：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java">java.util.GregorianCalendar[time=<span class="hljs-number">1744207975651</span>,areFieldsSet=<span class="hljs-keyword">true</span>,areAllFieldsSet=<span class="hljs-keyword">true</span>,lenient=<span class="hljs-keyword">true</span>,zone=sun.util.calendar.ZoneInfo[id=<span class="hljs-string">"GMT+08:00"</span>,offset=<span class="hljs-number">28800000</span>,dstSavings=<span class="hljs-number">0</span>,useDaylight=<span class="hljs-keyword">false</span>,transitions=<span class="hljs-number">0</span>,lastRule=<span class="hljs-keyword">null</span>],firstDayOfWeek=<span class="hljs-number">1</span>,minimalDaysInFirstWeek=<span class="hljs-number">1</span>,ERA=<span class="hljs-number">1</span>,YEAR=<span class="hljs-number">2025</span>,MONTH=<span class="hljs-number">3</span>,WEEK_OF_YEAR=<span class="hljs-number">15</span>,WEEK_OF_MONTH=<span class="hljs-number">2</span>,DAY_OF_MONTH=<span class="hljs-number">9</span>,DAY_OF_YEAR=<span class="hljs-number">99</span>,DAY_OF_WEEK=<span class="hljs-number">4</span>,DAY_OF_WEEK_IN_MONTH=<span class="hljs-number">2</span>,AM_PM=<span class="hljs-number">1</span>,HOUR=<span class="hljs-number">10</span>,HOUR_OF_DAY=<span class="hljs-number">22</span>,MINUTE=<span class="hljs-number">12</span>,SECOND=<span class="hljs-number">55</span>,MILLISECOND=<span class="hljs-number">651</span>,ZONE_OFFSET=<span class="hljs-number">28800000</span>,DST_OFFSET=<span class="hljs-number">0</span>]<br></code></pre></td></tr></tbody></table></figure>
 
 
 
-<p>这个就违反了OCP开闭原则和DIP依赖倒置原则。</p>
-<h1 id="OCP开闭原则"><a href="#OCP开闭原则" class="headerlink" title="OCP开闭原则"></a>OCP开闭原则</h1><p>开闭原则(Open-Closed Principle)：简称OCP，在软件开发过程中应当对扩展开放，对修改关闭。也就是说，如果在进行功能扩展的时候，添加额外的类是没问题的，但因为功能扩展而修改之前运行正常的程序，这是不推荐的。因为一旦修改之前运行正常的程序，就会导致项目整体要进行全方位的重新测试。这是相当繁琐的过程。导致这个问题的主要原因是：代码和代码之间的耦合度太高。如下图所示：</p>
-<p><img src="https://raw.githubusercontent.com/growingbambi/typora/master/image-20241120223531143.png" srcset="/img/loading.gif" lazyload alt="image-20241120223531143"></p>
-<p><strong>上层</strong>是依赖<strong>下层</strong>的。UserAction依赖UserServiceImpl，而UserServiceImpl依赖UserDaoImplForMySQL，这样就会导致<strong>下面只要改动</strong>，<strong>上面必然会受牵连（跟着也会改）</strong>，所谓牵一发而动全身。这个也同时违背了另一个开发原则：依赖倒置原则。</p>
-<h1 id="DIP依赖倒置原则"><a href="#DIP依赖倒置原则" class="headerlink" title="DIP依赖倒置原则"></a>DIP依赖倒置原则</h1><p>依赖倒置原则(Dependence Inversion Principle)：简称DIP，主要倡导<strong>面向抽象编程，面向接口编程，不要面向具体编程</strong>，让<strong>上层</strong>不再依赖<strong>下层</strong>，下面改动了，上面的代码不会受到牵连。这样可以大大降低程序的耦合度，耦合度低了，扩展力就强了，同时代码复用性也会增强。（<strong>软件七大开发原则都是在为解耦合服务</strong>）</p>
-<p>前面有问题的代码没有完全实现面向接口编程，因为代码中还是使用了接口的具体实现类。</p>
-<p><img src="https://raw.githubusercontent.com/growingbambi/typora/master/image-20241120223937975.png" srcset="/img/loading.gif" lazyload alt="image-20241120223937975"></p>
-<p>下面这种才算是完全的面向接口编程</p>
-<p><img src="https://raw.githubusercontent.com/growingbambi/typora/master/image-20241120224101643.png" srcset="/img/loading.gif" lazyload alt="image-20241120224101643"></p>
+
+
+<h3 id="获取日历中某部分（年份-月份-星期等）"><a href="#获取日历中某部分（年份-月份-星期等）" class="headerlink" title="获取日历中某部分（年份/月份/星期等）"></a>获取日历中某部分（年份/月份/星期等）</h3><table>
+<thead>
+<tr>
+<th>类型</th>
+<th>描述</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Calendar.YEAR</td>
+<td>获取年份</td>
+<td></td>
+</tr>
+<tr>
+<td>Calendar.MONTH</td>
+<td>获取月份</td>
+<td>0表示1月，1表示2月，…，11表示12月</td>
+</tr>
+<tr>
+<td>Calendar.DAY_OF_MONTH</td>
+<td>获取本月的第几天</td>
+<td></td>
+</tr>
+<tr>
+<td>Calendar.DAY_OF_YEAR</td>
+<td>获取本年的第几天</td>
+<td></td>
+</tr>
+<tr>
+<td>Calendar.DAY_OF_WEEK</td>
+<td>获取星期几</td>
+<td>1表示星期日，…，7表示星期六</td>
+</tr>
+<tr>
+<td>Calendar.HOUR_OF_DAY</td>
+<td>小时，24小时制</td>
+<td></td>
+</tr>
+<tr>
+<td>Calendar.HOUR</td>
+<td>小时，12小时制</td>
+<td></td>
+</tr>
+<tr>
+<td>Calendar.MINUTE</td>
+<td>获取分钟</td>
+<td></td>
+</tr>
+<tr>
+<td>Calendar.SECOND</td>
+<td>获取秒</td>
+<td></td>
+</tr>
+<tr>
+<td>Calendar.MILLISECOND</td>
+<td>获取毫秒</td>
+<td></td>
+</tr>
+</tbody></table>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs java">Calendar instance = Calendar.getInstance();<br>System.out.println(<span class="hljs-string">"year: "</span> + instance.get(Calendar.YEAR));<span class="hljs-comment">//2025</span><br>System.out.println(<span class="hljs-string">"month: "</span> + instance.get(Calendar.MONTH));<span class="hljs-comment">//3: 四月</span><br>System.out.println(<span class="hljs-string">"the day of the month: "</span> + instance.get(Calendar.DAY_OF_MONTH));<span class="hljs-comment">//9</span><br>System.out.println(<span class="hljs-string">"the day number within the current year: "</span> + instance.get(Calendar.DAY_OF_YEAR));<span class="hljs-comment">//99</span><br>System.out.println(<span class="hljs-string">"the day of the week:"</span> + instance.get(Calendar.DAY_OF_WEEK));<span class="hljs-comment">//4: 星期三</span><br><span class="hljs-comment">//the hour of the day. HOUR_OF_DAY is used for the 24-hour clock</span><br>System.out.println(<span class="hljs-string">"the hour of the day. 24-hour clock: "</span> + instance.get(Calendar.HOUR_OF_DAY));<span class="hljs-comment">//22</span><br><span class="hljs-comment">//the hour of the morning or afternoon. HOUR is used for the 12-hour clock (0 - 11). Noon and midnight are represented by 0, not by 12.</span><br>System.out.println(<span class="hljs-string">"the hour of the day. 12-hour clock: "</span> + instance.get(Calendar.HOUR));<span class="hljs-comment">//10</span><br>System.out.println(<span class="hljs-string">"minute: "</span> + instance.get(Calendar.MINUTE));<span class="hljs-comment">//39</span><br>System.out.println(<span class="hljs-string">"second: "</span> + instance.get(Calendar.SECOND));<span class="hljs-comment">//35</span><br>System.out.println(<span class="hljs-string">"millsecond: "</span> + instance.get(Calendar.MILLISECOND));<span class="hljs-comment">//711</span><br></code></pre></td></tr></tbody></table></figure>
+
+
+
+
+
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//获取自1970年1月1日0时0分0秒到系统当前时间的总毫秒数。</span><br>System.out.println(System.currentTimeMillis());<span class="hljs-comment">//1744207198604</span><br></code></pre></td></tr></tbody></table></figure>
+
+
+
+
+
+<h3 id="设置日历-set方法"><a href="#设置日历-set方法" class="headerlink" title="设置日历 set方法"></a>设置日历 set方法</h3><h4 id="calendar-set-Calendar-YEAR-2023"><a href="#calendar-set-Calendar-YEAR-2023" class="headerlink" title="calendar.set(Calendar.YEAR, 2023)"></a>calendar.set(Calendar.YEAR, 2023)</h4><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java">Calendar calendar2 = Calendar.getInstance();<br>calendar2.set(Calendar.YEAR, <span class="hljs-number">2023</span>);<br>System.out.println(calendar2.get(Calendar.YEAR) + <span class="hljs-string">"年"</span> + (calendar2.get(Calendar.MONTH) + <span class="hljs-number">1</span>) + <span class="hljs-string">"月"</span> + calendar2.get(Calendar.DAY_OF_MONTH) + <span class="hljs-string">"日"</span>); <span class="hljs-comment">//2023年4月9日</span><br></code></pre></td></tr></tbody></table></figure>
+
+
+
+
+
+<h4 id="calendar-set-2015-Calendar-SEPTEMBER-8"><a href="#calendar-set-2015-Calendar-SEPTEMBER-8" class="headerlink" title="calendar.set(2015, Calendar.SEPTEMBER,8)"></a>calendar.set(2015, Calendar.SEPTEMBER,8)</h4><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java">Calendar calendar2 = Calendar.getInstance();<br>calendar2.set(<span class="hljs-number">2015</span>, Calendar.JULY, <span class="hljs-number">26</span>, <span class="hljs-number">8</span>, <span class="hljs-number">30</span>, <span class="hljs-number">0</span>);<br>System.out.println(calendar2);<br></code></pre></td></tr></tbody></table></figure>
+
+<p>结果：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-number">2015</span>年<span class="hljs-number">7</span>月<span class="hljs-number">26</span>日<br></code></pre></td></tr></tbody></table></figure>
+
+
+
+
+
+<p>小点：最好用提供的常量</p>
+<p><img src="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250409224631266.png" srcset="/img/loading.gif" lazyload alt="image-20250409224631266"></p>
+<p><img src="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250409224610367.png" srcset="/img/loading.gif" lazyload alt="image-20250409224610367"></p>
+<h3 id="日历中各部分加减-add方法"><a href="#日历中各部分加减-add方法" class="headerlink" title="日历中各部分加减 add方法"></a>日历中各部分加减 add方法</h3><h4 id="calendar-add-Calendar-YEAR-1"><a href="#calendar-add-Calendar-YEAR-1" class="headerlink" title="calendar.add(Calendar.YEAR, 1)"></a>calendar.add(Calendar.YEAR, 1)</h4><figure class="highlight routeros"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs routeros">Calendar calendar2 = Calendar.getInstance();<br>calendar2.<span class="hljs-builtin-name">add</span>(Calendar.YEAR, 1);<br>System.out.println(calendar2.<span class="hljs-builtin-name">get</span>(Calendar.YEAR) + <span class="hljs-string">"年"</span> + (calendar2.<span class="hljs-builtin-name">get</span>(Calendar.MONTH) + 1) + <span class="hljs-string">"月"</span> + calendar2.<span class="hljs-builtin-name">get</span>(Calendar.DAY_OF_MONTH) + <span class="hljs-string">"日"</span>);<br></code></pre></td></tr></tbody></table></figure>
+
+<p>结果：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-number">2026</span>年<span class="hljs-number">4</span>月<span class="hljs-number">9</span>日<br></code></pre></td></tr></tbody></table></figure>
+
+
+
+
+
+
+
+<h3 id="让日历关联具体时间-setTime方法"><a href="#让日历关联具体时间-setTime方法" class="headerlink" title="让日历关联具体时间 setTime方法"></a>让日历关联具体时间 setTime方法</h3><h4 id="calendar-setTime-new-Date"><a href="#calendar-setTime-new-Date" class="headerlink" title="calendar.setTime(new Date())"></a>calendar.setTime(new Date())</h4><p><strong><em>//年份偏移： Date 构造方法中的年份参数是基于 1900 的偏移量。例如，传入 2015 实际表示 1900 + 2015 = 3915 年。</em></strong></p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs java">Calendar calendar2 = Calendar.getInstance();<br><br>calendar2.setTime(<span class="hljs-keyword">new</span> Date(<span class="hljs-number">2015</span>, Calendar.JULY, <span class="hljs-number">15</span>));<br>System.out.println(calendar2.get(Calendar.YEAR) + <span class="hljs-string">"年"</span> + (calendar2.get(Calendar.MONTH) + <span class="hljs-number">1</span>) + <span class="hljs-string">"月"</span> + calendar2.get(Calendar.DAY_OF_MONTH) + <span class="hljs-string">"日"</span>); <span class="hljs-comment">//3915年7月15日</span><br></code></pre></td></tr></tbody></table></figure>
+
+
+
+<h3 id="获取日历的具体时间-getTime方法"><a href="#获取日历的具体时间-getTime方法" class="headerlink" title="获取日历的具体时间 getTime方法"></a>获取日历的具体时间 getTime方法</h3><h4 id="Date-time-calendar-getTime"><a href="#Date-time-calendar-getTime" class="headerlink" title="Date time = calendar.getTime();"></a>Date time = calendar.getTime();</h4><p>IDEA小技巧：</p>
+<p>自动提示忽略大小写，取消勾选Match Case checkbox</p>
+<p><img src="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250409215455705.png" srcset="/img/loading.gif" lazyload alt="image-20250409215455705"></p>
 
                 
               </div>
@@ -337,7 +427,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/Spring6/" class="category-chain-item">Spring6</a>
+  <a href="/categories/Java/" class="category-chain-item">Java</a>
   
   
 
@@ -357,8 +447,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Spring</div>
-      <div>https://xiaofanshutu.github.io/posts/6c92115f.html</div>
+      <div>常用类_日期</div>
+      <div>https://xiaofanshutu.github.io/posts/4f0359c2.html</div>
     </div>
     <div class="license-meta">
       
@@ -402,9 +492,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/posts/4f0359c2.html" title="常用类_日期">
+                      <a href="/posts/566321e7.html" title="IDEA常用快捷键">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">常用类_日期</span>
+                        <span class="hidden-mobile">IDEA常用快捷键</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -412,8 +502,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/posts/13006ff7.html" title="Injection">
-                        <span class="hidden-mobile">Injection</span>
+                      <a href="/posts/6c92115f.html" title="Spring">
+                        <span class="hidden-mobile">Spring</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
