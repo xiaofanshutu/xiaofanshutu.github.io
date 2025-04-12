@@ -6,7 +6,7 @@
   <link href="https://xiaofanshutu.github.io/atom.xml" rel="self"/>
   
   <link href="https://xiaofanshutu.github.io/"/>
-  <updated>2025-04-11T01:07:35.681Z</updated>
+  <updated>2025-04-10T00:10:05.718Z</updated>
   <id>https://xiaofanshutu.github.io/</id>
   
   <author>
@@ -17,11 +17,174 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>IDEA常用快捷键</title>
+    <link href="https://xiaofanshutu.github.io/posts/566321e7.html"/>
+    <id>https://xiaofanshutu.github.io/posts/566321e7.html</id>
+    <published>2025-04-12T10:43:43.493Z</published>
+    <updated>2025-04-10T00:10:05.718Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="IDEA常用快捷键"><a href="#IDEA常用快捷键" class="headerlink" title="IDEA常用快捷键"></a>IDEA常用快捷键</h1><ol><li>单行注释：ctrl + /</li><li>多行注释：ctrl + shift + /</li><li>查看源码：按ctrl别松手，鼠标移动到对应的类名下方，出现下划线，点击过去，可以查看类源码。</li><li>多行编辑：按alt别松手，鼠标拖动多行，完成多行编辑。</li><li>怎么快速生成创建对象语句：类名.new.var</li><li>怎么快速生成if语句：布尔类型值.if</li><li>怎么快速生成setter和getter方法：alt + insert，然后选择setter and getter生成。</li><li>怎么快速生成构造方法：alt + insert，然后选择Constructor。</li><li>在IDEA当中如何自动纠错：将光标移动到错误的位置，按atl + enter。会有提示，根据提示进行纠错。</li><li>移动代码到上一行：alt + shift + 上/下方向</li><li>怎么快速重写方法？alt + insert，选择Override….</li><li>怎么快速重写方法？ctrl + o</li><li>快速向下转型，并同时生成变量名：变量名.castvar</li><li>快速查看方法的参数：ctrl + p</li><li>返回上一步：ctrl + alt + 左方向键。 下一步：ctrl + alt + 右方向键。</li><li>代码格式化：ctrl + alt + L</li><li>查看继承结构：ctrl + H</li><li>自动代码包裹：ctrl + alt + t</li><li>快速运行程序 ctrl + shift + F10</li></ol>]]></content>
+    
+    
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; class=&quot;aplayer-secondary-script-marker&quot;&gt;&lt;/script&gt;&lt;h1 id=&quot;IDEA常用快捷键&quot;&gt;&lt;a href=&quot;#IDEA常用快捷键&quot; class=&quot;headerlink&quot; title=&quot;IDEA常用快捷键&quot;&gt;&lt;/a&gt;IDEA常用快捷键&lt;/h1&gt;&lt;ol&gt;
+&lt;li&gt;单行注释：ctrl + /&lt;/li&gt;
+&lt;li&gt;多行注释：ctrl + shift + /&lt;/li&gt;
+&lt;li&gt;查看源码：按ctrl别松手，鼠标移动到对应的类名下方，出现下划线，点击过去，可以查看类源码。&lt;/li&gt;
+&lt;li&gt;多行编辑：按alt别松手，鼠标拖动多行，完成多行编辑。&lt;/li&gt;
+&lt;li&gt;怎么快速生成创建对象语句：类名.new.var&lt;/li&gt;
+&lt;li&gt;怎么快速生成if语句：布尔类型值.if&lt;/li&gt;
+&lt;li&gt;怎么快速生成setter和getter方法：alt + insert，然后选择setter and getter生成。&lt;/li&gt;
+&lt;li&gt;怎么快速生成构造方法：alt + insert，然后选择Constructor。&lt;/li&gt;
+&lt;li&gt;在IDEA当中如何自动纠错：将光标移动到错误的位置，按atl + enter。会有提示，根据提示进行纠错。&lt;/li&gt;
+&lt;li&gt;移动代码到上一行：alt + shift + 上/下方向&lt;/li&gt;
+&lt;li&gt;怎么快速重写方法？alt + insert，选择Override….&lt;/li&gt;
+&lt;li&gt;怎么快速重写方法？ctrl + o&lt;/li&gt;
+&lt;li&gt;快速向下转型，并同时生成变量名：变量名.castvar&lt;/li&gt;
+&lt;li&gt;快速查看方法的参数：ctrl + p&lt;/li&gt;
+&lt;li&gt;返回上一步：ctrl + alt + 左方向键。 下一步：ctrl + alt + 右方向键。&lt;/li&gt;
+&lt;li&gt;代码格式化：ctrl + alt + L&lt;/li&gt;
+&lt;li&gt;查看继承结构：ctrl + H&lt;/li&gt;
+&lt;li&gt;自动代码包裹：ctrl + alt + t&lt;/li&gt;
+&lt;li&gt;快速运行程序 ctrl + shift + F10&lt;/li&gt;
+&lt;/ol&gt;
+</summary>
+    
+    
+    
+    <category term="Java" scheme="https://xiaofanshutu.github.io/categories/Java/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>集合</title>
+    <link href="https://xiaofanshutu.github.io/posts/d366874c.html"/>
+    <id>https://xiaofanshutu.github.io/posts/d366874c.html</id>
+    <published>2025-04-11T12:10:19.347Z</published>
+    <updated>2025-04-12T11:49:23.908Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="集合概述"><a href="#集合概述" class="headerlink" title="集合概述"></a>集合概述</h1><ol><li>Java集合中存储的是引用，存的不是堆中的对象。堆中的对象的地址存储到了集合中。</li><li>默认情况下，如果不使用泛型，集合中可以存储任何类型的引用。（只要是Object类的子类都可以存储）</li><li>Java集合框架相关的类都在java.util包下。</li><li>Java集合框架分为两部分：<ul><li>Collection结构：元素以单个形式存储。</li><li>Map结构：元素以键值对的映射关系存储。</li></ul></li></ol><h1 id="Collection继承结构"><a href="#Collection继承结构" class="headerlink" title="Collection继承结构"></a>Collection继承结构</h1><p><img src="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250412180840197.png" alt="image-20250412180840197"></p><ol><li><p>上图6个蓝色的实现类中，只有HashSet是无序集合，其他都是有序集合。</p><ul><li><p>有序集合：集合中存储的元素有下标 <strong>或者</strong> 集合中存储的元素是可排序的</p></li><li><p>无序集合： 集合中存储的元素没有下标 <strong>并且</strong> 集合中存储的元素也没有排序</p></li></ul></li><li><p>每个集合实现类对应的数据结构：</p></li></ol><table><thead><tr><th>集合类型</th><th>数据结构</th><th>描述</th></tr></thead><tbody><tr><td>ArrayList</td><td>数组</td><td>一种可以动态增长和缩减的索引序列</td></tr><tr><td>LinkedList</td><td>双向链表（不是队列结构，但是可以用它模拟队列）</td><td>一种可以在任何位置进行高效插入和删除操作的有序序列</td></tr><tr><td>Vector</td><td>数组（线程安全）</td><td></td></tr><tr><td>HashSet</td><td>哈希表</td><td>一种没有重复元素的无序集合</td></tr><tr><td>LinkedHashSet</td><td>双向链表+哈希表</td><td>一种可以记住元素插入次序的集</td></tr><tr><td>TreeSet</td><td>红黑树</td><td>一种有序集</td></tr></tbody></table><ol start="3"><li>List集合中存储的元素可以重复，Set集合中的元素不可重复。</li></ol><h1 id="Collection接口的常用方法"><a href="#Collection接口的常用方法" class="headerlink" title="Collection接口的常用方法"></a>Collection接口的常用方法</h1><table><thead><tr><th>方法</th><th>描述</th></tr></thead><tbody><tr><td>boolean add(E e);</td><td>向集合中添加元素</td></tr><tr><td>int size();</td><td>获取集合中元素个数</td></tr><tr><td>boolean addAll(Collection c);</td><td>将参数集合中所有元素全部加入当前集合</td></tr><tr><td>boolean contains(Object o);</td><td>判断集合中是否包含对象o</td></tr><tr><td>boolean remove(Object o);</td><td>从集合中删除对象o</td></tr><tr><td>void clear();</td><td>清空集合</td></tr><tr><td>boolean isEmpty();</td><td>判断集合中元素个数是否为0</td></tr><tr><td>Object[] toArray();</td><td>将集合转换成一维数组</td></tr></tbody></table><p>这里有疑问：为什么col.toArray()返回的是地址？？？    </p><h2 id="add-E-e-amp-size-amp-toArray"><a href="#add-E-e-amp-size-amp-toArray" class="headerlink" title="add(E e) &amp; size() &amp; toArray()"></a>add(E e) &amp; size() &amp; toArray()</h2><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs java">Collection col = <span class="hljs-keyword">new</span> ArrayList();<br><span class="hljs-comment">//add(E e)</span><br>col.add(<span class="hljs-string">"zhangsan"</span>);<br>col.add(<span class="hljs-number">123</span>);<br>col.add(<span class="hljs-keyword">true</span>);<br>System.out.println(col); <span class="hljs-comment">// [zhangsan, 123, true]</span><br>System.out.println(col.toArray());<span class="hljs-comment">// [Ljava.lang.Object;@1b6d3586</span><br><br><span class="hljs-comment">//size()</span><br>System.out.println(col.size());<span class="hljs-comment">// 3</span><br></code></pre></td></tr></tbody></table></figure><h2 id="addAll-Collection-c"><a href="#addAll-Collection-c" class="headerlink" title="addAll(Collection c)"></a>addAll(Collection c)</h2><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//addAll(Collection c)</span><br>Collection col2 = <span class="hljs-keyword">new</span> ArrayList();<br>col2.add(<span class="hljs-string">"好好学习，天天向上"</span>);<br>col2.add(<span class="hljs-string">"you are the best~"</span>);<br>col.addAll(col2); <span class="hljs-comment">// 将col2中的元素添加到col中</span><br>System.out.println(col);<br></code></pre></td></tr></tbody></table></figure><p>遇到问题：控制台中文乱码</p><p><img src="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250412183545975.png" alt="image-20250412183545975"></p><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//addAll(Collection c)</span><br>Collection col2 = <span class="hljs-keyword">new</span> ArrayList();<br>col2.add(<span class="hljs-string">"hello~"</span>);<br>col.addAll(col2); <span class="hljs-comment">// 将col2中的元素添加到col中</span><br>System.out.println(col);<span class="hljs-comment">// [zhangsan, 123, true, hello~]</span><br></code></pre></td></tr></tbody></table></figure><h2 id="contains-Object-o"><a href="#contains-Object-o" class="headerlink" title="contains(Object o)"></a>contains(Object o)</h2><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//contains(Object o)</span><br>System.out.println(col.contains(<span class="hljs-string">"zhangsan"</span>)); <span class="hljs-comment">// true</span><br>System.out.println(col.contains(<span class="hljs-keyword">new</span> String(<span class="hljs-string">"zhangsan"</span>))); <span class="hljs-comment">// true</span><br></code></pre></td></tr></tbody></table></figure><h2 id="remove-Object-o"><a href="#remove-Object-o" class="headerlink" title="remove(Object o)"></a>remove(Object o)</h2><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java">System.out.println(col);<span class="hljs-comment">//[zhangsan, 123, true, hello~]</span><br>col.remove(<span class="hljs-string">"zhangsan"</span>); <span class="hljs-comment">// 删除元素</span><br>System.out.println(col);<span class="hljs-comment">//[123, true, hello~]</span><br></code></pre></td></tr></tbody></table></figure><h2 id="clear-amp-isEmpty"><a href="#clear-amp-isEmpty" class="headerlink" title="clear() &amp; isEmpty()"></a>clear() &amp; isEmpty()</h2><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs java">System.out.println(col);<span class="hljs-comment">// [123, true, hello~]</span><br>col.clear();<br>System.out.println(col);<span class="hljs-comment">// []</span><br>System.out.println(col.isEmpty()); <span class="hljs-comment">// true</span><br></code></pre></td></tr></tbody></table></figure><h1 id="Collection集合的遍历"><a href="#Collection集合的遍历" class="headerlink" title="Collection集合的遍历"></a>Collection集合的遍历</h1><p>第一步：获取当前集合依赖的迭代器对象</p><p>​    Iterator it = collection.iterator();</p><p>第二步：编写循环，循环条件：当前光标指向的位置是否存在元素。</p><p>​    while(it.hasNext()){}</p><p>第三步：如果有，将光标指向的当前元素返回，并且将光标向下移动一位。</p><p>​    Object obj = it.next();</p><p><img src="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250412190556190.png" alt="image-20250412190556190"></p><p><img src="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250412190641158.png" alt="image-20250412190641158"></p><h1 id="泛型"><a href="#泛型" class="headerlink" title="泛型"></a>泛型</h1><ol><li><p>泛型是Java5的新特性，属于编译阶段的功能。</p></li><li><p>泛型可以让开发者在编写代码时指定集合中存储数据的数据类型。</p></li><li><p>泛型作用：</p><ul><li>类型安全：指定类型后，编译期会在编译阶段进行类型检查。如果尝试将错误的类型加入集合中，则会在编译阶段报错。避免了在运行时出现类型错误的问题。</li><li>代码简洁：使用泛型后可以简化代码，避免了繁琐的类型转换操作。没有泛型的时候，需要使用Object类型来保存集合中的元素，在使用时需要强制类型转换成实际类型。</li></ul></li><li><p>在集合中使用泛型</p><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs java">Collection&lt;String&gt; strs = <span class="hljs-keyword">new</span> ArrayList&lt;String&gt;();<br><span class="hljs-comment">//这就表示该集合只能存储字符串，存储其它类型时编译器报错。并且以上代码使用泛型后，避免了繁琐的类型转换，集合中的元素可以直接调用String类特有的方法。</span><br></code></pre></td></tr></tbody></table></figure></li><li><p>Java7的新特性：钻石表达式</p><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java">Collection&lt;String&gt; strs = <span class="hljs-keyword">new</span> ArrayList&lt;&gt;();<br></code></pre></td></tr></tbody></table></figure></li></ol><h2 id="泛型擦除与补偿"><a href="#泛型擦除与补偿" class="headerlink" title="泛型擦除与补偿"></a>泛型擦除与补偿</h2><ol><li><p>泛型的出现提高了编译时的安全性，正因为编译时对添加的数据做了检查，则程序运行时才不会抛出类型转换异常。因此泛型本质上是编译时期的技术，是专门给编译器用的。加载类的时候，会将泛型擦除掉（擦除之后的类型为Object类型），这个称为<strong>泛型擦除</strong>。</p></li><li><p>为什么要有泛型擦除呢？其本质是为了让JDK1.4和JDK1.5能够兼容同一个类加载器。在JDK1.5版本中，程序编译时期会对集合添加的元素进行安全检查，如果检查完是安全的、没有错误的，那么就意味着添加的元素都属于同一种数据类型，则加载类时就可以把这个泛型擦除掉，将泛型擦除后的类型就是Object类，这样擦除之后的代码就与JDK1.4的代码一致。</p></li><li><p>由于加载类的时候，会默认将类中的泛型擦除为Object类型，所以添加的元素就被转化为Object类型，同时取出的元素也默认为Object类型。而我们获得集合中的元素时，按理说取出的元素应该是Object类型，为什么取出的元素却是实际添加的元素类型呢？</p><p>这是因为这里又做了一个默认的操作，我们称之为<strong>泛型的补偿</strong>。在程序运行时，通过获取元素的实际类型进行强转，这就叫做泛型补偿（不必手动实现强制转换）。获得集合中的元素时，虚拟机会根据获得元素的实际类型进行向下转型，也就是会恢复获得元素的实际类型，因此我们就无需手动执行向下转型操作，从本质上避免了抛出类型转换异常。</p></li></ol><h2 id="泛型的使用"><a href="#泛型的使用" class="headerlink" title="泛型的使用"></a>泛型的使用</h2><h3 id="在类上定义泛型"><a href="#在类上定义泛型" class="headerlink" title="在类上定义泛型"></a>在类上定义泛型</h3><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">package</span> com.powernode.javase.collection.Summer;<br><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyAnimal</span>&lt;<span class="hljs-title">String</span>, <span class="hljs-title">Integer</span>&gt; </span>{<br>    <span class="hljs-keyword">private</span> String name;<br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> age;<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">MyAnimal</span><span class="hljs-params">(String name, <span class="hljs-keyword">int</span> age)</span> </span>{<br>        <span class="hljs-keyword">this</span>.name = name;<br>        <span class="hljs-keyword">this</span>.age = age;<br>    }<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">getName</span><span class="hljs-params">()</span> </span>{<br>        <span class="hljs-keyword">return</span> name;<br>    }<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setName</span><span class="hljs-params">(String name)</span> </span>{<br>        <span class="hljs-keyword">this</span>.name = name;<br>    }<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">getAge</span><span class="hljs-params">()</span> </span>{<br>        <span class="hljs-keyword">return</span> age;<br>    }<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setAge</span><span class="hljs-params">(<span class="hljs-keyword">int</span> age)</span> </span>{<br>        <span class="hljs-keyword">this</span>.age = age;<br>    }<br><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> java.lang.<span class="hljs-function">String <span class="hljs-title">toString</span><span class="hljs-params">()</span> </span>{<br>        <span class="hljs-keyword">return</span> <span class="hljs-string">"MyAnimal{"</span> +<br>                <span class="hljs-string">"name="</span> + name +<br>                <span class="hljs-string">", age="</span> + age +<br>                <span class="hljs-string">'}'</span>;<br>    }<br>}<br><br></code></pre></td></tr></tbody></table></figure><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//这种可以直接调用String或者Integer类特有的方法（因为声明泛型的时候直接指定了泛型类型是String和Object）</span><br>MyAnimal&lt;String, Integer&gt; myAnimal = <span class="hljs-keyword">new</span> MyAnimal&lt;&gt;(<span class="hljs-string">"dog"</span>, <span class="hljs-number">2</span>);<br>System.out.println(myAnimal.getName().charAt(<span class="hljs-number">1</span>));<br><br><span class="hljs-comment">//这种的不能直接调用String或者Integer类特有的方法</span><br>MyAnimal&lt;Object, Object&gt; myAnimal1 = <span class="hljs-keyword">new</span> MyAnimal&lt;&gt;(<span class="hljs-string">"cat"</span>, <span class="hljs-number">0</span>);<br><span class="hljs-comment">//myAnimal1.getName().charAt(1); 调用不了这个方法</span><br></code></pre></td></tr></tbody></table></figure>]]></content>
+    
+    
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; class=&quot;aplayer-secondary-script-marker&quot;&gt;&lt;/script&gt;&lt;h1 id=&quot;集合概述&quot;&gt;&lt;a href=&quot;#集合概述&quot; class=&quot;headerlink&quot; title=&quot;集合概述&quot;&gt;&lt;/a&gt;集合概述&lt;/h1&gt;&lt;ol&gt;
+&lt;li&gt;Java集合中存储的是引用，存的不是堆中的对象。堆中的对象的地址存储到了集合中。&lt;/li&gt;
+&lt;li&gt;默认情况下，如果不使用泛型，集合中可以存储任何类型的引用。（只要是Object类的子类都可以存储）&lt;/li&gt;
+&lt;li&gt;Java集合框架相关的类都在java.util包下。&lt;/li&gt;
+&lt;li&gt;Java集合框架分为两部分：&lt;ul&gt;
+&lt;li&gt;Collection结构：元素以单个形式存储。&lt;/li&gt;
+&lt;li&gt;Map结构：元素以键值对的映射关系存储。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&quot;Collection继承结构&quot;&gt;&lt;a href=&quot;#Collection继承结构&quot; class=&quot;headerlink&quot; title=&quot;Collection继承结构&quot;&gt;&lt;/a&gt;Collection继承结构&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/growingbambi/typora/master/image-20250412180840197.png&quot; alt=&quot;image-20250412180840197&quot;&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;上图6个蓝色的实现类中，只有HashSet是无序集合，其他都是有序集合。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;有序集合：集合中存储的元素有下标 &lt;strong&gt;或者&lt;/strong&gt; 集合中存储的元素是可排序的&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;无序集合： 集合中存储的元素没有下标 &lt;strong&gt;并且&lt;/strong&gt; 集合中存储的元素也没有排序&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;每个集合实现类对应的数据结构：&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;集合类型&lt;/th&gt;
+&lt;th&gt;数据结构&lt;/th&gt;
+&lt;th&gt;描述&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;ArrayList&lt;/td&gt;
+&lt;td&gt;数组&lt;/td&gt;
+&lt;td&gt;一种可以动态增长和缩减的索引序列&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;LinkedList&lt;/td&gt;
+&lt;td&gt;双向链表（不是队列结构，但是可以用它模拟队列）&lt;/td&gt;
+&lt;td&gt;一种可以在任何位置进行高效插入和删除操作的有序序列&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Vector&lt;/td&gt;
+&lt;td&gt;数组（线程安全）&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;HashSet&lt;/td&gt;
+&lt;td&gt;哈希表&lt;/td&gt;
+&lt;td&gt;一种没有重复元素的无序集合&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;LinkedHashSet&lt;/td&gt;
+&lt;td&gt;双向链表+哈希表&lt;/td&gt;
+&lt;td&gt;一种可以记住元素插入次序的集&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;TreeSet&lt;/td&gt;
+&lt;td&gt;红黑树&lt;/td&gt;
+&lt;td&gt;一种有序集&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;ol start=&quot;3&quot;&gt;
+&lt;li&gt;List集合中存储的元素可以重复，Set集合中的元素不可重复。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&quot;Collection接口的常用方法&quot;&gt;&lt;a href=&quot;#Collection接口的常用方法&quot; class=&quot;headerlink&quot; title=&quot;Collection接口的常用方法&quot;&gt;&lt;/a&gt;Collection接口的常用方法&lt;/h1&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;方法&lt;/th&gt;
+&lt;th&gt;描述&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;boolean add(E e);&lt;/td&gt;
+&lt;td&gt;向集合中添加元素&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;int size();&lt;/td&gt;
+&lt;td&gt;获取集合中元素个数&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;boolean addAll(Collection c);&lt;/td&gt;
+&lt;td&gt;将参数集合中所有元素全部加入当前集合&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;boolean contains(Object o);&lt;/td&gt;
+&lt;td&gt;判断集合中是否包含对象o&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;boolean remove(Object o);&lt;/td&gt;
+&lt;td&gt;从集合中删除对象o&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;void clear();&lt;/td&gt;
+&lt;td&gt;清空集合&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;boolean isEmpty();&lt;/td&gt;
+&lt;td&gt;判断集合中元素个数是否为0&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Object[] toArray();&lt;/td&gt;
+&lt;td&gt;将集合转换成一维数组&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;</summary>
+    
+    
+    
+    <category term="Java" scheme="https://xiaofanshutu.github.io/categories/Java/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>常用类_String类</title>
     <link href="https://xiaofanshutu.github.io/posts/6dd21eef.html"/>
     <id>https://xiaofanshutu.github.io/posts/6dd21eef.html</id>
     <published>2025-04-10T23:38:26.701Z</published>
-    <updated>2025-04-11T01:07:35.681Z</updated>
+    <updated>2025-04-11T12:11:43.308Z</updated>
     
     <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="String初识"><a href="#String初识" class="headerlink" title="String初识"></a>String初识</h1><ol><li><p>java.lang.String</p></li><li><p>Java中String属于引用数据类型，代表字符串。</p></li><li><p>Java在堆中为字符串准备了字符串常量池。（是一种缓存技术，提高程序执行效率）</p></li></ol><blockquote><p>​    <strong>注：字符串字面量在编译的时候就已经确定了将其放到字符串常量池中。JVM启动时会立即将程序中带有双引号的字符串字面量全部放入字符串常量池。</strong></p></blockquote><ol start="3"><li>Java8之后字符串常量池存放在堆中，Java8之前字符串常量池在永久代。</li><li>字符串一旦创建是不可变的。</li></ol><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@Stable</span><br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">byte</span>[] value;<br></code></pre></td></tr></tbody></table></figure><h1 id="String的拼接"><a href="#String的拼接" class="headerlink" title="String的拼接"></a>String的拼接</h1><ol><li>动态拼接后新的字符串不会自动放到字符串常量池。</li></ol><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java">String str1 = <span class="hljs-string">"abc"</span>; <span class="hljs-comment">//字符串常量池</span><br>String str2 = <span class="hljs-string">"def"</span>; <span class="hljs-comment">//字符串常量池</span><br>String str3 = <span class="hljs-string">"abcdef"</span>; <span class="hljs-comment">//字符串常量池</span><br>String str4 = str1 + str2; <span class="hljs-comment">//运行时才会创建对象, str4在堆内存中</span><br>System.out.println(str3 == str4); <span class="hljs-comment">//false</span><br></code></pre></td></tr></tbody></table></figure><ol start="2"><li>两个字符串字面量拼接会做编译阶段的优化，在编译阶段就会进行字符串的拼接。</li></ol><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//在字符串常量池中只有一个abcdef</span><br>String str3 = <span class="hljs-string">"abcdef"</span>; <span class="hljs-comment">//字符串常量池</span><br>String str5 = <span class="hljs-string">"abc"</span> + <span class="hljs-string">"def"</span>; <span class="hljs-comment">//字符串常量池</span><br>System.out.println(str3 == str5); <span class="hljs-comment">//true </span><br></code></pre></td></tr></tbody></table></figure><h1 id="String类的常用构造方法"><a href="#String类的常用构造方法" class="headerlink" title="String类的常用构造方法"></a>String类的常用构造方法</h1><ol><li><p>String(char[] value)：</p><ul><li><p>根据字符数组创建一个新的字符串对象。</p><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">char</span>[] chars = <span class="hljs-keyword">new</span> <span class="hljs-keyword">char</span>[]{<span class="hljs-string">'a'</span>, <span class="hljs-string">'b'</span>, <span class="hljs-string">'c'</span>};<br>String s = <span class="hljs-keyword">new</span> String(chars);<br>System.out.println(s);<span class="hljs-comment">//abc</span><br></code></pre></td></tr></tbody></table></figure></li></ul></li><li><p>String(char[] value, int offset, int count)：</p><ul><li><p>根据字符数组的指定部分创建一个新的字符串对象。</p><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">char</span>[] chars = <span class="hljs-keyword">new</span> <span class="hljs-keyword">char</span>[]{<span class="hljs-string">'a'</span>, <span class="hljs-string">'b'</span>, <span class="hljs-string">'c'</span>, <span class="hljs-string">'d'</span>, <span class="hljs-string">'e'</span>, <span class="hljs-string">'f'</span>};<br>String s = <span class="hljs-keyword">new</span> String(chars, <span class="hljs-number">1</span>, <span class="hljs-number">3</span>);<br>System.out.println(s);<span class="hljs-comment">//bcd</span><br></code></pre></td></tr></tbody></table></figure></li></ul></li><li><p>String(byte[] bytes)：</p><ul><li>根据字节数组创建一个新的字符串对象，默认使用平台默认的字符集进行解码。</li></ul></li><li><p>String(byte[] bytes, int offset, int length)：</p><ul><li><p>根据字节数组的指定部分创建一个新的字符串对象，默认使用平台默认的字符集进行解码。</p><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">byte</span>[] bytes = <span class="hljs-keyword">new</span> <span class="hljs-keyword">byte</span>[]{<span class="hljs-number">97</span>, <span class="hljs-number">98</span>, <span class="hljs-number">99</span>, <span class="hljs-number">100</span>, <span class="hljs-number">101</span>, <span class="hljs-number">102</span>};<br>String str = <span class="hljs-keyword">new</span> String(chars, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>);<br>System.out.println(str);<span class="hljs-comment">//cde</span><br></code></pre></td></tr></tbody></table></figure></li></ul></li><li><p>String(byte[] bytes, Charset charset)：根据字节数组和指定的字符集创建一个新的字符串对象。</p><ul><li><p>如果编码和解码用到的字符集不一致，则会出现乱码。</p></li><li><p>new String(bytes, Charset.defaultCharset());</p><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">byte</span>[] bytesArr = <span class="hljs-keyword">new</span> <span class="hljs-keyword">byte</span>[]{<span class="hljs-number">97</span>, <span class="hljs-number">98</span>, <span class="hljs-number">99</span>, <span class="hljs-number">100</span>, <span class="hljs-number">101</span>, <span class="hljs-number">102</span>};<br>String s5 = <span class="hljs-keyword">new</span> String(bytesArr, Charset.defaultCharset());<br>System.out.println(s5);<span class="hljs-comment">//abcdef</span><br></code></pre></td></tr></tbody></table></figure><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">// 先将字符串转换成byte[]数组（这个过程是一个编码的过程）</span><br><span class="hljs-keyword">byte</span>[] bytes1 = <span class="hljs-string">"你好旧时光"</span>.getBytes(StandardCharsets.UTF_8);<br><span class="hljs-comment">// 将以上的byte[]数组转换成字符串（这个过程是一个解码的过程）</span><br>String s6 = <span class="hljs-keyword">new</span> String(bytes1, StandardCharsets.UTF_8);<br>System.out.println(s6);<span class="hljs-comment">//你好旧时光</span><br></code></pre></td></tr></tbody></table></figure><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">// 乱码的本质：在进行编码和解码的时候没有使用同一个字符编码方式。</span><br><span class="hljs-comment">//如果编码和解码的字符集不一致，就会出现乱码。</span><br><br><span class="hljs-comment">// 先将字符串转换成byte[]数组（这个过程是一个编码的过程）</span><br><span class="hljs-keyword">byte</span>[] bytes1 = <span class="hljs-string">"你好旧时光"</span>.getBytes(StandardCharsets.UTF_8);<br><span class="hljs-comment">// 将以上的byte[]数组转换成字符串（这个过程是一个解码的过程）</span><br>String s6 = <span class="hljs-keyword">new</span> String(bytes1, StandardCharsets.ISO_8859_1);<br>System.out.println(s6);<br></code></pre></td></tr></tbody></table></figure></li></ul><p><img src="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250411085551049.png" alt="image-20250411085551049"></p></li></ol><ol start="6"><li><p>String(byte[] bytes, String charsetName)：根据字节数组和指定的字符集名称创建一个新的字符串对象。</p><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">// 编码</span><br><span class="hljs-keyword">byte</span>[] bytes = <span class="hljs-string">"淡然"</span>.getBytes(<span class="hljs-string">"GBK"</span>);<br><span class="hljs-comment">// 解码</span><br>String s6 = <span class="hljs-keyword">new</span> String(bytes, <span class="hljs-string">"GBK"</span>);<br>System.out.println(s6);<span class="hljs-comment">//淡然</span><br></code></pre></td></tr></tbody></table></figure></li><li><p>String(String original)：通过复制现有字符串创建一个新的字符串对象。</p><ul><li><p>这个方法被@IntrinsicCandidate标注，这个注解的作用是告诉编译器，该方法或构造函数是一个内在的候选方法,可以被优化和替换为更高效的代码。因此它是不建议使用的。</p></li><li><p>new String(“hello”); 这个代码会让常量池中有一个 “hello”，并且在堆中也有有一个String对象。</p><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@IntrinsicCandidate</span><br><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">String</span><span class="hljs-params">(String original)</span> </span>{<br>    <span class="hljs-keyword">this</span>.value = original.value;<br>    <span class="hljs-keyword">this</span>.coder = original.coder;<br>    <span class="hljs-keyword">this</span>.hash = original.hash;<br>}<br></code></pre></td></tr></tbody></table></figure><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java">String helloStr = <span class="hljs-keyword">new</span> String(<span class="hljs-string">"hello"</span>);<br></code></pre></td></tr></tbody></table></figure></li></ul></li></ol><h1 id="String类的常用方法"><a href="#String类的常用方法" class="headerlink" title="String类的常用方法"></a>String类的常用方法</h1><ol><li>byte[] getBytes(); 将字符串转换成字节数组。其实就是对字符串进行编码。默认按照系统默认字符集。</li><li>byte[] getBytes(String charsetName); 将字符串按照指定字符集的方式进行编码。</li><li>byte[] getBytes(Charset charset);</li><li>char[] toCharArray(); 将字符串转换字符数组。</li><li>String toLowerCase(); 转小写</li><li>String toUpperCase(); 转大写</li><li>String concat(String str); 进行字符串的拼接操作。和 + 的区别？+ <ul><li>既可以进行求和，也可以进行字符串的拼接，底层拼接时会创建StringBuilder对象进行拼接。+ 拼接null时不会出现空指针异常。</li><li>concat方法参数只能时字符串类型，拼接时不会创建StringBuilder对象，拼接完成后返回一个新的String对象。拼接null会出现空指针异常。</li><li>+使用较多。如果进行大量字符串拼接，这两个都不合适。</li></ul></li><li>String substring(int beginIndex); 从指定下标beginIndex开始截取子字符串</li><li>String substring(int beginIndex, int endIndex);</li><li>String trim(); 去除字符串前后空白（只能去除ASCII码中的空格和制表符）</li><li>String strip(); 去除字符串前后空白（支持所有的编码形式的空白，可以将全角空格去除，\u3000是全角空格，Java11新增）</li><li>String stripLeading(); 去除前空白</li><li>String stripTrailing(); 去除后空白</li><li>String toString();</li><li>String intern(); 获取字符串常量池中的字符串，如果常量池中没有，则将字符串加入常量池并返回。<ul><li>byte[] bytes = {97,98,99,100}; String s = new String(bytes);</li><li>String s2 = s.intern(); // 将字符串 “abcd”放入字符串常量池并返回常量池中的字符串 “abcd”</li></ul></li><li>static String join(CharSequence d, CharSequence… elements); 将多个字符串以某个分隔符连接（Java8新增）</li><li>static String join(CharSequence delimiter, Iterable&lt;? extends CharSequence&gt; elements);</li><li>static String valueOf(boolean b); 以下所有的静态方法valueOf作用是将非字符串类型的数据转换为字符串形式。</li><li>static String valueOf(char c);</li><li>static String valueOf(char[] data);</li><li>static String valueOf(char[] data, int offset, int count);</li><li>static String valueOf(double d);</li><li>static String valueOf(float f);</li><li>static String valueOf(int i);</li><li>static String valueOf(long l);</li><li>static String valueOf(Object obj);</li></ol><h1 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h1><h1 id="String类的面试题"><a href="#String类的面试题" class="headerlink" title="String类的面试题"></a>String类的面试题</h1><h1 id="练习题"><a href="#练习题" class="headerlink" title="练习题"></a>练习题</h1>]]></content>
     
@@ -62,13 +225,13 @@
   </entry>
   
   <entry>
-    <title>IDEA常用快捷键</title>
+    <title>IDEA常用</title>
     <link href="https://xiaofanshutu.github.io/posts/566321e7.html"/>
     <id>https://xiaofanshutu.github.io/posts/566321e7.html</id>
     <published>2025-04-09T14:14:33.587Z</published>
-    <updated>2025-04-10T00:10:05.718Z</updated>
+    <updated>2025-04-12T10:48:51.370Z</updated>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="IDEA常用快捷键"><a href="#IDEA常用快捷键" class="headerlink" title="IDEA常用快捷键"></a>IDEA常用快捷键</h1><ol><li>单行注释：ctrl + /</li><li>多行注释：ctrl + shift + /</li><li>查看源码：按ctrl别松手，鼠标移动到对应的类名下方，出现下划线，点击过去，可以查看类源码。</li><li>多行编辑：按alt别松手，鼠标拖动多行，完成多行编辑。</li><li>怎么快速生成创建对象语句：类名.new.var</li><li>怎么快速生成if语句：布尔类型值.if</li><li>怎么快速生成setter和getter方法：alt + insert，然后选择setter and getter生成。</li><li>怎么快速生成构造方法：alt + insert，然后选择Constructor。</li><li>在IDEA当中如何自动纠错：将光标移动到错误的位置，按atl + enter。会有提示，根据提示进行纠错。</li><li>移动代码到上一行：alt + shift + 上/下方向</li><li>怎么快速重写方法？alt + insert，选择Override….</li><li>怎么快速重写方法？ctrl + o</li><li>快速向下转型，并同时生成变量名：变量名.castvar</li><li>快速查看方法的参数：ctrl + p</li><li>返回上一步：ctrl + alt + 左方向键。 下一步：ctrl + alt + 右方向键。</li><li>代码格式化：ctrl + alt + L</li><li>查看继承结构：ctrl + H</li><li>自动代码包裹：ctrl + alt + t</li><li>快速运行程序 ctrl + shift + F10</li></ol>]]></content>
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="IDEA常用快捷键"><a href="#IDEA常用快捷键" class="headerlink" title="IDEA常用快捷键"></a>IDEA常用快捷键</h1><ol><li>单行注释：ctrl + /</li><li>多行注释：ctrl + shift + /</li><li>查看源码：按ctrl别松手，鼠标移动到对应的类名下方，出现下划线，点击过去，可以查看类源码。</li><li>多行编辑：按alt别松手，鼠标拖动多行，完成多行编辑。</li><li>怎么快速生成创建对象语句：类名.new.var</li><li>怎么快速生成if语句：布尔类型值.if</li><li>怎么快速生成setter和getter方法：alt + insert，然后选择setter and getter生成。</li><li>怎么快速生成构造方法：alt + insert，然后选择Constructor。</li><li>在IDEA当中如何自动纠错：将光标移动到错误的位置，按atl + enter。会有提示，根据提示进行纠错。</li><li>移动代码到上一行：alt + shift + 上/下方向</li><li>怎么快速重写方法？alt + insert，选择Override….</li><li>怎么快速重写方法？ctrl + o</li><li>快速向下转型，并同时生成变量名：变量名.castvar</li><li>快速查看方法的参数：ctrl + p</li><li>返回上一步：ctrl + alt + 左方向键。 下一步：ctrl + alt + 右方向键。</li><li>代码格式化：ctrl + alt + L</li><li>查看继承结构：ctrl + H（或者F4）</li><li>自动代码包裹：ctrl + alt + t</li><li>快速运行程序 ctrl + shift + F10</li></ol><h1 id="IDEA中文乱码"><a href="#IDEA中文乱码" class="headerlink" title="IDEA中文乱码"></a>IDEA中文乱码</h1><ol><li><p>在 IntelliJ IDEA 中，可以通过以下步骤检查和设置文件编码：<br>右键文件 -&gt; File Encoding -&gt; 选择 UTF-8。</p><img src="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250412184653927.png" alt="image-20250412184653927"></li><li><p>设置 JVM 的字符编码：<br>在运行配置中添加 JVM 参数，强制指定 UTF-8 编码：-Dfile.encoding=UTF-8<br>在 IntelliJ IDEA 中：<br>打开 Run/Debug Configurations。<br>在 VM options 中添加上述参数。</p><img src="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250412184810062.png" alt="image-20250412184810062"></li></ol>]]></content>
     
     
     <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; class=&quot;aplayer-secondary-script-marker&quot;&gt;&lt;/script&gt;&lt;h1 id=&quot;IDEA常用快捷键&quot;&gt;&lt;a href=&quot;#IDEA常用快捷键&quot; class=&quot;headerlink&quot; title=&quot;IDEA常用快捷键&quot;&gt;&lt;/a&gt;IDEA常用快捷键&lt;/h1&gt;&lt;ol&gt;
@@ -88,9 +251,17 @@
 &lt;li&gt;快速查看方法的参数：ctrl + p&lt;/li&gt;
 &lt;li&gt;返回上一步：ctrl + alt + 左方向键。 下一步：ctrl + alt + 右方向键。&lt;/li&gt;
 &lt;li&gt;代码格式化：ctrl + alt + L&lt;/li&gt;
-&lt;li&gt;查看继承结构：ctrl + H&lt;/li&gt;
+&lt;li&gt;查看继承结构：ctrl + H（或者F4）&lt;/li&gt;
 &lt;li&gt;自动代码包裹：ctrl + alt + t&lt;/li&gt;
 &lt;li&gt;快速运行程序 ctrl + shift + F10&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&quot;IDEA中文乱码&quot;&gt;&lt;a href=&quot;#IDEA中文乱码&quot; class=&quot;headerlink&quot; title=&quot;IDEA中文乱码&quot;&gt;&lt;/a&gt;IDEA中文乱码&lt;/h1&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;在 IntelliJ IDEA 中，可以通过以下步骤检查和设置文件编码：&lt;br&gt;右键文件 -&amp;gt; File Encoding -&amp;gt; 选择 UTF-8。&lt;/p&gt;
+&lt;img src=&quot;https://raw.githubusercontent.com/growingbambi/typora/master/image-20250412184653927.png&quot; alt=&quot;image-20250412184653927&quot;&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;设置 JVM 的字符编码：&lt;br&gt;在运行配置中添加 JVM 参数，强制指定 UTF-8 编码：-Dfile.encoding=UTF-8&lt;br&gt;在 IntelliJ IDEA 中：&lt;br&gt;打开 Run/Debug Configurations。&lt;br&gt;在 VM options 中添加上述参数。&lt;/p&gt;
+&lt;img src=&quot;https://raw.githubusercontent.com/growingbambi/typora/master/image-20250412184810062.png&quot; alt=&quot;image-20250412184810062&quot;&gt;
+&lt;/li&gt;
 &lt;/ol&gt;
 </summary>
     
@@ -487,50 +658,6 @@
     
     
     <category term="八股文" scheme="https://xiaofanshutu.github.io/categories/%E5%85%AB%E8%82%A1%E6%96%87/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>马士兵</title>
-    <link href="https://xiaofanshutu.github.io/posts/fc27ae96.html"/>
-    <id>https://xiaofanshutu.github.io/posts/fc27ae96.html</id>
-    <published>2023-04-29T01:07:41.762Z</published>
-    <updated>2024-01-17T23:38:21.012Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><a id="more"></a><h1 id="Java基础"><a href="#Java基础" class="headerlink" title="Java基础"></a>Java基础</h1><h2 id="Java是什么类型的语言？"><a href="#Java是什么类型的语言？" class="headerlink" title="Java是什么类型的语言？"></a>Java是什么类型的语言？</h2><h2 id="简单说说Java中对象如何拷贝？"><a href="#简单说说Java中对象如何拷贝？" class="headerlink" title="简单说说Java中对象如何拷贝？"></a>简单说说Java中对象如何拷贝？</h2><h2 id="伪代码快速实现深拷贝？"><a href="#伪代码快速实现深拷贝？" class="headerlink" title="伪代码快速实现深拷贝？"></a>伪代码快速实现深拷贝？</h2><h2 id="什么是Object？有哪些常用的方法？怎么创建对象？"><a href="#什么是Object？有哪些常用的方法？怎么创建对象？" class="headerlink" title="什么是Object？有哪些常用的方法？怎么创建对象？"></a>什么是Object？有哪些常用的方法？怎么创建对象？</h2><h3 id="notify方法"><a href="#notify方法" class="headerlink" title="notify方法"></a>notify方法</h3><h3 id="为什么唤醒线程的方法是在object里面？不是应该在线程Thread里面吗？"><a href="#为什么唤醒线程的方法是在object里面？不是应该在线程Thread里面吗？" class="headerlink" title="为什么唤醒线程的方法是在object里面？不是应该在线程Thread里面吗？"></a>为什么唤醒线程的方法是在object里面？不是应该在线程Thread里面吗？</h3><p><img src="https://raw.githubusercontent.com/xiaofanshutu/typora2022/main/202304050808543.png" alt="image-20230405080755353"></p><h2 id="多态，面向接口编程-聊聊你的认知"><a href="#多态，面向接口编程-聊聊你的认知" class="headerlink" title="多态，面向接口编程?聊聊你的认知"></a>多态，面向接口编程?聊聊你的认知</h2><ul><li>制定标准</li><li>提高可扩展性</li></ul><p>让你设计一个接口，你会考虑到什么点？</p><p>最小隔离</p><p>接口和抽象类的区别？</p><h2 id="什么是内部类，说说你的理解以及实战场景"><a href="#什么是内部类，说说你的理解以及实战场景" class="headerlink" title="什么是内部类，说说你的理解以及实战场景"></a>什么是内部类，说说你的理解以及实战场景</h2><p>HashMap里面有大量的内部类，匿名内部类，局部内部类等等，下来自己看一下</p><p><img src="https://raw.githubusercontent.com/xiaofanshutu/typora2022/main/202304050827088.png" alt="image-20230405082700035"></p><h2 id="说说static和final在Java中的意义"><a href="#说说static和final在Java中的意义" class="headerlink" title="说说static和final在Java中的意义"></a>说说static和final在Java中的意义</h2><p>static不能修饰局部变量，static字段和static代码块谁先加载</p><p>如果子类里面有static，那么先加载子类还是先加载父类</p><h2 id="Java中的基本数据类型占多少个字节，不同的操作系统一样吗？"><a href="#Java中的基本数据类型占多少个字节，不同的操作系统一样吗？" class="headerlink" title="Java中的基本数据类型占多少个字节，不同的操作系统一样吗？"></a>Java中的基本数据类型占多少个字节，不同的操作系统一样吗？</h2><p>这个是JVM来决定的。不同操作系统占的字节一样，只不过占的空间不一样</p><h2 id="int和Integer有什么关联？为什么需要Integer？装箱拆箱"><a href="#int和Integer有什么关联？为什么需要Integer？装箱拆箱" class="headerlink" title="int和Integer有什么关联？为什么需要Integer？装箱拆箱"></a>int和Integer有什么关联？为什么需要Integer？装箱拆箱</h2><h2 id="为什么需要8种包装类型？"><a href="#为什么需要8种包装类型？" class="headerlink" title="为什么需要8种包装类型？"></a>为什么需要8种包装类型？</h2><p>因为java是面向对象的语言</p><h2 id="String-StringBuffer-StringBuilder的区别，以及String的常用方法？"><a href="#String-StringBuffer-StringBuilder的区别，以及String的常用方法？" class="headerlink" title="String, StringBuffer,StringBuilder的区别，以及String的常用方法？"></a>String, StringBuffer,StringBuilder的区别，以及String的常用方法？</h2><h2 id="什么是序列化，反序列化，说说运用场景？"><a href="#什么是序列化，反序列化，说说运用场景？" class="headerlink" title="什么是序列化，反序列化，说说运用场景？"></a>什么是序列化，反序列化，说说运用场景？</h2><p>反序列化的不安全问题如何解决？</p><p>应用场景：</p><p>dubbo</p><p>RTC手写自己的rpc框架里面</p><h2 id="数组有length-方法吗？"><a href="#数组有length-方法吗？" class="headerlink" title="数组有length()方法吗？"></a>数组有length()方法吗？</h2><h2 id="构造器是否可以被重写？构造器"><a href="#构造器是否可以被重写？构造器" class="headerlink" title="构造器是否可以被重写？构造器"></a>构造器是否可以被重写？构造器</h2><p>不可以</p><h2 id="char是否可以存储一个汉字"><a href="#char是否可以存储一个汉字" class="headerlink" title="char是否可以存储一个汉字"></a>char是否可以存储一个汉字</h2><p>可以</p><p>字符集和字符编码，解决乱码必学</p><h2 id="集合原理系列"><a href="#集合原理系列" class="headerlink" title="集合原理系列"></a>集合原理系列</h2><p>ArrayList</p><p>LinkedList： queue Deque</p><p>为什么现在舍弃Vector？</p><p>HashSet TreeSet</p><p>HashMap TreeMap LinkedMap（有序）</p><p>queue 阻塞队列</p><p>add remove element offer poll peek take</p><h2 id="Enumeration接口和Iterator接口的区别有哪些？"><a href="#Enumeration接口和Iterator接口的区别有哪些？" class="headerlink" title="Enumeration接口和Iterator接口的区别有哪些？"></a>Enumeration接口和Iterator接口的区别有哪些？</h2><p>Enumeration速度是迭代器的两倍，但是遍历的时候不能改里面的东西</p><h2 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h2><p>异常是用来干嘛的？也是一种代码分支的实现方式</p><h2 id="什么是事务？为什么需要事务？如何实现事务？事务隔离级别？"><a href="#什么是事务？为什么需要事务？如何实现事务？事务隔离级别？" class="headerlink" title="什么是事务？为什么需要事务？如何实现事务？事务隔离级别？"></a>什么是事务？为什么需要事务？如何实现事务？事务隔离级别？</h2><p>java事务类型有几种？</p><p>jdbc事务 jta事务 容器事务</p><h2 id="java修饰符以及各自的作用范围"><a href="#java修饰符以及各自的作用范围" class="headerlink" title="java修饰符以及各自的作用范围"></a>java修饰符以及各自的作用范围</h2><p>public protect 缺省 private</p><h1 id="linux"><a href="#linux" class="headerlink" title="linux"></a>linux</h1><p>什么是linux？如何安装使用linux</p><p>说说你常用的linux查看文件和文件夹的命令</p><p>如何递归删除文件夹和所有文件</p><p>如何拷贝，移动一个文件</p><p>如何查找一个文件</p><p>你还使用过哪些常用的linux命令</p><p>grep是什么命令？man是什么命令？</p><p>chmod是什么命令？如何使用？r,w,x/u,g,o/+,-/1,2,4各自代表什么含义？？</p><p>VI，VIM是什么？说说你常用的VI命令和按键</p><p>netstat命令的作用？如何使用？</p><p>kill命令如何使用？</p><p>ps和grep各自作用是什么？如何使用？</p><p>如何部署自己的项目到linux服务器？</p><p>什么是编辑视图，预览视图？</p><h1 id="Java-Web"><a href="#Java-Web" class="headerlink" title="Java Web"></a>Java Web</h1><p><img src="https://raw.githubusercontent.com/xiaofanshutu/typora2022/main/202304051013681.png" alt="image-20230405101324628"></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla</summary>
-      
-    
-    
-    
-    <category term="八股文" scheme="https://xiaofanshutu.github.io/categories/%E5%85%AB%E8%82%A1%E6%96%87/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Java网络编程</title>
-    <link href="https://xiaofanshutu.github.io/posts/81e7b834.html"/>
-    <id>https://xiaofanshutu.github.io/posts/81e7b834.html</id>
-    <published>2023-04-29T01:07:41.747Z</published>
-    <updated>2024-01-17T23:40:13.558Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><a id="more"></a><h1 id="网络编程"><a href="#网络编程" class="headerlink" title="网络编程"></a>网络编程</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><ul><li>计算机网络：计算机网络是指将地理位置不同的具有独立功能的多台计算机及其外部设备，通过通信线路连接起来，在网络操作系统，网络管理软件及网络通信协议的管理和协调下，实现资源共享和信息传递的计算机系统。</li><li>网络编程的目的：传播交流信息，数据交换</li><li>想要实现网络编程需要什么？：IP和端口号</li></ul><h3 id="网络编程-1"><a href="#网络编程-1" class="headerlink" title="网络编程"></a>网络编程</h3><p>C/S 最新类的机器人</p><h3 id="Java-Web"><a href="#Java-Web" class="headerlink" title="Java Web"></a>Java Web</h3><p>B/S</p><h2 id="网络通信的要素"><a href="#网络通信的要素" class="headerlink" title="网络通信的要素"></a>网络通信的要素</h2><ul><li>如何实现网络通信？<ul><li>地址<ul><li>IP</li><li>端口号</li></ul></li><li>规则：网络通信的协议</li></ul></li></ul><p>小结：</p><ol><li>网络编程中的两个主要问题<ul><li>如何准确定位到网络上的一台或者多台主机</li><li>找到主机之后如何进行通信</li></ul></li><li>网络编程中的要素：<ul><li>IP和端口号</li><li>网络通信协议UDP/TCP</li></ul></li><li>万物皆对象</li></ol><h2 id="IP"><a href="#IP" class="headerlink" title="IP"></a>IP</h2><ul><li>唯一定位一台网络上的计算机</li><li>127.0.0.1： 本机localhost</li><li>ip地址的分类<ul><li>IPV4/IPV6<ul><li>IPV4：127.0.0.1，4个字节组成，每一个字节0~255，全球总共42亿个，30亿在北美，亚洲只有4亿。2011年用尽了。</li><li>IPV6：128位，8个无符号整数</li></ul></li><li>公网（互联网）/ 私网（局域网）<ul><li>ABCD类地址</li></ul></li></ul></li><li>域名</li></ul><h3 id="练习：测试InetAddress的常用方法"><a href="#练习：测试InetAddress的常用方法" class="headerlink" title="练习：测试InetAddress的常用方法"></a>练习：测试InetAddress的常用方法</h3><h2 id="端口"><a href="#端口" class="headerlink" title="端口"></a>端口</h2><p>端口表示计算机上的一个程序的进程</p><ul><li><p>不同的进程有不同的端口号，用来区分软件</p></li><li><p>0~65535</p><ul><li>TCP/UDP: 65535*2。tcp:80 udp:80  单个协议下，端口号不能冲突</li></ul></li><li><p>分类</p><ul><li>公有端口： 0~1023<ul><li>HTTP: 80</li><li>HTTPS: 443</li><li>FTP: 21</li><li>Telent: 23</li></ul></li><li>程序注册端口：1024~49151，分配用户或者程序<ul><li>Tomcat: 8080</li><li>MySQL: 3306</li><li>Oracle: 1521</li></ul></li><li>动态/私有：49152~65535</li></ul></li><li><p>小技巧</p><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment">#查看所有的端口</span><br>netstat -ano<br><br><span class="hljs-comment">#查看指定端口</span><br>netstat -ano|findStr <span class="hljs-string">"7890"</span><br><br><span class="hljs-comment">#查看指定端口的进程</span><br>tasklist|findStr <span class="hljs-string">"3972"</span><br><br><span class="hljs-comment">#打开任务管理器的快捷键 Ctrl + Shift + Esc</span><br></code></pre></td></tr></tbody></table></figure></li></ul><p><img src="https://raw.githubusercontent.com/xiaofanshutu/typora2022/main/202211191729112.png"></p><p><img src="https://raw.githubusercontent.com/xiaofanshutu/typora2022/main/202211191730674.png"></p><p><img src="https://raw.githubusercontent.com/xiaofanshutu/typora2022/main/202211191730885.png"></p><p><img src="https://raw.githubusercontent.com/xiaofanshutu/typora2022/main/202211191730548.png"></p><p><img src="https://raw.githubusercontent.com/xiaofanshutu/typora2022/main/202211191730878.png"></p><ul><li><p>端口映射</p><p><img src="https://raw.githubusercontent.com/xiaofanshutu/typora2022/main/202211191736292.png"></p></li></ul><h3 id="练习：学习InetSocketAddress常用方法"><a href="#练习：学习InetSocketAddress常用方法" class="headerlink" title="练习：学习InetSocketAddress常用方法"></a>练习：学习InetSocketAddress常用方法</h3><h2 id="通信协议"><a href="#通信协议" class="headerlink" title="通信协议"></a>通信协议</h2><p>协议就是一种约定</p><h3 id="TCP-IP协议簇"><a href="#TCP-IP协议簇" class="headerlink" title="TCP/IP协议簇"></a>TCP/IP协议簇</h3><p>重要：</p><p>TCP：用户传输协议</p><p>UDP：用户数据报协议</p><p>有名的协议：</p><p>TCP：</p><p>IP：网络互连协议</p><h3 id="TCP-IP参考模型"><a href="#TCP-IP参考模型" class="headerlink" title="TCP/IP参考模型"></a>TCP/IP参考模型</h3><p><img src="https://raw.githubusercontent.com/xiaofanshutu/typora2022/main/202211191741115.png"></p><h3 id="TCP-UDP对比"><a href="#TCP-UDP对比" class="headerlink" title="TCP/UDP对比"></a>TCP/UDP对比</h3><ul><li><p>TCP：打电话</p><ul><li><p>连接，稳定</p></li><li><p>三次握手，四次挥手</p><figure class="highlight avrasm"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs avrasm">最少需要三次，保证稳定连接<br><span class="hljs-symbol">A:</span>你瞅啥？<br><span class="hljs-symbol">B:</span>瞅你咋地？<br><span class="hljs-symbol">A:</span>干一场<br><br><span class="hljs-symbol">A:</span>我要走了<br><span class="hljs-symbol">B:</span>你真的要走了吗？<br><span class="hljs-symbol">B:</span>你真的真的要走了吗？<br><span class="hljs-symbol">A:</span>我真的要走了<br></code></pre></td></tr></tbody></table></figure><p><img src="https://raw.githubusercontent.com/xiaofanshutu/typora2022/main/202211191750706.png"></p></li></ul></li></ul><p>  <img src="https://raw.githubusercontent.com/xiaofanshutu/typora2022/main/202211191751731.png"></p><ul><li><p>客户端，服务端</p></li><li><p>传输完成，释放连接，效率低</p></li><li><p>UDP：发短信</p><ul><li>不连接，不稳定</li><li>客户端，服务端：没有明确的界限</li><li>不管有没有准备好，都可以发给你</li><li>导弹</li><li>DDOS：洪水攻击（饱和攻击）</li></ul></li></ul><h2 id=""><a href="#" class="headerlink" title=""></a></h2>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla</summary>
-      
-    
-    
-    
-    <category term="Java基础" scheme="https://xiaofanshutu.github.io/categories/Java%E5%9F%BA%E7%A1%80/"/>
     
     
   </entry>

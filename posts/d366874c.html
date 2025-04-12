@@ -1,0 +1,811 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="集合概述 Java集合中存储的是引用，存的不是堆中的对象。堆中的对象的地址存储到了集合中。 默认情况下，如果不使用泛型，集合中可以存储任何类型的引用。（只要是Object类的子类都可以存储） Java集合框架相关的类都在java.util包下。 Java集合框架分为两部分： Collection结构：元素以单个形式存储。 Map结构：元素以键值对的映射关系存储。    Collection继承结构">
+<meta property="og:type" content="article">
+<meta property="og:title" content="集合">
+<meta property="og:url" content="https://xiaofanshutu.github.io/posts/d366874c.html">
+<meta property="og:site_name" content="yubiii">
+<meta property="og:description" content="集合概述 Java集合中存储的是引用，存的不是堆中的对象。堆中的对象的地址存储到了集合中。 默认情况下，如果不使用泛型，集合中可以存储任何类型的引用。（只要是Object类的子类都可以存储） Java集合框架相关的类都在java.util包下。 Java集合框架分为两部分： Collection结构：元素以单个形式存储。 Map结构：元素以键值对的映射关系存储。    Collection继承结构">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250412180840197.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250412183545975.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250412190556190.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250412190641158.png">
+<meta property="article:published_time" content="2025-04-11T12:10:19.347Z">
+<meta property="article:modified_time" content="2025-04-12T11:49:23.908Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250412180840197.png">
+  
+  
+  
+  <title>集合 - yubiii</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"xiaofanshutu.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 5.2.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="yubiii" type="application/atom+xml">
+</head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="集合"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-04-11 20:10" pubdate>
+          2025年4月11日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          1.7k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          15 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">集合</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="集合概述"><a href="#集合概述" class="headerlink" title="集合概述"></a>集合概述</h1><ol>
+<li>Java集合中存储的是引用，存的不是堆中的对象。堆中的对象的地址存储到了集合中。</li>
+<li>默认情况下，如果不使用泛型，集合中可以存储任何类型的引用。（只要是Object类的子类都可以存储）</li>
+<li>Java集合框架相关的类都在java.util包下。</li>
+<li>Java集合框架分为两部分：<ul>
+<li>Collection结构：元素以单个形式存储。</li>
+<li>Map结构：元素以键值对的映射关系存储。</li>
+</ul>
+</li>
+</ol>
+<h1 id="Collection继承结构"><a href="#Collection继承结构" class="headerlink" title="Collection继承结构"></a>Collection继承结构</h1><p><img src="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250412180840197.png" srcset="/img/loading.gif" lazyload alt="image-20250412180840197"></p>
+<ol>
+<li><p>上图6个蓝色的实现类中，只有HashSet是无序集合，其他都是有序集合。</p>
+<ul>
+<li><p>有序集合：集合中存储的元素有下标 <strong>或者</strong> 集合中存储的元素是可排序的</p>
+</li>
+<li><p>无序集合： 集合中存储的元素没有下标 <strong>并且</strong> 集合中存储的元素也没有排序</p>
+</li>
+</ul>
+</li>
+<li><p>每个集合实现类对应的数据结构：</p>
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>集合类型</th>
+<th>数据结构</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ArrayList</td>
+<td>数组</td>
+<td>一种可以动态增长和缩减的索引序列</td>
+</tr>
+<tr>
+<td>LinkedList</td>
+<td>双向链表（不是队列结构，但是可以用它模拟队列）</td>
+<td>一种可以在任何位置进行高效插入和删除操作的有序序列</td>
+</tr>
+<tr>
+<td>Vector</td>
+<td>数组（线程安全）</td>
+<td></td>
+</tr>
+<tr>
+<td>HashSet</td>
+<td>哈希表</td>
+<td>一种没有重复元素的无序集合</td>
+</tr>
+<tr>
+<td>LinkedHashSet</td>
+<td>双向链表+哈希表</td>
+<td>一种可以记住元素插入次序的集</td>
+</tr>
+<tr>
+<td>TreeSet</td>
+<td>红黑树</td>
+<td>一种有序集</td>
+</tr>
+</tbody></table>
+<ol start="3">
+<li>List集合中存储的元素可以重复，Set集合中的元素不可重复。</li>
+</ol>
+<h1 id="Collection接口的常用方法"><a href="#Collection接口的常用方法" class="headerlink" title="Collection接口的常用方法"></a>Collection接口的常用方法</h1><table>
+<thead>
+<tr>
+<th>方法</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>boolean add(E e);</td>
+<td>向集合中添加元素</td>
+</tr>
+<tr>
+<td>int size();</td>
+<td>获取集合中元素个数</td>
+</tr>
+<tr>
+<td>boolean addAll(Collection c);</td>
+<td>将参数集合中所有元素全部加入当前集合</td>
+</tr>
+<tr>
+<td>boolean contains(Object o);</td>
+<td>判断集合中是否包含对象o</td>
+</tr>
+<tr>
+<td>boolean remove(Object o);</td>
+<td>从集合中删除对象o</td>
+</tr>
+<tr>
+<td>void clear();</td>
+<td>清空集合</td>
+</tr>
+<tr>
+<td>boolean isEmpty();</td>
+<td>判断集合中元素个数是否为0</td>
+</tr>
+<tr>
+<td>Object[] toArray();</td>
+<td>将集合转换成一维数组</td>
+</tr>
+</tbody></table>
+<p>这里有疑问：为什么col.toArray()返回的是地址？？？    </p>
+<h2 id="add-E-e-amp-size-amp-toArray"><a href="#add-E-e-amp-size-amp-toArray" class="headerlink" title="add(E e) &amp; size() &amp; toArray()"></a>add(E e) &amp; size() &amp; toArray()</h2><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs java">Collection col = <span class="hljs-keyword">new</span> ArrayList();<br><span class="hljs-comment">//add(E e)</span><br>col.add(<span class="hljs-string">"zhangsan"</span>);<br>col.add(<span class="hljs-number">123</span>);<br>col.add(<span class="hljs-keyword">true</span>);<br>System.out.println(col); <span class="hljs-comment">// [zhangsan, 123, true]</span><br>System.out.println(col.toArray());<span class="hljs-comment">// [Ljava.lang.Object;@1b6d3586</span><br><br><span class="hljs-comment">//size()</span><br>System.out.println(col.size());<span class="hljs-comment">// 3</span><br></code></pre></td></tr></tbody></table></figure>
+
+<h2 id="addAll-Collection-c"><a href="#addAll-Collection-c" class="headerlink" title="addAll(Collection c)"></a>addAll(Collection c)</h2><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//addAll(Collection c)</span><br>Collection col2 = <span class="hljs-keyword">new</span> ArrayList();<br>col2.add(<span class="hljs-string">"好好学习，天天向上"</span>);<br>col2.add(<span class="hljs-string">"you are the best~"</span>);<br>col.addAll(col2); <span class="hljs-comment">// 将col2中的元素添加到col中</span><br>System.out.println(col);<br></code></pre></td></tr></tbody></table></figure>
+
+<p>遇到问题：控制台中文乱码</p>
+<p><img src="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250412183545975.png" srcset="/img/loading.gif" lazyload alt="image-20250412183545975"></p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//addAll(Collection c)</span><br>Collection col2 = <span class="hljs-keyword">new</span> ArrayList();<br>col2.add(<span class="hljs-string">"hello~"</span>);<br>col.addAll(col2); <span class="hljs-comment">// 将col2中的元素添加到col中</span><br>System.out.println(col);<span class="hljs-comment">// [zhangsan, 123, true, hello~]</span><br></code></pre></td></tr></tbody></table></figure>
+
+<h2 id="contains-Object-o"><a href="#contains-Object-o" class="headerlink" title="contains(Object o)"></a>contains(Object o)</h2><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//contains(Object o)</span><br>System.out.println(col.contains(<span class="hljs-string">"zhangsan"</span>)); <span class="hljs-comment">// true</span><br>System.out.println(col.contains(<span class="hljs-keyword">new</span> String(<span class="hljs-string">"zhangsan"</span>))); <span class="hljs-comment">// true</span><br></code></pre></td></tr></tbody></table></figure>
+
+<h2 id="remove-Object-o"><a href="#remove-Object-o" class="headerlink" title="remove(Object o)"></a>remove(Object o)</h2><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java">System.out.println(col);<span class="hljs-comment">//[zhangsan, 123, true, hello~]</span><br>col.remove(<span class="hljs-string">"zhangsan"</span>); <span class="hljs-comment">// 删除元素</span><br>System.out.println(col);<span class="hljs-comment">//[123, true, hello~]</span><br></code></pre></td></tr></tbody></table></figure>
+
+<h2 id="clear-amp-isEmpty"><a href="#clear-amp-isEmpty" class="headerlink" title="clear() &amp; isEmpty()"></a>clear() &amp; isEmpty()</h2><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs java">System.out.println(col);<span class="hljs-comment">// [123, true, hello~]</span><br>col.clear();<br>System.out.println(col);<span class="hljs-comment">// []</span><br>System.out.println(col.isEmpty()); <span class="hljs-comment">// true</span><br></code></pre></td></tr></tbody></table></figure>
+
+
+
+<h1 id="Collection集合的遍历"><a href="#Collection集合的遍历" class="headerlink" title="Collection集合的遍历"></a>Collection集合的遍历</h1><p>第一步：获取当前集合依赖的迭代器对象</p>
+<p>​    Iterator it = collection.iterator();</p>
+<p>第二步：编写循环，循环条件：当前光标指向的位置是否存在元素。</p>
+<p>​    while(it.hasNext()){}</p>
+<p>第三步：如果有，将光标指向的当前元素返回，并且将光标向下移动一位。</p>
+<p>​    Object obj = it.next();</p>
+<p><img src="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250412190556190.png" srcset="/img/loading.gif" lazyload alt="image-20250412190556190"></p>
+<p><img src="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250412190641158.png" srcset="/img/loading.gif" lazyload alt="image-20250412190641158"></p>
+<h1 id="泛型"><a href="#泛型" class="headerlink" title="泛型"></a>泛型</h1><ol>
+<li><p>泛型是Java5的新特性，属于编译阶段的功能。</p>
+</li>
+<li><p>泛型可以让开发者在编写代码时指定集合中存储数据的数据类型。</p>
+</li>
+<li><p>泛型作用：</p>
+<ul>
+<li>类型安全：指定类型后，编译期会在编译阶段进行类型检查。如果尝试将错误的类型加入集合中，则会在编译阶段报错。避免了在运行时出现类型错误的问题。</li>
+<li>代码简洁：使用泛型后可以简化代码，避免了繁琐的类型转换操作。没有泛型的时候，需要使用Object类型来保存集合中的元素，在使用时需要强制类型转换成实际类型。</li>
+</ul>
+</li>
+<li><p>在集合中使用泛型</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs java">Collection&lt;String&gt; strs = <span class="hljs-keyword">new</span> ArrayList&lt;String&gt;();<br><span class="hljs-comment">//这就表示该集合只能存储字符串，存储其它类型时编译器报错。并且以上代码使用泛型后，避免了繁琐的类型转换，集合中的元素可以直接调用String类特有的方法。</span><br></code></pre></td></tr></tbody></table></figure>
+</li>
+<li><p>Java7的新特性：钻石表达式</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java">Collection&lt;String&gt; strs = <span class="hljs-keyword">new</span> ArrayList&lt;&gt;();<br></code></pre></td></tr></tbody></table></figure>
+
+</li>
+</ol>
+<h2 id="泛型擦除与补偿"><a href="#泛型擦除与补偿" class="headerlink" title="泛型擦除与补偿"></a>泛型擦除与补偿</h2><ol>
+<li><p>泛型的出现提高了编译时的安全性，正因为编译时对添加的数据做了检查，则程序运行时才不会抛出类型转换异常。因此泛型本质上是编译时期的技术，是专门给编译器用的。加载类的时候，会将泛型擦除掉（擦除之后的类型为Object类型），这个称为<strong>泛型擦除</strong>。</p>
+</li>
+<li><p>为什么要有泛型擦除呢？其本质是为了让JDK1.4和JDK1.5能够兼容同一个类加载器。在JDK1.5版本中，程序编译时期会对集合添加的元素进行安全检查，如果检查完是安全的、没有错误的，那么就意味着添加的元素都属于同一种数据类型，则加载类时就可以把这个泛型擦除掉，将泛型擦除后的类型就是Object类，这样擦除之后的代码就与JDK1.4的代码一致。</p>
+</li>
+<li><p>由于加载类的时候，会默认将类中的泛型擦除为Object类型，所以添加的元素就被转化为Object类型，同时取出的元素也默认为Object类型。而我们获得集合中的元素时，按理说取出的元素应该是Object类型，为什么取出的元素却是实际添加的元素类型呢？</p>
+<p>这是因为这里又做了一个默认的操作，我们称之为<strong>泛型的补偿</strong>。在程序运行时，通过获取元素的实际类型进行强转，这就叫做泛型补偿（不必手动实现强制转换）。获得集合中的元素时，虚拟机会根据获得元素的实际类型进行向下转型，也就是会恢复获得元素的实际类型，因此我们就无需手动执行向下转型操作，从本质上避免了抛出类型转换异常。</p>
+</li>
+</ol>
+<h2 id="泛型的使用"><a href="#泛型的使用" class="headerlink" title="泛型的使用"></a>泛型的使用</h2><h3 id="在类上定义泛型"><a href="#在类上定义泛型" class="headerlink" title="在类上定义泛型"></a>在类上定义泛型</h3><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">package</span> com.powernode.javase.collection.Summer;<br><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyAnimal</span>&lt;<span class="hljs-title">String</span>, <span class="hljs-title">Integer</span>&gt; </span>{<br>    <span class="hljs-keyword">private</span> String name;<br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> age;<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">MyAnimal</span><span class="hljs-params">(String name, <span class="hljs-keyword">int</span> age)</span> </span>{<br>        <span class="hljs-keyword">this</span>.name = name;<br>        <span class="hljs-keyword">this</span>.age = age;<br>    }<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">getName</span><span class="hljs-params">()</span> </span>{<br>        <span class="hljs-keyword">return</span> name;<br>    }<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setName</span><span class="hljs-params">(String name)</span> </span>{<br>        <span class="hljs-keyword">this</span>.name = name;<br>    }<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">getAge</span><span class="hljs-params">()</span> </span>{<br>        <span class="hljs-keyword">return</span> age;<br>    }<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setAge</span><span class="hljs-params">(<span class="hljs-keyword">int</span> age)</span> </span>{<br>        <span class="hljs-keyword">this</span>.age = age;<br>    }<br><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> java.lang.<span class="hljs-function">String <span class="hljs-title">toString</span><span class="hljs-params">()</span> </span>{<br>        <span class="hljs-keyword">return</span> <span class="hljs-string">"MyAnimal{"</span> +<br>                <span class="hljs-string">"name="</span> + name +<br>                <span class="hljs-string">", age="</span> + age +<br>                <span class="hljs-string">'}'</span>;<br>    }<br>}<br><br></code></pre></td></tr></tbody></table></figure>
+
+
+
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//这种可以直接调用String或者Integer类特有的方法（因为声明泛型的时候直接指定了泛型类型是String和Object）</span><br>MyAnimal&lt;String, Integer&gt; myAnimal = <span class="hljs-keyword">new</span> MyAnimal&lt;&gt;(<span class="hljs-string">"dog"</span>, <span class="hljs-number">2</span>);<br>System.out.println(myAnimal.getName().charAt(<span class="hljs-number">1</span>));<br><br><span class="hljs-comment">//这种的不能直接调用String或者Integer类特有的方法</span><br>MyAnimal&lt;Object, Object&gt; myAnimal1 = <span class="hljs-keyword">new</span> MyAnimal&lt;&gt;(<span class="hljs-string">"cat"</span>, <span class="hljs-number">0</span>);<br><span class="hljs-comment">//myAnimal1.getName().charAt(1); 调用不了这个方法</span><br></code></pre></td></tr></tbody></table></figure>
+
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Java/" class="category-chain-item">Java</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>集合</div>
+      <div>https://xiaofanshutu.github.io/posts/d366874c.html</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>John Doe</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2025年4月11日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/posts/566321e7.html" title="IDEA常用快捷键">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">IDEA常用快捷键</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/posts/6dd21eef.html" title="常用类_String类">
+                        <span class="hidden-mobile">常用类_String类</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
