@@ -30,8 +30,9 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250412183545975.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250412190556190.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250412190641158.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250414204339412.png">
 <meta property="article:published_time" content="2025-04-11T12:10:19.347Z">
-<meta property="article:modified_time" content="2025-04-12T11:54:07.251Z">
+<meta property="article:modified_time" content="2025-04-14T14:31:02.035Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250412180840197.png">
@@ -230,7 +231,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.7k 字
+          4k 字
         
       </span>
     
@@ -241,7 +242,7 @@
         
         
         
-          15 分钟
+          34 分钟
         
       </span>
     
@@ -447,6 +448,279 @@
 
 <figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//这种可以直接调用String或者Integer类特有的方法（因为声明泛型的时候直接指定了泛型类型是String和Object）</span><br>MyAnimal&lt;String, Integer&gt; myAnimal = <span class="hljs-keyword">new</span> MyAnimal&lt;&gt;(<span class="hljs-string">"dog"</span>, <span class="hljs-number">2</span>);<br>System.out.println(myAnimal.getName().charAt(<span class="hljs-number">1</span>));<br><br><span class="hljs-comment">//这种的不能直接调用String或者Integer类特有的方法</span><br>MyAnimal&lt;Object, Object&gt; myAnimal1 = <span class="hljs-keyword">new</span> MyAnimal&lt;&gt;(<span class="hljs-string">"cat"</span>, <span class="hljs-number">0</span>);<br><span class="hljs-comment">//myAnimal1.getName().charAt(1); 调用不了这个方法</span><br></code></pre></td></tr></tbody></table></figure>
 
+
+
+<h3 id="在静态方法上定义泛型"><a href="#在静态方法上定义泛型" class="headerlink" title="在静态方法上定义泛型"></a>在静态方法上定义泛型</h3><ol>
+<li><p>在类上定义的泛型，在静态方法中无法使用。</p>
+</li>
+<li><p>如果在静态方法中使用泛型，则需要在方法返回值类型前面进行泛型的声明。</p>
+<ul>
+<li><strong>语法格式：&lt;泛型1, 泛型2, 泛型3, …&gt; 返回值类型 方法名(形参列表) {}</strong></li>
+</ul>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">A</span> </span>{<br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> &lt;T&gt; <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">print</span><span class="hljs-params">(T[] t)</span> </span>{<br>        <span class="hljs-keyword">for</span> (T t1 : t) {<br>            System.out.println(t1);<br>        }<br>    }<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{<br>        String[] strs = {<span class="hljs-string">"a"</span>, <span class="hljs-string">"b"</span>, <span class="hljs-string">"c"</span>};<br>        Integer[] ints = {<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>};<br>        Double[] doubles = {<span class="hljs-number">1.1</span>, <span class="hljs-number">2.2</span>, <span class="hljs-number">3.3</span>};<br><br>        A.print(strs);<br>        System.out.println(<span class="hljs-string">"=========="</span>);<br>        A.print(ints);<br>        System.out.println(<span class="hljs-string">"=========="</span>);<br>        A.print(doubles);<br>    }<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+<p>结果：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs java">a<br>b<br>c<br>==========<br><span class="hljs-number">1</span><br><span class="hljs-number">2</span><br><span class="hljs-number">3</span><br>==========<br><span class="hljs-number">1.1</span><br><span class="hljs-number">2.2</span><br><span class="hljs-number">3.3</span><br></code></pre></td></tr></tbody></table></figure>
+
+
+
+</li>
+</ol>
+<h3 id="在接口上定义泛型"><a href="#在接口上定义泛型" class="headerlink" title="在接口上定义泛型"></a>在接口上定义泛型</h3><p><strong>语法格式：interface 接口名&lt;泛型1,泛型2,…&gt; {}</strong></p>
+<ul>
+<li>例如：public interface Flayable<t>{}<ul>
+<li>实现接口时，如果知道具体的类型，则：public class MyClass implements Flyable<bird>{}</bird></li>
+<li>实现接口时，如果不知道具体的类型，则：public class MyClass<t> implements Flyable<t>{}</t></t></li>
+</ul>
+</t></li>
+</ul>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">/*</span><br><span class="hljs-comment">	定义一个泛型接口</span><br><span class="hljs-comment">*/</span><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">MyFlyable</span>&lt;<span class="hljs-title">T</span>&gt; </span>{<br>    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">fly</span><span class="hljs-params">(T t)</span></span>;<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+
+
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">/*</span><br><span class="hljs-comment">	B类实现接口时，指定具体类型为Bird</span><br><span class="hljs-comment">*/</span><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">B</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">MyFlyable</span>&lt;<span class="hljs-title">Bird</span>&gt; </span>{<br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">fly</span><span class="hljs-params">(Bird bird)</span> </span>{<br>        System.out.println(<span class="hljs-string">"Bird "</span> + bird.getName() + <span class="hljs-string">" is flying."</span>);<br>    }<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+<p>​    </p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">/*</span><br><span class="hljs-comment">	C类实现接口时，未指定具体类型</span><br><span class="hljs-comment">*/</span><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">C</span>&lt;<span class="hljs-title">T</span>&gt; <span class="hljs-keyword">implements</span> <span class="hljs-title">MyFlyable</span>&lt;<span class="hljs-title">T</span>&gt; </span>{<br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">fly</span><span class="hljs-params">(T t)</span> </span>{<br>        <span class="hljs-keyword">if</span> (t <span class="hljs-keyword">instanceof</span> Bird) {<br>            System.out.println(<span class="hljs-string">"Bird "</span> + ((Bird) t).getName() + <span class="hljs-string">" is flying."</span>);<br>        } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (t <span class="hljs-keyword">instanceof</span> Dragon) {<br>            System.out.println(<span class="hljs-string">"Dragon "</span> + ((Dragon) t).getName() + <span class="hljs-string">" is flying."</span>);<br>        } <span class="hljs-keyword">else</span> {<br>            System.out.println(<span class="hljs-string">"Unknown type is flying."</span>);<br>        }<br>    }<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+
+
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs java">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{<br>        Bird bird = <span class="hljs-keyword">new</span> Bird(<span class="hljs-string">"xiaohuangli"</span>);<br>        Dragon dragon = <span class="hljs-keyword">new</span> Dragon(<span class="hljs-string">"xiaolongren"</span>);<br><br>        B b = <span class="hljs-keyword">new</span> B();<br>        b.fly(bird);<br>        <span class="hljs-comment">//会报错,因为B类只接受Bird类型的参数</span><br><span class="hljs-comment">//        b.fly(dragon);</span><br><br>        C c = <span class="hljs-keyword">new</span> C();<br>        c.fly(dragon);<br>        c.fly(bird);<br>    }<br></code></pre></td></tr></tbody></table></figure>
+
+
+
+<p>结果：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java">Bird xiaohuangli is flying.<br>Dragon xiaolongren is flying.<br>Bird xiaohuangli is flying.<br></code></pre></td></tr></tbody></table></figure>
+
+
+
+<h3 id="泛型通配符-泛型的使用，不属于定义了"><a href="#泛型通配符-泛型的使用，不属于定义了" class="headerlink" title="泛型通配符(泛型的使用，不属于定义了)"></a>泛型通配符(泛型的使用，不属于定义了)</h3><ol>
+<li>无限定通配符，&lt;?&gt;，此处“？”可以为任意引用数据类型。</li>
+<li>上限通配符，&lt;? extends Number&gt;，此处“？”必须为Number及其子类。</li>
+<li>下限通配符，&lt;? super Number&gt;，此处“？”必须为Number及其父类。</li>
+</ol>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Test</span> </span>{<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{<br>        <span class="hljs-comment">//什么类型都可以接收</span><br>        print(<span class="hljs-keyword">new</span> ArrayList&lt;String&gt;());<br>        print(<span class="hljs-keyword">new</span> ArrayList&lt;Object&gt;());<br>        print(<span class="hljs-keyword">new</span> ArrayList&lt;Integer&gt;());<br><br>        <span class="hljs-comment">//报错，这里需要的是BB或者BB的子类</span><br>        <span class="hljs-comment">//print2(new ArrayList&lt;AA&gt;());</span><br>        print2(<span class="hljs-keyword">new</span> ArrayList&lt;BB&gt;());<br>        print2(<span class="hljs-keyword">new</span> ArrayList&lt;CC&gt;());<br>        <br>        print3(<span class="hljs-keyword">new</span> ArrayList&lt;AA&gt;());<br>        print3(<span class="hljs-keyword">new</span> ArrayList&lt;BB&gt;());<br>        <span class="hljs-comment">//报错，这里需要的是BB或者BB的父类</span><br>        <span class="hljs-comment">//print3(new ArrayList&lt;CC&gt;());</span><br>    }<br><br>    <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">print</span><span class="hljs-params">(ArrayList&lt;?&gt; list)</span></span>{<br>        System.out.println(list);<br>    }<br><br>    <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">print2</span><span class="hljs-params">(ArrayList&lt;? extends BB&gt; list)</span></span>{<br>        System.out.println(list);<br>    }<br><br>    <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">print3</span><span class="hljs-params">(ArrayList&lt;? <span class="hljs-keyword">super</span> BB&gt; list)</span></span>{<br>        System.out.println(list);<br>    }<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+
+
+<h3 id="迭代时删除元素"><a href="#迭代时删除元素" class="headerlink" title="迭代时删除元素"></a>迭代时删除元素</h3><ol>
+<li>迭代集合时删除元素<ul>
+<li>使用“集合对象.remove(元素)”：会出现ConcurrentModificationException异常。</li>
+<li>使用“迭代器对象.remove()”：不会出现异常。</li>
+</ul>
+</li>
+<li>如何解决并发修改问题？答案：fail-fast机制<ul>
+<li>fail-fast机制又被称为“快速失败机制”。只要程序发现对集合进行了并发修改，就会立即让其失败，以防出错。</li>
+</ul>
+</li>
+<li>fail-fast机制是如何实现的？<ul>
+<li>集合中设置了一个modCount属性，用来记录修改次数，使用集合对象执行增，删，改中任意一个操作时，modCount就会自动加1。</li>
+<li>获取迭代器对象的时候，会给迭代器对象初始化一个expectedModCount属性。并且将expectedModCount初始化为modCount，即：int expectedModCount = modCount;</li>
+<li>当使用集合对象删除元素时：modCount会加1。但是迭代器中的expectedModCount不会加1。而当迭代器对象的next()方法执行时，会检测expectedModCount和modCount是否相等，如果不相等，则抛出：ConcurrentModificationException异常。</li>
+<li>当使用迭代器删除元素的时候：modCount会加1，并且expectedModCount也会加1。这样当迭代器对象的next()方法执行时，检测到的expectedModCount和modCount相等，则不会出现ConcurrentModificationException异常。</li>
+</ul>
+</li>
+<li>注意：虽然我们当前写的程序是单线程的程序，并没有使用多线程，但是通过迭代器去遍历的同时使用集合去删除元素，这个行为将被认定为并发修改。</li>
+<li>结论：迭代集合时，删除元素要使用“迭代器对象.remove()”方法来删除，避免使用“集合对象.remove(元素)”。主要是为了避免ConcurrentModificationException异常的发生。<strong>注意：迭代器的remove()方法删除的是next()方法的返回的那个数据。remove()方法调用之前一定是先调用了next()方法，如果不是这样的，就会报错。</strong></li>
+</ol>
+<p>获取迭代器对象的时候，会给迭代器对象初始化一个expectedModCount属性。并且将expectedModCount初始化为modCount，即：int expectedModCount = modCount;</p>
+<p>​    java.util.ArrayList#iterator</p>
+<p><img src="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250414204339412.png" srcset="/img/loading.gif" lazyload alt="image-20250414204339412"></p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{<br>    ArrayList&lt;Integer&gt; integers = <span class="hljs-keyword">new</span> ArrayList&lt;&gt;();<br>    integers.add(<span class="hljs-number">1</span>);<br>    integers.add(<span class="hljs-number">2</span>);<br>    integers.add(<span class="hljs-number">3</span>);<br><br>    Iterator&lt;Integer&gt; iterator = integers.iterator();<br>    <span class="hljs-keyword">while</span> (iterator.hasNext()) {<br>        Integer integer = iterator.next();<br>        <span class="hljs-keyword">if</span>(integer == <span class="hljs-number">2</span>) {<br>            iterator.remove();<br>        }<br>    }<br><br>    <span class="hljs-keyword">for</span> (Integer integer : integers) {<br>        System.out.println(integer);<br>    }<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+
+
+<p>结果：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-number">1</span><br><span class="hljs-number">3</span><br></code></pre></td></tr></tbody></table></figure>
+
+
+
+
+
+
+
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{<br>        ArrayList&lt;Integer&gt; integers = <span class="hljs-keyword">new</span> ArrayList&lt;&gt;();<br>        integers.add(<span class="hljs-number">1</span>);<br>        integers.add(<span class="hljs-number">2</span>);<br>        integers.add(<span class="hljs-number">3</span>);<br><br>        Iterator&lt;Integer&gt; iterator = integers.iterator();<br>        <span class="hljs-keyword">while</span> (iterator.hasNext()) {<br>            Integer integer = iterator.next();<br>            <span class="hljs-keyword">if</span>(integer == <span class="hljs-number">2</span>) {<br>                integers.remove(integer);<span class="hljs-comment">//没有异常，为什么</span><br>            }<br>        }<br><br>        <span class="hljs-keyword">for</span> (Integer integer : integers) {<br>            System.out.println(integer);<br>        }<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+
+
+
+
+<h1 id="List接口"><a href="#List接口" class="headerlink" title="List接口"></a>List接口</h1><h2 id="List接口常用方法"><a href="#List接口常用方法" class="headerlink" title="List接口常用方法"></a>List接口常用方法</h2><ol>
+<li><p>List集合存储的元素特点：有序可重复</p>
+</li>
+<li><p>List接口下的常见实现类：</p>
+<ul>
+<li>ArrayList：数组</li>
+<li>Vector, Stack：数组（且线程安全）</li>
+<li>LinkedList：双向链表</li>
+</ul>
+</li>
+<li><p>List接口特有方法</p>
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>void add(int index, E element)</td>
+<td>在指定索引处插入元素</td>
+</tr>
+<tr>
+<td>E set(int index, E element)</td>
+<td>修改索引处的元素</td>
+</tr>
+<tr>
+<td>E get(int index)</td>
+<td>根据索引获取元素（因为有这个方法，所以可以根据下标遍历List集合）</td>
+</tr>
+<tr>
+<td>E remove(int index)</td>
+<td>删除索引处的元素</td>
+</tr>
+<tr>
+<td>int indexOf(Object o)</td>
+<td>获取对象o在当前集合中第一次出现时的索引。</td>
+</tr>
+<tr>
+<td>int lastIndexOf(Object o)</td>
+<td>获取对象o在当前集合中最后一次出现时的索引。</td>
+</tr>
+<tr>
+<td>List<e> subList(int fromIndex, int toIndex)</e></td>
+<td>截取子List集合生成一个新集合（对原集合无影响）。[fromIndex, toIndex)</td>
+</tr>
+<tr>
+<td>static List<e> of(E… elements)</e></td>
+<td>静态方法，返回包含任意数量元素的不可修改列表。（获取的集合是只读的，不可修改的。）</td>
+</tr>
+</tbody></table>
+<p>通过下标遍历List集合</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{<br>    ArrayList&lt;String&gt; animals = <span class="hljs-keyword">new</span> ArrayList&lt;&gt;();<br>    animals.add(<span class="hljs-string">"Dog"</span>);<br>    animals.add(<span class="hljs-string">"Cat"</span>);<br>    animals.add(<span class="hljs-string">"Bird"</span>);<br>    animals.add(<span class="hljs-string">"Fish"</span>);<br>    animals.add(<span class="hljs-string">"Lizard"</span>);<br><br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; animals.size(); i++) {<br>        String animal = animals.get(i);<br>        System.out.println(animal);<br>    }<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+<p>结果：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java">Dog<br>Cat<br>Bird<br>Fish<br>Lizard<br></code></pre></td></tr></tbody></table></figure>
+
+
+
+
+
+<p>测试subList</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{<br>    List&lt;String&gt; animals = <span class="hljs-keyword">new</span> ArrayList&lt;&gt;();<br>    animals.add(<span class="hljs-string">"Dog"</span>);<br>    animals.add(<span class="hljs-string">"Cat"</span>);<br>    animals.add(<span class="hljs-string">"Bird"</span>);<br>    animals.add(<span class="hljs-string">"Fish"</span>);<br>    animals.add(<span class="hljs-string">"Lizard"</span>);<br><br>    List&lt;String&gt; newAnimals = <span class="hljs-keyword">new</span> ArrayList&lt;&gt;();<br>    newAnimals = animals.subList(<span class="hljs-number">2</span>, <span class="hljs-number">4</span>); <span class="hljs-comment">//实际获取到的是下标2和3的元素</span><br>    ListIterator&lt;String&gt; listIterator = newAnimals.listIterator();<br>    <span class="hljs-keyword">while</span> (listIterator.hasNext()) {<br>        String next = listIterator.next();<br>        System.out.println(next);<br>    }<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+
+
+<p>结果：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs java">Bird<br>Fish<br></code></pre></td></tr></tbody></table></figure>
+
+
+
+<p>测试of(E… elements)</p>
+<p>❓疑问：这里为什么是? extends Serializable，这个代码是我的Idea自动生成的</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs java">List&lt;? extends Serializable&gt; hello = List.of(<span class="hljs-number">1</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-string">"hello"</span>, <span class="hljs-keyword">true</span>, <span class="hljs-number">1.2f</span>);<br><span class="hljs-keyword">for</span> (Serializable s : hello) {<br>    System.out.println(s);<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+<p>结果：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-number">1</span><br><span class="hljs-number">3</span><br><span class="hljs-number">4</span><br><span class="hljs-number">5</span><br>hello<br><span class="hljs-keyword">true</span><br><span class="hljs-number">1.2</span><br></code></pre></td></tr></tbody></table></figure>
+
+
+
+
+
+<h2 id="List接口特有迭代器"><a href="#List接口特有迭代器" class="headerlink" title="List接口特有迭代器"></a>List接口特有迭代器</h2><ol>
+<li>特有的迭代方式</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ListIterator<e> listIterator()</e></td>
+<td>获取List集合特有的迭代器（该迭代器功能更加强大，但只适合于List集合使用）</td>
+</tr>
+<tr>
+<td>ListIterator<e> listIterator(int index)</e></td>
+<td>从列表中的指定位置开始，返回列表中元素的列表迭代器</td>
+</tr>
+</tbody></table>
+<ol start="2">
+<li>ListIterator接口中常用方法</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>boolean hasNext()</td>
+<td>判断光标当前指向的位置是否存在元素。</td>
+</tr>
+<tr>
+<td>E next()</td>
+<td>将当前光标指向的元素返回，然后将光标向下移动一位。</td>
+</tr>
+<tr>
+<td>void remove()</td>
+<td>删除上一次next()方法返回的那个数据(删除的是集合中的)。remove()方法调用的前提是：先调用next()方法。否则会报错。</td>
+</tr>
+<tr>
+<td>void add(E e)</td>
+<td>添加元素（将元素添加到光标指向的位置，然后光标向下移动一位。）</td>
+</tr>
+<tr>
+<td>boolean hasPrevious()</td>
+<td>判断当前光标指向位置的上一个位置是否存在元素。</td>
+</tr>
+<tr>
+<td>E previous()</td>
+<td>获取上一个元素（<strong>将光标向上移动一位</strong>，然后将光标指向的元素返回）</td>
+</tr>
+<tr>
+<td>int nextIndex()</td>
+<td>获取光标指向的那个位置的下标</td>
+</tr>
+<tr>
+<td>int previousIndex()</td>
+<td>获取光标指向的那个位置的上一个位置的下标</td>
+</tr>
+<tr>
+<td>void set(E e)</td>
+<td>修改的是上一次next()方法返回的那个数据（修改的是集合中的）。set()方法调用的前提是：先调用了next()方法。否则会报错。</td>
+</tr>
+</tbody></table>
+<p>hasNext()：判断光标当前指向的位置是否存在元素</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs java">List&lt;String&gt; animals = <span class="hljs-keyword">new</span> ArrayList&lt;&gt;();<br>animals.add(<span class="hljs-string">"Dog"</span>);<br>animals.add(<span class="hljs-string">"Cat"</span>);<br>animals.add(<span class="hljs-string">"Bird"</span>);<br>animals.add(<span class="hljs-string">"Fish"</span>);<br>animals.add(<span class="hljs-string">"Lizard"</span>);<br><br><span class="hljs-comment">//测试hasNext()</span><br>ListIterator&lt;String&gt; iterator = animals.listIterator();<br><span class="hljs-keyword">while</span> (iterator.hasNext()) {<br>    String animal = iterator.next();<br>    System.out.println(animal);<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+<p>结果：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java">Dog<br>Cat<br>Bird<br>Fish<br>Lizard<br></code></pre></td></tr></tbody></table></figure>
+
+
+
+<p>nextIndex()：获取光标指向的那个位置的下标</p>
+<p>previousIndex()：获取光标指向的那个位置的上一个位置的下标</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs java">List&lt;String&gt; animals = <span class="hljs-keyword">new</span> ArrayList&lt;&gt;();<br>animals.add(<span class="hljs-string">"Dog"</span>);<br>animals.add(<span class="hljs-string">"Cat"</span>);<br>animals.add(<span class="hljs-string">"Bird"</span>);<br>animals.add(<span class="hljs-string">"Fish"</span>);<br>animals.add(<span class="hljs-string">"Lizard"</span>);<br><br>ListIterator&lt;String&gt; iterator = animals.listIterator();<br><br><span class="hljs-comment">//测试nextIndex()</span><br>System.out.println(<span class="hljs-string">"Next index: "</span> + iterator.nextIndex());<span class="hljs-comment">//0</span><br><span class="hljs-comment">//测试previousIndex()</span><br>System.out.println(<span class="hljs-string">"Previous index: "</span> + iterator.previousIndex());<span class="hljs-comment">//-1</span><br></code></pre></td></tr></tbody></table></figure>
+
+
+
+<p>remove()：删除上一次next()方法返回的那个数据(删除的是集合中的)。<strong>remove()方法调用的前提是：你先调用next()方法。不然会报错。</strong></p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs java">List&lt;String&gt; animals = <span class="hljs-keyword">new</span> ArrayList&lt;&gt;();<br>animals.add(<span class="hljs-string">"Dog"</span>);<br>animals.add(<span class="hljs-string">"Cat"</span>);<br>animals.add(<span class="hljs-string">"Bird"</span>);<br>animals.add(<span class="hljs-string">"Fish"</span>);<br>animals.add(<span class="hljs-string">"Lizard"</span>);<br><br>ListIterator&lt;String&gt; iterator = animals.listIterator();<br><br><span class="hljs-comment">//测试remove()</span><br>iterator.remove();<span class="hljs-comment">//java.lang.IllegalStateException</span><br></code></pre></td></tr></tbody></table></figure>
+
+
+
+<p>add(E e)：将元素添加到光标的位置，然后光标向下移动一位</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs java">List&lt;String&gt; animals = <span class="hljs-keyword">new</span> ArrayList&lt;&gt;();<br>animals.add(<span class="hljs-string">"Dog"</span>);<br>animals.add(<span class="hljs-string">"Cat"</span>);<br>animals.add(<span class="hljs-string">"Bird"</span>);<br>animals.add(<span class="hljs-string">"Fish"</span>);<br>animals.add(<span class="hljs-string">"Lizard"</span>);<br><br>ListIterator&lt;String&gt; iterator = animals.listIterator();<br><br><span class="hljs-keyword">while</span> (iterator.hasNext()) {<br>    String animal = iterator.next();<br>    <span class="hljs-keyword">if</span>(<span class="hljs-string">"Bird"</span>.equals(animal)){<br>        iterator.remove();<br>    }<br>}<br>System.out.println(animals);<span class="hljs-comment">// [Dog, Cat, Bird, Butterfly, Fish, Lizard]</span><br></code></pre></td></tr></tbody></table></figure>
+
+
+
+<p>set(E e)：修改的是上一次next()方法返回的那个数据（修改的是集合中的）。set()方法调用的前提是：你先调用了next()方法。不然会报错</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs java">List&lt;String&gt; animals = <span class="hljs-keyword">new</span> ArrayList&lt;&gt;();<br>animals.add(<span class="hljs-string">"Dog"</span>);<br>animals.add(<span class="hljs-string">"Cat"</span>);<br>animals.add(<span class="hljs-string">"Bird"</span>);<br>animals.add(<span class="hljs-string">"Fish"</span>);<br>animals.add(<span class="hljs-string">"Lizard"</span>);<br><br>ListIterator&lt;String&gt; iterator = animals.listIterator();<br><br><span class="hljs-keyword">while</span> (iterator.hasNext()) {<br>    String animal = iterator.next();<br>    <span class="hljs-keyword">if</span>(<span class="hljs-string">"Bird"</span>.equals(animal)){<br>        iterator.set(<span class="hljs-string">"Butterfly"</span>);<br>    }<br>}<br><br>System.out.println(animals);<span class="hljs-comment">// [Dog, Cat, Butterfly, Fish, Lizard]</span><br></code></pre></td></tr></tbody></table></figure>
 
                 
               </div>
