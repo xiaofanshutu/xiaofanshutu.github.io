@@ -377,13 +377,6 @@
   </url>
   
   <url>
-    <loc>https://xiaofanshutu.github.io/categories/Java-IO/</loc>
-    <lastmod>2025-04-16</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://xiaofanshutu.github.io/categories/%E6%96%B0%E6%8A%80%E6%9C%AFFreeMarker/</loc>
     <lastmod>2025-04-16</lastmod>
     <changefreq>daily</changefreq>
@@ -391,7 +384,14 @@
   </url>
   
   <url>
-    <loc>https://xiaofanshutu.github.io/categories/Java%E5%9F%BA%E7%A1%80/</loc>
+    <loc>https://xiaofanshutu.github.io/categories/Java-IO/</loc>
+    <lastmod>2025-04-16</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xiaofanshutu.github.io/categories/Java/</loc>
     <lastmod>2025-04-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -412,14 +412,14 @@
   </url>
   
   <url>
-    <loc>https://xiaofanshutu.github.io/categories/Java/</loc>
+    <loc>https://xiaofanshutu.github.io/categories/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E5%9F%BA%E7%A1%80/</loc>
     <lastmod>2025-04-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://xiaofanshutu.github.io/categories/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E5%9F%BA%E7%A1%80/</loc>
+    <loc>https://xiaofanshutu.github.io/categories/Java%E5%9F%BA%E7%A1%80/</loc>
     <lastmod>2025-04-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -433,7 +433,7 @@
   </url>
   
   <url>
-    <loc>https://xiaofanshutu.github.io/categories/%E6%97%A5%E5%B8%B8/</loc>
+    <loc>https://xiaofanshutu.github.io/categories/SpringBoot/</loc>
     <lastmod>2025-04-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -447,7 +447,7 @@
   </url>
   
   <url>
-    <loc>https://xiaofanshutu.github.io/categories/SpringBoot/</loc>
+    <loc>https://xiaofanshutu.github.io/categories/%E6%97%A5%E5%B8%B8/</loc>
     <lastmod>2025-04-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
