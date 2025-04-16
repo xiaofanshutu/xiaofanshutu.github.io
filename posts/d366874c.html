@@ -31,8 +31,16 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250412190556190.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250412190641158.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250414204339412.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250415222113163.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250416225542715.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250416225623438.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250416225638228.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250416225649156.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250416225702308.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250416225714227.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250416225726534.png">
 <meta property="article:published_time" content="2025-04-11T12:10:19.347Z">
-<meta property="article:modified_time" content="2025-04-14T14:31:02.035Z">
+<meta property="article:modified_time" content="2025-04-16T15:01:07.480Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250412180840197.png">
@@ -90,9 +98,9 @@
 
 
   
-<meta name="generator" content="Hexo 5.2.0">
+<meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/atom.xml" title="yubiii" type="application/atom+xml">
+
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="alternate" href="/atom.xml" title="yubiii" type="application/atom+xml">
 </head>
 
 
@@ -231,7 +239,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          4k 字
+          5.1k 字
         
       </span>
     
@@ -242,7 +250,7 @@
         
         
         
-          34 分钟
+          43 分钟
         
       </span>
     
@@ -468,11 +476,11 @@
 </ol>
 <h3 id="在接口上定义泛型"><a href="#在接口上定义泛型" class="headerlink" title="在接口上定义泛型"></a>在接口上定义泛型</h3><p><strong>语法格式：interface 接口名&lt;泛型1,泛型2,…&gt; {}</strong></p>
 <ul>
-<li>例如：public interface Flayable<t>{}<ul>
-<li>实现接口时，如果知道具体的类型，则：public class MyClass implements Flyable<bird>{}</bird></li>
-<li>实现接口时，如果不知道具体的类型，则：public class MyClass<t> implements Flyable<t>{}</t></t></li>
+<li>例如：<code>public interface Flayable &lt;T&gt; {}</code><ul>
+<li>实现接口时，如果知道具体的类型，则：<code>public class MyClass implements Flyable &lt;Bird&gt; {}</code></li>
+<li>实现接口时，如果不知道具体的类型，则：<code>public class MyClass &lt;T&gt; implements Flyable &lt;T&gt; {}</code></li>
 </ul>
-</t></li>
+</li>
 </ul>
 <figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">/*</span><br><span class="hljs-comment">	定义一个泛型接口</span><br><span class="hljs-comment">*/</span><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">MyFlyable</span>&lt;<span class="hljs-title">T</span>&gt; </span>{<br>    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">fly</span><span class="hljs-params">(T t)</span></span>;<br>}<br></code></pre></td></tr></tbody></table></figure>
 
@@ -499,7 +507,7 @@
 <li>上限通配符，&lt;? extends Number&gt;，此处“？”必须为Number及其子类。</li>
 <li>下限通配符，&lt;? super Number&gt;，此处“？”必须为Number及其父类。</li>
 </ol>
-<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Test</span> </span>{<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{<br>        <span class="hljs-comment">//什么类型都可以接收</span><br>        print(<span class="hljs-keyword">new</span> ArrayList&lt;String&gt;());<br>        print(<span class="hljs-keyword">new</span> ArrayList&lt;Object&gt;());<br>        print(<span class="hljs-keyword">new</span> ArrayList&lt;Integer&gt;());<br><br>        <span class="hljs-comment">//报错，这里需要的是BB或者BB的子类</span><br>        <span class="hljs-comment">//print2(new ArrayList&lt;AA&gt;());</span><br>        print2(<span class="hljs-keyword">new</span> ArrayList&lt;BB&gt;());<br>        print2(<span class="hljs-keyword">new</span> ArrayList&lt;CC&gt;());<br>        <br>        print3(<span class="hljs-keyword">new</span> ArrayList&lt;AA&gt;());<br>        print3(<span class="hljs-keyword">new</span> ArrayList&lt;BB&gt;());<br>        <span class="hljs-comment">//报错，这里需要的是BB或者BB的父类</span><br>        <span class="hljs-comment">//print3(new ArrayList&lt;CC&gt;());</span><br>    }<br><br>    <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">print</span><span class="hljs-params">(ArrayList&lt;?&gt; list)</span></span>{<br>        System.out.println(list);<br>    }<br><br>    <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">print2</span><span class="hljs-params">(ArrayList&lt;? extends BB&gt; list)</span></span>{<br>        System.out.println(list);<br>    }<br><br>    <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">print3</span><span class="hljs-params">(ArrayList&lt;? <span class="hljs-keyword">super</span> BB&gt; list)</span></span>{<br>        System.out.println(list);<br>    }<br>}<br></code></pre></td></tr></tbody></table></figure>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Test</span> </span>{<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{<br>        <span class="hljs-comment">//什么类型都可以接收</span><br>        print(<span class="hljs-keyword">new</span> ArrayList&lt;String&gt;());<br>        print(<span class="hljs-keyword">new</span> ArrayList&lt;Object&gt;());<br>        print(<span class="hljs-keyword">new</span> ArrayList&lt;Integer&gt;());<br><br>        <span class="hljs-comment">//报错，这里需要的是BB或者BB的子类</span><br>        <span class="hljs-comment">//print2(new ArrayList&lt;AA&gt;());</span><br>        print2(<span class="hljs-keyword">new</span> ArrayList&lt;BB&gt;());<br>        print2(<span class="hljs-keyword">new</span> ArrayList&lt;CC&gt;());<br>        <br>        print3(<span class="hljs-keyword">new</span> ArrayList&lt;AA&gt;());<br>        print3(<span class="hljs-keyword">new</span> ArrayList&lt;BB&gt;());<br>        <span class="hljs-comment">//报错，这里需要的是BB或者BB的父类</span><br>        <span class="hljs-comment">//print3(new ArrayList&lt;CC&gt;());</span><br>    }<br><br>    <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">print</span><span class="hljs-params">(ArrayList&lt;?&gt; list)</span></span>{<br>        System.out.println(list);<br>    }<br><br>    <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">print2</span><span class="hljs-params">(ArrayList&lt;? extends BB&gt; list)</span></span>{<br>        System.out.println(list);<br>    }<br><br>    <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">print3</span><span class="hljs-params">(ArrayList&lt;? <span class="hljs-keyword">super</span> BB&gt; list)</span></span>{<br>        System.out.println(list);<br>    }<br>}<br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AA</span></span>{<br><br>}<br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">BB</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">AA</span></span>{<br><br>}<br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CC</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">BB</span></span>{<br><br>}<br></code></pre></td></tr></tbody></table></figure>
 
 
 
@@ -721,6 +729,155 @@
 
 <p>set(E e)：修改的是上一次next()方法返回的那个数据（修改的是集合中的）。set()方法调用的前提是：你先调用了next()方法。不然会报错</p>
 <figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs java">List&lt;String&gt; animals = <span class="hljs-keyword">new</span> ArrayList&lt;&gt;();<br>animals.add(<span class="hljs-string">"Dog"</span>);<br>animals.add(<span class="hljs-string">"Cat"</span>);<br>animals.add(<span class="hljs-string">"Bird"</span>);<br>animals.add(<span class="hljs-string">"Fish"</span>);<br>animals.add(<span class="hljs-string">"Lizard"</span>);<br><br>ListIterator&lt;String&gt; iterator = animals.listIterator();<br><br><span class="hljs-keyword">while</span> (iterator.hasNext()) {<br>    String animal = iterator.next();<br>    <span class="hljs-keyword">if</span>(<span class="hljs-string">"Bird"</span>.equals(animal)){<br>        iterator.set(<span class="hljs-string">"Butterfly"</span>);<br>    }<br>}<br><br>System.out.println(animals);<span class="hljs-comment">// [Dog, Cat, Butterfly, Fish, Lizard]</span><br></code></pre></td></tr></tbody></table></figure>
+
+
+
+<h2 id="List接口使用Comparator排序"><a href="#List接口使用Comparator排序" class="headerlink" title="List接口使用Comparator排序"></a>List接口使用Comparator排序</h2><h3 id="数组中自定义类型是如何排序的"><a href="#数组中自定义类型是如何排序的" class="headerlink" title="数组中自定义类型是如何排序的"></a>数组中自定义类型是如何排序的</h3><p>让自定义类型实现java.lang.Comparable接口，接着重写compareTo方法。在compareTo方法中指定比较规则。</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">User</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Comparable</span>&lt;<span class="hljs-title">User</span>&gt; </span>{<br>    <span class="hljs-keyword">private</span> String name;<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">User</span><span class="hljs-params">(String name)</span> </span>{<br>        <span class="hljs-keyword">this</span>.name = name;<br>    }<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">getName</span><span class="hljs-params">()</span> </span>{<br>        <span class="hljs-keyword">return</span> name;<br>    }<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setName</span><span class="hljs-params">(String name)</span> </span>{<br>        <span class="hljs-keyword">this</span>.name = name;<br>    }<br><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">compareTo</span><span class="hljs-params">(User user)</span> </span>{<br>        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.name.compareTo(user.name);<br>    }<br><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">toString</span><span class="hljs-params">()</span> </span>{<br>        <span class="hljs-keyword">return</span> <span class="hljs-string">"User{"</span> +<br>                <span class="hljs-string">"name='"</span> + name + <span class="hljs-string">'\''</span> +<br>                <span class="hljs-string">'}'</span>;<br>    }<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+
+
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> java.util.Arrays;<br><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ArraySort</span> </span>{<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{<br>        User jack = <span class="hljs-keyword">new</span> User(<span class="hljs-string">"Jack"</span>);<br>        User tom = <span class="hljs-keyword">new</span> User(<span class="hljs-string">"Tom"</span>);<br>        User lucy = <span class="hljs-keyword">new</span> User(<span class="hljs-string">"Lucy"</span>);<br>        User[] users = <span class="hljs-keyword">new</span> User[]{jack, tom, lucy};<br>        Arrays.sort(users);<br>        <span class="hljs-keyword">for</span> (User user : users) {<br>            System.out.println(user.getName());<br>        }<br>    }<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+<p>结果：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java">Jack<br>Lucy<br>Tom<br></code></pre></td></tr></tbody></table></figure>
+
+
+
+<h3 id="List集合的排序"><a href="#List集合的排序" class="headerlink" title="List集合的排序"></a>List集合的排序</h3><p>对list集合排序可以调用 <code>default void sort(Comparator&lt;? super E&gt; c)</code></p>
+<p>​    sort方法参数：java.util.Comparator（我们把这个叫比较器，这是一个接口）</p>
+<ol>
+<li>提供一个Comparator的实现类，重写compare方法</li>
+</ol>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ListSort</span> </span>{<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{<br>        Person zhangsan = <span class="hljs-keyword">new</span> Person(<span class="hljs-string">"zhangsan"</span>, <span class="hljs-number">20</span>);<br>        Person lisi = <span class="hljs-keyword">new</span> Person(<span class="hljs-string">"lisi"</span>, <span class="hljs-number">25</span>);<br>        Person wangwu = <span class="hljs-keyword">new</span> Person(<span class="hljs-string">"wangwu"</span>, <span class="hljs-number">30</span>);<br>        Person zhaoliu = <span class="hljs-keyword">new</span> Person(<span class="hljs-string">"zhaoliu"</span>, <span class="hljs-number">35</span>);<br><br>        ArrayList&lt;Person&gt; people = <span class="hljs-keyword">new</span> ArrayList&lt;Person&gt;();<br>        people.add(zhangsan);<br>        people.add(lisi);<br>        people.add(wangwu);<br>        people.add(zhaoliu);<br><br>        System.out.println(<span class="hljs-string">"Before sorting:"</span>);<br>        <span class="hljs-keyword">for</span> (Person person : people) {<br>            System.out.println(person.getName() + <span class="hljs-string">" "</span> + person.getAge());<br>        }<br><br>        <span class="hljs-comment">// Sort the list using the custom comparator</span><br>        people.sort(<span class="hljs-keyword">new</span> PersonComparator());<br>        System.out.println(<span class="hljs-string">"\nAfter sorting by name:"</span>);<br>        <span class="hljs-keyword">for</span> (Person person : people) {<br>            System.out.println(person.getName() + <span class="hljs-string">" "</span> + person.getAge());<br>        }<br>    }<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+<p>​        </p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Person</span> </span>{<br>    <span class="hljs-keyword">private</span> String name;<br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> age;<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Person</span><span class="hljs-params">(String name, <span class="hljs-keyword">int</span> age)</span> </span>{<br>        <span class="hljs-keyword">this</span>.name = name;<br>        <span class="hljs-keyword">this</span>.age = age;<br>    }<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">getName</span><span class="hljs-params">()</span> </span>{<br>        <span class="hljs-keyword">return</span> name;<br>    }<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setName</span><span class="hljs-params">(String name)</span> </span>{<br>        <span class="hljs-keyword">this</span>.name = name;<br>    }<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">getAge</span><span class="hljs-params">()</span> </span>{<br>        <span class="hljs-keyword">return</span> age;<br>    }<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setAge</span><span class="hljs-params">(<span class="hljs-keyword">int</span> age)</span> </span>{<br>        <span class="hljs-keyword">this</span>.age = age;<br>    }<br><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">toString</span><span class="hljs-params">()</span> </span>{<br>        <span class="hljs-keyword">return</span> <span class="hljs-string">"Person{"</span> +<br>                <span class="hljs-string">"name='"</span> + name + <span class="hljs-string">'\''</span> +<br>                <span class="hljs-string">", age="</span> + age +<br>                <span class="hljs-string">'}'</span>;<br>    }<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+
+
+
+
+<p>结果：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs java">Before sorting:<br>zhangsan <span class="hljs-number">20</span><br>lisi <span class="hljs-number">25</span><br>wangwu <span class="hljs-number">30</span><br>zhaoliu <span class="hljs-number">35</span><br><br>After sorting by name:<br>lisi <span class="hljs-number">25</span><br>wangwu <span class="hljs-number">30</span><br>zhangsan <span class="hljs-number">20</span><br>zhaoliu <span class="hljs-number">35</span><br></code></pre></td></tr></tbody></table></figure>
+
+
+
+
+
+<ol start="2">
+<li>采用匿名内部类的方式提供Comparator的实现类</li>
+</ol>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> java.util.ArrayList;<br><span class="hljs-keyword">import</span> java.util.Comparator;<br><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ListSort2</span> </span>{<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{<br>        Person zhangsan = <span class="hljs-keyword">new</span> Person(<span class="hljs-string">"zhangsan"</span>, <span class="hljs-number">20</span>);<br>        Person lisi = <span class="hljs-keyword">new</span> Person(<span class="hljs-string">"lisi"</span>, <span class="hljs-number">25</span>);<br>        Person wangwu = <span class="hljs-keyword">new</span> Person(<span class="hljs-string">"wangwu"</span>, <span class="hljs-number">30</span>);<br>        Person zhaoliu = <span class="hljs-keyword">new</span> Person(<span class="hljs-string">"zhaoliu"</span>, <span class="hljs-number">35</span>);<br><br>        ArrayList&lt;Person&gt; people = <span class="hljs-keyword">new</span> ArrayList&lt;Person&gt;();<br>        people.add(zhangsan);<br>        people.add(lisi);<br>        people.add(wangwu);<br>        people.add(zhaoliu);<br><br>        System.out.println(<span class="hljs-string">"Before sorting:"</span>);<br>        <span class="hljs-keyword">for</span> (Person person : people) {<br>            System.out.println(person.getName() + <span class="hljs-string">" "</span> + person.getAge());<br>        }<br><br>        <span class="hljs-comment">// Sort the list using an anonymous inner class</span><br>        people.sort(<span class="hljs-keyword">new</span> Comparator&lt;Person&gt;() {<br>            <span class="hljs-meta">@Override</span><br>            <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">compare</span><span class="hljs-params">(Person o1, Person o2)</span> </span>{<br>                <span class="hljs-keyword">return</span> o2.getName().compareTo(o1.getName());<br>            }<br>        });<br><br>        System.out.println(<span class="hljs-string">"\nAfter sorting by name:"</span>);<br>        <span class="hljs-keyword">for</span> (Person person : people) {<br>            System.out.println(person.getName() + <span class="hljs-string">" "</span> + person.getAge());<br>        }<br>    }<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+
+
+
+
+<h2 id="ArrayList"><a href="#ArrayList" class="headerlink" title="ArrayList"></a>ArrayList</h2><ol>
+<li>底层采用了数组数据结构</li>
+<li>优点：底层是数组，因此根据下标查找元素的时间复杂度是O(1)，检索效率高</li>
+<li>缺点：随机增删元素效率低。注意：只要数组的容量没有满，对末尾元素进行增删时，效率不会受影响</li>
+<li>适用场景：需要频繁检索元素，并且很少进行随机增删元素时建议使用ArrayList</li>
+<li>默认初始化容量：<ul>
+<li>当调用无参构造方法时，初始化容量为0，当第一次调用add方法时，会将ArrayList容量初始化为10个长度</li>
+</ul>
+</li>
+<li>扩容策略<ul>
+<li>底层扩容会创建一个新数组，然后使用数组拷贝。扩容之后的新容量是原容量的1.5倍</li>
+</ul>
+</li>
+</ol>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">private</span> Object[] grow(<span class="hljs-keyword">int</span> minCapacity) {<br>    <span class="hljs-keyword">int</span> oldCapacity = elementData.length;<br>    <span class="hljs-keyword">if</span> (oldCapacity &gt; <span class="hljs-number">0</span> || elementData != DEFAULTCAPACITY_EMPTY_ELEMENTDATA) {<br>        <span class="hljs-keyword">int</span> newCapacity = ArraysSupport.newLength(oldCapacity,<br>                                                  minCapacity - oldCapacity, <span class="hljs-comment">/* minimum growth */</span><br>                                                  oldCapacity &gt;&gt; <span class="hljs-number">1</span>           <span class="hljs-comment">/* preferred growth */</span>);<br>        <span class="hljs-keyword">return</span> elementData = Arrays.copyOf(elementData, newCapacity);<br>    } <span class="hljs-keyword">else</span> {<br>        <span class="hljs-keyword">return</span> elementData = <span class="hljs-keyword">new</span> Object[Math.max(DEFAULT_CAPACITY, minCapacity)];<br>    }<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+
+
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-title">newLength</span><span class="hljs-params">(<span class="hljs-keyword">int</span> oldLength, <span class="hljs-keyword">int</span> minGrowth, <span class="hljs-keyword">int</span> prefGrowth)</span> </span>{<br>    <span class="hljs-comment">// preconditions not checked because of inlining</span><br>    <span class="hljs-comment">// assert oldLength &gt;= 0</span><br>    <span class="hljs-comment">// assert minGrowth &gt; 0</span><br><br>    <span class="hljs-keyword">int</span> prefLength = oldLength + Math.max(minGrowth, prefGrowth); <span class="hljs-comment">// might overflow</span><br>    <span class="hljs-keyword">if</span> (<span class="hljs-number">0</span> &lt; prefLength &amp;&amp; prefLength &lt;= SOFT_MAX_ARRAY_LENGTH) {<br>        <span class="hljs-keyword">return</span> prefLength;<br>    } <span class="hljs-keyword">else</span> {<br>        <span class="hljs-comment">// put code cold in a separate method</span><br>        <span class="hljs-keyword">return</span> hugeLength(oldLength, minGrowth);<br>    }<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+
+
+
+
+<ol start="8">
+<li>集合源码分析</li>
+</ol>
+<ul>
+<li><p>属性分析</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//The array buffer into which the elements of the ArrayList are stored. </span><br><span class="hljs-keyword">transient</span> Object[] elementData; <span class="hljs-comment">// non-private to simplify nested class access</span><br><br><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * The size of the ArrayList (the number of elements it contains).</span><br><span class="hljs-comment"> *</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@serial</span></span><br><span class="hljs-comment"> */</span><br><span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> size;<br></code></pre></td></tr></tbody></table></figure>
+
+
+
+</li>
+</ul>
+<ul>
+<li><p>构造方法分析（使用ArrayList时，最好预测一下最大数量，给定初始化容量，减少扩容次数）</p>
+<p><img src="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250415222113163.png" srcset="/img/loading.gif" lazyload alt="image-20250415222113163"></p>
+</li>
+<li><p>添加元素</p>
+<p>看上面扩容策略处的代码</p>
+</li>
+<li><p>修改元素: <strong>修改元素时会将修改前的值返回</strong></p>
+</li>
+</ul>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function">E <span class="hljs-title">set</span><span class="hljs-params">(<span class="hljs-keyword">int</span> index, E element)</span></span>;<br></code></pre></td></tr></tbody></table></figure>
+
+
+
+
+
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> E <span class="hljs-title">set</span><span class="hljs-params">(<span class="hljs-keyword">int</span> index, E element)</span> </span>{<br>    Objects.checkIndex(index, size);<br>    E oldValue = elementData(index);<br>    elementData[index] = element;<br>    <span class="hljs-keyword">return</span> oldValue;<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+
+
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ListSort</span> </span>{<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{<br>        Person zhangsan = <span class="hljs-keyword">new</span> Person(<span class="hljs-string">"zhangsan"</span>, <span class="hljs-number">20</span>);<br>        Person lisi = <span class="hljs-keyword">new</span> Person(<span class="hljs-string">"lisi"</span>, <span class="hljs-number">25</span>);<br>        Person wangwu = <span class="hljs-keyword">new</span> Person(<span class="hljs-string">"wangwu"</span>, <span class="hljs-number">30</span>);<br>        Person zhaoliu = <span class="hljs-keyword">new</span> Person(<span class="hljs-string">"zhaoliu"</span>, <span class="hljs-number">35</span>);<br><br>        List&lt;Person&gt; people = <span class="hljs-keyword">new</span> ArrayList&lt;&gt;();<br>        people.add(zhangsan);<br>        people.add(lisi);<br>        people.add(wangwu);<br>        people.add(zhaoliu);<br><br>        System.out.println(people.set(<span class="hljs-number">2</span>, zhaoliu)); <span class="hljs-comment">//Person{name='wangwu', age=30}</span><br>    }<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+<ul>
+<li>插入元素</li>
+<li>删除元素</li>
+</ul>
+<h2 id="Vector"><a href="#Vector" class="headerlink" title="Vector"></a>Vector</h2><ol>
+<li>Vector底层也是数组，和ArrayList相同。</li>
+<li>不同的是Vector几乎所有的方法都是同步的（被synchronized修饰：线程排队执行，不能并发），因此Vector是线程安全的，但是因为效率低，所以很少使用。控制线程安全有新的方式，所以这个很少用。</li>
+<li>初始化容量：10</li>
+<li>扩容策略：扩容之后的容量是原容量的2倍。</li>
+</ol>
+<h2 id="链表存储结构"><a href="#链表存储结构" class="headerlink" title="链表存储结构"></a>链表存储结构</h2><ol>
+<li><p>单向链表</p>
+<p><img src="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250416225542715.png" srcset="/img/loading.gif" lazyload alt="image-20250416225542715"></p>
+<p><img src="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250416225623438.png" srcset="/img/loading.gif" lazyload alt="image-20250416225623438"></p>
+<p><img src="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250416225638228.png" srcset="/img/loading.gif" lazyload alt="image-20250416225638228"></p>
+<p><img src="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250416225649156.png" srcset="/img/loading.gif" lazyload alt="image-20250416225649156"></p>
+</li>
+<li><p>双向链表</p>
+<p><img src="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250416225702308.png" srcset="/img/loading.gif" lazyload alt="image-20250416225702308"></p>
+</li>
+<li><p>环形链表</p>
+<p><img src="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250416225714227.png" srcset="/img/loading.gif" lazyload alt="image-20250416225714227"></p>
+<p><img src="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250416225726534.png" srcset="/img/loading.gif" lazyload alt="image-20250416225726534"></p>
+</li>
+<li><p>链表优点</p>
+<p>因为链表节点在空间存储上，内存地址不是连续的。因此删除某个节点时不需要涉及到元素位移的问题。因此随机增删元素效率较高。时间复杂度O(1)</p>
+</li>
+<li><p>链表缺点</p>
+<p>链表中元素在查找时，只能从某个节点开始顺序查找，因为链表节点的内存地址在空间上不是连续的。链表查找元素效率较低，时间复杂度O(n)</p>
+</li>
+<li><p>适用场景</p>
+</li>
+</ol>
+<p>​        需要频繁进行随机增删，但很少的查找的操作时。</p>
+<h2 id="LinkedList"><a href="#LinkedList" class="headerlink" title="LinkedList"></a>LinkedList</h2><ol>
+<li>LinkedList是一个双向链表</li>
+<li>源码分析<ul>
+<li>属性分析</li>
+<li>构造方法分析</li>
+<li>添加元素</li>
+<li>修改元素</li>
+<li>插入元素</li>
+<li>删除元素</li>
+</ul>
+</li>
+<li>手写单向链表</li>
+</ol>
 
                 
               </div>
