@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://xiaofanshutu.github.io/posts/50a54d3c.html</loc>
+    
+    <lastmod>2025-07-02</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://xiaofanshutu.github.io/posts/80436e1d.html</loc>
     
     <lastmod>2025-07-02</lastmod>
@@ -454,13 +461,6 @@
   </url>
   
   <url>
-    <loc>https://xiaofanshutu.github.io/categories/%E6%96%B0%E6%8A%80%E6%9C%AFFreeMarker/</loc>
-    <lastmod>2025-07-02</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://xiaofanshutu.github.io/categories/HTML5/</loc>
     <lastmod>2025-07-02</lastmod>
     <changefreq>daily</changefreq>
@@ -469,6 +469,20 @@
   
   <url>
     <loc>https://xiaofanshutu.github.io/categories/Java-IO/</loc>
+    <lastmod>2025-07-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xiaofanshutu.github.io/categories/%E6%96%B0%E6%8A%80%E6%9C%AFFreeMarker/</loc>
+    <lastmod>2025-07-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xiaofanshutu.github.io/categories/Java-Web/</loc>
     <lastmod>2025-07-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -496,14 +510,14 @@
   </url>
   
   <url>
-    <loc>https://xiaofanshutu.github.io/categories/Java-Web/</loc>
+    <loc>https://xiaofanshutu.github.io/categories/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E5%9F%BA%E7%A1%80/</loc>
     <lastmod>2025-07-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://xiaofanshutu.github.io/categories/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E5%9F%BA%E7%A1%80/</loc>
+    <loc>https://xiaofanshutu.github.io/categories/SpringBoot/</loc>
     <lastmod>2025-07-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -525,13 +539,6 @@
   
   <url>
     <loc>https://xiaofanshutu.github.io/categories/%E5%85%AB%E8%82%A1%E6%96%87/</loc>
-    <lastmod>2025-07-02</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://xiaofanshutu.github.io/categories/SpringBoot/</loc>
     <lastmod>2025-07-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
