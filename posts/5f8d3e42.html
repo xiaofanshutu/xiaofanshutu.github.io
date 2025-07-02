@@ -1,0 +1,1360 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="面向对象概述软件开发方法：面向过程和面向对象  面向过程：关注点在实现功能的步骤上。 PO：Procedure Oriented。代表语言：C语言 面向过程就是分析出解决问题所需要的步骤，然后用函数把这些步骤一步一步实现，使用的时候一个一个依次调用就可以了。 例如开汽车：启动、踩离合、挂挡、松离合、踩油门、车走了。 再例如装修房子：做水电、刷墙、贴地砖、做柜子和家具、入住。 对于简单的流程是适合使">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java面向对象">
+<meta property="og:url" content="https://xiaofanshutu.github.io/posts/5f8d3e42.html">
+<meta property="og:site_name" content="yubiii">
+<meta property="og:description" content="面向对象概述软件开发方法：面向过程和面向对象  面向过程：关注点在实现功能的步骤上。 PO：Procedure Oriented。代表语言：C语言 面向过程就是分析出解决问题所需要的步骤，然后用函数把这些步骤一步一步实现，使用的时候一个一个依次调用就可以了。 例如开汽车：启动、踩离合、挂挡、松离合、踩油门、车走了。 再例如装修房子：做水电、刷墙、贴地砖、做柜子和家具、入住。 对于简单的流程是适合使">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250609065526094.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250609070610111.png">
+<meta property="og:image" content="c:/Users/winner/AppData/Roaming/Typora/typora-user-images/image-20250609070123919.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250609070107374.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250609070055017.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250609234419797.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250609070219176.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250609070232517.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250609234658995.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250610000917927.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250610000944986.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250610000027814.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250610000020447.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250610000422264.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250610000511236.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250610000559552.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250610081313410.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250610082447152.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250610082609041.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250610081647995.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250610082727228.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250610081802767.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250610081912927.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250610081955826.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250616194149481.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250616194646187.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250616195155900.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250616200545886.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250616200559988.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250616201851462.png">
+<meta property="article:published_time" content="2025-06-08T22:12:58.052Z">
+<meta property="article:modified_time" content="2025-06-16T13:03:17.002Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250609065526094.png">
+  
+  
+  
+  <title>Java面向对象 - yubiii</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"xiaofanshutu.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 5.2.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="yubiii" type="application/atom+xml">
+</head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 30vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="Java面向对象"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-06-09 06:12" pubdate>
+          2025年6月9日 早上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          10k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          85 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">Java面向对象</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h2 id="面向对象概述"><a href="#面向对象概述" class="headerlink" title="面向对象概述"></a>面向对象概述</h2><p><strong>软件开发方法：面向过程和面向对象</strong></p>
+<ol>
+<li>面向过程：关注点在实现功能的步骤上。<ul>
+<li>PO：Procedure Oriented。代表语言：C语言</li>
+<li>面向过程就是分析出解决问题所需要的步骤，然后用函数把这些步骤一步一步实现，使用的时候一个一个依次调用就可以了。</li>
+<li>例如开汽车：启动、踩离合、挂挡、松离合、踩油门、车走了。</li>
+<li>再例如装修房子：做水电、刷墙、贴地砖、做柜子和家具、入住。</li>
+<li>对于简单的流程是适合使用面向过程的方式进行的。复杂的流程不适合使用面向过程的开发方式。</li>
+</ul>
+</li>
+<li>面向对象：关注点在实现功能需要哪些对象的参与。<ul>
+<li>OO：Object Oriented 面向对象。包括OOA,OOD,OOP。OOA：Object Oriented Analysis 面向对象分析。OOD：Object Oriented Design 面向对象设计。OOP：Object Oriented Programming 面向对象编程。代表语言：Java、C#、Python等。</li>
+<li>人类是以面向对象的方式去认知世界的。所以采用面向对象的思想更加容易处理复杂的问题。</li>
+<li>面向对象就是分析出解决这个问题都需要哪些对象的参加，然后让对象与对象之间协作起来形成一个系统。</li>
+<li>例如开汽车：汽车对象、司机对象。司机对象有一个驾驶的行为。司机对象驾驶汽车对象。</li>
+<li>再例如装修房子：水电工对象，油漆工对象，瓦工对象，木工对象。每个对象都有自己的行为动作。最终完成装修。</li>
+<li>面向对象开发方式耦合度低，扩展能力强。例如采用面向过程生产一台电脑，不会分CPU、内存和硬盘，它会按照电脑的工作流程一次成型。采用面向对象生产一台电脑，CPU是一个对象，内存条是一个对象，硬盘是一个对象，如果觉得硬盘容量小，后期是很容易更换的，这就是扩展性。</li>
+</ul>
+</li>
+</ol>
+<p><strong>面向对象三大特征</strong></p>
+<ol>
+<li>封装（Encapsulation）</li>
+<li>继承（Inheritance）</li>
+<li>多态（Polymorphism）</li>
+</ol>
+<p><strong>类与对象</strong></p>
+<ol>
+<li>类<ul>
+<li>现实世界中，事物与事物之间具有共同特征，例如：刘德华和梁朝伟都有姓名、身份证号、身高等状态，都有吃、跑、跳等行为。将这些共同的状态和行为提取出来，形成了一个模板，称为类。</li>
+<li>类实际上是人类大脑思考总结的一个模板，类是一个抽象的概念。</li>
+<li>状态在程序中对应属性。属性通常用变量来表示。</li>
+<li>行为在程序中对应方法。用方法来描述行为动作。</li>
+<li>类 = 属性 + 方法。</li>
+</ul>
+</li>
+<li>对象<ul>
+<li>实际存在的个体。</li>
+<li>对象又称为实例（instance）。</li>
+<li>通过类这个模板可以实例化n个对象。（通过类可以创造多个对象）<ul>
+<li>例如通过“明星类”可以创造出“刘德华对象”和“梁朝伟对象”。</li>
+</ul>
+</li>
+<li>明星类中有一个属性姓名：String name;“</li>
+<li>刘德华对象”和“梁朝伟对象”由于是通过明星类造出来的，所以这两个都有name属性，但是值是不同的。因此这种属性被称为<font color="red">实例变量</font>。</li>
+</ul>
+</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250609065526094.png" srcset="/img/loading.gif" lazyload alt="image-20250609065526094"></p>
+<p><strong>对象的创建和使用</strong></p>
+<p>类的定义语法格式：</p>
+<p>[修饰符列表] class 类名 {</p>
+<p>​    // 属性（描述状态）</p>
+<p>​    // 方法（描述行为动作）</p>
+<p>}</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Student</span> </span>{<br>    <span class="hljs-comment">// 姓名</span><br>    String name; <span class="hljs-comment">// 实例变量</span><br>    <span class="hljs-comment">// 年龄</span><br>    <span class="hljs-keyword">int</span> age;<br>    <span class="hljs-comment">// 性别</span><br>    <span class="hljs-keyword">boolean</span> gender;<br>    <span class="hljs-comment">// 学习</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">study</span><span class="hljs-params">()</span></span>{ System.out.println(“正在学习”); } <span class="hljs-comment">// 实例方法（实例方法又叫对象方法）</span><br>}<br></code></pre></td></tr></tbody></table></figure>
+
+
+
+
+
+<ol>
+<li>对象的创建<ul>
+<li>Student s = new Student();</li>
+<li>在Java中，使用class定义的类，属于引用数据类型。所以Student属于引用数据类型。类型名为：Student。</li>
+<li>Student s; 表示定义一个变量。数据类型是Student。变量名是s。</li>
+</ul>
+</li>
+<li>对象的使用<ul>
+<li>读取属性值：s.name</li>
+<li>修改属性值：s.name = “jackson”;</li>
+</ul>
+</li>
+<li>通过一个类可以实例化多个对象<ul>
+<li>Student s1 = new Student();</li>
+<li>Student s2 = new Student();</li>
+</ul>
+</li>
+</ol>
+<p><strong>对象的内存分析（对象与引用）</strong></p>
+<ol>
+<li><p>new运算符会在JVM的堆内存中分配空间用来存储实例变量。new分配的空间就是Java对象。</p>
+</li>
+<li><p>在JVM中对象创建后会有对应的内存地址，将内存地址赋值给一个变量，这个变量被称为引用。</p>
+</li>
+<li><p>Java中的GC主要针对的是JVM的堆内存。</p>
+</li>
+<li><p>空指针异常是如何发生的？</p>
+<p>程序计数器</p>
+<p>虚拟机栈</p>
+<p>堆</p>
+<p>方法区</p>
+<p>运行时常量池</p>
+<p>本地方法区</p>
+<p><img src="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250609070610111.png" srcset="/img/loading.gif" lazyload alt="image-20250609070610111"></p>
+</li>
+</ol>
+<p>   <img src="C:\Users\winner\AppData\Roaming\Typora\typora-user-images\image-20250609070123919.png" srcset="/img/loading.gif" lazyload alt="image-20250609070123919"></p>
+<ol start="5">
+<li>方法调用时参数是如何传递的？将变量中保存的值复制一份传递过去。</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250609070107374.png" srcset="/img/loading.gif" lazyload alt="image-20250609070107374"></p>
+<ol start="6">
+<li>初次认识this关键字：出现在实例方法中，代表当前对象。“this.”大部分情况下可以省略。this存储在实例方法栈帧的局部变量表的0号槽位上。任何一个实例方法，局部变量表0号槽位放的是this。</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250609070055017.png" srcset="/img/loading.gif" lazyload alt="image-20250609070055017"></p>
+<p>this.用来区分局部变量和实例变量的时候不能省略。</p>
+<p><img src="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250609234419797.png" srcset="/img/loading.gif" lazyload alt="image-20250609234419797"></p>
+<p><font color="red"><strong>传递的是u变量保存的那个地址</strong></font></p>
+<p><img src="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250609070219176.png" srcset="/img/loading.gif" lazyload alt="image-20250609070219176"></p>
+<p><img src="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250609070232517.png" srcset="/img/loading.gif" lazyload alt="image-20250609070232517"></p>
+<h2 id="面向对象的封装特性"><a href="#面向对象的封装特性" class="headerlink" title="面向对象的封装特性"></a>面向对象的封装特性</h2><p>什么是封装？</p>
+<p>​    封装是一种将数据和方法加以包装，使之成为一个独立的实体，并且把它与外部对象隔离开来的机制。具体来说，封装是将一个对象的所有“状态（属性）”以及“行为（方法）”统一封装到一个类中，从而隐藏了对象内部的具体实现细节，向外界提供了有限的访问接口，以实现对对象的保护和隔离。</p>
+<p>实现封装的步骤：</p>
+<p>第一步：属性私有化</p>
+<p>第二步：对外提供getter setter方法</p>
+<p>封装保证安全性，提高复用性</p>
+<h2 id="实例方法中调用实例方法"><a href="#实例方法中调用实例方法" class="headerlink" title="实例方法中调用实例方法"></a>实例方法中调用实例方法</h2><p><img src="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250609234658995.png" srcset="/img/loading.gif" lazyload alt="image-20250609234658995"></p>
+<h2 id="构造方法Constructor-构造器-的语法"><a href="#构造方法Constructor-构造器-的语法" class="headerlink" title="构造方法Constructor(构造器)的语法"></a>构造方法Constructor(构造器)的语法</h2><ol>
+<li><p>构造方法有什么作用？</p>
+<ul>
+<li>构造方法的执行分为两个阶段：对象的创建和对象的初始化。这两个阶段不能颠倒，也不可分割。</li>
+<li>在Java中，当我们使用关键字new时，就会在内存中创建一个新的对象，虽然对象已经被创建出来了，但还没有被初始化。而初始化则是在执行构造方法体时进行的。</li>
+</ul>
+</li>
+<li><p>构造方法如何定义？</p>
+<ul>
+<li>[修饰符列表] 构造方法名(形参){}</li>
+</ul>
+</li>
+<li><p>构造方法如何调用？</p>
+<p> new 构造方法名(实参);</p>
+</li>
+<li><p>关于无参数构造方法：</p>
+<ul>
+<li>如果一个类没有显示的定义任何构造方法，系统会默认提供一个无参数构造方法，也被称为缺省构造器。一旦显示的定义了构造方法，则缺省构造器将不存在。为了方便对象的创建，建议将缺省构造器显示的定义出来。</li>
+</ul>
+</li>
+<li><p>构造方法支持重载机制。</p>
+</li>
+<li><p>关于构造代码块。对象的创建和初始化过程梳理：</p>
+<ul>
+<li>new的时候在堆内存中开辟空间，给所有属性赋默认值</li>
+<li>执行构造代码块进行初始化</li>
+<li>执行构造方法体进行初始化</li>
+<li>构造方法执行结束，对象初始化完毕。</li>
+</ul>
+</li>
+</ol>
+<p>构造方法/Constructor/构造器</p>
+<ol>
+<li><p>构造方法有什么作用？</p>
+<p>作用1：对象的创建（通过调用构造方法可以完成对象的创建）</p>
+<p>作用2：对象的初始化（给对象的所有属性赋值就是对象的初始化）</p>
+</li>
+<li><p>怎么定义构造方法呢？</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java">[修饰符列表] 构造方法名(形参列表){<br>    构造方法体;<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+</li>
+</ol>
+<p>注意：</p>
+<ul>
+<li><p>构造方法名必须和类名一致。</p>
+</li>
+<li><p>构造方法不需要提供返回值类型。</p>
+</li>
+<li><p>如果提供了返回值类型，那么这个方法就不是构造方法了，就变成普通方法了。</p>
+</li>
+</ul>
+<ol start="3">
+<li><p>构造方法怎么调用呢？</p>
+<ul>
+<li>使用new运算符来调用。</li>
+<li>语法：new 构造方法名(实参);</li>
+<li>注意：构造方法最终执行结束之后，会自动将创建的对象的内存地址返回。但构造方法体中不需要提供“return 值;”这样的语句。</li>
+</ul>
+</li>
+<li><p>在java语言中，如果一个类没有显示的去定义构造方法，系统会默认提供一个无参数的构造方法。（通常把这个构造方法叫做缺省构造器。）</p>
+</li>
+<li><p>一个类中如果显示的定义了构造方法，系统则不再提供缺省构造器。所以，为了对象创建更加方便，建议把无参数构造方法手动的写出来。</p>
+</li>
+<li><p>在java中，一个类中可以定义多个构造方法，而且这些构造方法自动构成了方法的重载(overload)。</p>
+</li>
+<li><p>构造方法中给属性赋值了？为什么还需要单独定义set方法给属性赋值呢？</p>
+<ul>
+<li><p>在构造方法中赋值是对象第一次创建时属性赋的值。set方法可以在后期的时候调用，来完成属性值的修改。</p>
+</li>
+<li><p>时机不一样</p>
+<p>set方法是出生之后想改内容，调用构造方法</p>
+<p>构造方法里面设置属性内容是在创建对象的时候给属性赋值</p>
+</li>
+</ul>
+</li>
+</ol>
+<ol start="8">
+<li><p>构造方法执行原理？</p>
+<ul>
+<li>构造方法执行包括两个重要的阶段：<ul>
+<li> 第一阶段：对象的创建</li>
+<li>第二阶段：对象的初始化</li>
+</ul>
+</li>
+<li>对象在什么时候创建的？<ul>
+<li>new的时候，会直接在堆内存中开辟空间。然后给所有属性赋默认值，完成对象的创建。（这个过程是在构造方法体执行之前就完成了。）</li>
+</ul>
+</li>
+<li>对象初始化在什么时候完成的？<ul>
+<li>构造方法体开始执行，标志着开始进行对象初始化。构造方法体执行完毕，表示对象初始化完毕。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>构造代码块？</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs JAVA"><span class="hljs-comment">//语法格式</span><br>{<br>    <span class="hljs-comment">//构造代码块</span><br>}<br></code></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java">{<br>构造代码块：<span class="hljs-keyword">new</span>一次就会执行一次这个，每次执行构造方法前会执行一次（构造代码块执行之前对象已经创建好了）<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+
+
+</li>
+</ol>
+<ul>
+<li>构造代码块什么时候执行，执行几次？<ul>
+<li>每一次在new的时候，都会先执行一次构造代码块。</li>
+<li>构造代码块是在构造方法执行之前执行的。</li>
+</ul>
+</li>
+</ul>
+<ol start="10">
+<li><p>构造代码块有什么用？</p>
+<p>如果所有的构造方法在最开始的时候有相同的一部分代码，不妨将这个公共的代码提取到构造代码块当中，这样代码可以得到复用。</p>
+</li>
+</ol>
+<h2 id="this关键字"><a href="#this关键字" class="headerlink" title="this关键字"></a>this关键字</h2><ol>
+<li>this是一个关键字</li>
+<li>this出现在实例方法中，代表当前对象。语法是：<strong>this.</strong></li>
+<li>this本质上是一个引用，该引用保存当前对象的内存地址。</li>
+<li>通过“this.”可以访问实例变量，可以调用实例方法。</li>
+<li>this存储在：栈帧的局部变量表的第0个槽位上。</li>
+<li>this. 大部分情况下可以省略，用于区分局部变量和实例变量时不能省略。</li>
+<li>this不能出现在静态方法中。</li>
+<li>“this(实参)”语法：<ul>
+<li>只能出现在构造方法的第一行。</li>
+<li>通过当前构造方法去调用本类中其他的构造方法。</li>
+<li>作用是：代码复用。</li>
+</ul>
+</li>
+</ol>
+<figure class="highlight text"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs text">this(实参)：<br>1. 通过这种语法可以在构造方法中调用本类中其他的构造方法。<br>2. 作用：代码复用。<br>3. this(实参); 只能出现在构造方法第一行。<br></code></pre></td></tr></tbody></table></figure>
+
+
+
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Date</span><span class="hljs-params">()</span> </span>{<br>    <span class="hljs-comment">/*</span><br><span class="hljs-comment">        this.year = 1970;</span><br><span class="hljs-comment">        this.month = 1;</span><br><span class="hljs-comment">        this.day = 1;</span><br><span class="hljs-comment">         */</span><br><br>    <span class="hljs-comment">// 不要这么写，这样会导致再创建一个新的对象。</span><br>    <span class="hljs-comment">//new Date(1970,1,1);</span><br><br>    <span class="hljs-comment">// 不会创建新对象。只是通过一个构造方法去调用另一个构造方法。</span><br>    <span class="hljs-keyword">this</span>(<span class="hljs-number">1970</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>);<br><br>    System.out.println(<span class="hljs-string">"日期创建成功！~"</span>);<br>}<br><br><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Date</span><span class="hljs-params">(<span class="hljs-keyword">int</span> year, <span class="hljs-keyword">int</span> month, <span class="hljs-keyword">int</span> day)</span> </span>{<br>    <span class="hljs-keyword">this</span>.year = year;<br>    <span class="hljs-keyword">this</span>.month = month;<br>    <span class="hljs-keyword">this</span>.day = day;<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+
+
+
+
+<h2 id="static关键字"><a href="#static关键字" class="headerlink" title="static关键字"></a>static关键字</h2><ol>
+<li>static是一个关键字，翻译为：静态的。</li>
+<li>static修饰的变量叫做静态变量。当所有对象的某个属性的值是相同的，建议将该属性定义为静态变量，来节省内存的开销。</li>
+<li>静态变量在类加载时初始化，存储在堆中。</li>
+<li>static修饰的方法叫做静态方法。</li>
+<li>所有静态变量和静态方法，统一使用“类名.”调用。虽然可以使用“引用.”来调用，但实际运行时和对象无关，所以不建议这样写，因为这样写会给其他人造成疑惑。</li>
+<li>使用“引用.”访问静态相关的，即使引用为null，也不会出现空指针异常。</li>
+<li>静态方法中不能使用this关键字。因此无法直接访问实例变量和调用实例方法。</li>
+<li>静态代码块在类加载时执行，一个类中可以编写多个静态代码块，遵循自上而下的顺序依次执行。</li>
+<li>静态代码块代表了类加载时刻，如果你有代码需要在此时刻执行，可以将该代码放到静态代码块中。</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250610000917927.png" srcset="/img/loading.gif" lazyload alt="image-20250610000917927"></p>
+<p><img src="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250610000944986.png" srcset="/img/loading.gif" lazyload alt="image-20250610000944986"></p>
+<p><img src="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250610000027814.png" srcset="/img/loading.gif" lazyload alt="image-20250610000027814"></p>
+<p><img src="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250610000020447.png" srcset="/img/loading.gif" lazyload alt="image-20250610000020447"></p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * static关键字：</span><br><span class="hljs-comment"> *      1. static翻译为静态的</span><br><span class="hljs-comment"> *      2. static修饰的变量：静态变量</span><br><span class="hljs-comment"> *      3. static修饰的方法：静态方法</span><br><span class="hljs-comment"> *      4. 所有static修饰的，访问的时候，直接采用“类名.”，不需要new对象。</span><br><span class="hljs-comment"> *      5. 什么情况下把成员变量定义为静态成员变量？</span><br><span class="hljs-comment"> *          当一个属性是对象级别的，这个属性通常定义为实例变量。（实例变量是一个对象一份。100个对象就应该有100个空间）</span><br><span class="hljs-comment"> *          当一个属性是类级别的（所有对象都有这个属性，并且这个属性的值是一样的），建议将其定义为静态变量，在内存空间上只有一份。节省内存开销。</span><br><span class="hljs-comment"> *          这种类级别的属性，不需要new对象，直接通过类名访问。</span><br><span class="hljs-comment"> *      6. 静态变量存储在哪里？静态变量在什么时候初始化？（什么时候开辟空间）</span><br><span class="hljs-comment"> *          JDK8之后：静态变量存储在堆内存当中。</span><br><span class="hljs-comment"> *          类加载时初始化。</span><br><span class="hljs-comment"> */</span><br></code></pre></td></tr></tbody></table></figure>
+
+
+
+
+
+<h3 id="静态变量的内存图"><a href="#静态变量的内存图" class="headerlink" title="静态变量的内存图"></a>静态变量的内存图</h3><p><img src="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250610000422264.png" srcset="/img/loading.gif" lazyload alt="image-20250610000422264"></p>
+<p>类加载的时候会去检查类中有没有静态变量，有静态变量的话就将其放在类的静态变量中</p>
+<p>类加载是在main方法执行之前执行的</p>
+<h3 id="空指针异常何时发生"><a href="#空指针异常何时发生" class="headerlink" title="空指针异常何时发生"></a>空指针异常何时发生</h3><p>实例相关：实例变量 实例方法</p>
+<p><img src="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250610000511236.png" srcset="/img/loading.gif" lazyload alt="image-20250610000511236"></p>
+<h3 id="静态代码块"><a href="#静态代码块" class="headerlink" title="静态代码块"></a>静态代码块</h3><p>i可以访问，j不能访问</p>
+<p><img src="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250610000559552.png" srcset="/img/loading.gif" lazyload alt="image-20250610000559552"></p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * static关键字还可以定义静态代码块：</span><br><span class="hljs-comment"> *</span><br><span class="hljs-comment"> * 1.语法格式：</span><br><span class="hljs-comment"> *      static {</span><br><span class="hljs-comment"> *</span><br><span class="hljs-comment"> *      }</span><br><span class="hljs-comment"> *</span><br><span class="hljs-comment"> * 2. 静态代码块什么时候执行？执行几次？</span><br><span class="hljs-comment"> *      静态代码块在类加载时执行，并且只执行一次。</span><br><span class="hljs-comment"> *</span><br><span class="hljs-comment"> * 3. 静态代码块可以编写多个，并且遵循自上而下的顺序依次执行。</span><br><span class="hljs-comment"> *</span><br><span class="hljs-comment"> * 4. 静态代码块什么时候使用？</span><br><span class="hljs-comment"> *      本质上，静态代码块就是为程序员预留的一个特殊的时间点：类加载时刻</span><br><span class="hljs-comment"> *      如果你需要再类加载时刻执行一段程序的话，这段代码就可以写到静态代码块当中。</span><br><span class="hljs-comment"> *      例如，有这样一个需求：请在类加载时，记录日志。那么记录日志的代码就可以编写到静态代码块当中。</span><br><span class="hljs-comment"> */</span><br></code></pre></td></tr></tbody></table></figure>
+
+
+
+
+
+<h2 id="Java虚拟机规范"><a href="#Java虚拟机规范" class="headerlink" title="Java虚拟机规范"></a>Java虚拟机规范</h2><h3 id="JVM对应了一套规范（Java虚拟机规范），它可以有不同的实现"><a href="#JVM对应了一套规范（Java虚拟机规范），它可以有不同的实现" class="headerlink" title="JVM对应了一套规范（Java虚拟机规范），它可以有不同的实现"></a>JVM对应了一套规范（Java虚拟机规范），它可以有不同的实现</h3><p>JVM规范是一种抽象的概念，它可以有多种不同的实现。例如：</p>
+<ol>
+<li>HotSpot：HotSpot 由 Oracle 公司开发，是目前最常用的虚拟机实现，也是默认的 Java 虚拟机，默认包含在 Oracle JDK 和 OpenJDK 中</li>
+<li>JRockit：JRockit 也是由 Oracle 公司开发。它是一款针对生产环境优化的 JVM 实现，能够提供高性能和可伸缩性</li>
+<li>IBM JDK：IBM JDK 是 IBM 公司开发的 Java 环境，采用了与 HotSpot 不同的 J9 VM，能够提供更小的内存占用和更迅速的启动时间</li>
+<li>Azul Zing：Azul Zing 是针对生产环境优化的虚拟机实现，能够提供高性能和实时处理能力，适合于高负载的企业应用和实时分析等场景</li>
+<li>OpenJ9：OpenJ9 是由 IBM 开发的优化的 Java 虚拟机实现，支持高度轻量级、低时延的 GC、优化的 JIT 编译器和用于健康度测试的可观察性仪表板</li>
+</ol>
+<p>Oracle官网上Java虚拟机规范的一部分</p>
+<p><img src="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250610081313410.png" srcset="/img/loading.gif" lazyload alt="image-20250610081313410"></p>
+<h3 id="运行时数据区"><a href="#运行时数据区" class="headerlink" title="运行时数据区"></a>运行时数据区</h3><ol>
+<li><p>The pc Register（程序计数器）</p>
+<p>是一块较小的内存空间，此计数器记录的是正在执行的虚拟机字节码指令的地址；</p>
+<p><img src="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250610082447152.png" srcset="/img/loading.gif" lazyload alt="image-20250610082447152"></p>
+</li>
+<li><p>Java Virtual Machine Stacks（Java虚拟机栈）</p>
+<p>Java虚拟机栈用于存储栈帧。栈帧用于存储局部变量表、操作数栈、动态链接、方法出口等信息。</p>
+</li>
+<li><p>Heap（堆）</p>
+<p>是Java虚拟机所管理的最大的一块内存。堆内存用于存放Java对象实例以及数组。堆是垃圾收集器收集垃圾的主要区域。</p>
+</li>
+<li><p>Method Area（方法区）</p>
+<p>用于存储已被虚拟机加载的类信息、常量、<strong>静态变量</strong>、即时编译器编译后的代码等数据。</p>
+<p><strong>规范上静态变量在方法区，但是实际上在堆中</strong></p>
+</li>
+<li><p>Run-Time Constant Pool（运行时常量池）</p>
+<p>是方法区的一部分，用于存放编译期生成的各种字面量与符号引用。</p>
+<p>符号引用：类名，方法名，属性名，字面量，都存在于运行时常量池</p>
+</li>
+<li><p>Native Method Stacks（本地方法栈）</p>
+<p>在本地方法的执行过程中，会使用到本地方法栈。和 Java 虚拟机栈十分相似。</p>
+<p>压栈是给本地方法栈压。</p>
+<p><img src="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250610082609041.png" srcset="/img/loading.gif" lazyload alt="image-20250610082609041"></p>
+</li>
+</ol>
+<p>总结：这些运行时数据区虽然在功能上有所区别，但在整个 Java 虚拟机启动时都需要被创建，并且在虚拟机运行期间始终存在，直到虚拟机停止运行时被销毁。同时，不同的 JVM 实现对运行时数据区的分配和管理方式也可能不同，会对性能和功能产生影响。</p>
+<h3 id="JVM体系结构图（该图属于JVM规范，不是具体的实现）"><a href="#JVM体系结构图（该图属于JVM规范，不是具体的实现）" class="headerlink" title="JVM体系结构图（该图属于JVM规范，不是具体的实现）"></a>JVM体系结构图（该图属于JVM规范，不是具体的实现）</h3><p><img src="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250610081647995.png" srcset="/img/loading.gif" lazyload alt="image-20250610081647995"></p>
+<h3 id="JVM规范的实现：HotSpot（Oracle-JDK-Open-JDK内部使用的JVM就是HotSpot）"><a href="#JVM规范的实现：HotSpot（Oracle-JDK-Open-JDK内部使用的JVM就是HotSpot）" class="headerlink" title="JVM规范的实现：HotSpot（Oracle JDK/Open JDK内部使用的JVM就是HotSpot）"></a>JVM规范的实现：HotSpot（Oracle JDK/Open JDK内部使用的JVM就是HotSpot）</h3><h4 id="JDK6的HotSpot"><a href="#JDK6的HotSpot" class="headerlink" title="JDK6的HotSpot"></a>JDK6的HotSpot</h4><ul>
+<li><p>年轻代：刚new出来的对象放在这里。</p>
+</li>
+<li><p>老年代：经过垃圾回收之后仍然存活的对象。</p>
+</li>
+<li><p>符号引用：类全名，字段全名，方法全名等。</p>
+<p><img src="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250610082727228.png" srcset="/img/loading.gif" lazyload alt="image-20250610082727228"></p>
+</li>
+<li><p>这个时期的永久代和堆是相邻的，使用连续的物理内存，但是内存空间是隔离的。</p>
+</li>
+<li><p>永久代的垃圾收集是和老年代捆绑在一起的，因此无论谁满了，都会触发永久代和老年代的垃圾收集。</p>
+</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250610081802767.png" srcset="/img/loading.gif" lazyload alt="image-20250610081802767"></p>
+<h4 id="JDK7的HotSpot"><a href="#JDK7的HotSpot" class="headerlink" title="JDK7的HotSpot"></a>JDK7的HotSpot</h4><p>这是一个过渡的版本，该版本相对于JDK6来说，变化如下：</p>
+<ol>
+<li>类的静态变量转移到堆中了</li>
+<li>字符串常量池转移到堆中了</li>
+<li>运行时常量池中的符号引用转移到本地内存了</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250610081912927.png" srcset="/img/loading.gif" lazyload alt="image-20250610081912927"></p>
+<h4 id="JDK8及更高版本的HotSpot"><a href="#JDK8及更高版本的HotSpot" class="headerlink" title="JDK8及更高版本的HotSpot"></a>JDK8及更高版本的HotSpot</h4><p>相对于JDK7来说发生了如下变化：</p>
+<ol>
+<li>彻底删除永久代（为了避免OOM错误的发生）</li>
+<li>将方法区的实现转移到本地内存</li>
+<li>将符号引用重新放回运行时常量池</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250610081955826.png" srcset="/img/loading.gif" lazyload alt="image-20250610081955826"></p>
+<h2 id="单例模式"><a href="#单例模式" class="headerlink" title="单例模式"></a>单例模式</h2><h3 id="设计模式概述"><a href="#设计模式概述" class="headerlink" title="设计模式概述"></a>设计模式概述</h3><ul>
+<li>什么是设计模式？</li>
+</ul>
+<p>设计模式（Design Pattern）是一套被广泛接受的、经过试验验证的、可反复使用的基于面向对象的软件设计经验总结，它是软件开发人员在软件设计中，对常见问题的解决方案的总结和抽象。设计模式是针对软件开发中常见问题和模式的通用解决方案</p>
+<ul>
+<li>设计模式有哪些？<ol>
+<li><font color="red">GoF设计模式</font>：《Design Patterns: Elements of Reusable Object-Oriented Software》（即后述《设计模式》一书），由 Erich Gamma、Richard Helm、Ralph Johnson 和 John Vlissides 合著（Addison-Wesley，1995）。这几位作者常被称为四人组（Gang of Four）。</li>
+<li>架构设计模式（Architectural Pattern）：主要用于软件系统的整体架构设计，包括多层架构、MVC架构、微服务架构、REST架构和大数据架构等。</li>
+<li>企业级设计模式（Enterprise Pattern）：主要用于企业级应用程序设计，包括基于服务的架构（SOA）、企业集成模式（EIP）、业务流程建模（BPM）和企业规则引擎（BRE）等。</li>
+<li>领域驱动设计模式（Domain Driven Design Pattern）：主要用于领域建模和开发，包括聚合、实体、值对象、领域事件和领域服务等。</li>
+<li>并发设计模式（Concurrency Pattern）：主要用于处理并发性问题，包括互斥、线程池、管道、多线程算法和Actor模型等。</li>
+<li>数据访问模式（Data Access Pattern）：主要用于处理数据访问层次结构，包括数据访问对象（DAO）、仓库模式和活动记录模式等。</li>
+</ol>
+</li>
+<li>GoF设计模式的分类？<ol>
+<li>创建型：主要解决对象的创建问题</li>
+<li>结构型：通过设计和构建对象之间的关系，以达到更好的重用性、扩展性和灵活性</li>
+<li>行为型：主要用于处理对象之间的算法和责任分配</li>
+</ol>
+</li>
+</ul>
+<h3 id="单例模式-1"><a href="#单例模式-1" class="headerlink" title="单例模式"></a>单例模式</h3><p>单例模式（GoF23种设计模式之一，最简单的设计模式：保证某种类型的对象只创建一个）</p>
+<h4 id="饿汉式-类加载时就创建对象。"><a href="#饿汉式-类加载时就创建对象。" class="headerlink" title="饿汉式:类加载时就创建对象。"></a>饿汉式:类加载时就创建对象。</h4><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Singleton</span> </span>{<br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> Singleton instance = <span class="hljs-keyword">new</span> Singleton(); <span class="hljs-comment">// 在类加载的时候就创建实例</span><br>    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-title">Singleton</span><span class="hljs-params">()</span> </span>{}  <span class="hljs-comment">// 将构造方法设为私有化</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> Singleton <span class="hljs-title">getInstance</span><span class="hljs-params">()</span> </span>{  <span class="hljs-comment">// 提供一个公有的静态方法，以获取实例</span><br>        <span class="hljs-keyword">return</span> instance;<br>    }<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+
+
+
+
+<h4 id="懒汉式：第一次调用get方法时才会创建对象。"><a href="#懒汉式：第一次调用get方法时才会创建对象。" class="headerlink" title="懒汉式：第一次调用get方法时才会创建对象。"></a>懒汉式：第一次调用get方法时才会创建对象。</h4><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Singleton</span> </span>{<br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> Singleton instance; <span class="hljs-comment">// 声明一个静态的、私有的该类类型的变量，用于存储该类的实例</span><br>    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-title">Singleton</span><span class="hljs-params">()</span> </span>{} <span class="hljs-comment">// 将构造方法设为私有化</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> Singleton <span class="hljs-title">getInstance</span><span class="hljs-params">()</span> </span>{ <span class="hljs-comment">// 提供一个公有的静态方法，以获取实例</span><br>        <span class="hljs-keyword">if</span> (instance == <span class="hljs-keyword">null</span>) { <span class="hljs-comment">// 第一次调用该方法时，才真正创建实例</span><br>            instance = <span class="hljs-keyword">new</span> Singleton(); <span class="hljs-comment">// 创建实例</span><br>        }<br>        <span class="hljs-keyword">return</span> instance;<br>    }<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+
+
+
+
+<h2 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h2><ol>
+<li>面向对象三大特征之一：继承</li>
+<li>继承作用？<ul>
+<li>基本作用：代码复用</li>
+<li>重要作用：有了继承，才有了方法覆盖和多态机制。</li>
+</ul>
+</li>
+<li>继承在java中如何实现？<ul>
+<li>[修饰符列表] class 类名 extends 父类名{}</li>
+<li>extends翻译为扩展。表示子类继承父类后，子类是对父类的扩展。</li>
+</ul>
+</li>
+<li>继承相关的术语：当B类继承A类时<ul>
+<li>A类称为：父类、超类、基类、superclass</li>
+<li>B类称为：子类、派生类、subclass</li>
+</ul>
+</li>
+<li>Java只支持单继承，一个类只能直接继承一个类。</li>
+<li>Java不支持多继承，但支持多重继承（多层继承）。</li>
+<li>子类继承父类后，除私有的不支持继承、构造方法不支持继承。其它的全部会继承。</li>
+<li>一个类没有显示继承任何类时，默认继承java.lang.Object类。</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250616194149481.png" srcset="/img/loading.gif" lazyload alt="image-20250616194149481"></p>
+<h2 id="方法覆盖-override-方法重写-overwrite"><a href="#方法覆盖-override-方法重写-overwrite" class="headerlink" title="方法覆盖(override)/方法重写(overwrite)"></a>方法覆盖(override)/方法重写(overwrite)</h2><ol>
+<li>什么情况下考虑使用方法覆盖？<ul>
+<li>当从父类中继承过来的方法无法满足当前子类的业务需求时。</li>
+</ul>
+</li>
+<li>发生方法覆盖的条件？<ul>
+<li>具有继承关系的父子类之间</li>
+<li>相同的返回值类型，相同的方法名，相同的形式参数列表</li>
+<li>访问权限不能变低，可以变高。</li>
+<li>抛出异常不能变多，可以变少。</li>
+<li>返回值类型可以是父类方法返回值类型的子类。</li>
+</ul>
+</li>
+<li>方法覆盖的小细节：<ul>
+<li>@Override注解标注的方法会在编译阶段检查该方法是否重写了父类的方法。</li>
+<li>私有方法不能继承，所以不能覆盖。</li>
+<li>构造方法不能继承，所以不能覆盖。</li>
+<li>静态方法不存在方法覆盖，方法覆盖针对的是实例方法。</li>
+<li>方法覆盖说的实例方法，和实例变量无关。</li>
+</ul>
+</li>
+</ol>
+<h2 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h2><h3 id="多态的基础语法"><a href="#多态的基础语法" class="headerlink" title="多态的基础语法"></a>多态的基础语法</h3><ol>
+<li>什么是向上转型和向下转型？<ul>
+<li>java允许具有继承关系的父子类型之间的类型转换。</li>
+<li>向上转型（upcasting）：子–&gt;父<ul>
+<li>子类型的对象可以赋值给一个父类型的引用。</li>
+</ul>
+</li>
+<li>向下转型（downcasting）：父–&gt;子<ul>
+<li>父类型的引用可以转换为子类型的引用。但是需要加强制类型转换符。</li>
+</ul>
+</li>
+<li>无论是向上转型还是向下转型，前提条件是：两种类型之间必须存在继承关系。这样编译器才能编译通过。</li>
+</ul>
+</li>
+<li>什么是多态？<ul>
+<li>父类型引用指向子类对象。Animal a = new Cat(); a.move();</li>
+<li>程序分为编译阶段和运行阶段：<ul>
+<li>编译阶段：编译器只知道a是Animal类型，因此去Animal类中找move()方法，找到之后，绑定成功，编译通过。这个过程通常被称为静态绑定。</li>
+<li>运行阶段：运行时和JVM堆内存中的真实Java对象有关，所以运行时会自动调用真实对象的move()方法。这个过程通常被称为动态绑定。</li>
+</ul>
+</li>
+<li>多态指的是：多种形态，编译阶段一种形态，运行阶段另一种形态，因此叫做多态。</li>
+</ul>
+</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250616194646187.png" srcset="/img/loading.gif" lazyload alt="image-20250616194646187"></p>
+<ol start="3">
+<li>向下转型我们需要注意什么？<ul>
+<li>向下转型时，使用不当，容易发生类型转换异常：ClassCastException。</li>
+<li>在向下转型时，一般建议使用instanceof运算符进行判断来避免ClassCastException的发生。</li>
+</ul>
+</li>
+<li>instanceof运算符的使用<ul>
+<li>语法格式：(引用 instanceof 类型)</li>
+<li>执行结果是true或者false</li>
+<li>例如：(a instanceof Cat)<ul>
+<li>如果结果是true：表示a引用指向的对象是Cat类型的。</li>
+<li>如果结果是false：表示a引用指向的对象不是Cat类型的。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="软件开发七大原则"><a href="#软件开发七大原则" class="headerlink" title="软件开发七大原则"></a>软件开发七大原则</h3><ol>
+<li>软件开发原则旨在引导软件行业的从业者在代码设计和开发过程中，遵循一些基本原则，以达到高质量、易维护、易扩展、安全性强等目标。软件开发原则与具体的编程语言无关的，属于软件设计方面的知识。</li>
+<li>软件开发七大原则？<ul>
+<li>开闭原则 (Open-Closed Principle，OCP)：一个软件实体应该对扩展开放，对修改关闭。即在不修改原有代码的基础上，通过添加新的代码来扩展功能。（最基本的原则，其它原则都是为这个原则服务的。）</li>
+<li>单一职责原则：一个类只负责单一的职责，也就是一个类只有一个引起它变化的原因。</li>
+<li>里氏替换原则：子类对象可以替换其基类对象出现的任何地方，并且保证原有程序的正确性。</li>
+<li>接口隔离原则：客户端不应该依赖它不需要的接口。</li>
+<li>依赖倒置原则：高层模块不应该依赖底层模块，它们都应该依赖于抽象接口。换言之，面向接口编程。</li>
+<li>迪米特法则：一个对象应该对其它对象保持最少的了解。即一个类应该对自己需要耦合或调用的类知道得最少。</li>
+<li>合成复用原则：尽量使用对象组合和聚合，而不是继承来达到复用的目的。组合和聚合可以在获取外部对象的方法中被调用，是一种运行时关联，而继承则是一种编译时关联。</li>
+</ul>
+</li>
+</ol>
+<h3 id="多态在开发中的作用"><a href="#多态在开发中的作用" class="headerlink" title="多态在开发中的作用"></a>多态在开发中的作用</h3><ol>
+<li>降低程序的耦合度，提高程序的扩展力。</li>
+<li>尽量使用多态，面向抽象编程，不要面向具体编程。</li>
+</ol>
+<h2 id="super关键字"><a href="#super关键字" class="headerlink" title="super关键字"></a>super关键字</h2><ol>
+<li>super关键字和this关键字对比来学习。this代表的是当前对象。super代表的是当前对象中的父类型特征。</li>
+<li>super不能使用在静态上下文中。</li>
+<li>“super.”大部分情况下是可以省略的。什么时候不能省略？<ul>
+<li>当父类和子类中定义了相同的属性（实例变量）或者相同方法（实例方法）时，如果需要在子类中访问父类的属性或方法时，super.不能省略。</li>
+</ul>
+</li>
+<li>this可以单独输出，super不能单独输出。</li>
+<li>super(实参); 通过子类的构造方法调用父类的构造方法，目的是为了完成父类型特征的初始化。当一个构造方法第一行没有显示的调用“super(实参);”，也没有显示的调用“this(实参)”，系统会自动调用super()。因此一个类中的无参数构造方法建议显示的定义出来。</li>
+<li>super(实参); 这个语法只能出现在构造方法第一行。</li>
+<li>在Java语言中只要new对象，Object的无参数构造方法一定会执行。</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250616195155900.png" srcset="/img/loading.gif" lazyload alt="image-20250616195155900"></p>
+<h2 id="final关键字"><a href="#final关键字" class="headerlink" title="final关键字"></a>final关键字</h2><ol>
+<li>final修饰的类不能被继承</li>
+<li>final修饰的方法不能被覆盖</li>
+<li>final修饰的变量，一旦赋值不能重新赋值</li>
+<li>final修饰的实例变量必须在对象初始化时手动赋值</li>
+<li>final修饰的实例变量一般和static联合使用：称为常量</li>
+<li>final修饰的引用，一旦指向某个对象后，不能再指向其它对象。但指向的对象内部的数据是可以修改的。</li>
+</ol>
+<h2 id="抽象类"><a href="#抽象类" class="headerlink" title="抽象类"></a>抽象类</h2><ol>
+<li>什么时候考虑将类定义为抽象类？<ul>
+<li>如果类中有些方法无法实现或者没有意义，可以将方法定义为抽象方法，类定义为抽象类。这样在抽象类中只提供公共代码，具体的实现强行交给子类去做。</li>
+<li>比如一个Person类有一个问候的方法greet()，但是不同国家的人问候的方式不同，因此greet()方法具体实现应该交给子类。再比如主人喂养宠物的例子中的宠物Pet，Pet中的eat()方法的方法体就是没有意义的。</li>
+</ul>
+</li>
+<li>抽象类如何定义？<ul>
+<li>abstract class 类名{}</li>
+</ul>
+</li>
+<li>抽象类有构造方法，但无法实例化。抽象类的构造方法是给子类使用的。</li>
+<li>抽象方法如何定义？<ul>
+<li>abstract 方法返回值类型 方法名(形参);</li>
+</ul>
+</li>
+<li>抽象类中不一定有抽象方法，但如果有抽象方法那么类要求必须是抽象类。</li>
+<li>一个非抽象的类继承抽象类，要求必须将抽象方法进行实现/重写。</li>
+<li>abstract关键字不能和private，final，static关键字共存。</li>
+</ol>
+<h2 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h2><h3 id="接口的基础语法"><a href="#接口的基础语法" class="headerlink" title="接口的基础语法"></a>接口的基础语法</h3><ol>
+<li>接口（interface）在Java中表示一种规范或契约，它定义了一组抽象方法和常量，用来描述一些实现这个接口的类应该具有哪些行为和属性。接口和类一样，也是一种引用数据类型。</li>
+<li>接口怎么定义？[修饰符列表] interface 接口名{}</li>
+<li>抽象类是半抽象的，接口是完全抽象的。接口没有构造方法，也无法实例化。</li>
+<li>接口中只能定义：常量+抽象方法。接口中的常量的static final可以省略。接口中的抽象方法的abstract可以省略。接口中所有的方法和变量都是public修饰的。</li>
+<li>接口和接口之间可以多继承。</li>
+<li>类和接口的关系我们叫做实现（这里的实现也可以等同看做继承）。使用implements关键字进行接口的实现。</li>
+<li>一个非抽象的类实现接口必须将接口中所有的抽象方法全部实现。</li>
+<li>一个类可以实现多个接口。语法是：class 类 implements 接口A,接口B{}</li>
+<li>Java8之后，接口中允许出现默认方法和静态方法(JDK8新特性)<ul>
+<li>引入默认方式是为了解决接口演变问题：接口可以定义抽象方法，但是不能实现这些方法。所有实现接口的类都必须实现这些抽象方法。这会导致接口升级的问题：当我们向接口添加或删除一个抽象方法时，这会破坏该接口的所有实现，并且所有该接口的用户都必须修改其代码才能适应更改。这就是所谓的”接口演变”问题。</li>
+<li>引入的静态方法只能使用本接口名来访问，无法使用实现类的类名访问。</li>
+</ul>
+</li>
+<li>JDK9之后允许接口中定义私有的实例方法（为默认方法服务的）和私有的静态方法（为静态方法服务的）。</li>
+<li>所有的接口隐式的继承Object。因此接口也可以调用Object类的相关方法。</li>
+</ol>
+<h3 id="接口的作用"><a href="#接口的作用" class="headerlink" title="接口的作用"></a>接口的作用</h3><ol>
+<li><p>面向接口调用的称为：接口调用者</p>
+</li>
+<li><p>面向接口实现的称为：接口实现者</p>
+</li>
+<li><p>调用者和实现者通过接口达到了解耦合。也就是说调用者不需要关心具体的实现者，实现者也不需要关心具体的调用者，双方都遵循规范，面向接口进行开发。</p>
+</li>
+<li><p><font color="red">面向抽象编程，面向接口编程，可以降低程序的耦合度，提高程序的扩展力。</font></p>
+</li>
+<li><p>定义一个Usb接口，提供read()和write()方法，通过read()方法读，通过write()方法写：</p>
+<ul>
+<li><p>定义一个电脑类Computer，它是调用者，面向Usb接口来调用。</p>
+</li>
+<li><p>Usb接口的实现可以有很多，例如：打印机（Printer），硬盘（HardDrive）。</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Computer</span></span>{<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">conn</span><span class="hljs-params">(Usb usb)</span></span>{<br>        usb.read();<br>        usb.write();<br>    }<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+
+
+</li>
+</ul>
+</li>
+</ol>
+<ol start="6">
+<li>再想想，我们平时去饭店吃饭，这个场景中有没有接口呢？食谱菜单就是接口。顾客是调用者。厨师是实现者。</li>
+</ol>
+<h3 id="接口与抽象类如何选择"><a href="#接口与抽象类如何选择" class="headerlink" title="接口与抽象类如何选择"></a>接口与抽象类如何选择</h3><ol>
+<li>抽象类和接口虽然在代码角度都能达到同样的效果，但适用场景不同：<ul>
+<li>抽象类主要适用于公共代码的提取。当多个类中有共同的属性和方法时，为了达到代码的复用，建议为这几个类提取出来一个父类，在该父类中编写公共的代码。如果有一些方法无法在该类中实现，可以延迟到子类中实现。这样的类就应该使用抽象类。</li>
+<li>接口主要用于功能的扩展。例如有很多类，一些类需要这个方法，另外一些类不需要这个方法时，可以将该方法定义到接口中。需要这个方法的类就去实现这个接口，不需要这个方法的就可以不实现这个接口。接口主要规定的是行为。</li>
+</ul>
+</li>
+</ol>
+<h2 id="UML"><a href="#UML" class="headerlink" title="UML"></a>UML</h2><ol>
+<li>UML（Unified Modeling Language，统一建模语言）是一种用于面向对象软件开发的图形化的建模语言。它由Grady Booch、James Rumbaugh和Ivar Jacobson等三位著名的软件工程师所开发，并于1997年正式发布。UML提供了一套通用的图形化符号和规范，帮助开发人员以图形化的形式表达软件设计和编写的所有关键方面，从而更好地展示软件系统的设计和实现过程。</li>
+<li>UML是一种图形化的语言，类似于现实生活中建筑工程师画的建筑图纸，图纸上有特定的符号代表特殊的含义。</li>
+<li>UML不是专门为java语言准备的。只要是面向对象的编程语言，开发前的设计，都需要画UML图进行系统设计。（设计模式、软件开发七大原则等同样也不是只为java语言准备的。）</li>
+<li>UML图包括：<ul>
+<li><font color="red">类图（Class Diagram）：描述软件系统中的类、接口、关系和其属性等；</font></li>
+<li><font color="red">用例图（Use Case Diagram）：描述系统的功能需求和用户与系统之间的关系；</font></li>
+<li><font color="red">序列图（Sequence Diagram）：描述对象之间的交互、消息传递和时序约束等；</font></li>
+<li><font color="red">状态图（Statechart Diagram）：描述类或对象的生命周期以及状态之间的转换；</font></li>
+<li>对象图（Object Diagram）：表示特定时间的系统状态，并显示其包含的对象及其属性；</li>
+<li>协作图（Collaboration Diagram）：描述对象之间的协作，表示对象之间相互合作来完成任务的关系；</li>
+<li>活动图（Activity Diagram）：描述系统的动态行为和流程，包括控制流和对象流；</li>
+<li>部署图（Deployment Diagram）：描述软件或系统在不同物理设备上部署的情况，包括计算机、网络、中间件、应用程序等。</li>
+</ul>
+</li>
+<li>常见的UML建模工具有：StarUML，Rational Rose等。</li>
+</ol>
+<h3 id="类之间的关系"><a href="#类之间的关系" class="headerlink" title="类之间的关系"></a>类之间的关系</h3><ol>
+<li>泛化关系（is a）</li>
+<li>实现关系（is like a）</li>
+<li>关联关系（has a）</li>
+<li>聚合关系<ul>
+<li>聚合关系指的是一个类包含、合成或者拥有另一个类的实例，而这个实例是可以独立存在的。</li>
+<li>聚合关系是一种弱关联关系，表示整体与部分之间的关系。</li>
+<li>例如一个教室有多个学生</li>
+</ul>
+</li>
+<li>组合关系（Composition）<ul>
+<li>组合关系是聚合关系的一种特殊情况，表示整体与部分之间的关系更加强烈。</li>
+<li>组合关系指的是一个类包含、合成或者拥有另一个类的实例，而这个实例只能同时存在于一个整体对象中。如果整体对象被销毁，那么部分对象也会被销毁。</li>
+<li>例如一个人对应四个肢体。</li>
+</ul>
+</li>
+<li>依赖关系（Dependency）<ul>
+<li>依赖关系是一种临时性的关系，当一个类使用另一个类的功能时，就会产生依赖关系。</li>
+<li>如果一个类的改变会影响到另一个类的功能，那么这两个类之间就存在依赖关系。</li>
+<li>依赖关系是一种较弱的关系，可以存在多个依赖于同一个类的对象。</li>
+<li>例如A类中使用了B类，但是B类作为A类的方法参数或者局部变量等。</li>
+</ul>
+</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250616200545886.png" srcset="/img/loading.gif" lazyload alt="image-20250616200545886"></p>
+<h2 id="访问控制权限"><a href="#访问控制权限" class="headerlink" title="访问控制权限"></a>访问控制权限</h2><ol>
+<li><p>private：私有的，只能在本类中访问。</p>
+</li>
+<li><p>缺省：默认的，同一个包下可以访问。</p>
+</li>
+<li><p>protected：受保护的，子类中可以访问。（受保护的通常就是给子孙用的。）</p>
+</li>
+<li><p>public：公共的，在任何位置都可以访问。</p>
+</li>
+</ol>
+<p>   a.  类中的属性和方法访问权限共有四种：private、缺省、protected和public。b. 类的访问权限只有两种：public和 缺省。</p>
+<p>   c. 访问权限控制符不能修饰局部变量。</p>
+<p><img src="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250616200559988.png" srcset="/img/loading.gif" lazyload alt="image-20250616200559988"></p>
+<h2 id="Object类"><a href="#Object类" class="headerlink" title="Object类"></a>Object类</h2><ol>
+<li>java.lang.Object是所有类的超类。java中所有类都实现了这个类中的方法。</li>
+<li>Object类是我们学习JDK类库的第一个类。通过这个类的学习要求掌握会查阅API帮助文档。</li>
+<li>现阶段Object类中需要掌握的方法：<ul>
+<li>toString：将java对象转换成字符串。</li>
+<li>equals：判断两个对象是否相等。</li>
+</ul>
+</li>
+<li>现阶段Object类中需要了解的方法：<ul>
+<li>hashCode：返回一个对象的哈希值，通常作为在哈希表中查找该对象的键值。Object类的默认实现是根据对象的内存地址生成一个哈希码（即将对象的内存地址转换为整数作为哈希值）。hashCode()方法是为了HashMap、Hashtable、HashSet等集合类进行优化而设置的，以便更快地查找和存储对象。</li>
+<li>finalize：当java对象被回收时，由GC自动调用被回收对象的finalize方法，通常在该方法中完成销毁前的准备。</li>
+<li>clone：对象的拷贝。（浅拷贝，深拷贝）protected修饰的只能在同一个包下或者子类中访问。只有实现了Cloneable接口的对象才能被克隆。</li>
+</ul>
+</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250616201851462.png" srcset="/img/loading.gif" lazyload alt="image-20250616201851462"></p>
+<h2 id="内部类"><a href="#内部类" class="headerlink" title="内部类"></a>内部类</h2><ol>
+<li>什么是内部类？<ul>
+<li>定义在一个类中的类。</li>
+</ul>
+</li>
+<li>什么时候使用内部类？<ul>
+<li>一个类用到了另外一个类，而这两个类的联系比较密切，但是如果把这两个类定义为独立的类，不但增加了类的数量，也不利于代码的阅读和维护。</li>
+<li>内部类可以访问外部类的私有成员，这样可以将相关的类和接口隐藏在外部类的内部，从而提高封装性。</li>
+<li>匿名内部类是指没有名字的内部类，通常用于定义一个只使用一次的类，比如在事件处理中。</li>
+</ul>
+</li>
+<li>内部类包括哪几种？<ul>
+<li>静态内部类：和静态变量一个级别<ul>
+<li>静态内部类如何实例化：OuterClass.StaticInnerClass staticInnerClass = new OuterClass.StaticInnerClass();</li>
+<li>无法直接访问外部类中实例变量和实例方法。</li>
+</ul>
+</li>
+<li>实例内部类：和实例变量一个级别<ul>
+<li>实例内部类如何实例化：OuterClass.InnerClass innerClass = new OuterClass().new InnerClass();</li>
+<li>可以直接访问外部类中所有的实例变量，实例方法，静态变量，静态方法。</li>
+</ul>
+</li>
+<li>局部内部类：和局部变量一个级别<ul>
+<li>局部内部类方外类外部的局部变量时，局部变量需要被final修饰。</li>
+<li>从JDK8开始，不需要手动添加final了，但JVM会自动添加。</li>
+</ul>
+</li>
+<li>匿名内部类：特殊的局部内部类，没有名字，只能用一次。</li>
+</ul>
+</li>
+</ol>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Java/" class="category-chain-item">Java</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>Java面向对象</div>
+      <div>https://xiaofanshutu.github.io/posts/5f8d3e42.html</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>John Doe</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2025年6月9日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/posts/e3345db4.html" title="Java数组">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Java数组</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/posts/ea538f2a.html" title="Java基础语法">
+                        <span class="hidden-mobile">Java基础语法</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

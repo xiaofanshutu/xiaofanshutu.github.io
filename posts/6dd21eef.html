@@ -1,0 +1,774 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="String初识 java.lang.String  Java中String属于引用数据类型，代表字符串。  Java在堆中为字符串准备了字符串常量池。（是一种缓存技术，提高程序执行效率）    ​    注：字符串字面量在编译的时候就已经确定了将其放到字符串常量池中。JVM启动时会立即将程序中带有双引号的字符串字面量全部放入字符串常量池。   Java8之后字符串常量池存放在堆中，Java8之前">
+<meta property="og:type" content="article">
+<meta property="og:title" content="常用类_String类">
+<meta property="og:url" content="https://xiaofanshutu.github.io/posts/6dd21eef.html">
+<meta property="og:site_name" content="yubiii">
+<meta property="og:description" content="String初识 java.lang.String  Java中String属于引用数据类型，代表字符串。  Java在堆中为字符串准备了字符串常量池。（是一种缓存技术，提高程序执行效率）    ​    注：字符串字面量在编译的时候就已经确定了将其放到字符串常量池中。JVM启动时会立即将程序中带有双引号的字符串字面量全部放入字符串常量池。   Java8之后字符串常量池存放在堆中，Java8之前">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250411085551049.png">
+<meta property="article:published_time" content="2025-04-10T23:38:26.701Z">
+<meta property="article:modified_time" content="2025-04-11T12:11:43.308Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250411085551049.png">
+  
+  
+  
+  <title>常用类_String类 - yubiii</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"xiaofanshutu.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 5.2.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="yubiii" type="application/atom+xml">
+</head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 30vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="常用类_String类"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-04-11 07:38" pubdate>
+          2025年4月11日 早上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          1.4k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          12 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">常用类_String类</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="String初识"><a href="#String初识" class="headerlink" title="String初识"></a>String初识</h1><ol>
+<li><p>java.lang.String</p>
+</li>
+<li><p>Java中String属于引用数据类型，代表字符串。</p>
+</li>
+<li><p>Java在堆中为字符串准备了字符串常量池。（是一种缓存技术，提高程序执行效率）</p>
+</li>
+</ol>
+<blockquote>
+<p>​    <strong>注：字符串字面量在编译的时候就已经确定了将其放到字符串常量池中。JVM启动时会立即将程序中带有双引号的字符串字面量全部放入字符串常量池。</strong></p>
+</blockquote>
+<ol start="3">
+<li>Java8之后字符串常量池存放在堆中，Java8之前字符串常量池在永久代。</li>
+<li>字符串一旦创建是不可变的。</li>
+</ol>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@Stable</span><br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">byte</span>[] value;<br></code></pre></td></tr></tbody></table></figure>
+
+<h1 id="String的拼接"><a href="#String的拼接" class="headerlink" title="String的拼接"></a>String的拼接</h1><ol>
+<li>动态拼接后新的字符串不会自动放到字符串常量池。</li>
+</ol>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java">String str1 = <span class="hljs-string">"abc"</span>; <span class="hljs-comment">//字符串常量池</span><br>String str2 = <span class="hljs-string">"def"</span>; <span class="hljs-comment">//字符串常量池</span><br>String str3 = <span class="hljs-string">"abcdef"</span>; <span class="hljs-comment">//字符串常量池</span><br>String str4 = str1 + str2; <span class="hljs-comment">//运行时才会创建对象, str4在堆内存中</span><br>System.out.println(str3 == str4); <span class="hljs-comment">//false</span><br></code></pre></td></tr></tbody></table></figure>
+
+
+
+<ol start="2">
+<li>两个字符串字面量拼接会做编译阶段的优化，在编译阶段就会进行字符串的拼接。</li>
+</ol>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//在字符串常量池中只有一个abcdef</span><br>String str3 = <span class="hljs-string">"abcdef"</span>; <span class="hljs-comment">//字符串常量池</span><br>String str5 = <span class="hljs-string">"abc"</span> + <span class="hljs-string">"def"</span>; <span class="hljs-comment">//字符串常量池</span><br>System.out.println(str3 == str5); <span class="hljs-comment">//true </span><br></code></pre></td></tr></tbody></table></figure>
+
+
+
+
+
+<h1 id="String类的常用构造方法"><a href="#String类的常用构造方法" class="headerlink" title="String类的常用构造方法"></a>String类的常用构造方法</h1><ol>
+<li><p>String(char[] value)：</p>
+<ul>
+<li><p>根据字符数组创建一个新的字符串对象。</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">char</span>[] chars = <span class="hljs-keyword">new</span> <span class="hljs-keyword">char</span>[]{<span class="hljs-string">'a'</span>, <span class="hljs-string">'b'</span>, <span class="hljs-string">'c'</span>};<br>String s = <span class="hljs-keyword">new</span> String(chars);<br>System.out.println(s);<span class="hljs-comment">//abc</span><br></code></pre></td></tr></tbody></table></figure>
+</li>
+</ul>
+</li>
+<li><p>String(char[] value, int offset, int count)：</p>
+<ul>
+<li><p>根据字符数组的指定部分创建一个新的字符串对象。</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">char</span>[] chars = <span class="hljs-keyword">new</span> <span class="hljs-keyword">char</span>[]{<span class="hljs-string">'a'</span>, <span class="hljs-string">'b'</span>, <span class="hljs-string">'c'</span>, <span class="hljs-string">'d'</span>, <span class="hljs-string">'e'</span>, <span class="hljs-string">'f'</span>};<br>String s = <span class="hljs-keyword">new</span> String(chars, <span class="hljs-number">1</span>, <span class="hljs-number">3</span>);<br>System.out.println(s);<span class="hljs-comment">//bcd</span><br></code></pre></td></tr></tbody></table></figure>
+</li>
+</ul>
+</li>
+<li><p>String(byte[] bytes)：</p>
+<ul>
+<li>根据字节数组创建一个新的字符串对象，默认使用平台默认的字符集进行解码。</li>
+</ul>
+</li>
+<li><p>String(byte[] bytes, int offset, int length)：</p>
+<ul>
+<li><p>根据字节数组的指定部分创建一个新的字符串对象，默认使用平台默认的字符集进行解码。</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">byte</span>[] bytes = <span class="hljs-keyword">new</span> <span class="hljs-keyword">byte</span>[]{<span class="hljs-number">97</span>, <span class="hljs-number">98</span>, <span class="hljs-number">99</span>, <span class="hljs-number">100</span>, <span class="hljs-number">101</span>, <span class="hljs-number">102</span>};<br>String str = <span class="hljs-keyword">new</span> String(chars, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>);<br>System.out.println(str);<span class="hljs-comment">//cde</span><br></code></pre></td></tr></tbody></table></figure>
+</li>
+</ul>
+</li>
+<li><p>String(byte[] bytes, Charset charset)：根据字节数组和指定的字符集创建一个新的字符串对象。</p>
+<ul>
+<li><p>如果编码和解码用到的字符集不一致，则会出现乱码。</p>
+</li>
+<li><p>new String(bytes, Charset.defaultCharset());</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">byte</span>[] bytesArr = <span class="hljs-keyword">new</span> <span class="hljs-keyword">byte</span>[]{<span class="hljs-number">97</span>, <span class="hljs-number">98</span>, <span class="hljs-number">99</span>, <span class="hljs-number">100</span>, <span class="hljs-number">101</span>, <span class="hljs-number">102</span>};<br>String s5 = <span class="hljs-keyword">new</span> String(bytesArr, Charset.defaultCharset());<br>System.out.println(s5);<span class="hljs-comment">//abcdef</span><br></code></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">// 先将字符串转换成byte[]数组（这个过程是一个编码的过程）</span><br><span class="hljs-keyword">byte</span>[] bytes1 = <span class="hljs-string">"你好旧时光"</span>.getBytes(StandardCharsets.UTF_8);<br><span class="hljs-comment">// 将以上的byte[]数组转换成字符串（这个过程是一个解码的过程）</span><br>String s6 = <span class="hljs-keyword">new</span> String(bytes1, StandardCharsets.UTF_8);<br>System.out.println(s6);<span class="hljs-comment">//你好旧时光</span><br></code></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">// 乱码的本质：在进行编码和解码的时候没有使用同一个字符编码方式。</span><br><span class="hljs-comment">//如果编码和解码的字符集不一致，就会出现乱码。</span><br><br><span class="hljs-comment">// 先将字符串转换成byte[]数组（这个过程是一个编码的过程）</span><br><span class="hljs-keyword">byte</span>[] bytes1 = <span class="hljs-string">"你好旧时光"</span>.getBytes(StandardCharsets.UTF_8);<br><span class="hljs-comment">// 将以上的byte[]数组转换成字符串（这个过程是一个解码的过程）</span><br>String s6 = <span class="hljs-keyword">new</span> String(bytes1, StandardCharsets.ISO_8859_1);<br>System.out.println(s6);<br></code></pre></td></tr></tbody></table></figure>
+
+</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250411085551049.png" srcset="/img/loading.gif" lazyload alt="image-20250411085551049"></p>
+</li>
+</ol>
+<ol start="6">
+<li><p>String(byte[] bytes, String charsetName)：根据字节数组和指定的字符集名称创建一个新的字符串对象。</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">// 编码</span><br><span class="hljs-keyword">byte</span>[] bytes = <span class="hljs-string">"淡然"</span>.getBytes(<span class="hljs-string">"GBK"</span>);<br><span class="hljs-comment">// 解码</span><br>String s6 = <span class="hljs-keyword">new</span> String(bytes, <span class="hljs-string">"GBK"</span>);<br>System.out.println(s6);<span class="hljs-comment">//淡然</span><br></code></pre></td></tr></tbody></table></figure>
+</li>
+<li><p>String(String original)：通过复制现有字符串创建一个新的字符串对象。</p>
+<ul>
+<li><p>这个方法被@IntrinsicCandidate标注，这个注解的作用是告诉编译器，该方法或构造函数是一个内在的候选方法,可以被优化和替换为更高效的代码。因此它是不建议使用的。</p>
+</li>
+<li><p>new String(“hello”); 这个代码会让常量池中有一个 “hello”，并且在堆中也有有一个String对象。</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@IntrinsicCandidate</span><br><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">String</span><span class="hljs-params">(String original)</span> </span>{<br>    <span class="hljs-keyword">this</span>.value = original.value;<br>    <span class="hljs-keyword">this</span>.coder = original.coder;<br>    <span class="hljs-keyword">this</span>.hash = original.hash;<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java">String helloStr = <span class="hljs-keyword">new</span> String(<span class="hljs-string">"hello"</span>);<br></code></pre></td></tr></tbody></table></figure>
+
+</li>
+</ul>
+</li>
+</ol>
+<h1 id="String类的常用方法"><a href="#String类的常用方法" class="headerlink" title="String类的常用方法"></a>String类的常用方法</h1><ol>
+<li>byte[] getBytes(); 将字符串转换成字节数组。其实就是对字符串进行编码。默认按照系统默认字符集。</li>
+<li>byte[] getBytes(String charsetName); 将字符串按照指定字符集的方式进行编码。</li>
+<li>byte[] getBytes(Charset charset);</li>
+<li>char[] toCharArray(); 将字符串转换字符数组。</li>
+<li>String toLowerCase(); 转小写</li>
+<li>String toUpperCase(); 转大写</li>
+<li>String concat(String str); 进行字符串的拼接操作。和 + 的区别？+ <ul>
+<li>既可以进行求和，也可以进行字符串的拼接，底层拼接时会创建StringBuilder对象进行拼接。+ 拼接null时不会出现空指针异常。</li>
+<li>concat方法参数只能时字符串类型，拼接时不会创建StringBuilder对象，拼接完成后返回一个新的String对象。拼接null会出现空指针异常。</li>
+<li>+使用较多。如果进行大量字符串拼接，这两个都不合适。</li>
+</ul>
+</li>
+<li>String substring(int beginIndex); 从指定下标beginIndex开始截取子字符串</li>
+<li>String substring(int beginIndex, int endIndex);</li>
+<li>String trim(); 去除字符串前后空白（只能去除ASCII码中的空格和制表符）</li>
+<li>String strip(); 去除字符串前后空白（支持所有的编码形式的空白，可以将全角空格去除，\u3000是全角空格，Java11新增）</li>
+<li>String stripLeading(); 去除前空白</li>
+<li>String stripTrailing(); 去除后空白</li>
+<li>String toString();</li>
+<li>String intern(); 获取字符串常量池中的字符串，如果常量池中没有，则将字符串加入常量池并返回。<ul>
+<li>byte[] bytes = {97,98,99,100}; String s = new String(bytes);</li>
+<li>String s2 = s.intern(); // 将字符串 “abcd”放入字符串常量池并返回常量池中的字符串 “abcd”</li>
+</ul>
+</li>
+<li>static String join(CharSequence d, CharSequence… elements); 将多个字符串以某个分隔符连接（Java8新增）</li>
+<li>static String join(CharSequence delimiter, Iterable&lt;? extends CharSequence&gt; elements);</li>
+<li>static String valueOf(boolean b); 以下所有的静态方法valueOf作用是将非字符串类型的数据转换为字符串形式。</li>
+<li>static String valueOf(char c);</li>
+<li>static String valueOf(char[] data);</li>
+<li>static String valueOf(char[] data, int offset, int count);</li>
+<li>static String valueOf(double d);</li>
+<li>static String valueOf(float f);</li>
+<li>static String valueOf(int i);</li>
+<li>static String valueOf(long l);</li>
+<li>static String valueOf(Object obj);</li>
+</ol>
+<h1 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h1><h1 id="String类的面试题"><a href="#String类的面试题" class="headerlink" title="String类的面试题"></a>String类的面试题</h1><h1 id="练习题"><a href="#练习题" class="headerlink" title="练习题"></a>练习题</h1>
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Java/" class="category-chain-item">Java</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>常用类_String类</div>
+      <div>https://xiaofanshutu.github.io/posts/6dd21eef.html</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>John Doe</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2025年4月11日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/posts/d366874c.html" title="集合">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">集合</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/posts/566321e7.html" title="IDEA常用">
+                        <span class="hidden-mobile">IDEA常用</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

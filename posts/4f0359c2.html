@@ -1,0 +1,773 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="日期日期类 java.util.Date123public Date() {    this(System.currentTimeMillis());}  123public Date(long date) {    fastTime &#x3D; date;}      日期格式化类 SimpleDateFormat日期转字符串字符串转日期日历类 java.util.Calendar获取当前时间的日历对象">
+<meta property="og:type" content="article">
+<meta property="og:title" content="常用类_日期">
+<meta property="og:url" content="https://xiaofanshutu.github.io/posts/4f0359c2.html">
+<meta property="og:site_name" content="yubiii">
+<meta property="og:description" content="日期日期类 java.util.Date123public Date() {    this(System.currentTimeMillis());}  123public Date(long date) {    fastTime &#x3D; date;}      日期格式化类 SimpleDateFormat日期转字符串字符串转日期日历类 java.util.Calendar获取当前时间的日历对象">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250409224631266.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250409224610367.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250409215455705.png">
+<meta property="article:published_time" content="2025-04-09T13:56:08.600Z">
+<meta property="article:modified_time" content="2025-04-10T00:10:05.716Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250409224631266.png">
+  
+  
+  
+  <title>常用类_日期 - yubiii</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"xiaofanshutu.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 5.2.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="yubiii" type="application/atom+xml">
+</head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 30vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="常用类_日期"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-04-09 21:56" pubdate>
+          2025年4月9日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          603 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          6 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">常用类_日期</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="日期"><a href="#日期" class="headerlink" title="日期"></a>日期</h1><h2 id="日期类-java-util-Date"><a href="#日期类-java-util-Date" class="headerlink" title="日期类 java.util.Date"></a>日期类 java.util.Date</h2><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Date</span><span class="hljs-params">()</span> </span>{<br>    <span class="hljs-keyword">this</span>(System.currentTimeMillis());<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Date</span><span class="hljs-params">(<span class="hljs-keyword">long</span> date)</span> </span>{<br>    fastTime = date;<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+
+
+
+
+<h2 id="日期格式化类-SimpleDateFormat"><a href="#日期格式化类-SimpleDateFormat" class="headerlink" title="日期格式化类 SimpleDateFormat"></a>日期格式化类 SimpleDateFormat</h2><h3 id="日期转字符串"><a href="#日期转字符串" class="headerlink" title="日期转字符串"></a>日期转字符串</h3><h3 id="字符串转日期"><a href="#字符串转日期" class="headerlink" title="字符串转日期"></a>字符串转日期</h3><h2 id="日历类-java-util-Calendar"><a href="#日历类-java-util-Calendar" class="headerlink" title="日历类 java.util.Calendar"></a>日历类 java.util.Calendar</h2><h3 id="获取当前时间的日历对象"><a href="#获取当前时间的日历对象" class="headerlink" title="获取当前时间的日历对象"></a>获取当前时间的日历对象</h3><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//Gets a calendar using the default time zone and locale.</span><br>Calendar instance = Calendar.getInstance();<br>System.out.println(instance);<br></code></pre></td></tr></tbody></table></figure>
+
+
+
+<p>结果：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java">java.util.GregorianCalendar[time=<span class="hljs-number">1744207975651</span>,areFieldsSet=<span class="hljs-keyword">true</span>,areAllFieldsSet=<span class="hljs-keyword">true</span>,lenient=<span class="hljs-keyword">true</span>,zone=sun.util.calendar.ZoneInfo[id=<span class="hljs-string">"GMT+08:00"</span>,offset=<span class="hljs-number">28800000</span>,dstSavings=<span class="hljs-number">0</span>,useDaylight=<span class="hljs-keyword">false</span>,transitions=<span class="hljs-number">0</span>,lastRule=<span class="hljs-keyword">null</span>],firstDayOfWeek=<span class="hljs-number">1</span>,minimalDaysInFirstWeek=<span class="hljs-number">1</span>,ERA=<span class="hljs-number">1</span>,YEAR=<span class="hljs-number">2025</span>,MONTH=<span class="hljs-number">3</span>,WEEK_OF_YEAR=<span class="hljs-number">15</span>,WEEK_OF_MONTH=<span class="hljs-number">2</span>,DAY_OF_MONTH=<span class="hljs-number">9</span>,DAY_OF_YEAR=<span class="hljs-number">99</span>,DAY_OF_WEEK=<span class="hljs-number">4</span>,DAY_OF_WEEK_IN_MONTH=<span class="hljs-number">2</span>,AM_PM=<span class="hljs-number">1</span>,HOUR=<span class="hljs-number">10</span>,HOUR_OF_DAY=<span class="hljs-number">22</span>,MINUTE=<span class="hljs-number">12</span>,SECOND=<span class="hljs-number">55</span>,MILLISECOND=<span class="hljs-number">651</span>,ZONE_OFFSET=<span class="hljs-number">28800000</span>,DST_OFFSET=<span class="hljs-number">0</span>]<br></code></pre></td></tr></tbody></table></figure>
+
+
+
+
+
+<h3 id="获取日历中某部分（年份-月份-星期等）"><a href="#获取日历中某部分（年份-月份-星期等）" class="headerlink" title="获取日历中某部分（年份/月份/星期等）"></a>获取日历中某部分（年份/月份/星期等）</h3><table>
+<thead>
+<tr>
+<th>类型</th>
+<th>描述</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Calendar.YEAR</td>
+<td>获取年份</td>
+<td></td>
+</tr>
+<tr>
+<td>Calendar.MONTH</td>
+<td>获取月份</td>
+<td>0表示1月，1表示2月，…，11表示12月</td>
+</tr>
+<tr>
+<td>Calendar.DAY_OF_MONTH</td>
+<td>获取本月的第几天</td>
+<td></td>
+</tr>
+<tr>
+<td>Calendar.DAY_OF_YEAR</td>
+<td>获取本年的第几天</td>
+<td></td>
+</tr>
+<tr>
+<td>Calendar.DAY_OF_WEEK</td>
+<td>获取星期几</td>
+<td>1表示星期日，…，7表示星期六</td>
+</tr>
+<tr>
+<td>Calendar.HOUR_OF_DAY</td>
+<td>小时，24小时制</td>
+<td></td>
+</tr>
+<tr>
+<td>Calendar.HOUR</td>
+<td>小时，12小时制</td>
+<td></td>
+</tr>
+<tr>
+<td>Calendar.MINUTE</td>
+<td>获取分钟</td>
+<td></td>
+</tr>
+<tr>
+<td>Calendar.SECOND</td>
+<td>获取秒</td>
+<td></td>
+</tr>
+<tr>
+<td>Calendar.MILLISECOND</td>
+<td>获取毫秒</td>
+<td></td>
+</tr>
+</tbody></table>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs java">Calendar instance = Calendar.getInstance();<br>System.out.println(<span class="hljs-string">"year: "</span> + instance.get(Calendar.YEAR));<span class="hljs-comment">//2025</span><br>System.out.println(<span class="hljs-string">"month: "</span> + instance.get(Calendar.MONTH));<span class="hljs-comment">//3: 四月</span><br>System.out.println(<span class="hljs-string">"the day of the month: "</span> + instance.get(Calendar.DAY_OF_MONTH));<span class="hljs-comment">//9</span><br>System.out.println(<span class="hljs-string">"the day number within the current year: "</span> + instance.get(Calendar.DAY_OF_YEAR));<span class="hljs-comment">//99</span><br>System.out.println(<span class="hljs-string">"the day of the week:"</span> + instance.get(Calendar.DAY_OF_WEEK));<span class="hljs-comment">//4: 星期三</span><br><span class="hljs-comment">//the hour of the day. HOUR_OF_DAY is used for the 24-hour clock</span><br>System.out.println(<span class="hljs-string">"the hour of the day. 24-hour clock: "</span> + instance.get(Calendar.HOUR_OF_DAY));<span class="hljs-comment">//22</span><br><span class="hljs-comment">//the hour of the morning or afternoon. HOUR is used for the 12-hour clock (0 - 11). Noon and midnight are represented by 0, not by 12.</span><br>System.out.println(<span class="hljs-string">"the hour of the day. 12-hour clock: "</span> + instance.get(Calendar.HOUR));<span class="hljs-comment">//10</span><br>System.out.println(<span class="hljs-string">"minute: "</span> + instance.get(Calendar.MINUTE));<span class="hljs-comment">//39</span><br>System.out.println(<span class="hljs-string">"second: "</span> + instance.get(Calendar.SECOND));<span class="hljs-comment">//35</span><br>System.out.println(<span class="hljs-string">"millsecond: "</span> + instance.get(Calendar.MILLISECOND));<span class="hljs-comment">//711</span><br></code></pre></td></tr></tbody></table></figure>
+
+
+
+
+
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//获取自1970年1月1日0时0分0秒到系统当前时间的总毫秒数。</span><br>System.out.println(System.currentTimeMillis());<span class="hljs-comment">//1744207198604</span><br></code></pre></td></tr></tbody></table></figure>
+
+
+
+
+
+<h3 id="设置日历-set方法"><a href="#设置日历-set方法" class="headerlink" title="设置日历 set方法"></a>设置日历 set方法</h3><h4 id="calendar-set-Calendar-YEAR-2023"><a href="#calendar-set-Calendar-YEAR-2023" class="headerlink" title="calendar.set(Calendar.YEAR, 2023)"></a>calendar.set(Calendar.YEAR, 2023)</h4><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java">Calendar calendar2 = Calendar.getInstance();<br>calendar2.set(Calendar.YEAR, <span class="hljs-number">2023</span>);<br>System.out.println(calendar2.get(Calendar.YEAR) + <span class="hljs-string">"年"</span> + (calendar2.get(Calendar.MONTH) + <span class="hljs-number">1</span>) + <span class="hljs-string">"月"</span> + calendar2.get(Calendar.DAY_OF_MONTH) + <span class="hljs-string">"日"</span>); <span class="hljs-comment">//2023年4月9日</span><br></code></pre></td></tr></tbody></table></figure>
+
+
+
+
+
+<h4 id="calendar-set-2015-Calendar-SEPTEMBER-8"><a href="#calendar-set-2015-Calendar-SEPTEMBER-8" class="headerlink" title="calendar.set(2015, Calendar.SEPTEMBER,8)"></a>calendar.set(2015, Calendar.SEPTEMBER,8)</h4><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java">Calendar calendar2 = Calendar.getInstance();<br>calendar2.set(<span class="hljs-number">2015</span>, Calendar.JULY, <span class="hljs-number">26</span>, <span class="hljs-number">8</span>, <span class="hljs-number">30</span>, <span class="hljs-number">0</span>);<br>System.out.println(calendar2);<br></code></pre></td></tr></tbody></table></figure>
+
+<p>结果：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-number">2015</span>年<span class="hljs-number">7</span>月<span class="hljs-number">26</span>日<br></code></pre></td></tr></tbody></table></figure>
+
+
+
+
+
+<p>小点：最好用提供的常量</p>
+<p><img src="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250409224631266.png" srcset="/img/loading.gif" lazyload alt="image-20250409224631266"></p>
+<p><img src="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250409224610367.png" srcset="/img/loading.gif" lazyload alt="image-20250409224610367"></p>
+<h3 id="日历中各部分加减-add方法"><a href="#日历中各部分加减-add方法" class="headerlink" title="日历中各部分加减 add方法"></a>日历中各部分加减 add方法</h3><h4 id="calendar-add-Calendar-YEAR-1"><a href="#calendar-add-Calendar-YEAR-1" class="headerlink" title="calendar.add(Calendar.YEAR, 1)"></a>calendar.add(Calendar.YEAR, 1)</h4><figure class="highlight routeros"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs routeros">Calendar calendar2 = Calendar.getInstance();<br>calendar2.<span class="hljs-builtin-name">add</span>(Calendar.YEAR, 1);<br>System.out.println(calendar2.<span class="hljs-builtin-name">get</span>(Calendar.YEAR) + <span class="hljs-string">"年"</span> + (calendar2.<span class="hljs-builtin-name">get</span>(Calendar.MONTH) + 1) + <span class="hljs-string">"月"</span> + calendar2.<span class="hljs-builtin-name">get</span>(Calendar.DAY_OF_MONTH) + <span class="hljs-string">"日"</span>);<br></code></pre></td></tr></tbody></table></figure>
+
+<p>结果：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-number">2026</span>年<span class="hljs-number">4</span>月<span class="hljs-number">9</span>日<br></code></pre></td></tr></tbody></table></figure>
+
+
+
+
+
+
+
+<h3 id="让日历关联具体时间-setTime方法"><a href="#让日历关联具体时间-setTime方法" class="headerlink" title="让日历关联具体时间 setTime方法"></a>让日历关联具体时间 setTime方法</h3><h4 id="calendar-setTime-new-Date"><a href="#calendar-setTime-new-Date" class="headerlink" title="calendar.setTime(new Date())"></a>calendar.setTime(new Date())</h4><p><strong><em>//年份偏移： Date 构造方法中的年份参数是基于 1900 的偏移量。例如，传入 2015 实际表示 1900 + 2015 = 3915 年。</em></strong></p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs java">Calendar calendar2 = Calendar.getInstance();<br><br>calendar2.setTime(<span class="hljs-keyword">new</span> Date(<span class="hljs-number">2015</span>, Calendar.JULY, <span class="hljs-number">15</span>));<br>System.out.println(calendar2.get(Calendar.YEAR) + <span class="hljs-string">"年"</span> + (calendar2.get(Calendar.MONTH) + <span class="hljs-number">1</span>) + <span class="hljs-string">"月"</span> + calendar2.get(Calendar.DAY_OF_MONTH) + <span class="hljs-string">"日"</span>); <span class="hljs-comment">//3915年7月15日</span><br></code></pre></td></tr></tbody></table></figure>
+
+
+
+<h3 id="获取日历的具体时间-getTime方法"><a href="#获取日历的具体时间-getTime方法" class="headerlink" title="获取日历的具体时间 getTime方法"></a>获取日历的具体时间 getTime方法</h3><h4 id="Date-time-calendar-getTime"><a href="#Date-time-calendar-getTime" class="headerlink" title="Date time = calendar.getTime();"></a>Date time = calendar.getTime();</h4><p>IDEA小技巧：</p>
+<p>自动提示忽略大小写，取消勾选Match Case checkbox</p>
+<p><img src="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250409215455705.png" srcset="/img/loading.gif" lazyload alt="image-20250409215455705"></p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Java/" class="category-chain-item">Java</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>常用类_日期</div>
+      <div>https://xiaofanshutu.github.io/posts/4f0359c2.html</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>John Doe</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2025年4月9日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/posts/566321e7.html" title="IDEA常用">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">IDEA常用</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/posts/6c92115f.html" title="Spring">
+                        <span class="hidden-mobile">Spring</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

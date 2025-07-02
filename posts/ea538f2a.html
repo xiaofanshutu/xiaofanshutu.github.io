@@ -1,0 +1,853 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="标识符什么是标识符 在Java中，程序员有权利自己取名的就是标识符。标识符是用来给变量、方法、类和包等命名的字符序列。 标识符的长度没有限制，但是建议使用有意义的、简洁的标识符，以提高代码的可读性和可维护性。 标识符可以标识什么  变量名 方法名 类名、接口名、枚举名、注解名 包名 常量名 其他……  标识符命名规则  标识符可以由字母、数字、下划线(_)和美元符号($)组成，不能含有其他符号。（">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java基础语法">
+<meta property="og:url" content="https://xiaofanshutu.github.io/posts/ea538f2a.html">
+<meta property="og:site_name" content="yubiii">
+<meta property="og:description" content="标识符什么是标识符 在Java中，程序员有权利自己取名的就是标识符。标识符是用来给变量、方法、类和包等命名的字符序列。 标识符的长度没有限制，但是建议使用有意义的、简洁的标识符，以提高代码的可读性和可维护性。 标识符可以标识什么  变量名 方法名 类名、接口名、枚举名、注解名 包名 常量名 其他……  标识符命名规则  标识符可以由字母、数字、下划线(_)和美元符号($)组成，不能含有其他符号。（">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250609062938704.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250609063242912.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250609063527771.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250609063629833.png">
+<meta property="article:published_time" content="2025-06-08T22:12:37.686Z">
+<meta property="article:modified_time" content="2025-06-08T23:23:09.087Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250609062938704.png">
+  
+  
+  
+  <title>Java基础语法 - yubiii</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"xiaofanshutu.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 5.2.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="yubiii" type="application/atom+xml">
+</head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 30vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="Java基础语法"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-06-09 06:12" pubdate>
+          2025年6月9日 早上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          2.5k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          21 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">Java基础语法</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h2 id="标识符"><a href="#标识符" class="headerlink" title="标识符"></a>标识符</h2><p><strong>什么是标识符</strong></p>
+<p>在Java中，程序员有权利自己取名的就是标识符。标识符是用来给变量、方法、类和包等命名的字符序列。</p>
+<p>标识符的长度没有限制，但是建议使用有意义的、简洁的标识符，以提高代码的可读性和可维护性。</p>
+<p><strong>标识符可以标识什么</strong></p>
+<ol>
+<li>变量名</li>
+<li>方法名</li>
+<li>类名、接口名、枚举名、注解名</li>
+<li>包名</li>
+<li>常量名</li>
+<li>其他……</li>
+</ol>
+<p><strong>标识符命名规则</strong></p>
+<ol>
+<li>标识符可以由字母、数字、下划线(_)和美元符号($)组成，不能含有其他符号。（java支持全球所有语言，所以这里的 字母 指的是任何一个国家的文字都可以）</li>
+<li>标识符不能以数字开头。</li>
+<li>标识符不能是Java中的关键字，如public、class、void等。</li>
+<li>标识符是区分大小写的，即Foo和foo是两个不同的标识符。</li>
+<li>标识符的长度没有限制，但是Java建议使用有意义的、简短的标识符。</li>
+</ol>
+<p><strong>标识符命名规范</strong></p>
+<ol>
+<li>见名知意</li>
+<li>驼峰式命名方式</li>
+<li>类名、接口名、枚举、注解：首字母大写，后面每个单词首字母大写。（StudentService，UserService）</li>
+<li>变量名和方法名：首字母小写，后面每个单词首字母大写。（doSome，doOther）</li>
+<li>常量名：全部大写，每个单词用下划线连接。（LOGIN_SUCCESS，SYSTEM_ERROR）</li>
+<li>包名：全部小写</li>
+</ol>
+<h2 id="关键字"><a href="#关键字" class="headerlink" title="关键字"></a>关键字</h2><p><strong>什么是关键字</strong></p>
+<ol>
+<li><p>Java关键字是Java编程语言中预定义的具有特殊含义的单词，这些单词不能被用作标识符，而是在语法中有特定的用法和限制。</p>
+</li>
+<li><p>Java关键字都是小写的。</p>
+</li>
+</ol>
+<p><strong>Java关键字有哪些</strong></p>
+<ol>
+<li>abstract, assert, boolean, break, byte, case, catch, char, class, continue, default, do, double, else, enum, extends, final, finally, float, for, if, implements, import, instanceof, int, interface, long, native, new, package, private, protected, public, return, short, static, strictfp, super, switch, synchronized, this, throw, throws, transient, try, void, volatile, while</li>
+<li>保留字：goto，const</li>
+</ol>
+<h2 id="字面量"><a href="#字面量" class="headerlink" title="字面量"></a>字面量</h2><p><strong>什么是字面量</strong></p>
+<ol>
+<li>字面量指的是在程序中直接使用的数据。</li>
+<li>字面量是Java中最基本的表达式，不需要进行计算或转换，直接使用即可。</li>
+</ol>
+<p><strong>Java中有哪些字面量</strong></p>
+<ol>
+<li>整数型：10、-5、0、100</li>
+<li>浮点型：3.14、-0.5、1.0</li>
+<li>布尔型：true、false</li>
+<li>字符型：’a’、’b’、’c’、’1’、’2’、’国’</li>
+<li>字符串型：”Hello”、”World”、”Java”、”你好呀”</li>
+</ol>
+<p><strong>加号运算符 +</strong></p>
+<p>作用1：求和（当加号两边都是数字时进行求和运算）</p>
+<p>作用2：字符串拼接（当加号两边有任意一边是字符串类型时会进行字符串拼接，结果还是一个字符串）</p>
+<h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><p><strong>什么是变量？</strong></p>
+<ol>
+<li>变量是内存当中的一块空间。是计算机中存储数据最基本的单元。</li>
+<li>变量三要素：<ul>
+<li>数据类型（决定空间大小）【int, double, String】</li>
+<li>变量名（只要是合法的标识符即可）</li>
+<li>变量值（变量中具体存储的数据）</li>
+</ul>
+</li>
+<li>变量的声明、赋值、访问<ul>
+<li>int i; // 声明一个整数型的变量，起名i</li>
+<li>i = 100; // 给变量i赋值100</li>
+<li>System.out.println(i); // 访问i变量：读操作</li>
+<li>i = 200; // 访问i变量：改操作【给变量i重新赋值200】</li>
+</ul>
+</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250609062938704.png" srcset="/img/loading.gif" lazyload alt="image-20250609062938704"></p>
+<p><strong>变量的作用</strong></p>
+<ol>
+<li>变量的存在会让程序更加便于维护。</li>
+<li>变量的存在可以增强程序的可读性。</li>
+</ol>
+<p><strong>变量的小细节</strong></p>
+<ol>
+<li>变量必须先声明，再赋值，才能访问</li>
+<li>方法体当中的代码遵循自上而下的顺序依次逐行执行，变量先访问，再声明肯定是不行的</li>
+<li>一行代码上可以同时声明多个变量</li>
+<li>在同一个作用域当中，变量名不能重名，可以重新赋值</li>
+<li>变量值的数据类型必须和变量的数据类型一致，这样是不允许的：String name = 100;</li>
+</ol>
+<p><strong>变量的作用域</strong></p>
+<ol>
+<li>作用域就是变量的有效范围。变量的作用域是怎样的呢？用一句大白话就可以概括了：出了大括号就不认识了。</li>
+<li>作用域的不同主要是因为声明在不同位置的变量具有不同的生命周期。所谓的生命周期是：从内存开辟到内存释放。</li>
+<li>Java遵循就近原则</li>
+</ol>
+<p><strong>变量的分类</strong></p>
+<ol>
+<li>局部变量</li>
+<li>成员变量<ul>
+<li>静态变量</li>
+<li>实例变量</li>
+</ul>
+</li>
+</ol>
+<h2 id="二进制"><a href="#二进制" class="headerlink" title="二进制"></a>二进制</h2><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//二进制字面量是以ob开始的</span><br>System.out.println(<span class="hljs-number">0b10011011</span>);<span class="hljs-comment">//155</span><br><span class="hljs-comment">//八进制字面量是以0开始的</span><br>System.out.println(<span class="hljs-number">0123</span>);<span class="hljs-comment">//83</span><br><span class="hljs-comment">//十六进制字面量是以0x开始的</span><br>System.out.println(<span class="hljs-number">0x1A3F</span>);<span class="hljs-comment">//6719</span><br></code></pre></td></tr></tbody></table></figure>
+
+
+
+
+
+
+
+<p><strong>二进制概述</strong></p>
+<ol>
+<li>计算机底层只能识别二进制。</li>
+<li>计算机底层只识别二进制是因为计算机内部的电子元件只能识别两种状态，即开和关，或者高电平和低电平。二进制正好可以用两种状态来表示数字和字符，因此成为了计算机最基本的表示方法。</li>
+<li>在计算机内部，所有的数据都被转化为二进制形式进行处理和存储。</li>
+<li>虽然计算机可以通过不同的编程语言和程序来处理不同的数据类型和格式，但最终都需要将其转化为二进制形式才能被计算机底层识别和处理。</li>
+</ol>
+<p><strong>什么是二进制</strong></p>
+<p>十进制：满十进一</p>
+<p>二进制：满二进一</p>
+<p><img src="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250609063242912.png" srcset="/img/loading.gif" lazyload alt="image-20250609063242912"></p>
+<p><strong>十进制转换为二进制</strong></p>
+<ol>
+<li>将十进制数除以2，得到商和余数。</li>
+<li>将余数记录下来，然后将商作为新的十进制数，重复步骤1，直到商为0为止。</li>
+<li>将记录的余数从下往上排列，得到的就是对应的二进制数。</li>
+</ol>
+<p><strong>二进制转换为十进制</strong></p>
+<ol>
+<li>将二进制数每一位权值找出来，然后每个权值与对应二进制位相乘，最后将它们相加，即可得到十进制数。</li>
+<li>什么是权值？<ul>
+<li>在二进制中，权值指的是每个位所代表的数值大小，即二进制中每个位的位置所代表的数值大小。</li>
+<li>例如，在二进制数1101中，最高位的权值为8，次高位的权值为4，第三位的权值为2，最低位的权值为1。</li>
+</ul>
+</li>
+<li>二进制数1101转换为十进制数的计算过程如下：<ul>
+<li>1×2³ + 1×2² + 0×2¹ + 1×2⁰ = 8 + 4 + 0 + 1 = 13</li>
+</ul>
+</li>
+</ol>
+<h2 id="八进制与十六进制"><a href="#八进制与十六进制" class="headerlink" title="八进制与十六进制"></a>八进制与十六进制</h2><p>八进制是满8进1</p>
+<p><img src="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250609063527771.png" srcset="/img/loading.gif" lazyload alt="image-20250609063527771"></p>
+<p>十六进制是满十六进1</p>
+<p><img src="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250609063629833.png" srcset="/img/loading.gif" lazyload alt="image-20250609063629833"></p>
+<p>十进制转为八进制（或十六进制）与二进制相同。</p>
+<p>八进制（或十六进制）转为十进制的原理与二进制相同。</p>
+<p><strong>二进制转为十六进制</strong></p>
+<ol>
+<li>将二进制数从右往左每四位一组，不足四位则在左侧补0，得到若干个四位二进制数。 </li>
+<li>将每个四位二进制数转换为对应的十六进制数</li>
+</ol>
+<p><strong>十六进制转为二进制</strong></p>
+<ol>
+<li>将十六进制中的每个数字转换成4个二进制位</li>
+</ol>
+<h2 id="原码反码补码"><a href="#原码反码补码" class="headerlink" title="原码反码补码"></a>原码反码补码</h2><p><strong>byte与bit</strong></p>
+<ol>
+<li>byte（字节）是计算机存储和处理数据的基本单位，通常由8个比特（bit）组成。每个比特（bit）是计算机中最小的存储单位，只能存储0或1两个状态。因此，一个字节（byte）可以存储8个比特（bit）的数据。</li>
+<li>两者之间的关系是，1 byte = 8 bit，即8个比特（bit）组成一个字节（byte）。</li>
+<li>在计算机中，数据通常以字节（byte）为单位进行存储和传输，而比特（bit）则是用来表示数据的最小单位。</li>
+<li>1KB = 1024byte</li>
+<li>1MB = 1024KB</li>
+<li>1GB = 1024MB</li>
+<li>1TB = 1024GB</li>
+</ol>
+<p><strong>原码反码补码</strong></p>
+<ol>
+<li>原码反码补码是计算机二进制的三种表示形式。</li>
+<li>计算机在底层都是采用二进制补码形式表示的。</li>
+<li>二进制位最高位称为符号位，0为正数，1为负数。</li>
+</ol>
+<p><strong>正数的原码反码补码</strong></p>
+<ol>
+<li>正数的原码反码补码是相同的。</li>
+<li>127的原码反码补码分别是多少？都是0111 1111</li>
+</ol>
+<p><strong>负数的原码反码补码</strong></p>
+<ol>
+<li>负数的原码运算规则：将绝对值转换为二进制后，最高位改为1。</li>
+<li>-5的原码：10000101</li>
+<li>-5的反码：11111010（原则是：以原码作为参考，符号位不变，其他位取反。）</li>
+<li>-5的补码：11111011（原则是：以反码作为参考，符号位不变，加1）</li>
+<li>-20的原码反码补码是多少？</li>
+<li>-128的原码反码补码是多少？<ul>
+<li>-128的原码和补码都是1000 0000</li>
+</ul>
+</li>
+</ol>
+<p><strong>已知负数补码怎么得到原码</strong></p>
+<ol>
+<li>虽然计算机底层是采用补码的形式存储的，但最终显示给人类的时候是以原码的形式显示的。</li>
+<li>将负数的补码形式除符号位外的所有位按位取反，再加1即可得到原码。</li>
+<li>已知补码：10000001</li>
+<li>它的原码是：11111111</li>
+<li>结果是：-127</li>
+<li>通过这个可以得出，对于一个字节来说，最大值127，最小值-128。</li>
+</ol>
+<p><strong>计算机底层为什么采用补码</strong></p>
+<ol>
+<li>可以简化电路设计：采用补码形式可以将加减法运算转化为相同的操作，从而简化电路设计。 </li>
+<li>解决了0的正负问题：在原码中，0有两个表示，+0和-0，这样会导致计算结果不唯一，而在补码中，0只有一种表示，即全0，可以避免这个问题。 </li>
+<li>解决了负数溢出问题：在原码中，负数的表示范围比正数少1，这样在进行减法运算时容易出现负数溢出的情况，而在补码中，负数的表示范围与正数相同，可以避免负数溢出的问题。 </li>
+<li>方便计算机进行运算：补码形式可以方便计算机进行加减法运算，而且可以使用相同的电路进行运算，从而提高了计算机的运算效率。 </li>
+<li>可以计算一下 -3 + 2，看看能不能理解。</li>
+</ol>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Java/" class="category-chain-item">Java</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>Java基础语法</div>
+      <div>https://xiaofanshutu.github.io/posts/ea538f2a.html</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>John Doe</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2025年6月9日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/posts/5f8d3e42.html" title="Java面向对象">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Java面向对象</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/posts/77a3ba8f.html" title="Java开发环境搭建">
+                        <span class="hidden-mobile">Java开发环境搭建</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

@@ -1,0 +1,875 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="cutiebambi">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="类与对象养猫猫问题张老太养了两只猫猫:一只名字叫小白,今年 3 岁,白色。还有一只叫小花,今年 100 岁,花色。请编写一个程序，当用户输入小猫的名字时，就显示该猫的名字，年龄，颜色。如果用户输入的小猫名错误，则显示张老太没有这只猫猫。 使用现有技术解决上述问题 单独定义变量解决 123456789&#x2F;&#x2F;第 1 只猫信息String cat1Name &#x3D; &quot;小白&quot;;int cat1Age &#x3D; 3">
+<meta property="og:type" content="article">
+<meta property="og:title" content="面向对象编程（基础部分）">
+<meta property="og:url" content="https://xiaofanshutu.github.io/posts/dfc0bd6b.html">
+<meta property="og:site_name" content="yubiii">
+<meta property="og:description" content="类与对象养猫猫问题张老太养了两只猫猫:一只名字叫小白,今年 3 岁,白色。还有一只叫小花,今年 100 岁,花色。请编写一个程序，当用户输入小猫的名字时，就显示该猫的名字，年龄，颜色。如果用户输入的小猫名错误，则显示张老太没有这只猫猫。 使用现有技术解决上述问题 单独定义变量解决 123456789&#x2F;&#x2F;第 1 只猫信息String cat1Name &#x3D; &quot;小白&quot;;int cat1Age &#x3D; 3">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/xiaofanshutu/typora2022/main/202304241358645.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/xiaofanshutu/typora2022/main/202304241706409.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/xiaofanshutu/typora2022/main/202304241727144.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/xiaofanshutu/typora2022/main/202304241747184.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/xiaofanshutu/typora2022/main/image-20230926055700474.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/xiaofanshutu/typora2022/main/image-20231001063620877.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/xiaofanshutu/typora2022/main/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20231001070833.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/xiaofanshutu/typora2022/main/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20231001070934.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/xiaofanshutu/typora2022/main/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20231001071209.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/xiaofanshutu/typora2022/main/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20231001071559.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/xiaofanshutu/typora2022/main/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20231001073459.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/xiaofanshutu/typora2022/main/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20231001071609.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/xiaofanshutu/typora2022/main/image-20230920054444242.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/xiaofanshutu/typora2022/main/image-20231007092829954.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/xiaofanshutu/typora2022/main/image-20230504070603522.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/xiaofanshutu/typora2022/main/image-20230504063923225.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/xiaofanshutu/typora2022/main/image-20230504072459076.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/xiaofanshutu/typora2022/main/image-20230504072517694.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/xiaofanshutu/typora2022/main/image-20230504072532803.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/xiaofanshutu/typora2022/main/image-20230504072549638.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/xiaofanshutu/typora2022/main/image-20230504072611368.png">
+<meta property="article:published_time" content="2023-10-07T12:03:21.888Z">
+<meta property="article:modified_time" content="2024-01-17T23:38:29.143Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/xiaofanshutu/typora2022/main/202304241358645.png">
+  
+  
+  
+  <title>面向对象编程（基础部分） - yubiii</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"xiaofanshutu.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 5.2.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="yubiii" type="application/atom+xml">
+</head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 30vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="面向对象编程（基础部分）"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-10-07 20:03" pubdate>
+          2023年10月7日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          2.6k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          22 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">面向对象编程（基础部分）</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <a id="more"></a>
+
+<h2 id="类与对象"><a href="#类与对象" class="headerlink" title="类与对象"></a>类与对象</h2><h3 id="养猫猫问题"><a href="#养猫猫问题" class="headerlink" title="养猫猫问题"></a>养猫猫问题</h3><p>张老太养了两只猫猫:一只名字叫小白,今年 3 岁,白色。还有一只叫小花,今年 100 岁,花色。请编写一个程序，当用户输入小猫的名字时，就显示该猫的名字，年龄，颜色。如果用户输入的小猫名错误，则显示张老太没有这只猫猫。</p>
+<h3 id="使用现有技术解决上述问题"><a href="#使用现有技术解决上述问题" class="headerlink" title="使用现有技术解决上述问题"></a>使用现有技术解决上述问题</h3><ol>
+<li><p>单独定义变量解决</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//第 1 只猫信息</span><br>String cat1Name = <span class="hljs-string">"小白"</span>;<br><span class="hljs-keyword">int</span> cat1Age = <span class="hljs-number">3</span>;<br>String cat1Color = <span class="hljs-string">"白色"</span>;<br><br><span class="hljs-comment">//第 2 只猫信息</span><br>String cat2Name = <span class="hljs-string">"小花"</span>;<br><span class="hljs-keyword">int</span> cat2Age = <span class="hljs-number">100</span>;<br>String cat2Color = <span class="hljs-string">"花色"</span>;<br></code></pre></td></tr></tbody></table></figure>
+
+
+
+</li>
+</ol>
+<ol start="2">
+<li><p>使用数组</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//1.数据类型体现不出来</span><br><span class="hljs-comment">//2.只能通过[下标]获取信息，造成变量名字和内容的对应关系不明确</span><br><span class="hljs-comment">//3.不能体现猫的行为</span><br>String[] cat1 = {<span class="hljs-string">"小白"</span>, <span class="hljs-string">"3"</span>, <span class="hljs-string">"白色"</span>};<br>String[] cat2 = {<span class="hljs-string">"小花"</span>, <span class="hljs-string">"100"</span>, <span class="hljs-string">"花色"</span>};<br></code></pre></td></tr></tbody></table></figure>
+
+
+
+</li>
+</ol>
+<h3 id="现有技术缺点分析"><a href="#现有技术缺点分析" class="headerlink" title="现有技术缺点分析"></a>现有技术缺点分析</h3><ul>
+<li>不利于数据管理</li>
+<li>效率低下</li>
+</ul>
+<h3 id="引入类与对象（OOP）"><a href="#引入类与对象（OOP）" class="headerlink" title="引入类与对象（OOP）"></a>引入类与对象（OOP）</h3><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs java">Cat cat1 = <span class="hljs-keyword">new</span> Cat();<br>cat1.name = <span class="hljs-string">"小白"</span>;<br>cat1.age = <span class="hljs-number">3</span>;<br>cat1.color = <span class="hljs-string">"白色"</span>;<br>cat1.weight = <span class="hljs-number">10</span>;<br><br>Cat cat2 = <span class="hljs-keyword">new</span> Cat();<br>cat2.name = <span class="hljs-string">"小花"</span>;<br>cat2.age = <span class="hljs-number">100</span>;<br>cat2.color = <span class="hljs-string">"花色"</span>;<br>cat2.weight = <span class="hljs-number">20</span>;<br></code></pre></td></tr></tbody></table></figure>
+
+
+
+<h3 id="类和对象的内存分配机制（重点！！！）"><a href="#类和对象的内存分配机制（重点！！！）" class="headerlink" title="类和对象的内存分配机制（重点！！！）"></a>类和对象的内存分配机制（重点！！！）</h3><h4 id="Java内存结构分析"><a href="#Java内存结构分析" class="headerlink" title="Java内存结构分析"></a>Java内存结构分析</h4><ol>
+<li>栈：基本数据类型</li>
+<li>堆：存放对象（Cat cat，数组等）</li>
+<li>方法区：常量池（常量，字符串），类加载信息</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/xiaofanshutu/typora2022/main/202304241358645.png" srcset="/img/loading.gif" lazyload alt="image-20230424135822547"></p>
+<h4 id="练习题"><a href="#练习题" class="headerlink" title="练习题"></a>练习题</h4><p>分析下列代码的内存结构：</p>
+<p><img src="https://raw.githubusercontent.com/xiaofanshutu/typora2022/main/202304241706409.png" srcset="/img/loading.gif" lazyload alt="image-20230424170641328"></p>
+<p><img src="https://raw.githubusercontent.com/xiaofanshutu/typora2022/main/202304241727144.png" srcset="/img/loading.gif" lazyload alt="image-20230424172718050"></p>
+<h3 id="重载介绍"><a href="#重载介绍" class="headerlink" title="重载介绍"></a>重载介绍</h3><p>同一个类里面，可以有多个同名的方法。但是方法的形参列表不能一样。</p>
+<h3 id="可变参数使用"><a href="#可变参数使用" class="headerlink" title="可变参数使用"></a>可变参数使用</h3><p>可以通过可变参数，将同一个类中同方法名，同功能但是不同参数的方法封装成一个方法。</p>
+<h4 id="语法格式"><a href="#语法格式" class="headerlink" title="语法格式"></a>语法格式</h4><p>修饰符 返回值类型 方法名(参数类型… 形参名) {</p>
+<p>}</p>
+<h4 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h4><p>求2个整数，3个整数，5个整数的和。</p>
+<p><strong>使用传统技术解决问题</strong></p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">App</span> </span>{<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{<br>        SumNum sumNum = <span class="hljs-keyword">new</span> SumNum();<br>        System.out.println(sumNum.sum2(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>));<br>        System.out.println(sumNum.sum3(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>));<br>        System.out.println(sumNum.sum5(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>));<br>    }<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+
+
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SumNum</span> </span>{<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">sum2</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n1, <span class="hljs-keyword">int</span> n2)</span></span>{<br>        <span class="hljs-keyword">return</span> n1 + n2;<br>    }<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">sum3</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n1, <span class="hljs-keyword">int</span> n2, <span class="hljs-keyword">int</span> n3)</span></span>{<br>        <span class="hljs-keyword">return</span> n1 + n2 + n3;<br>    }<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">sum5</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n1, <span class="hljs-keyword">int</span> n2, <span class="hljs-keyword">int</span> n3, <span class="hljs-keyword">int</span> n4, <span class="hljs-keyword">int</span> n5)</span></span>{<br>        <span class="hljs-keyword">return</span> n1 + n2 + n3 + n4 + n5;<br>    }<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+<p>结果</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-number">3</span><br><span class="hljs-number">6</span><br><span class="hljs-number">15</span><br></code></pre></td></tr></tbody></table></figure>
+
+
+
+<p><strong>使用可变参数解决问题</strong></p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">App</span> </span>{<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{<br>        SumNum sumNum = <span class="hljs-keyword">new</span> SumNum();<br>        System.out.println(sumNum.sums(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>));<br>        System.out.println(sumNum.sums(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>));<br>        System.out.println(sumNum.sums(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>));<br>    }<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SumNum</span> </span>{<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">sums</span><span class="hljs-params">(<span class="hljs-keyword">int</span>... n)</span></span>{<br>        <span class="hljs-keyword">int</span> total = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n.length; i++) {<br>            total += n[i];<br>        }<br>        <span class="hljs-keyword">return</span> total;<br>    }<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+<p>结果</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-number">3</span><br><span class="hljs-number">6</span><br><span class="hljs-number">15</span><br></code></pre></td></tr></tbody></table></figure>
+
+
+
+<h3 id="对象创建流程分析（包含构造器）"><a href="#对象创建流程分析（包含构造器）" class="headerlink" title="对象创建流程分析（包含构造器）"></a>对象创建流程分析（包含构造器）</h3><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java">Person p = <span class="hljs-keyword">new</span> Person(<span class="hljs-number">5</span>, <span class="hljs-string">"闹闹"</span>);<br></code></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Person</span> </span>{<br>    <span class="hljs-keyword">int</span> age = <span class="hljs-number">10</span>;<br>    String name;<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Person</span><span class="hljs-params">(<span class="hljs-keyword">int</span> age, String name)</span> </span>{<br>        <span class="hljs-keyword">this</span>.age = age;<br>        <span class="hljs-keyword">this</span>.name = name;<br>    }<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+
+
+
+
+<p><img src="https://raw.githubusercontent.com/xiaofanshutu/typora2022/main/202304241747184.png" srcset="/img/loading.gif" lazyload alt="image-20230424174731976"></p>
+<h2 id="成员方法"><a href="#成员方法" class="headerlink" title="成员方法"></a>成员方法</h2><h3 id="基本介绍"><a href="#基本介绍" class="headerlink" title="基本介绍"></a>基本介绍</h3><p>在某些情况下，我们要需要定义成员方法(简称方法)。比如人类:除了有一些属性外( 年龄，姓名..),我们人类还有一些行为比如:可以说话、跑步..,通过学习，还可以做算术题。这时就要用成员方法才能完成。</p>
+<h3 id="成员方法快速入门"><a href="#成员方法快速入门" class="headerlink" title="成员方法快速入门"></a>成员方法快速入门</h3><p>笔记本28页图片</p>
+<h3 id="方法的调用机制原理"><a href="#方法的调用机制原理" class="headerlink" title="方法的调用机制原理"></a>方法的调用机制原理</h3><p>笔记本29页图片</p>
+<h3 id="为什么需要成员方法"><a href="#为什么需要成员方法" class="headerlink" title="为什么需要成员方法"></a>为什么需要成员方法</h3><p>笔记本29页图片</p>
+<h3 id="成员方法的好处"><a href="#成员方法的好处" class="headerlink" title="成员方法的好处"></a>成员方法的好处</h3><p>提高代码的复用性</p>
+<p>可以将实现的细节封装起来，然后供其他用户来调用即可</p>
+<h3 id="成员方法的定义"><a href="#成员方法的定义" class="headerlink" title="成员方法的定义"></a>成员方法的定义</h3><p>笔记本30页</p>
+<h3 id="注意事项和使用细节"><a href="#注意事项和使用细节" class="headerlink" title="注意事项和使用细节"></a>注意事项和使用细节</h3><p><strong>访问修饰符(作用是控制方法使用的范围)</strong><br>如果不写默认访问，[有四种: public, protected, 默认, private], 具体在后面说</p>
+<p><strong>返回数据类型</strong></p>
+<ol>
+<li>一个方法最多有一个返回值[思考，如何返回多个结果返回数组]</li>
+<li>返回类型可以为任意类型，包含基本类型或引用类型(数组，对象)</li>
+<li>如果方法要求有返回数据类型，则方法体中最后的执行语句必须为return 值; 而且要求返回值类型必须和return 的<br> 值类型一致或兼容</li>
+<li>如果方法是void，则方法体中可以没有return 语句，或者只写return ;</li>
+</ol>
+<p><strong>方法名</strong><br>遵循驼峰命名法，最好见名知义，表达出该功能的意思即可, 比如得到两个数的和getSum, 开发中按照规范</p>
+<p><strong>形参列表</strong></p>
+<p><img src="https://raw.githubusercontent.com/xiaofanshutu/typora2022/main/image-20230926055700474.png" srcset="/img/loading.gif" lazyload alt="image-20230926055700474"></p>
+<h3 id="类定义的完善"><a href="#类定义的完善" class="headerlink" title="类定义的完善"></a>类定义的完善</h3><p><img src="https://raw.githubusercontent.com/xiaofanshutu/typora2022/main/image-20231001063620877.png" srcset="/img/loading.gif" lazyload alt="image-20231001063620877"></p>
+<h3 id="课堂练习题"><a href="#课堂练习题" class="headerlink" title="课堂练习题"></a>课堂练习题</h3><p>1.编写类AA ，有一个方法：判断一个数是奇数odd 还是偶数, 返回boolean</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Test01</span> </span>{<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{<br>        AA aa = <span class="hljs-keyword">new</span> AA();<br>        <span class="hljs-keyword">int</span> num = <span class="hljs-number">4</span>;<br>        <span class="hljs-keyword">if</span> (aa.isOdd(num)) {<br>            System.out.println(<span class="hljs-string">"数字"</span> + num + <span class="hljs-string">"是奇数"</span>);<br>        } <span class="hljs-keyword">else</span> {<br>            System.out.println(<span class="hljs-string">"数字"</span> + num + <span class="hljs-string">"是偶数"</span>);<br>        }<br>    }<br>}<br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AA</span> </span>{<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">isOdd</span><span class="hljs-params">(<span class="hljs-keyword">int</span> num)</span> </span>{<br>        <span class="hljs-keyword">return</span> num % <span class="hljs-number">2</span> == <span class="hljs-number">0</span> ? <span class="hljs-keyword">false</span> : <span class="hljs-keyword">true</span>;<br>    }<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+
+
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java">数字<span class="hljs-number">4</span>是偶数<br></code></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java">数字<span class="hljs-number">9</span>是奇数<br></code></pre></td></tr></tbody></table></figure>
+
+
+
+<p>2.根据行、列、字符打印对应行数和列数的字符，比如：行：3，列：2，字符 #, 则打印相应的效果</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Test02</span> </span>{<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{<br>        String[][] arr = <span class="hljs-keyword">new</span> String[<span class="hljs-number">3</span>][<span class="hljs-number">2</span>];<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; arr.length; i++) {<br>            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>; j &lt; arr[i].length; j++) {<br>                arr[i][j] = <span class="hljs-string">"#"</span>;<br>            }<br>        }<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; arr.length; i++) {<br>            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>; j &lt; arr[i].length; j++) {<br>                System.out.print(arr[i][j] + <span class="hljs-string">"\t"</span>);<br>            }<br>            System.out.println();<br>        }<br>    }<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java">#	#	<br>#	#	<br>#	#	<br></code></pre></td></tr></tbody></table></figure>
+
+
+
+<h2 id="成员方法传参机制-非常非常重要"><a href="#成员方法传参机制-非常非常重要" class="headerlink" title="成员方法传参机制(非常非常重要)"></a>成员方法传参机制(非常非常重要)</h2><h3 id="基本数据类型的传参机制"><a href="#基本数据类型的传参机制" class="headerlink" title="基本数据类型的传参机制"></a>基本数据类型的传参机制</h3><p>基本数据类型，传递的是值（值拷贝），形参的任何改变不影响实参。</p>
+<h3 id="引用数据类型的传参机制"><a href="#引用数据类型的传参机制" class="headerlink" title="引用数据类型的传参机制"></a>引用数据类型的传参机制</h3><p>引用类型可以通过形参来影响实参。</p>
+<p><img src="https://raw.githubusercontent.com/xiaofanshutu/typora2022/main/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20231001070833.jpg" srcset="/img/loading.gif" lazyload></p>
+<h3 id="成员方法返回类型是引用类型应用实例"><a href="#成员方法返回类型是引用类型应用实例" class="headerlink" title="成员方法返回类型是引用类型应用实例"></a>成员方法返回类型是引用类型应用实例</h3><p><img src="https://raw.githubusercontent.com/xiaofanshutu/typora2022/main/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20231001070934.jpg" srcset="/img/loading.gif" lazyload></p>
+<h2 id="方法递归调用-非常非常重要，比较难"><a href="#方法递归调用-非常非常重要，比较难" class="headerlink" title="方法递归调用(非常非常重要，比较难)"></a>方法递归调用(非常非常重要，比较难)</h2><h3 id="基本介绍-1"><a href="#基本介绍-1" class="headerlink" title="基本介绍"></a>基本介绍</h3><p>递归就是方法自己调用自己。</p>
+<h3 id="递归能解决什么问题"><a href="#递归能解决什么问题" class="headerlink" title="递归能解决什么问题?"></a>递归能解决什么问题?</h3><p><img src="https://raw.githubusercontent.com/xiaofanshutu/typora2022/main/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20231001071209.jpg" srcset="/img/loading.gif" lazyload></p>
+<h3 id="递归举例"><a href="#递归举例" class="headerlink" title="递归举例"></a>递归举例</h3><p>打印问题</p>
+<p><img src="https://raw.githubusercontent.com/xiaofanshutu/typora2022/main/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20231001071559.jpg" srcset="/img/loading.gif" lazyload></p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Recursion01</span> </span>{<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{<br>        T t = <span class="hljs-keyword">new</span> T();<br>        t.test(<span class="hljs-number">4</span>);<span class="hljs-comment">//调用方法后输出结果是？</span><br>    }<br>}<br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">T</span> </span>{<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">test</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n)</span> </span>{<br>        <span class="hljs-keyword">if</span> (n &gt; <span class="hljs-number">2</span>) {<br>            test(n - <span class="hljs-number">1</span>);<br>        }<br>        System.out.println(<span class="hljs-string">"n="</span> + n);<br>    }<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+
+
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java">n=<span class="hljs-number">2</span><br>n=<span class="hljs-number">3</span><br>n=<span class="hljs-number">4</span><br></code></pre></td></tr></tbody></table></figure>
+
+
+
+<p><img src="https://raw.githubusercontent.com/xiaofanshutu/typora2022/main/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20231001073459.jpg" srcset="/img/loading.gif" lazyload></p>
+<p>阶乘问题</p>
+<p><img src="https://raw.githubusercontent.com/xiaofanshutu/typora2022/main/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20231001071609.jpg" srcset="/img/loading.gif" lazyload></p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><code class="hljs java">```<br><br><br><br>### 递归重要规则<br><br>![image-<span class="hljs-number">20230920060433456</span>](https:<span class="hljs-comment">//raw.githubusercontent.com/xiaofanshutu/typora2022/main/image-20230920060433456.png)</span><br><br>### 课堂练习<br><br>![image-<span class="hljs-number">20230920052744709</span>](https:<span class="hljs-comment">//raw.githubusercontent.com/xiaofanshutu/typora2022/main/image-20230920052744709.png)</span><br><br>请使用递归的方式求出斐波那契数<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">5</span>,<span class="hljs-number">8</span>,<span class="hljs-number">13.</span>..给你一个整数n，求出它的斐波那契值是多少。<br><br>```java<br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">RecursionExercise01</span> </span>{<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{<br>        T t = <span class="hljs-keyword">new</span> T();<br>        <span class="hljs-keyword">int</span> n = <span class="hljs-number">7</span>;<br>        <span class="hljs-keyword">int</span> fibonacciNum = t.fibonacci(n);<br>        <span class="hljs-keyword">if</span> (fibonacciNum != -<span class="hljs-number">1</span>) {<br>            System.out.println(<span class="hljs-string">"数字 "</span> + n + <span class="hljs-string">" 的斐波那契值为 "</span> + fibonacciNum);<br>        } <span class="hljs-keyword">else</span> {<br>            System.out.println(<span class="hljs-string">"数据不合法"</span>);<br>        }<br>    }<br>}<br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">T</span> </span>{<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">fibonacci</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n)</span> </span>{<br>        <span class="hljs-keyword">if</span> (n &gt; <span class="hljs-number">0</span>) {<br>            <span class="hljs-keyword">if</span> (n == <span class="hljs-number">1</span> || n == <span class="hljs-number">2</span>) {<br>                <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;<br>            } <span class="hljs-keyword">else</span> {<br>                <span class="hljs-keyword">return</span> fibonacci(n - <span class="hljs-number">1</span>) + fibonacci(n - <span class="hljs-number">2</span>);<br>            }<br>        } <span class="hljs-keyword">else</span> {<br>            System.out.println(<span class="hljs-string">"数据不合法，输入的n为："</span> + n);<br>            <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>;<br>        }<br>    }<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+
+
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java">数字 <span class="hljs-number">7</span> 的斐波那契值为 <span class="hljs-number">13</span><br></code></pre></td></tr></tbody></table></figure>
+
+<p>猴子吃桃子问题：有一堆桃子，猴子第一天吃了其中的一半，并再多吃了一个！以后每天猴子都吃其中的一半，然后再多吃一个。当到第10 天时，想再吃时（即还没吃），发现只有1个桃子了。问题：最初共多少个桃子？</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">package</span> chapter07;<br><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">RecursionExercise01</span> </span>{<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{<br>        T t = <span class="hljs-keyword">new</span> T();<br>        <span class="hljs-keyword">int</span> peach = t.peach(<span class="hljs-number">1</span>);<br>        System.out.println(peach);<br>    }<br>}<br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">T</span> </span>{<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">peach</span><span class="hljs-params">(<span class="hljs-keyword">int</span> day)</span> </span>{<br>        <span class="hljs-keyword">if</span> (day == <span class="hljs-number">10</span>) {<br>            <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;<br>        } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (day &gt;= <span class="hljs-number">1</span> &amp;&amp; day &lt;= <span class="hljs-number">9</span>) {<br>            <span class="hljs-keyword">return</span> (peach(day + <span class="hljs-number">1</span>) + <span class="hljs-number">1</span>) * <span class="hljs-number">2</span>;<br>        } <span class="hljs-keyword">else</span> {<br>            <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>;<br>        }<br>    }<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+
+
+
+
+<h3 id="递归调用应用实例-迷宫问题"><a href="#递归调用应用实例-迷宫问题" class="headerlink" title="递归调用应用实例-迷宫问题"></a>递归调用应用实例-迷宫问题</h3><p><img src="https://raw.githubusercontent.com/xiaofanshutu/typora2022/main/image-20230920054444242.png" srcset="/img/loading.gif" lazyload alt="image-20230920054444242"></p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MiGong</span> </span>{<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{<br>        MiGongTest miGongTest = <span class="hljs-keyword">new</span> MiGongTest();<br>        <span class="hljs-keyword">int</span>[][] map = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[<span class="hljs-number">8</span>][<span class="hljs-number">7</span>];<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; map.length; i++) {<br>            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>; j &lt; map[i].length; j++) {<br>                map[i][j] = <span class="hljs-number">0</span>;<br>            }<br>        }<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; map.length; i++) {<br>            map[i][<span class="hljs-number">0</span>] = <span class="hljs-number">1</span>;<br>            map[i][<span class="hljs-number">6</span>] = <span class="hljs-number">1</span>;<br>        }<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>; j &lt; <span class="hljs-number">7</span>; j++) {<br>            map[<span class="hljs-number">0</span>][j] = <span class="hljs-number">1</span>;<br>            map[<span class="hljs-number">7</span>][j] = <span class="hljs-number">1</span>;<br>        }<br>        map[<span class="hljs-number">3</span>][<span class="hljs-number">1</span>] = <span class="hljs-number">1</span>;<br>        map[<span class="hljs-number">3</span>][<span class="hljs-number">2</span>] = <span class="hljs-number">1</span>;<br>        miGongTest.findWay(map, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>);<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; map.length; i++) {<br>            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>; j &lt; map[i].length; j++) {<br>                System.out.print(map[i][j] + <span class="hljs-string">" "</span>);<br>            }<br>            System.out.println();<br>        }<br>    }<br>}<br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MiGongTest</span> </span>{<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">findWay</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[][] map, <span class="hljs-keyword">int</span> i, <span class="hljs-keyword">int</span> j)</span> </span>{<br>        <span class="hljs-keyword">if</span> (map[<span class="hljs-number">6</span>][<span class="hljs-number">5</span>] == <span class="hljs-number">2</span>) {<br>            <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;<br>        } <span class="hljs-keyword">else</span> {<br>            <span class="hljs-keyword">if</span> (map[i][j] == <span class="hljs-number">0</span>) {<br>                map[i][j] = <span class="hljs-number">2</span>;<br>                <span class="hljs-keyword">if</span> (findWay(map, i + <span class="hljs-number">1</span>, j)) {<span class="hljs-comment">//下</span><br>                    <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;<br>                } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (findWay(map, i, j + <span class="hljs-number">1</span>)) {<span class="hljs-comment">//右</span><br>                    <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;<br>                } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (findWay(map, i - <span class="hljs-number">1</span>, j)) {<span class="hljs-comment">//上</span><br>                    <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;<br>                } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (findWay(map, i, j - <span class="hljs-number">1</span>)) {<span class="hljs-comment">//左</span><br>                    <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;<br>                } <span class="hljs-keyword">else</span> {<br>                    map[i][j] = <span class="hljs-number">3</span>;<br>                    <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;<br>                }<br>            } <span class="hljs-keyword">else</span> {<br>                <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;<br>            }<br>        }<br>    }<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+
+
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-number">1</span> <span class="hljs-number">1</span> <span class="hljs-number">1</span> <span class="hljs-number">1</span> <span class="hljs-number">1</span> <span class="hljs-number">1</span> <span class="hljs-number">1</span> <br><span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">1</span> <br><span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">2</span> <span class="hljs-number">2</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">1</span> <br><span class="hljs-number">1</span> <span class="hljs-number">1</span> <span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">1</span> <br><span class="hljs-number">1</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">2</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">1</span> <br><span class="hljs-number">1</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">2</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">1</span> <br><span class="hljs-number">1</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">2</span> <span class="hljs-number">2</span> <span class="hljs-number">2</span> <span class="hljs-number">1</span> <br><span class="hljs-number">1</span> <span class="hljs-number">1</span> <span class="hljs-number">1</span> <span class="hljs-number">1</span> <span class="hljs-number">1</span> <span class="hljs-number">1</span> <span class="hljs-number">1</span> <br></code></pre></td></tr></tbody></table></figure>
+
+<p>测试回溯法</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MiGong</span> </span>{<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{<br>        MiGongTest miGongTest = <span class="hljs-keyword">new</span> MiGongTest();<br>        <span class="hljs-keyword">int</span>[][] map = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[<span class="hljs-number">8</span>][<span class="hljs-number">7</span>];<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; map.length; i++) {<br>            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>; j &lt; map[i].length; j++) {<br>                map[i][j] = <span class="hljs-number">0</span>;<br>            }<br>        }<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; map.length; i++) {<br>            map[i][<span class="hljs-number">0</span>] = <span class="hljs-number">1</span>;<br>            map[i][<span class="hljs-number">6</span>] = <span class="hljs-number">1</span>;<br>        }<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>; j &lt; <span class="hljs-number">7</span>; j++) {<br>            map[<span class="hljs-number">0</span>][j] = <span class="hljs-number">1</span>;<br>            map[<span class="hljs-number">7</span>][j] = <span class="hljs-number">1</span>;<br>        }<br>        map[<span class="hljs-number">3</span>][<span class="hljs-number">1</span>] = <span class="hljs-number">1</span>;<br>        map[<span class="hljs-number">3</span>][<span class="hljs-number">2</span>] = <span class="hljs-number">1</span>;<br>        map[<span class="hljs-number">2</span>][<span class="hljs-number">2</span>] = <span class="hljs-number">1</span>;<span class="hljs-comment">//测试回溯法</span><br>        miGongTest.findWay(map, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>);<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; map.length; i++) {<br>            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>; j &lt; map[i].length; j++) {<br>                System.out.print(map[i][j] + <span class="hljs-string">" "</span>);<br>            }<br>            System.out.println();<br>        }<br>    }<br>}<br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MiGongTest</span> </span>{<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">findWay</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[][] map, <span class="hljs-keyword">int</span> i, <span class="hljs-keyword">int</span> j)</span> </span>{<br>        <span class="hljs-keyword">if</span> (map[<span class="hljs-number">6</span>][<span class="hljs-number">5</span>] == <span class="hljs-number">2</span>) {<br>            <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;<br>        } <span class="hljs-keyword">else</span> {<br>            <span class="hljs-keyword">if</span> (map[i][j] == <span class="hljs-number">0</span>) {<br>                map[i][j] = <span class="hljs-number">2</span>;<br>                <span class="hljs-keyword">if</span> (findWay(map, i + <span class="hljs-number">1</span>, j)) {<span class="hljs-comment">//下</span><br>                    <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;<br>                } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (findWay(map, i, j + <span class="hljs-number">1</span>)) {<span class="hljs-comment">//右</span><br>                    <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;<br>                } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (findWay(map, i - <span class="hljs-number">1</span>, j)) {<span class="hljs-comment">//上</span><br>                    <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;<br>                } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (findWay(map, i, j - <span class="hljs-number">1</span>)) {<span class="hljs-comment">//左</span><br>                    <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;<br>                } <span class="hljs-keyword">else</span> {<br>                    map[i][j] = <span class="hljs-number">3</span>;<br>                    <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;<br>                }<br>            } <span class="hljs-keyword">else</span> {<br>                <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;<br>            }<br>        }<br>    }<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+
+
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-number">1</span> <span class="hljs-number">1</span> <span class="hljs-number">1</span> <span class="hljs-number">1</span> <span class="hljs-number">1</span> <span class="hljs-number">1</span> <span class="hljs-number">1</span> <br><span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">2</span> <span class="hljs-number">2</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">1</span> <br><span class="hljs-number">1</span> <span class="hljs-number">3</span> <span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">1</span> <br><span class="hljs-number">1</span> <span class="hljs-number">1</span> <span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">1</span> <br><span class="hljs-number">1</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">2</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">1</span> <br><span class="hljs-number">1</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">2</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">1</span> <br><span class="hljs-number">1</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">2</span> <span class="hljs-number">2</span> <span class="hljs-number">2</span> <span class="hljs-number">1</span> <br><span class="hljs-number">1</span> <span class="hljs-number">1</span> <span class="hljs-number">1</span> <span class="hljs-number">1</span> <span class="hljs-number">1</span> <span class="hljs-number">1</span> <span class="hljs-number">1</span> <br></code></pre></td></tr></tbody></table></figure>
+
+
+
+<h3 id="递归调用应用实例-汉诺塔"><a href="#递归调用应用实例-汉诺塔" class="headerlink" title="递归调用应用实例-汉诺塔"></a>递归调用应用实例-汉诺塔</h3><h3 id="递归调用应用实例-八皇后问题-同学们先尝试做，后面老师评讲"><a href="#递归调用应用实例-八皇后问题-同学们先尝试做，后面老师评讲" class="headerlink" title="递归调用应用实例-八皇后问题[同学们先尝试做，后面老师评讲.]"></a>递归调用应用实例-八皇后问题[同学们先尝试做，后面老师评讲.]</h3><h2 id="方法重载-OverLoad"><a href="#方法重载-OverLoad" class="headerlink" title="方法重载(OverLoad)"></a>方法重载(OverLoad)</h2><h3 id="基本介绍-2"><a href="#基本介绍-2" class="headerlink" title="基本介绍"></a>基本介绍</h3><p>同一个类中，拥有<strong>相同方法名</strong>，且<strong>形参列表不一样</strong>。（返回类型无要求）</p>
+<h3 id="重载的好处"><a href="#重载的好处" class="headerlink" title="重载的好处"></a>重载的好处</h3><p>减轻了起名和记名的麻烦。</p>
+<h3 id="快速入门案例"><a href="#快速入门案例" class="headerlink" title="快速入门案例"></a>快速入门案例</h3><p><img src="https://raw.githubusercontent.com/xiaofanshutu/typora2022/main/image-20231007092829954.png" srcset="/img/loading.gif" lazyload alt="image-20231007092829954"></p>
+<h3 id="注意事项和使用细节-1"><a href="#注意事项和使用细节-1" class="headerlink" title="注意事项和使用细节"></a>注意事项和使用细节</h3><h3 id="课堂练习题-1"><a href="#课堂练习题-1" class="headerlink" title="课堂练习题"></a>课堂练习题</h3><h2 id="this关键字"><a href="#this关键字" class="headerlink" title="this关键字"></a>this关键字</h2><h3 id="深入理解this"><a href="#深入理解this" class="headerlink" title="深入理解this"></a>深入理解this</h3><h4 id="什么是this？"><a href="#什么是this？" class="headerlink" title="什么是this？"></a>什么是this？</h4><p>Java虚拟机给每个对象都分配了一个this，代表当前对象。</p>
+<h4 id="this本质"><a href="#this本质" class="headerlink" title="this本质"></a>this本质</h4><p><img src="https://raw.githubusercontent.com/xiaofanshutu/typora2022/main/image-20230504070603522.png" srcset="/img/loading.gif" lazyload alt="image-20230504070603522"></p>
+<h4 id="this小结"><a href="#this小结" class="headerlink" title="this小结"></a>this小结</h4><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs java">dog1.info();<br><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">info</span><span class="hljs-params">()</span></span>{<br>    System.out.println(<span class="hljs-keyword">this</span>.hashCode());<span class="hljs-comment">//此时，输出的就是dog1的hashCode值。哪个对象调用，this就是哪个对象。</span><br>}<br></code></pre></td></tr></tbody></table></figure>
+
+
+
+<h3 id="this的注意事项和使用细节"><a href="#this的注意事项和使用细节" class="headerlink" title="this的注意事项和使用细节"></a>this的注意事项和使用细节</h3><p><img src="https://raw.githubusercontent.com/xiaofanshutu/typora2022/main/image-20230504063923225.png" srcset="/img/loading.gif" lazyload alt="image-20230504063923225"></p>
+<h3 id="本章作业"><a href="#本章作业" class="headerlink" title="本章作业"></a>本章作业</h3><ol>
+<li><p>定义方法max，实现求某个double数组的最大值，并返回</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">package</span> com.bambi;<br><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Homework01</span> </span>{<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{<br>        A01 a01 = <span class="hljs-keyword">new</span> A01();<br>        <span class="hljs-keyword">double</span>[] array = {<span class="hljs-number">10.01</span>, <span class="hljs-number">80.25</span>, <span class="hljs-number">20.15</span>, <span class="hljs-number">30.71</span>, <span class="hljs-number">12.56</span>};<br>        System.out.println(a01.max(array));<br>    }<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+
+
+</li>
+</ol>
+   <figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">package</span> com.bambi;<br><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">A01</span> </span>{<br><br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">double</span> <span class="hljs-title">max</span><span class="hljs-params">(<span class="hljs-keyword">double</span>[] array)</span> </span>{<br>        <span class="hljs-keyword">double</span> ans = <span class="hljs-number">0.0</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; array.length; i++) {<br>            <span class="hljs-keyword">if</span> (i == <span class="hljs-number">0</span>) {<br>                ans = array[i];<br>            } <span class="hljs-keyword">else</span> {<br>                <span class="hljs-keyword">if</span> (ans &lt; array[i]) {<br>                    ans = array[i];<br>                }<br>            }<br><br>        }<br>        <span class="hljs-keyword">return</span> ans;<br>    }<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+
+
+<ol start="2">
+<li><p>定义方法find，实现查找某字符串是否在字符串数组中，并返回索引，如果找不到，则返回-1</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">package</span> com.bambi;<br><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Homework02</span> </span>{<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{<br>        A02 a02 = <span class="hljs-keyword">new</span> A02();<br>        String[] array = {<span class="hljs-string">"bambi"</span>, <span class="hljs-string">"eazin"</span>, <span class="hljs-string">"stefen"</span>};<br>        System.out.println(a02.find(<span class="hljs-string">"summer"</span>, array));<br>    }<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">package</span> com.bambi;<br><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">A02</span> </span>{<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">find</span><span class="hljs-params">(String s, String[] array)</span> </span>{<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; array.length; i++) {<br>            <span class="hljs-keyword">if</span> (s.equals(array[i])) {<br>                <span class="hljs-keyword">return</span> i;<br>            }<br>        }<br>        <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>;<br>    }<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java">-<span class="hljs-number">1</span><br></code></pre></td></tr></tbody></table></figure>
+
+
+
+</li>
+</ol>
+<ol start="3">
+<li><p>编写类Book，定义方法updatePrice，实现更改某本书的价格，具体：如果价格大于150，则更改为150；如果价格大于100，则更改为100；否则不变。</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">A03</span> </span>{<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{<br>        Book book = <span class="hljs-keyword">new</span> Book();<br>        System.out.println(book.updatePrice(<span class="hljs-number">200.55</span>));<br>        System.out.println(book.updatePrice(<span class="hljs-number">130.91</span>));<br>        System.out.println(book.updatePrice(<span class="hljs-number">50.21</span>));<br>    }<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Book</span> </span>{<br>    <span class="hljs-comment">//编写类Book，定义方法updatePrice，实现更改某本书的价格，具体：如果价格大于150，则更改为150；如果价格大于100，则更改为100；否则不变。</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">double</span> <span class="hljs-title">updatePrice</span><span class="hljs-params">(<span class="hljs-keyword">double</span> price)</span></span>{<br>        <span class="hljs-keyword">if</span>(price &gt; <span class="hljs-number">150</span>){<br>            price = <span class="hljs-number">150</span>;<br>        } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (price &gt; <span class="hljs-number">100</span>) {<br>            price = <span class="hljs-number">100</span>;<br>        }<br>        <span class="hljs-keyword">return</span> price;<br>    }<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-number">150.0</span><br><span class="hljs-number">100.0</span><br><span class="hljs-number">50.21</span><br></code></pre></td></tr></tbody></table></figure>
+</li>
+<li><p>编写类，实现数组的复制功能copyArr，输入旧数组，返回新数组。</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">A03</span> </span>{<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{<br>        A04 a04 = <span class="hljs-keyword">new</span> A04();<br>        <span class="hljs-keyword">int</span>[] ints = {<span class="hljs-number">1</span>, <span class="hljs-number">2</span>};<br>        <span class="hljs-keyword">int</span>[] afterArr = a04.copyArr(ints);<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> num : afterArr) {<br>            System.out.println(num);<br>        }<br>    }<br>}<br><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">A04</span> </span>{<br>    <span class="hljs-comment">//定义一个类，实现数组的复制功能copyArr。输入旧数组，返回一个新数组</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span>[] copyArr(<span class="hljs-keyword">int</span>[] array) {<br>        <span class="hljs-keyword">int</span>[] newArr = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[array.length];<br><br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; array.length; i++) {<br>            newArr[i] = array[i];<br>        }<br>        <span class="hljs-keyword">return</span> newArr;<br>    }<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+
+
+</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/xiaofanshutu/typora2022/main/image-20230504072459076.png" srcset="/img/loading.gif" lazyload alt="image-20230504072459076"></p>
+<p><img src="https://raw.githubusercontent.com/xiaofanshutu/typora2022/main/image-20230504072517694.png" srcset="/img/loading.gif" lazyload alt="image-20230504072517694"></p>
+<p><img src="https://raw.githubusercontent.com/xiaofanshutu/typora2022/main/image-20230504072532803.png" srcset="/img/loading.gif" lazyload alt="image-20230504072532803"></p>
+<p><img src="https://raw.githubusercontent.com/xiaofanshutu/typora2022/main/image-20230504072549638.png" srcset="/img/loading.gif" lazyload alt="image-20230504072549638"></p>
+<p><img src="https://raw.githubusercontent.com/xiaofanshutu/typora2022/main/image-20230504072611368.png" srcset="/img/loading.gif" lazyload alt="image-20230504072611368"></p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Java%E5%9F%BA%E7%A1%80/" class="category-chain-item">Java基础</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>面向对象编程（基础部分）</div>
+      <div>https://xiaofanshutu.github.io/posts/dfc0bd6b.html</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>cutiebambi</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年10月7日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/posts/df2849ec.html" title="Java">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Java</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/posts/c2bc67b6.html" title="数组、排序和查找">
+                        <span class="hidden-mobile">数组、排序和查找</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

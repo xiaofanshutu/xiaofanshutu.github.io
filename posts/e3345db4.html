@@ -1,0 +1,957 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="数组概述 什么是数组？ 在Java中，数组是一种用于存储多个相同数据类型元素的容器。 例如一个存储整数的数组：int[] nums &#x3D; {100, 200, 300}; 例如一个存储字符串的数组：String[] names &#x3D; {“jack”,“lucy”,“lisi”}; 数组是一种引用数据类型，隐式继承Object。因此数组也可以调用Object类中的方法。 数组对象存储在堆内存中。   数">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java数组">
+<meta property="og:url" content="https://xiaofanshutu.github.io/posts/e3345db4.html">
+<meta property="og:site_name" content="yubiii">
+<meta property="og:description" content="数组概述 什么是数组？ 在Java中，数组是一种用于存储多个相同数据类型元素的容器。 例如一个存储整数的数组：int[] nums &#x3D; {100, 200, 300}; 例如一个存储字符串的数组：String[] names &#x3D; {“jack”,“lucy”,“lisi”}; 数组是一种引用数据类型，隐式继承Object。因此数组也可以调用Object类中的方法。 数组对象存储在堆内存中。   数">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250619212910246.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250619213239940.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250619213825573.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250619213838455.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250619213850130.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250619213901588.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250619213916165.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250619213926947.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250619214145962.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250619214158108.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250619214209590.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250619214225269.png">
+<meta property="article:published_time" content="2025-06-19T13:25:52.900Z">
+<meta property="article:modified_time" content="2025-06-25T22:53:49.990Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250619212910246.png">
+  
+  
+  
+  <title>Java数组 - yubiii</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"xiaofanshutu.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 5.2.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="yubiii" type="application/atom+xml">
+</head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 30vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="Java数组"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-06-19 21:25" pubdate>
+          2025年6月19日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          4.2k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          36 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">Java数组</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h2 id="数组概述"><a href="#数组概述" class="headerlink" title="数组概述"></a>数组概述</h2><ul>
+<li>什么是数组？<ol>
+<li>在Java中，数组是一种用于存储多个相同数据类型元素的容器。</li>
+<li>例如一个存储整数的数组：int[] nums = {100, 200, 300};</li>
+<li>例如一个存储字符串的数组：String[] names = {“jack”,“lucy”,“lisi”};</li>
+<li>数组是一种引用数据类型，隐式继承Object。因此数组也可以调用Object类中的方法。</li>
+<li>数组对象存储在堆内存中。</li>
+</ol>
+</li>
+<li>数组的分类？<ol>
+<li>根据维数进行分类：一维数组，二维数组，三维数组，多维数组。</li>
+<li>根据数组中存储的元素类型分类：基本类型数组，引用类型数组。</li>
+<li>根据数组初始化方式不同分类：静态数组，动态数组。</li>
+</ol>
+</li>
+<li>Java数组存储元素的特点？<ol>
+<li>数组长度一旦确定不可变。</li>
+<li>数组中元素数据类型一致，每个元素占用空间大小相同。</li>
+<li>数组中每个元素在空间存储上，内存地址是连续的。</li>
+<li>每个元素有索引，首元素索引0，以1递增。</li>
+<li>以首元素的内存地址作为数组对象在堆内存中的地址。</li>
+<li>所有数组对象都有length属性用来获取数组元素个数。末尾元素下标：length-1</li>
+</ol>
+</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250619212910246.png" srcset="/img/loading.gif" lazyload alt="image-20250619212910246"></p>
+<ul>
+<li>数组优点？<ol>
+<li>根据下标查询某个元素的效率极高。数组中有100个元素和有100万个元素，查询效率相同。时间复杂度O(1)。也就是说在数组中根据下标查询某个元素时，不管数组的长短，耗费时间是固定不变的。</li>
+<li>原因：知道首元素内存地址，元素在空间存储上内存地址又是连续的，每个元素占用空间大小相同，只要知道下标，就可以通过数学表达式计算出来要查找元素的内存地址。直接通过内存地址定位元素。</li>
+</ol>
+</li>
+<li>数组缺点？<ol>
+<li>随机增删元素的效率较低。因为随机增删元素时，为了保证数组中元素的内存地址连续，就需要涉及到后续元素的位移问题。时间复杂度O(n)。O(n)表示的是线性阶，随着问题规模n的不断增大，时间复杂度不断增大，算法的执行效率越低。（不过需要注意的是：对数组末尾元素的增删效率是不受影响的。）</li>
+<li>无法存储大量数据，因为很难在内存上找到非常大的一块连续的内存。</li>
+</ol>
+</li>
+</ul>
+<h2 id="一维数组"><a href="#一维数组" class="headerlink" title="一维数组"></a>一维数组</h2><ol>
+<li><p>一维数组是线性结构。二维数组，三维数组，多维数组是非线性结构。</p>
+</li>
+<li><p>如何静态初始化一维数组？</p>
+<ul>
+<li>第一种：int[] arr = {55,67,22}; 或者 int arr[] = {55,67,22};</li>
+<li>第二种：int[] arr = new int[]{55,67,22};</li>
+</ul>
+</li>
+<li><p>如何访问数组中的元素？</p>
+<p>​    通过下标来访问。注意ArrayIndexOutOfBoundsException异常的发生。</p>
+</li>
+<li><p>如何遍历数组？</p>
+<p>​    普通for循环遍历</p>
+<p>​    for-each遍历（优点是代码简洁。缺点是没有下标。）</p>
+</li>
+<li><p>如何动态初始化一维数组？</p>
+<p>​    int[] arr = new int[4];</p>
+<p>​    Object[] objs = new Object[5];</p>
+<p>​    数组动态初始化的时候，确定长度，并且数组中每个元素采用默认值。</p>
+</li>
+</ol>
+<ol start="6">
+<li>一维数组中存储引用时的内存图</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250619213239940.png" srcset="/img/loading.gif" lazyload alt="image-20250619213239940"></p>
+<ol start="7">
+<li><p>关于main方法的形参args？</p>
+<ul>
+<li><p>接收命令行参数</p>
+</li>
+<li><p>在DOS命令窗口中怎么传？在IDEA中怎么传？</p>
+</li>
+</ul>
+</li>
+<li><p>关于方法的可变长度参数？</p>
+<ul>
+<li>可变长参数只能出现在形参列表中的最后一个位置。</li>
+<li>可变长参数可以当做数组来处理。</li>
+</ul>
+</li>
+</ol>
+<h3 id="一维数组的扩容"><a href="#一维数组的扩容" class="headerlink" title="一维数组的扩容"></a>一维数组的扩容</h3><ol>
+<li>数组长度一旦确定不可变。</li>
+<li>那数组应该如何扩容？<ul>
+<li>只能创建一个更大的数组将原数组中的数据全部拷贝到新数组中</li>
+<li>可以使用System.arraycopy()方法完成数组的拷贝。</li>
+</ul>
+</li>
+<li>数组扩容会影响程序的执行效率，因此尽可能预测数据量，创建一个接近数量的数组，减少扩容次数</li>
+</ol>
+<h2 id="二维数组"><a href="#二维数组" class="headerlink" title="二维数组"></a>二维数组</h2><ol>
+<li>二维数组是一个特殊的一维数组，特殊在：这个一维数组中每个元素是一个一维数组。</li>
+<li>二维数组的静态初始化<ul>
+<li><code>int[][] arr = new int[][]{{},{},{}}</code>;</li>
+<li><code>int[][] arr = {{},{},{}}</code>;</li>
+</ul>
+</li>
+<li>二维数组的动态初始化(等长)<ul>
+<li><code>int[][] arr = new int[3][4]</code>;</li>
+</ul>
+</li>
+<li>二维数组的动态初始化（不等长）<ul>
+<li><code>int[][] arr = new int[3][]</code>;</li>
+</ul>
+</li>
+<li>二维数组中元素的访问<ul>
+<li><code>第一个元素：arr[0][0]</code></li>
+<li><code>最后一个元素：arr[arr.length-1][arr[arr.length-1].length-1]</code></li>
+</ul>
+</li>
+<li>二维数组中元素的遍历</li>
+</ol>
+<h2 id="IDEA中的Debug调试"><a href="#IDEA中的Debug调试" class="headerlink" title="IDEA中的Debug调试"></a>IDEA中的Debug调试</h2><ol>
+<li>在可能出现问题的代码附近添加断点。一般是将断点添加在方法体的某一行代码上。</li>
+<li>断点可以添加多个。点一次添加一个断点。再点一次断点则消失。</li>
+<li>添加断点后，如果想让程序运行到断点处停下来，需要使用Debug模式运行程序。</li>
+<li>Debug窗口中的按钮</li>
+<li>给断点添加条件</li>
+<li>Debug窗口中的隐藏按钮</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250619213825573.png" srcset="/img/loading.gif" lazyload alt="image-20250619213825573"></p>
+<p><img src="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250619213838455.png" srcset="/img/loading.gif" lazyload alt="image-20250619213838455"></p>
+<p><img src="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250619213850130.png" srcset="/img/loading.gif" lazyload alt="image-20250619213850130"></p>
+<p><img src="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250619213901588.png" srcset="/img/loading.gif" lazyload alt="image-20250619213901588"></p>
+<p><img src="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250619213916165.png" srcset="/img/loading.gif" lazyload alt="image-20250619213916165"></p>
+<p><img src="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250619213926947.png" srcset="/img/loading.gif" lazyload alt="image-20250619213926947"></p>
+<h2 id="数据结构与算法"><a href="#数据结构与算法" class="headerlink" title="数据结构与算法"></a>数据结构与算法</h2><h3 id="数据结构概述"><a href="#数据结构概述" class="headerlink" title="数据结构概述"></a>数据结构概述</h3><ul>
+<li>数据结构概述数据结构是指用来存储和组织数据的一种方式，就像在生活中我们用文件柜、书架、衣柜等来整理我们的物品一样，数据结构也可以帮助我们整理和管理程序中的数据。</li>
+<li>数据结构分为：数据的逻辑结构、数据的物理结构<ol>
+<li>逻辑结构是指数据元素之间的逻辑关系，它是从抽象的角度描述数据元素之间的关系，不涉及具体的存储方式或实现细节。逻辑结构主要关注问题的本质、特点和抽象模型，是数据结构的逻辑表示。</li>
+<li>物理结构是指数据结构在计算机内存中实际存储和组织的方式。它是从具体的角度描述数据结构的实现方式和存储结构，包括数据元素在内存中的存储分布和访问方式等。物理结构主要关注问题的具体实现和操作。</li>
+<li>因此，逻辑结构与物理结构的区别在于：逻辑结构是从抽象的角度描述数据元素之间的关系，物理结构是从具体的角度描述内存中数据元素的存储方式和组织形式。逻辑结构主要关注问题的本质和特点，物理结构主要关注问题的具体实现和操作。</li>
+</ol>
+</li>
+<li>逻辑结构的划分？<ol>
+<li>集合结构：数据结构中的元素之间除了在“同属一个集合”的关系外，别无其它关系；</li>
+<li>线性结构：数据结构中的元素存在“一对一”的线性关系，例如冰糖葫芦； </li>
+<li>树形结构：数据结构中的元素存在“一对多”的层次关系，例如公司组织架构； </li>
+<li>图形结构或网状结构：数据结构中的元素存在“多对多”的任意关系，例如地图。 </li>
+</ol>
+</li>
+<li>物理结构的划分？<ol>
+<li>顺序存储结构：用一组连续的存储空间单元来依次的存储数据元素，例如数组。</li>
+<li>链式存储结构：用一组任意的存储单元来存储元素，通过保存地址找到相关联的元素，元素之间的逻辑关系用引用来表示，例如链表。</li>
+<li>散列存储结构：根据节点key计算出该节点的存储地址。例如：java集合中的HashMap采用了散列存储结构，添加、查询速度都很快。</li>
+</ol>
+</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250619214145962.png" srcset="/img/loading.gif" lazyload alt="image-20250619214145962"></p>
+<p><img src="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250619214158108.png" srcset="/img/loading.gif" lazyload alt="image-20250619214158108"></p>
+<p><img src="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250619214209590.png" srcset="/img/loading.gif" lazyload alt="image-20250619214209590"></p>
+<p><img src="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250619214225269.png" srcset="/img/loading.gif" lazyload alt="image-20250619214225269"></p>
+<h3 id="算法概述"><a href="#算法概述" class="headerlink" title="算法概述"></a>算法概述</h3><ul>
+<li><p>什么是算法？</p>
+<p>算法就是解决问题的方法和步骤，可以让计算机完成特定任务，并提高计算机系统的效率和性能。就像烹饪食品需要遵循一定的步骤和配方一样，例如，做牛排需要选择牛排肉、煎炸的方式、烹饪的时间等，按照一定的步骤最终会有一个好的成品。一个良好的算法可以提高程序的执行效率。</p>
+</li>
+<li><p>怎么评价一个算法好不好？</p>
+<p>如何计算1+2+3+…+100的结果？</p>
+<ul>
+<li>算法1：通过循环，依次累加来实现。耗费时间</li>
+<li>算法2：使用递归来实现。耗费内存</li>
+<li>算法3：高斯算法。(1 + 100)*50。既节省时间，又节省空间。</li>
+</ul>
+<p>同一问题可用不同的算法来解决，而一个算法的质量优劣将影响到算法乃至程序的效率。因此，我们学习算法目的在于选择合适算法和改进算法，一个算法的评价主要从时间复杂度和空间复杂度来考虑。</p>
+<ul>
+<li>时间复杂度：评估执行程序所需的时间，可以估算出程序对处理器的使用程度。</li>
+<li>空间复杂度：评估执行程序所需的存储空间，可以估算出程序对计算机内存的使用程度。</li>
+</ul>
+</li>
+</ul>
+<h3 id="数组的排序算法"><a href="#数组的排序算法" class="headerlink" title="数组的排序算法"></a>数组的排序算法</h3><h4 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h4><p><strong>核心思想</strong></p>
+<p>相邻两个元素做比较大小，如果前一个元素大于后一个元素，则交换位置</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">bubbleSort</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] arr)</span> </span>{<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; arr.length - <span class="hljs-number">1</span>; i++) {<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>; j &lt; arr.length - <span class="hljs-number">1</span> - i; j++) {<br>            System.out.println(<span class="hljs-string">"============================"</span>);<br>            <span class="hljs-comment">// 两个两个进行比较</span><br>            <span class="hljs-keyword">if</span>(arr[j] &gt; arr[j+<span class="hljs-number">1</span>]) {<br>                <span class="hljs-keyword">int</span> temp = arr[j];<br>                arr[j] = arr[j+<span class="hljs-number">1</span>];<br>                arr[j+<span class="hljs-number">1</span>] = temp;<br>            }<br>        }<br>    }<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+<p>结果：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs java">============================<br>============================<br>============================<br>============================<br>============================<br>============================<br>============================<br>============================<br>============================<br>============================<br>[<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>]<br></code></pre></td></tr></tbody></table></figure>
+
+
+
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * 冒泡排序算法的优化。</span><br><span class="hljs-comment">*/</span><br><span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">bubbleSort</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] arr)</span> </span>{<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = arr.length - <span class="hljs-number">1</span>; i &gt;= <span class="hljs-number">0</span>; i--) {<br>        <span class="hljs-comment">// 默认是排好序的。</span><br>        <span class="hljs-keyword">boolean</span> flag = <span class="hljs-keyword">true</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>; j &lt; i; j++) {<br>            System.out.println(<span class="hljs-string">"======================="</span>);<br>            <span class="hljs-comment">// 两个两个进行比较</span><br>            <span class="hljs-keyword">if</span>(arr[j] &gt; arr[j+<span class="hljs-number">1</span>]) {<br>                <span class="hljs-keyword">int</span> temp = arr[j];<br>                arr[j] = arr[j+<span class="hljs-number">1</span>];<br>                arr[j+<span class="hljs-number">1</span>] = temp;<br>                flag = <span class="hljs-keyword">false</span>;<br>            }<br>        }<br>        <span class="hljs-keyword">if</span>(flag){<br>            <span class="hljs-keyword">break</span>;<br>        }<br>    }<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+
+
+<p>结果：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java">=======================<br>=======================<br>=======================<br>=======================<br>[<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>]<br></code></pre></td></tr></tbody></table></figure>
+
+
+
+
+
+
+
+<h4 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h4><p><strong>核心思想</strong></p>
+<p>在未排序的序列中，把未排序第一个元素和未排序的最小元素交换位置。</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * 选择排序：</span><br><span class="hljs-comment"> *      核心原理：找出参与比较的这些数据中最小的，然后拿着这个最小的数据和参与比较的这堆数据中最左边的元素交换位置。</span><br><span class="hljs-comment"> *      优点：交换的次数比冒泡排序的少。执行效率比冒泡排序高。（冒泡排序中的元素每一次比完之后就交换，这个交换有时是没必要的。）</span><br><span class="hljs-comment"> *</span><br><span class="hljs-comment"> * 原理：</span><br><span class="hljs-comment"> *      (1)参与比较的数据：3, 2, 7, 6, 1</span><br><span class="hljs-comment"> *      第一次循环之后的结果：1, 2, 7, 6, 3</span><br><span class="hljs-comment"> *</span><br><span class="hljs-comment"> *      (2)参与比较的数据：x, 2, 7, 6, 3</span><br><span class="hljs-comment"> *      第二次循环之后的结果：1, 2, 7, 6, 3</span><br><span class="hljs-comment"> *</span><br><span class="hljs-comment"> *      (3)参与比较的数据：x, x, 7, 6, 3</span><br><span class="hljs-comment"> *      第三次循环之后的结果：1, 2, 3, 6, 7</span><br><span class="hljs-comment"> *</span><br><span class="hljs-comment"> *      (4)参与比较的数据：x, x, x, 6, 7</span><br><span class="hljs-comment"> *      第四次循环之后的结果：1, 2, 3, 6, 7</span><br><span class="hljs-comment"> */</span><br></code></pre></td></tr></tbody></table></figure>
+
+
+
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{<br>    <span class="hljs-keyword">int</span>[] arr = {<span class="hljs-number">3</span>, <span class="hljs-number">2</span>, <span class="hljs-number">7</span>, <span class="hljs-number">6</span>, <span class="hljs-number">1</span>, <span class="hljs-number">100</span>, <span class="hljs-number">200</span>, <span class="hljs-number">80</span>, <span class="hljs-number">870</span>};<br>    selectSort(arr);<br>    System.out.println(Arrays.toString(arr));<br>}<br><br><span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">selectSort</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] arr)</span> </span>{<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; arr.length - <span class="hljs-number">1</span>; i++) {<br>        <span class="hljs-comment">// 假定参与比较的这些数据中最左边的是最小的。</span><br>        <span class="hljs-keyword">int</span> min = i;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j = i+<span class="hljs-number">1</span>; j &lt; arr.length; j++){<br>            <span class="hljs-keyword">if</span> (arr[j] &lt; arr[min]) {<br>                min = j;<br>            }<br>        }<br>        <span class="hljs-keyword">if</span>(min != i){ <span class="hljs-comment">// 说明有更小的值</span><br>            <span class="hljs-comment">// 交换位置（拿着当下的最小值和参与比较的这些数据中最前面的值交换位置）</span><br>            <span class="hljs-keyword">int</span> temp = arr[min];<br>            arr[min] = arr[i];<br>            arr[i] = temp;<br>        }<br>    }<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+
+
+
+
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java">[<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">6</span>, <span class="hljs-number">7</span>, <span class="hljs-number">80</span>, <span class="hljs-number">100</span>, <span class="hljs-number">200</span>, <span class="hljs-number">870</span>]<br></code></pre></td></tr></tbody></table></figure>
+
+
+
+
+
+<h3 id="数组的查找算法"><a href="#数组的查找算法" class="headerlink" title="数组的查找算法"></a>数组的查找算法</h3><h4 id="线性查找"><a href="#线性查找" class="headerlink" title="线性查找"></a>线性查找</h4><p>①线性查找是一种最简单粗暴的查找法了，采用逐一比对的方式进行对数组的遍历，如果发现了匹配值，返回数组下标即可。</p>
+<p>②线性查找，优点是查找数组无需有序；其缺点是查找的次数多，效率低下。</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{<br>    <span class="hljs-keyword">int</span>[] arr = {<span class="hljs-number">102</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">54</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>,<span class="hljs-number">67</span>,<span class="hljs-number">7</span>,<span class="hljs-number">78</span>,<span class="hljs-number">8</span>,<span class="hljs-number">8</span>,<span class="hljs-number">87</span>,<span class="hljs-number">67</span>,<span class="hljs-number">6</span>};<br>    <span class="hljs-comment">// 找出以上数组中67元素的下标（67元素第一次出现处的下标）</span><br>    <span class="hljs-keyword">int</span> num = <span class="hljs-number">67</span>;<br>    <span class="hljs-keyword">int</span> index = search(arr, num);<br>    System.out.println(index &gt;= <span class="hljs-number">0</span> ? num + <span class="hljs-string">" first occur at: "</span> + index : <span class="hljs-string">"don't have this data"</span>);<br>}<br><br><span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-title">search</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] arr, <span class="hljs-keyword">int</span> num)</span> </span>{<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; arr.length; i++) {<br>        <span class="hljs-keyword">if</span>(num == arr[i]){<br>            <span class="hljs-keyword">return</span> i;<br>        }<br>    }<br>    <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>;<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+
+
+
+
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-number">67</span> first occur at: <span class="hljs-number">6</span><br></code></pre></td></tr></tbody></table></figure>
+
+
+
+
+
+
+
+<h4 id="二分法查找"><a href="#二分法查找" class="headerlink" title="二分法查找"></a>二分法查找</h4><p>①二分查找又称折半查找，优点是比较次数少，查找速度快，平均性能好；缺点是要求待查数组必须排序，且执行插入和删除操作困难。因此，折半查找方法适用于不经常变动而查找频繁的数组。</p>
+<p>②查找思路：</p>
+<p>假设查找的数组为升序排序，则首先定义两个变量，分别用于保存查找元素（value）所在范围的最小索引值（min）和最大索引值（max）。</p>
+<p>然后开启二分查找，每次查找前都定义一个mid变量，并设置该变量的初始值为：(max + min)/2。在查找的过程中，发生以下三种情况，则做对应的处理。</p>
+<ol>
+<li><p>如果arr[mid]大于value，则证明查找的元素在mid的左侧，那么更新max的值为：mid-1</p>
+</li>
+<li><p>如果arr[mid]小于value，则证明查找的元素在mid的右侧，那么更新min的值为：mid+1</p>
+</li>
+<li><p>如果arr[mid]等于value，则证明查找元素的索引值就是mid，返回mid的值即可！</p>
+</li>
+</ol>
+<p>在以上的操作中，我们不停的更改min和max的值，如果发生min大于max的情况，则证明查找的元素不存在，那么返回-1（表示找不到）即可！</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{<br>    <span class="hljs-keyword">int</span>[] arr = {<span class="hljs-number">1</span>,<span class="hljs-number">20</span>,<span class="hljs-number">50</span>,<span class="hljs-number">77</span>,<span class="hljs-number">80</span>,<span class="hljs-number">99</span>,<span class="hljs-number">101</span>,<span class="hljs-number">256</span>,<span class="hljs-number">666</span>,<span class="hljs-number">888</span>};<br>    <span class="hljs-keyword">int</span> num = <span class="hljs-number">101</span>;<br>    <span class="hljs-keyword">int</span> index = binarySearch(arr, num);<br>    System.out.println(index &gt;= <span class="hljs-number">0</span> ? num + <span class="hljs-string">"'s index is: "</span> + index : <span class="hljs-string">"can't find this data"</span>);<br>}<br><br><span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-title">binarySearch</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] arr, <span class="hljs-keyword">int</span> num)</span> </span>{<br>    <span class="hljs-keyword">int</span> begin = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">int</span> end = arr.length - <span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">while</span>(begin &lt;= end){<br>        <span class="hljs-keyword">int</span> mid = (begin + end) / <span class="hljs-number">2</span>;<br>        <span class="hljs-keyword">if</span>(arr[mid] == num) {<br>            <span class="hljs-keyword">return</span> mid;<br>        }<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(num &gt; arr[mid]){<br>            begin = mid + <span class="hljs-number">1</span>;<br>        }<span class="hljs-keyword">else</span>{<br>            end = mid - <span class="hljs-number">1</span>;<br>        }<br>    }<br>    <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>;<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+
+
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-number">101</span><span class="hljs-string">'s index is: 6</span><br></code></pre></td></tr></tbody></table></figure>
+
+
+
+
+
+
+
+
+
+<h2 id="Arrays工具类"><a href="#Arrays工具类" class="headerlink" title="Arrays工具类"></a>Arrays工具类</h2><p>①Arrays.toString()方法：将数组转换成字符串</p>
+<p>②Arrays.deepToString()方法：可以将二维数组转换成字符串</p>
+<p>③Arrays.equals(int[] arr1, int[] arr2)方法：判断两个数组是否相等</p>
+<p>④Arrays.equals(Object[] arr1, Object[] arr2)方法</p>
+<p>⑤Arrays.deepEquals(Object[] arr1, Object[] arr2)方法：判断两个二维数组是否相等</p>
+<p>⑥Arrays.sort(int[] arr)方法：基于快速排序算法，适合小型数据量排序。</p>
+<p>⑦Arrays.sort(String[] arr)方法</p>
+<p>⑧Arrays.parallelSort(int[] arr)方法：基于分治的归并排序算法，支持多核CPU排序，适合大数据量排序。</p>
+<p>⑨int binarySearch(int[] arr, int elt)方法：二分法查找</p>
+<p>⑩Arrays.fill(int[] arr, int data)方法：填充数组</p>
+<p>⑪Arrays.fill(int[] a, int fromIndex, int toIndex, int val)方法</p>
+<p>⑫int[] Arrays.copyOf(int[] original, int newLength)方法：数组拷贝</p>
+<p>⑬int[] Arrays.copyOfRange(int[] original, int from, int to)</p>
+<p>⑭Arrays.asList(T… data)方法：将一组数据转换成List集合。</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@Test</span><br><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">testToString</span><span class="hljs-params">()</span> </span>{<br>    <span class="hljs-keyword">int</span>[] arr = {<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">34</span>, <span class="hljs-number">54</span>};<br>    System.out.println(arr); <span class="hljs-comment">// [I@3d3fcdb0</span><br>    System.out.println(Arrays.toString(arr)); <span class="hljs-comment">// [1, 2, 3, 34, 54]</span><br><br>    String[] names = {<span class="hljs-string">"zhangsan"</span>, <span class="hljs-string">"lisi"</span>, <span class="hljs-string">"wangwu"</span>};<br>    System.out.println(names); <span class="hljs-comment">// [Ljava.lang.String;@641147d0</span><br>    System.out.println(Arrays.toString(names)); <span class="hljs-comment">//[zhangsan, lisi, wangwu]</span><br>}<br></code></pre></td></tr></tbody></table></figure>
+
+
+
+
+
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * Arrays.deepToString()作用是：适合于将多维数组转换成字符串。</span><br><span class="hljs-comment"> */</span><br><span class="hljs-meta">@Test</span><br><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">testDeepToString</span><span class="hljs-params">()</span> </span>{<br>    <span class="hljs-comment">// 适合于二维数组以及多维数组的。</span><br>    <span class="hljs-keyword">int</span>[][] arr = {<br>        {<span class="hljs-number">12</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">3</span>},<br>        {<span class="hljs-number">4</span>, <span class="hljs-number">45</span>, <span class="hljs-number">5</span>, <span class="hljs-number">5</span>},<br>        {<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>}<br>    };<br>    System.out.println(Arrays.toString(arr)); <span class="hljs-comment">// [[I@641147d0, [I@6e38921c, [I@64d7f7e0]</span><br>    System.out.println(Arrays.deepToString(arr)); <span class="hljs-comment">// [[12, 2, 3, 3], [4, 45, 5, 5], [1, 1, 1, 1, 1, 1]]</span><br>}<br></code></pre></td></tr></tbody></table></figure>
+
+
+
+
+
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@Test</span><br><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">testEquals</span><span class="hljs-params">()</span> </span>{<br>    <span class="hljs-keyword">int</span>[] arr1 = {<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>};<br>    <span class="hljs-keyword">int</span>[] arr2 = {<span class="hljs-number">2</span>, <span class="hljs-number">1</span>, <span class="hljs-number">3</span>};<br>    System.out.println(Arrays.equals(arr1, arr2));<br><br>    String[] names1 = <span class="hljs-keyword">new</span> String[]{<span class="hljs-string">"abc"</span>, <span class="hljs-string">"def"</span>, <span class="hljs-string">"xyz"</span>};<br>    String[] names2 = <span class="hljs-keyword">new</span> String[]{<span class="hljs-string">"abc"</span>, <span class="hljs-string">"def"</span>, <span class="hljs-string">"xyz"</span>};<br>    System.out.println(Arrays.equals(names1, names2));<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+
+
+
+
+<p>Equals方法</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@Test</span><br><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">testEquals</span><span class="hljs-params">()</span> </span>{<br>    <span class="hljs-keyword">int</span>[] arr1 = {<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>};<br>    <span class="hljs-keyword">int</span>[] arr2 = {<span class="hljs-number">2</span>, <span class="hljs-number">1</span>, <span class="hljs-number">3</span>};<br>    System.out.println(Arrays.equals(arr1, arr2)); <span class="hljs-comment">//false</span><br><br>    String[] names1 = <span class="hljs-keyword">new</span> String[]{<span class="hljs-string">"abc"</span>, <span class="hljs-string">"def"</span>, <span class="hljs-string">"xyz"</span>};<br>    String[] names2 = <span class="hljs-keyword">new</span> String[]{<span class="hljs-string">"abc"</span>, <span class="hljs-string">"def"</span>, <span class="hljs-string">"xyz"</span>};<br>    System.out.println(Arrays.equals(names1, names2)); <span class="hljs-comment">//true</span><br>}<br></code></pre></td></tr></tbody></table></figure>
+
+
+
+
+
+<p>Sort方法</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@Test</span><br><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">testSort</span><span class="hljs-params">()</span> </span>{<br>    <span class="hljs-keyword">int</span>[] arr = {<span class="hljs-number">1</span>, <span class="hljs-number">3</span>, <span class="hljs-number">45</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>, <span class="hljs-number">7</span>, <span class="hljs-number">87</span>, <span class="hljs-number">8</span>};<br>    Arrays.sort(arr);<br>    System.out.println(Arrays.toString(arr));<span class="hljs-comment">//[1, 3, 5, 6, 7, 8, 45, 87]</span><br><br>    String[] strs = {<span class="hljs-string">"a"</span>, <span class="hljs-string">"ac"</span>, <span class="hljs-string">"ab"</span>, <span class="hljs-string">"b"</span>};<br>    <span class="hljs-comment">// 应该是根据字典的顺序排序的。</span><br>    Arrays.sort(strs);<br>    System.out.println(Arrays.toString(strs));<span class="hljs-comment">//[a, ab, ac, b]</span><br><br>    <span class="hljs-comment">// 能不能对Person数组排序</span><br>    Person p1 = <span class="hljs-keyword">new</span> Person(<span class="hljs-number">20</span>);<br>    Person p2 = <span class="hljs-keyword">new</span> Person(<span class="hljs-number">22</span>);<br>    Person p3 = <span class="hljs-keyword">new</span> Person(<span class="hljs-number">19</span>);<br>    Person p4 = <span class="hljs-keyword">new</span> Person(<span class="hljs-number">18</span>);<br>    <span class="hljs-comment">/*</span><br><span class="hljs-comment">        java.lang.ClassCastException: class com.powernode.javase.Person cannot be cast to class java.lang.Comparable</span><br><span class="hljs-comment">        猜测，底层一定有这样一行代码：</span><br><span class="hljs-comment">            Comparable c = (Comparable)p1; 为什么会报这样的错误呢？也进一步说明了我们的Person类不是可比较的。</span><br><span class="hljs-comment">            Comparable字面意思：可比较的。</span><br><span class="hljs-comment">         */</span><br>    Person[] persons = {p1, p2, p3, p4};<br>    <span class="hljs-comment">// 排序</span><br>    Arrays.sort(persons);<br>    System.out.println(Arrays.toString(persons));<span class="hljs-comment">//[Person{age=18}, Person{age=19}, Person{age=20}, Person{age=22}]</span><br>}<br></code></pre></td></tr></tbody></table></figure>
+
+
+
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">// 凡是自定义的类型要做比较的话，这个自定义类型必须实现一个接口：Comparable接口，并且实现compareTo方法，在这个方法中编写比较规则。</span><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Person</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Comparable</span> </span>{<br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> age;<br>    <span class="hljs-keyword">private</span> String name;<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Person</span><span class="hljs-params">()</span> </span>{<br>    }<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Person</span><span class="hljs-params">(<span class="hljs-keyword">int</span> age)</span> </span>{<br>        <span class="hljs-keyword">this</span>.age = age;<br>    }<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">getAge</span><span class="hljs-params">()</span> </span>{<br>        <span class="hljs-keyword">return</span> age;<br>    }<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setAge</span><span class="hljs-params">(<span class="hljs-keyword">int</span> age)</span> </span>{<br>        <span class="hljs-keyword">this</span>.age = age;<br>    }<br><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">toString</span><span class="hljs-params">()</span> </span>{<br>        <span class="hljs-keyword">return</span> <span class="hljs-string">"Person{"</span> +<br>                <span class="hljs-string">"age="</span> + age +<br>                <span class="hljs-string">'}'</span>;<br>    }<br><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">compareTo</span><span class="hljs-params">(Object o)</span> </span>{<br>        <span class="hljs-comment">// 编写比较规则。</span><br>        <span class="hljs-comment">// 根据年龄进行比较</span><br>        <span class="hljs-comment">// p1.compareTo(p2) p1和p2之间进行比较。</span><br>        <span class="hljs-comment">// this是p1</span><br>        <span class="hljs-comment">// o是p2</span><br>        <span class="hljs-comment">// 当前对象的年龄</span><br>        <span class="hljs-comment">//this.age;</span><br><br>        <span class="hljs-comment">// 另一个对象的年龄</span><br>        Person person = (Person) o;<br>        <span class="hljs-comment">//person.age;</span><br><br>        <span class="hljs-comment">// 按照年龄进行比较。</span><br>        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.age - person.age;<br>        <span class="hljs-comment">//return person.age - this.age;</span><br><br>        <span class="hljs-comment">// 按照字符串进行比较。</span><br>        <span class="hljs-comment">// 升序</span><br>        <span class="hljs-comment">//return this.name.compareTo(person.name);</span><br>        <span class="hljs-comment">// 降序</span><br>        <span class="hljs-comment">//return person.name.compareTo(this.name);</span><br>    }<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+
+
+<p>Copyof方法</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@Test</span><br><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">testCopyOf</span><span class="hljs-params">()</span> </span>{<br>    <span class="hljs-comment">// 数组拷贝</span><br>    <span class="hljs-keyword">int</span>[] arr = {<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>, <span class="hljs-number">7</span>, <span class="hljs-number">8</span>, <span class="hljs-number">9</span>};<br>    <span class="hljs-keyword">int</span>[] newArr = Arrays.copyOf(arr, <span class="hljs-number">3</span>);<br>    System.out.println(Arrays.toString(newArr));<span class="hljs-comment">//[1, 2, 3]</span><br><br>    <span class="hljs-comment">// to不包含</span><br>    <span class="hljs-keyword">int</span>[] newArr2 = Arrays.copyOfRange(arr, <span class="hljs-number">2</span>, <span class="hljs-number">4</span>);<br>    System.out.println(Arrays.toString(newArr2));<span class="hljs-comment">//[3, 4]</span><br>}<br></code></pre></td></tr></tbody></table></figure>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Java/" class="category-chain-item">Java</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>Java数组</div>
+      <div>https://xiaofanshutu.github.io/posts/e3345db4.html</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>John Doe</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2025年6月19日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/posts/f495a96f.html" title="Java异常">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Java异常</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/posts/5f8d3e42.html" title="Java面向对象">
+                        <span class="hidden-mobile">Java面向对象</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

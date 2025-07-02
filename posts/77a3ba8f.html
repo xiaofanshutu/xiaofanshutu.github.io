@@ -1,0 +1,896 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="常用的windows组合键 win + D 回到桌面   win + E 打开资源管理器   win + R 打开运行窗口   win + L 锁屏   alt + tab 应用之间的切换    常用的DOS命令 打开DOS命令窗口  win + R，输入cmd cmd是commond单词的缩写。   怎么在DOS命令窗口中完成复制和粘贴？  鼠标左键选中要复制的内容，再点击鼠标右键  在任意空白">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java开发环境搭建">
+<meta property="og:url" content="https://xiaofanshutu.github.io/posts/77a3ba8f.html">
+<meta property="og:site_name" content="yubiii">
+<meta property="og:description" content="常用的windows组合键 win + D 回到桌面   win + E 打开资源管理器   win + R 打开运行窗口   win + L 锁屏   alt + tab 应用之间的切换    常用的DOS命令 打开DOS命令窗口  win + R，输入cmd cmd是commond单词的缩写。   怎么在DOS命令窗口中完成复制和粘贴？  鼠标左键选中要复制的内容，再点击鼠标右键  在任意空白">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250609055232739.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250609060047533.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250609060148755.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250609062007061.png">
+<meta property="article:published_time" content="2025-06-08T21:33:49.327Z">
+<meta property="article:modified_time" content="2025-06-08T23:23:09.086Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250609055232739.png">
+  
+  
+  
+  <title>Java开发环境搭建 - yubiii</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"xiaofanshutu.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 5.2.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="yubiii" type="application/atom+xml">
+</head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 30vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="Java开发环境搭建"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-06-09 05:33" pubdate>
+          2025年6月9日 凌晨
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          2.6k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          22 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">Java开发环境搭建</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h2 id="常用的windows组合键"><a href="#常用的windows组合键" class="headerlink" title="常用的windows组合键"></a>常用的windows组合键</h2><ul>
+<li>win + D<ul>
+<li>回到桌面</li>
+</ul>
+</li>
+<li>win + E<ul>
+<li>打开资源管理器</li>
+</ul>
+</li>
+<li>win + R<ul>
+<li>打开运行窗口</li>
+</ul>
+</li>
+<li>win + L<ul>
+<li>锁屏</li>
+</ul>
+</li>
+<li>alt + tab<ul>
+<li>应用之间的切换</li>
+</ul>
+</li>
+</ul>
+<h2 id="常用的DOS命令"><a href="#常用的DOS命令" class="headerlink" title="常用的DOS命令"></a>常用的DOS命令</h2><ul>
+<li><p>打开DOS命令窗口</p>
+<ul>
+<li>win + R，输入cmd</li>
+<li>cmd是commond单词的缩写。</li>
+</ul>
+</li>
+<li><p>怎么在DOS命令窗口中完成复制和粘贴？</p>
+<ul>
+<li><p>鼠标左键选中要复制的内容，再点击鼠标右键</p>
+</li>
+<li><p>在任意空白处，鼠标右键，即可粘贴</p>
+</li>
+</ul>
+</li>
+<li><p>什么是当前路径？</p>
+<ul>
+<li>假设进入DOS命令窗口时显示的是：C:\Users\Administrator&gt;。那么当前路径就是：C:\Users\Administrator</li>
+</ul>
+</li>
+<li><p>常用DOS命令：</p>
+<ul>
+<li>dir：列出当前路径下所有的文件以及目录。</li>
+<li>cls：clear screen清屏。</li>
+<li>exit：退出DOS命令窗口。</li>
+<li>切换盘符：c: 或者 d: 或者e:</li>
+<li>del：删除一个文件或者多个文件。del Test.java  del *.java</li>
+<li>ipconfig以及ipconfig /all：查看网卡的相关信息，例如ip地址，mac地址等。</li>
+<li>ping命令：查看两台计算机之间是否可以正常通信<ul>
+<li>ping 192.168.137.101</li>
+<li>ping 192.168.137.101 -t</li>
+<li>ping <a target="_blank" rel="noopener" href="http://www.baidu.com/">www.baidu.com</a></li>
+<li>ping <a target="_blank" rel="noopener" href="http://www.baidu.com/">www.baidu.com</a> -t</li>
+<li>终止DOS命令窗口中某个命令的执行：ctrl + c</li>
+</ul>
+</li>
+<li>mkdir：创建目录<ul>
+<li>mkdir abc，表示在当前目录下新建一个目录：abc</li>
+</ul>
+</li>
+<li>rd：删除目录<ul>
+<li>rd abc，表示删除当前路径下的abc目录</li>
+</ul>
+</li>
+<li>ren：重命名<ul>
+<li>ren abc xyz，表示将当前路径下的abc目录名修改为xyz</li>
+</ul>
+</li>
+<li>cd命令：<ul>
+<li>作用是：切换目录。change directory</li>
+<li>cd命令的用法：cd 路径</li>
+<li>路径包括：<ul>
+<li>相对路径：相对路径一定是相对于当前路径而言的，以当前路径为基准，从当前所在的位置开始找。</li>
+<li>绝对路径：在windows当中，路径开始的时候，是以盘符开始的，都是绝对路径。例如：C:\Users\Administrator\xyz\abc\def</li>
+</ul>
+</li>
+<li>cd .. 回到上级目录 （在windows系统中两个点.. 代表的是一个上级目录。扩展：其实还有一个路径叫做一个点 . 一个点代表的是当前路径。）</li>
+<li>cd / 回到跟目录</li>
+<li>注意：路径在windows当中自动补全：使用tab键。</li>
+</ul>
+</li>
+<li>定时关机：<ul>
+<li>shutdown -s -t 3600 一小时之后自动关机。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>批处理文件</p>
+<ul>
+<li>my.bat文件</li>
+</ul>
+<figure class="highlight bat"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bat"><span class="hljs-built_in">cd</span> C:\Users\Administrator\xyz\abc\def<br><span class="hljs-function">c:</span><br><span class="hljs-function"><span class="hljs-title">del</span> *.<span class="hljs-title">java</span></span><br></code></pre></td></tr></tbody></table></figure>
+
+<p>作用：切换到C:\Users\Administrator\xyz\abc\def目录下，删除这个目录中所有的java文件。</p>
+</li>
+</ul>
+<h2 id="通用的文本编辑快捷键"><a href="#通用的文本编辑快捷键" class="headerlink" title="通用的文本编辑快捷键"></a>通用的文本编辑快捷键</h2><p>ctrl+c 复制</p>
+<p>ctrl+v 粘贴</p>
+<p>ctrl+x 剪切</p>
+<p>ctrl+s 保存</p>
+<p>ctrl+z 撤销</p>
+<p>ctrl+y 重做</p>
+<p>ctrl+a 全选</p>
+<p><strong>home 光标回到行首</strong></p>
+<p><strong>end 光标回到行尾</strong></p>
+<p><strong>ctrl + home 光标回到文章开始</strong></p>
+<p><strong>ctrl + end 光标回到文章末尾</strong></p>
+<p><strong>shift + home 或 end 选中一行</strong></p>
+<p>鼠标双击 （选中一个单词）</p>
+<p>ctrl + shift + 右箭头或左箭头 （选中一个单词）</p>
+<p>ctrl + f 查找</p>
+<h2 id="Java语言概述"><a href="#Java语言概述" class="headerlink" title="Java语言概述"></a>Java语言概述</h2><p><strong>Java SE（Java Standard Edition）是Java的标准版</strong>，它包含了Java语言的核心部分，包括基础类库、虚拟机和开发工具等。Java SE主要用于开发桌面应用程序、控制台程序和小型服务器端应用程序等。</p>
+<p><strong>Java EE（Java Enterprise Edition）是Java的企业版</strong>，它是在Java SE的基础上扩展而来，主要用于开发大型企业级应用程序，如电子商务系统、ERP系统和CRM系统等。Java EE包含了许多企业级技术，如Servlet、JSP、EJB、JMS、JTA等。</p>
+<p><strong>Java ME（Java Micro Edition）是Java的微型版</strong>，它主要用于嵌入式设备和移动设备上的应用程序开发，如手机、平板电脑、数码相机、路由器等。Java ME的特点是体积小、速度快、资源占用少，可以在较小的内存和处理能力的设备上运行。</p>
+<p><img src="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250609055232739.png" srcset="/img/loading.gif" lazyload alt="image-20250609055232739"></p>
+<h2 id="Java语言特点"><a href="#Java语言特点" class="headerlink" title="Java语言特点"></a>Java语言特点</h2><p>简单易学：Java语言的语法和C语言很相似，但是它去掉了C中的复杂的指针和多重继承等特性，使得Java语言更加简单易学。 </p>
+<p>面向对象：Java语言是一种纯面向对象的编程语言，它支持对象的封装、继承和多态等面向对象的特性。 </p>
+<p><font color="red">平台无关性</font>&gt;（跨平台性：一次编译，到处运行）：Java语言的程序可以在不同的操作系统和硬件平台上运行，这是因为Java程序被编译成字节码，而不是机器码，字节码可以在任何支持Java虚拟机的平台上运行。 实现原理：不同的操作系统上安装属于自己的Java虚拟机，而Java虚拟机屏蔽了各个操作系统之间的差异，从而做到跨平台。</p>
+<p>安全性：Java语言具有很高的安全性，它提供了一系列的安全措施来保护程序不受恶意攻击和病毒侵害。 高性能：Java语言具有很高的性能，它采用了一系列优化措施来提高程序的执行速度和内存使用效率。 </p>
+<p>多线程支持：Java语言具有很好的多线程支持，它提供了一系列的线程控制机制，使得程序可以更好地利用计算机的多核处理能力。 </p>
+<p><font color="red">自动垃圾回收机制</font>：Java语言采用的是垃圾回收机制（Garbage Collection，简称GC），也就是自动内存管理机制。在传统的编程语言中，程序员需要手动分配和释放内存，容易出现内存泄漏和悬挂指针等问题。而Java语言采用的垃圾回收机制可以自动分配和释放内存，避免了内存泄漏和悬挂指针等问题。</p>
+<h2 id="JDK的加载与执行原理"><a href="#JDK的加载与执行原理" class="headerlink" title="JDK的加载与执行原理"></a>JDK的加载与执行原理</h2><ol>
+<li>包含两个阶段：编译阶段和运行阶段。Java既是编译型语言，又是解释型语言</li>
+<li>编译阶段和运行阶段可以在不同的操作系统上完成。</li>
+<li>编译后删除java源程序，不会影响程序的执行。</li>
+<li>生成的class文件如果是A.class，则类名为A。如果是Hello.class，则类名为Hello。</li>
+<li>javac是负责编译的命令（检查语法规则），java是负责运行的命令。</li>
+<li>class文件不是机器码，操作系统无法直接执行。只有JVM才能看懂。</li>
+<li>JVM会把class字节码解释为机器码，这样操作系统才能看懂。</li>
+<li>JDK(Java Development Kit)、JRE(Java Runtime Environment)、JVM(Java Virtual Machine)分别是什么？他们的关系是什么？<ul>
+<li>JDK包含JRE，JRE里面有JVM</li>
+<li>JVM其实就是一个规范</li>
+</ul>
+</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250609060047533.png" srcset="/img/loading.gif" lazyload alt="image-20250609060047533"></p>
+<img src="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250609060148755.png" srcset="/img/loading.gif" lazyload alt="image-20250609060148755" style="zoom: 67%;">
+
+
+
+
+
+<h2 id="第一个Java程序"><a href="#第一个Java程序" class="headerlink" title="第一个Java程序"></a>第一个Java程序</h2><p>JDK的下载与安装</p>
+<p>环境变量PATH的配置</p>
+<p>JDK的重点目录介绍</p>
+<p>​    bin：该目录主要存放命令</p>
+<p>​    lib：该目录主要存放JDK的类库</p>
+<p>​    lib/src.zip：JDK源码</p>
+<p>第一个Java程序的编写</p>
+<p>第一个Java程序的编译</p>
+<p>​    javac命令的使用：javac 后面可以跟相对路径或者绝对路径（有盘符就是绝对路径）</p>
+<p>第一个Java程序的运行</p>
+<p>​    java命令的使用</p>
+<p>理解环境变量CLASSPATH</p>
+<p>​    类加载器（ClassLoader）</p>
+<p>​    CLASSPATH是给Java的类加载器指路的</p>
+<h2 id="PATH环境变量"><a href="#PATH环境变量" class="headerlink" title="PATH环境变量"></a>PATH环境变量</h2><ul>
+<li>path环境变量不是java的，隶属于windows操作系统</li>
+<li>path环境变量的作用是什么？<ul>
+<li>在path中有很多路径，路径和路径之间采用 分号（;） 隔开</li>
+<li>在DOS命令窗口中输入一个DOS命令之后，windows会先从当前路径下找这个命令，如果找不到，则会去环境变量PATH的路径中查找该命令，找到则执行，找不到，则报错。</li>
+<li>PATH环境变量实际上就是给windows操作系统指路的。</li>
+</ul>
+</li>
+</ul>
+<h2 id="编写第一个Java程序"><a href="#编写第一个Java程序" class="headerlink" title="编写第一个Java程序"></a>编写第一个Java程序</h2><p>在硬盘的任何位置，新建一个java源文件，起名：HelloWorld.java</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">HelloWorld</span> </span>{<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span></span>{<br>        System.out.println(<span class="hljs-string">"Hello World!"</span>);<br>    }<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+<h2 id="编译第一个java程序"><a href="#编译第一个java程序" class="headerlink" title="编译第一个java程序"></a>编译第一个java程序</h2><ul>
+<li>使用javac命令来编译。首先确保javac命令能用。</li>
+<li>javac命令怎么用，语法是什么？<ul>
+<li>javac      java源文件的路径</li>
+<li>javac     java源文件的相对路径</li>
+<li>javac     java源文件的绝对路径</li>
+</ul>
+</li>
+</ul>
+<h2 id="运行第一个Java程序"><a href="#运行第一个Java程序" class="headerlink" title="运行第一个Java程序"></a>运行第一个Java程序</h2><ul>
+<li><p>使用java命令来运行程序，首先确保java命令可以用。</p>
+</li>
+<li><p>java命令怎么用？语法格式是什么？</p>
+<ul>
+<li>java 类名（比如：java HelloWorld）</li>
+<li>切记切记切记~！！！！！！！！！ java命令后面跟的<strong>不是文件路径</strong>。java命令后面跟的是<font size="5">类名</font></li>
+</ul>
+</li>
+<li><p>什么是类名？</p>
+<ul>
+<li>A.class，类名是A</li>
+<li>HelloWorld.class，类名是HelloWorld</li>
+<li>Test.class，类名是：Test</li>
+</ul>
+</li>
+<li><p><font color="red">要使用java命令，首先DOS命令窗口中的当前路径必须切换到class文件所在的位置。</font></p>
+</li>
+</ul>
+<h2 id="掌握环境变量CLASSPATH"><a href="#掌握环境变量CLASSPATH" class="headerlink" title="掌握环境变量CLASSPATH"></a>掌握环境变量CLASSPATH</h2><ul>
+<li>classpath环境变量是隶属于Java语言的。不是windows操作系统的。和PATH环境变量完全不同。</li>
+<li>classpath环境变量是给classloader（类加载器）指路的。</li>
+<li>java A。执行后。先启动JVM，JVM启动classloader，classloader去硬盘上通过classpath找A.class文件。找到则执行，找不到则报错。</li>
+<li>如果classpath没有配置的话，默认从当前路径下找class字节码文件。</li>
+<li>如果classpath配置了，例如配置到桌面上了：C:\Users\Administrator\Desktop，那么classloader以后就只会去桌面上找字节码文件了，不再从当前路径下找了。</li>
+<li>注意，如果classpath配置为：classpath=.;C:\Users\Administrator\Desktop 是什么意思呢？<ul>
+<li>先让类加载器从当前路径下找，如果找不到的话，去C:\Users\Administrator\Desktop找。</li>
+</ul>
+</li>
+</ul>
+<h2 id="关于编译时的乱码问题"><a href="#关于编译时的乱码问题" class="headerlink" title="关于编译时的乱码问题"></a>关于编译时的乱码问题</h2><ul>
+<li><p>当java源文件中有中文时，用EditPlus工具写代码，最后会出现中文乱码问题，为什么？</p>
+<ul>
+<li>EditPlus默认是简体中文GBK。</li>
+<li>java21的javac编译器采用的是UTF-8的编码方式进行编译。</li>
+<li>编码不一致，所以乱码了。</li>
+</ul>
+</li>
+<li><p>怎么解决？</p>
+<ul>
+<li><p>第一种方案：编译的时候用特定字符集编译</p>
+<ul>
+<li>javac -encoding GBK HelloWorld2.java</li>
+</ul>
+</li>
+<li><p>第二种方案：</p>
+<ul>
+<li><p>将editplus的字符集修改为UTF-8</p>
+<p><img src="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250609062007061.png" srcset="/img/loading.gif" lazyload alt="image-20250609062007061"></p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="java中的三种注释"><a href="#java中的三种注释" class="headerlink" title="java中的三种注释"></a>java中的三种注释</h2><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">// 单行注释</span><br><span class="hljs-comment">// 单行注释</span><br><span class="hljs-comment">// 单行注释</span><br></code></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">/*</span><br><span class="hljs-comment">	多行注释</span><br><span class="hljs-comment">	多行注释</span><br><span class="hljs-comment">*/</span><br></code></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">/**</span><br><span class="hljs-comment">* javadoc注释，可以给javadoc命令解析提取并生成帮助文档</span><br><span class="hljs-comment">* <span class="hljs-doctag">@author</span> qingya</span><br><span class="hljs-comment">* <span class="hljs-doctag">@version</span> 1.0</span><br><span class="hljs-comment">* <span class="hljs-doctag">@since</span> 1.0</span><br><span class="hljs-comment">*/</span><br></code></pre></td></tr></tbody></table></figure>
+
+<p>使用以下命令可以提取生成帮助文档：</p>
+<figure class="highlight text"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs text">javadoc -d docs -author -version -encoding utf-8 HelloWorld.java<br></code></pre></td></tr></tbody></table></figure>
+
+<h2 id="public-class与class的区别"><a href="#public-class与class的区别" class="headerlink" title="public class与class的区别"></a>public class与class的区别</h2><figure class="highlight text"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs text">1. 一个Java源文件中可以定义多个class<br>2. 编译之后，一个class就会对应生成一个class字节码文件<br>3. 如果一个类是public的，类名必须和源文件名保持一致。<br>4. public的类可以没有。如果有的话，也只能有一个。<br>5. 每个类中都可以编写入口main方法。想执行X类的main方法怎么办？java X<br>6. 在实际的开发中，对于一个软件来说，一般入口只有1个。<br></code></pre></td></tr></tbody></table></figure>
+
+
+
+
+
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Java/" class="category-chain-item">Java</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>Java开发环境搭建</div>
+      <div>https://xiaofanshutu.github.io/posts/77a3ba8f.html</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>John Doe</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2025年6月9日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/posts/ea538f2a.html" title="Java基础语法">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Java基础语法</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/posts/0.html" title="">
+                        <span class="hidden-mobile"></span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
