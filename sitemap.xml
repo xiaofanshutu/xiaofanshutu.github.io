@@ -121,14 +121,14 @@
   </url>
   
   <url>
-    <loc>https://xiaofanshutu.github.io/posts/358c4d47.html</loc>
+    <loc>https://xiaofanshutu.github.io/posts/424232bd.html</loc>
     
     <lastmod>2025-04-09</lastmod>
     
   </url>
   
   <url>
-    <loc>https://xiaofanshutu.github.io/posts/424232bd.html</loc>
+    <loc>https://xiaofanshutu.github.io/posts/358c4d47.html</loc>
     
     <lastmod>2025-04-09</lastmod>
     
@@ -433,13 +433,6 @@
 
   
   <url>
-    <loc>https://xiaofanshutu.github.io/categories/Spring6/</loc>
-    <lastmod>2025-07-02</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://xiaofanshutu.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/</loc>
     <lastmod>2025-07-02</lastmod>
     <changefreq>daily</changefreq>
@@ -454,7 +447,7 @@
   </url>
   
   <url>
-    <loc>https://xiaofanshutu.github.io/categories/HTML5/</loc>
+    <loc>https://xiaofanshutu.github.io/categories/Spring6/</loc>
     <lastmod>2025-07-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -468,7 +461,7 @@
   </url>
   
   <url>
-    <loc>https://xiaofanshutu.github.io/categories/Java/</loc>
+    <loc>https://xiaofanshutu.github.io/categories/HTML5/</loc>
     <lastmod>2025-07-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -476,6 +469,13 @@
   
   <url>
     <loc>https://xiaofanshutu.github.io/categories/Java-IO/</loc>
+    <lastmod>2025-07-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xiaofanshutu.github.io/categories/Java/</loc>
     <lastmod>2025-07-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -496,14 +496,14 @@
   </url>
   
   <url>
-    <loc>https://xiaofanshutu.github.io/categories/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E5%9F%BA%E7%A1%80/</loc>
+    <loc>https://xiaofanshutu.github.io/categories/Java-Web/</loc>
     <lastmod>2025-07-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://xiaofanshutu.github.io/categories/Java-Web/</loc>
+    <loc>https://xiaofanshutu.github.io/categories/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E5%9F%BA%E7%A1%80/</loc>
     <lastmod>2025-07-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
