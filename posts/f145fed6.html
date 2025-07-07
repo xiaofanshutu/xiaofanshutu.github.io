@@ -1,0 +1,898 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="Oracle简介Oracle特点Oracle数据库具有以下特点：  支持多用户，大事务量的事务处理 数据安全性和完整性控制 支持分布式数据处理 可移植性  Oracle体系结构数据库Oracle数据库是数据的物理存储。Oracle的数据库是指一个操作系统只有一个库，可以看做Oracle只有一个大数据库。 实例一个Oracle实例（Oracle Instance）有一系列的后台进程（Backgrou">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Oracle">
+<meta property="og:url" content="https://xiaofanshutu.github.io/posts/f145fed6.html">
+<meta property="og:site_name" content="yubiii">
+<meta property="og:description" content="Oracle简介Oracle特点Oracle数据库具有以下特点：  支持多用户，大事务量的事务处理 数据安全性和完整性控制 支持分布式数据处理 可移植性  Oracle体系结构数据库Oracle数据库是数据的物理存储。Oracle的数据库是指一个操作系统只有一个库，可以看做Oracle只有一个大数据库。 实例一个Oracle实例（Oracle Instance）有一系列的后台进程（Backgrou">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250707175858947.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250707175956189.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250707180136371.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250707180041756.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250707192340153.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250707181133991.png">
+<meta property="og:image" content="c:/Users/winner/Desktop/image-20250707183619347.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250707184223015.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250707185831853.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250707174713196.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250707185508957.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250707185543105.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250707191456554.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250707191409362.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250707191636590.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250707191650272.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250707191722469.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250707191857634.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250707191954325.png">
+<meta property="article:published_time" content="2025-07-07T09:36:01.015Z">
+<meta property="article:modified_time" content="2025-07-07T11:25:53.001Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250707175858947.png">
+  
+  
+  
+  <title>Oracle - yubiii</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"xiaofanshutu.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 5.2.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="yubiii" type="application/atom+xml">
+</head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 30vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="Oracle"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-07-07 17:36" pubdate>
+          2025年7月7日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          1.9k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          17 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">Oracle</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="Oracle简介"><a href="#Oracle简介" class="headerlink" title="Oracle简介"></a>Oracle简介</h1><h2 id="Oracle特点"><a href="#Oracle特点" class="headerlink" title="Oracle特点"></a>Oracle特点</h2><p>Oracle数据库具有以下特点：</p>
+<ol>
+<li>支持多用户，大事务量的事务处理</li>
+<li>数据安全性和完整性控制</li>
+<li>支持分布式数据处理</li>
+<li>可移植性</li>
+</ol>
+<h2 id="Oracle体系结构"><a href="#Oracle体系结构" class="headerlink" title="Oracle体系结构"></a>Oracle体系结构</h2><h3 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h3><p>Oracle数据库是数据的物理存储。Oracle的数据库是指一个操作系统只有一个库，可以看做Oracle只有一个大数据库。</p>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p>一个Oracle实例（Oracle Instance）有一系列的后台进程（Background Processes）和内存结构（Memory Structures）组成。一个数据库可以有多个(n个)实例。</p>
+<h3 id="数据文件-dbf"><a href="#数据文件-dbf" class="headerlink" title="数据文件(dbf)"></a>数据文件(dbf)</h3><ul>
+<li>数据文件是数据库的物理存储单位。数据库的数据是存储在表空间中的。</li>
+<li>一个表空间可以由一个或多个数据文件组成，一个数据文件只能属于一个表空间。</li>
+<li>一旦数据文件被加入到某个表空间，就不能删除这个文件，如果要删除该数据文件，必须删除其所属的表空间才可以。</li>
+</ul>
+<h3 id="表空间"><a href="#表空间" class="headerlink" title="表空间"></a>表空间</h3><ul>
+<li>表空间是Oracle对物理数据库上相关数据文件（ORA或者DBF文件）的逻辑映射。</li>
+<li>一个数据库在逻辑上被划分成一到若干个表空间，每个表空间包含了在逻辑上相关联的一组结构。</li>
+<li>每个数据库至少有一个表空间称之为 system 表空间 。</li>
+<li>每个表空间由同一磁盘上的一个或多个文件组成，这些文件叫数据文件(datafile) 。一个数据文件只能属于一个表空间。</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250707175858947.png" srcset="/img/loading.gif" lazyload alt="image-20250707175858947"></p>
+<p>注：</p>
+<p>(1)表的数据，是有用户放入某一个表空间的，而这个表空间会随机把这些表数据放到一个或者多个数据文件中。</p>
+<p>(2)逻辑结构最小单位是数据块，不是磁盘块。</p>
+<p>由于 oracle 的数据库不是普通的概念， oracle 是由用户和表空间对数据进行管理和存放的。但是表不是由表空间去查询的，而是由用户去查的。因为不同用户可以在同一个表空间建立同一个名字的表！这里区分就是用户了！</p>
+<p><img src="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250707175956189.png" srcset="/img/loading.gif" lazyload alt="image-20250707175956189"></p>
+<p>图片理解：</p>
+<p><img src="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250707180136371.png" srcset="/img/loading.gif" lazyload alt="image-20250707180136371">这个符号是指一个数据文件由多个磁盘块组成</p>
+<h3 id="用户"><a href="#用户" class="headerlink" title="用户"></a>用户</h3><p>表空间—&gt;用户—&gt;表</p>
+<p>用户是在表空间下建立的。用户登陆后只能看到和操作自己的表 , Oracle的用户与MySQL的数据库类似，每建立一个应用需要创建一个用户。</p>
+<p><img src="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250707180041756.png" srcset="/img/loading.gif" lazyload alt="image-20250707180041756"></p>
+<p><strong>超级管理员账户</strong></p>
+<p><img src="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250707192340153.png" srcset="/img/loading.gif" lazyload alt="image-20250707192340153"></p>
+<h1 id="数据库操作"><a href="#数据库操作" class="headerlink" title="数据库操作"></a>数据库操作</h1><h2 id="创建表空间"><a href="#创建表空间" class="headerlink" title="创建表空间"></a>创建表空间</h2><figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">tablespace</span> waterboss<br><span class="hljs-keyword">datafile</span> <span class="hljs-string">'D:\2_dan\learningVideo\oracle\waterboss.dbf'</span><br><span class="hljs-keyword">size</span> <span class="hljs-number">100</span>m<br><span class="hljs-keyword">autoextend</span> <span class="hljs-keyword">ON</span><br><span class="hljs-keyword">next</span> <span class="hljs-number">10</span>m;<br></code></pre></td></tr></tbody></table></figure>
+
+<p>名字可以一样，也可以不一样</p>
+<p><img src="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250707181133991.png" srcset="/img/loading.gif" lazyload alt="image-20250707181133991"></p>
+<h2 id="创建用户"><a href="#创建用户" class="headerlink" title="创建用户"></a>创建用户</h2><figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">create</span> <span class="hljs-keyword">user</span> wateruser<br><span class="hljs-keyword">IDENTIFIED</span> <span class="hljs-keyword">BY</span> <span class="hljs-number">123456</span><br><span class="hljs-keyword">default</span> <span class="hljs-keyword">tablespace</span> waterboss;<br></code></pre></td></tr></tbody></table></figure>
+
+<p>wateruser：用户名</p>
+<p>123456：密码</p>
+<p>waterboss：默认表空间名称</p>
+<h2 id="用户赋权"><a href="#用户赋权" class="headerlink" title="用户赋权"></a>用户赋权</h2><figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">grant</span> dba <span class="hljs-keyword">to</span> wateruser;<span class="hljs-comment">--给用户赋dba权限</span><br></code></pre></td></tr></tbody></table></figure>
+
+
+
+<h1 id="表的创建、修改与删除"><a href="#表的创建、修改与删除" class="headerlink" title="表的创建、修改与删除"></a>表的创建、修改与删除</h1><h2 id="创建表"><a href="#创建表" class="headerlink" title="创建表"></a>创建表</h2><p><strong>语法：</strong></p>
+<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> 表名称(<br>字段名 类型 长度 primary <span class="hljs-keyword">key</span><br>字段名 类型 长度<br>......<br>);<br></code></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">create</span> <span class="hljs-keyword">table</span> t_owners<br>(<br><span class="hljs-keyword">id</span> <span class="hljs-built_in">number</span> primary <span class="hljs-keyword">key</span>,<br><span class="hljs-keyword">name</span> <span class="hljs-built_in">varchar2</span>(<span class="hljs-number">30</span>),<br>addressid <span class="hljs-built_in">number</span>,<br>housenumber <span class="hljs-built_in">varchar2</span>(<span class="hljs-number">30</span>),<br>watermeter <span class="hljs-built_in">varchar2</span>(<span class="hljs-number">30</span>),<br>adddate <span class="hljs-built_in">date</span>,<br>ownertypeid <span class="hljs-built_in">number</span><br>);<br></code></pre></td></tr></tbody></table></figure>
+
+
+
+<h3 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h3><p><strong>字符型</strong></p>
+<ol>
+<li>CHAR : 固定长度的字符类型，最多存储 2000 个字节</li>
+<li>VARCHAR2 : 可变长度的字符类型，最多存储 4000 个字节</li>
+<li>LONG : 大文本类型。 最大可以存储 2G</li>
+</ol>
+<p><strong>数值型</strong></p>
+<p>NUMBER : 数值类型</p>
+<p>例如：<br>NUMBER (5)   最大可以存的数为 99999<br>NUMBER(5,2) 最大可以存的数为 999.99</p>
+<p><strong>日期型</strong></p>
+<ol>
+<li>DATE ：日期时间型，精确到秒</li>
+<li>TIMESTAMP ：精确到秒的小数点后 9 位</li>
+</ol>
+<p><strong>二进制型</strong></p>
+<ol>
+<li>CLOB : 存储字符 最大可以存 4G</li>
+<li>BLOB ：存储图像、声音、 视频等二进制数据 最多可以存 4G</li>
+</ol>
+<h2 id="修改表"><a href="#修改表" class="headerlink" title="修改表"></a>修改表</h2><p><strong>增加字段语法</strong></p>
+<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> 表名称 <span class="hljs-keyword">ADD</span><br>(<br>    列名<span class="hljs-number">1</span> 类型 [<span class="hljs-keyword">DEFAULT</span> 默认值]，<br>    列名<span class="hljs-number">2</span> 类型 [<span class="hljs-keyword">DEFAULT</span> 默认值]<br>);<br></code></pre></td></tr></tbody></table></figure>
+
+
+
+
+
+<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> T_OWNERS <span class="hljs-keyword">ADD</span><br>(<br>REMARK <span class="hljs-built_in">VARCHAR2</span> <span class="hljs-number">20</span><br>OUTDATE <span class="hljs-built_in">DATE</span><br>)<br></code></pre></td></tr></tbody></table></figure>
+
+
+
+<p><strong>修改字段语法</strong></p>
+<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> 表名称 <span class="hljs-keyword">MODIFY</span><br>(<br>列名<span class="hljs-number">1</span> 类型 [<span class="hljs-keyword">DEFAULT</span> 默认值]，<br>列名<span class="hljs-number">2</span> 类型 [<span class="hljs-keyword">DEFAULT</span> 默认值]<br>)<br></code></pre></td></tr></tbody></table></figure>
+
+
+
+<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs sql">ALTE R TABLE T_OWNERS MODIFY<br>(<br>REMARK CHAR 20<br>OUTDATE TIMESTAMP<br>)<br></code></pre></td></tr></tbody></table></figure>
+
+
+
+<p><strong>修改字段名语法</strong></p>
+<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> 表名称 RNAME <span class="hljs-keyword">COLUMN</span> 原列名 <span class="hljs-keyword">TO</span> 新列名<br></code></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> T_OWNERS <span class="hljs-keyword">RENAME</span> <span class="hljs-keyword">COLUMN</span> OUTDATE <span class="hljs-keyword">TO</span> EXITDATE<br></code></pre></td></tr></tbody></table></figure>
+
+
+
+<p><strong>删除字段名</strong></p>
+<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-comment">--删除一个字段</span><br><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> 表名称 <span class="hljs-keyword">DROP</span> <span class="hljs-keyword">COLUMN</span> 列名<br><br><span class="hljs-comment">--删除多个字段</span><br><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> 表名称 <span class="hljs-keyword">DROP</span>( 列名<span class="hljs-number">1</span>, 列名<span class="hljs-number">2.</span>..)<br></code></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-comment">--删除字段</span><br><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> T_OWNERS <span class="hljs-keyword">DROP</span> <span class="hljs-keyword">COLUMN</span> REMARK<br></code></pre></td></tr></tbody></table></figure>
+
+
+
+<h2 id="删除表"><a href="#删除表" class="headerlink" title="删除表"></a>删除表</h2><figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">DROP</span> <span class="hljs-keyword">TABLE</span> 表名称<br></code></pre></td></tr></tbody></table></figure>
+
+
+
+
+
+<h1 id="数据增删改"><a href="#数据增删改" class="headerlink" title="数据增删改"></a>数据增删改</h1><h2 id="插入数据"><a href="#插入数据" class="headerlink" title="插入数据"></a>插入数据</h2><p>语法：</p>
+<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> 表名( 列名<span class="hljs-number">1</span>，列名<span class="hljs-number">2</span>，...) <span class="hljs-keyword">VALUES</span> ( 值<span class="hljs-number">1</span>，值<span class="hljs-number">2.</span>..)<br></code></pre></td></tr></tbody></table></figure>
+
+
+
+<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">insert</span> <span class="hljs-keyword">into</span> T_OWNERS_COPY <span class="hljs-keyword">VALUES</span>(<span class="hljs-number">11</span>, <span class="hljs-string">'张三丰'</span>, <span class="hljs-number">1</span>, <span class="hljs-string">'123'</span>, <span class="hljs-string">'321'</span>, <span class="hljs-keyword">sysdate</span>, <span class="hljs-number">1</span>);<br></code></pre></td></tr></tbody></table></figure>
+
+
+
+<p><img src="C:\Users\winner\Desktop\image-20250707183619347.png" srcset="/img/loading.gif" lazyload></p>
+<h2 id="修改数据"><a href="#修改数据" class="headerlink" title="修改数据"></a>修改数据</h2><p><strong>方式1</strong></p>
+<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">update</span> 表名 <span class="hljs-keyword">set</span> 列名<span class="hljs-number">1</span>=值<span class="hljs-number">1</span>, 列名<span class="hljs-number">2</span>=值<span class="hljs-number">2</span>,... <span class="hljs-keyword">where</span> 修改条件;<br></code></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">update</span> T_OWNERS_COPY <span class="hljs-keyword">set</span> <span class="hljs-keyword">NAME</span> = <span class="hljs-string">'小红'</span>, ADDRESSID = <span class="hljs-string">'888'</span> <span class="hljs-keyword">where</span> <span class="hljs-keyword">id</span> = <span class="hljs-number">1</span>;<br></code></pre></td></tr></tbody></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250707184223015.png" srcset="/img/loading.gif" lazyload alt="image-20250707184223015"></p>
+<p><strong>方式2</strong></p>
+<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">truncate</span> <span class="hljs-keyword">table</span> 表名<br></code></pre></td></tr></tbody></table></figure>
+
+
+
+<p>两种方式的区别：</p>
+<ol>
+<li>truncate删除的数据不可以rollback，delete删除的数据可以rollback</li>
+</ol>
+<h2 id="删除数据"><a href="#删除数据" class="headerlink" title="删除数据"></a>删除数据</h2><p>语法：</p>
+<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">delete</span> fromm 表名 <span class="hljs-keyword">where</span> 删除条件;<br></code></pre></td></tr></tbody></table></figure>
+
+
+
+<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">delete</span> <span class="hljs-keyword">from</span> T_OWNERS_COPY <span class="hljs-keyword">where</span> <span class="hljs-keyword">id</span> = <span class="hljs-number">11</span>;<br></code></pre></td></tr></tbody></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+<h1 id="JDBC连接Oracle"><a href="#JDBC连接Oracle" class="headerlink" title="JDBC连接Oracle"></a>JDBC连接Oracle</h1><h2 id="导入驱动包ojdbc8-jar"><a href="#导入驱动包ojdbc8-jar" class="headerlink" title="导入驱动包ojdbc8.jar"></a>导入驱动包ojdbc8.jar</h2><p>oracle 19c安装之后的ojdbc.jar包在下面这个地方可以找到，D:\6_application\oracle\jdbc\lib</p>
+<p><img src="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250707185831853.png" srcset="/img/loading.gif" lazyload alt="image-20250707185831853"></p>
+<p>将上面的jar添加到工程的library，否则会报下面这个错误。</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs java">java.lang.ClassNotFoundException: oracle.jdbc.driver.OracleDriver<br>	at java.net.URLClassLoader.findClass(URLClassLoader.java:<span class="hljs-number">382</span>)<br>	at java.lang.ClassLoader.loadClass(ClassLoader.java:<span class="hljs-number">424</span>)<br>	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:<span class="hljs-number">349</span>)<br>	at java.lang.ClassLoader.loadClass(ClassLoader.java:<span class="hljs-number">357</span>)<br>	at java.lang.Class.forName0(Native Method)<br>	at java.lang.Class.forName(Class.java:<span class="hljs-number">264</span>)<br>	at dao.BaseDao.&lt;clinit&gt;(BaseDao.java:<span class="hljs-number">11</span>)<br>	at dao.OwnerDao.add(OwnerDao.java:<span class="hljs-number">15</span>)<br>	at test.Test01.main(Test01.java:<span class="hljs-number">17</span>)<br>Exception in thread <span class="hljs-string">"main"</span> java.lang.RuntimeException: java.sql.SQLException: No suitable driver found <span class="hljs-keyword">for</span> jdbc:oracle:thin:<span class="hljs-meta">@localhost</span>:<span class="hljs-number">1521</span>:orcl<br>	at dao.OwnerDao.add(OwnerDao.java:<span class="hljs-number">26</span>)<br>	at test.Test01.main(Test01.java:<span class="hljs-number">17</span>)<br>Caused by: java.sql.SQLException: No suitable driver found <span class="hljs-keyword">for</span> jdbc:oracle:thin:<span class="hljs-meta">@localhost</span>:<span class="hljs-number">1521</span>:orcl<br>	at java.sql.DriverManager.getConnection(DriverManager.java:<span class="hljs-number">689</span>)<br>	at java.sql.DriverManager.getConnection(DriverManager.java:<span class="hljs-number">247</span>)<br>	at dao.BaseDao.getConnection(BaseDao.java:<span class="hljs-number">23</span>)<br>	at dao.OwnerDao.add(OwnerDao.java:<span class="hljs-number">15</span>)<br>	... <span class="hljs-number">1</span> more<br></code></pre></td></tr></tbody></table></figure>
+
+
+
+<p><img src="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250707174713196.png" srcset="/img/loading.gif" lazyload alt="image-20250707174713196"></p>
+<h2 id="BaseDao"><a href="#BaseDao" class="headerlink" title="BaseDao"></a>BaseDao</h2><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">package</span> dao;<br><br><span class="hljs-keyword">import</span> java.sql.*;<br><br><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * 基础数据访问类</span><br><span class="hljs-comment"> */</span><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">BaseDao</span> </span>{<br>    <span class="hljs-keyword">static</span> {<br>        <span class="hljs-keyword">try</span> {<br>            Class.forName(<span class="hljs-string">"oracle.jdbc.driver.OracleDriver"</span>); <span class="hljs-comment">// 加载Oracle JDBC驱动</span><br>        } <span class="hljs-keyword">catch</span> (Exception e) {<br>            e.printStackTrace();<br>        }<br>    }<br><br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 获取数据库连接</span><br><span class="hljs-comment">     *</span><br><span class="hljs-comment">     * <span class="hljs-doctag">@return</span> 数据库连接对象</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> Connection <span class="hljs-title">getConnection</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> SQLException </span>{<br>        <span class="hljs-comment">//痩连接: jdbc:oracle:thin</span><br>        <span class="hljs-keyword">return</span> DriverManager.getConnection(<span class="hljs-string">"jdbc:oracle:thin:@localhost:1521:orcl"</span>, <span class="hljs-string">"wateruser"</span>, <span class="hljs-string">"123456"</span>);<br>    }<br><br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 关闭数据库连接</span><br><span class="hljs-comment">     *</span><br><span class="hljs-comment">     * <span class="hljs-doctag">@param</span> conn 数据库连接对象</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">close</span><span class="hljs-params">(ResultSet rs, Statement stmt, Connection conn)</span> </span>{<br>        <span class="hljs-keyword">if</span> (rs != <span class="hljs-keyword">null</span>) {<br>            <span class="hljs-keyword">try</span> {<br>                rs.close();<br>            } <span class="hljs-keyword">catch</span> (SQLException e) {<br>                e.printStackTrace();<br>            }<br>        }<br><br>        <span class="hljs-keyword">if</span> (stmt != <span class="hljs-keyword">null</span>) {<br>            <span class="hljs-keyword">try</span> {<br>                stmt.close();<br>            } <span class="hljs-keyword">catch</span> (SQLException e) {<br>                e.printStackTrace();<br>            }<br>        }<br><br>        <span class="hljs-keyword">if</span> (conn != <span class="hljs-keyword">null</span>) {<br>            <span class="hljs-keyword">try</span> {<br>                conn.close();<br>            } <span class="hljs-keyword">catch</span> (SQLException e) {<br>                e.printStackTrace();<br>            }<br>        }<br>    }<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+
+
+<h2 id="OwnerDao"><a href="#OwnerDao" class="headerlink" title="OwnerDao"></a>OwnerDao</h2><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">package</span> dao;<br><br><span class="hljs-keyword">import</span> entity.Owners;<br><br><span class="hljs-keyword">import</span> java.sql.Connection;<br><span class="hljs-keyword">import</span> java.sql.PreparedStatement;<br><span class="hljs-keyword">import</span> java.sql.SQLException;<br><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">OwnerDao</span> </span>{<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">add</span><span class="hljs-params">(Owners owner)</span> </span>{<br>        Connection conn = <span class="hljs-keyword">null</span>;<br>        <span class="hljs-comment">//预处理，防止注入攻击</span><br>        PreparedStatement stmt = <span class="hljs-keyword">null</span>;<br><br>        <span class="hljs-keyword">try</span> {<br>            conn = BaseDao.getConnection();<br>            stmt = conn.prepareStatement(<span class="hljs-string">"INSERT INTO T_OWNERS_COPY (id, name, addressid, housenumber, watermeter, adddate, ownertypeid) VALUES (?, ?, ?, ?, ?, ?, ?)"</span>);<br>            stmt.setLong(<span class="hljs-number">1</span>, owner.getId());<br>            stmt.setString(<span class="hljs-number">2</span>, owner.getName());<br>            stmt.setLong(<span class="hljs-number">3</span>, owner.getAddressid());<br>            stmt.setString(<span class="hljs-number">4</span>, owner.getHousenumber());<br>            stmt.setString(<span class="hljs-number">5</span>, owner.getWatermeter());<br>            <span class="hljs-comment">//日期转为长整型Long, 然后再构造为java.sql.Date类型</span><br>            stmt.setDate(<span class="hljs-number">6</span>, <span class="hljs-keyword">new</span> java.sql.Date(owner.getAdddate().getTime()));<br>            stmt.setLong(<span class="hljs-number">7</span>, owner.getOwnertypeid());<br>            stmt.executeUpdate();<br>        } <span class="hljs-keyword">catch</span> (SQLException e) {<br>            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> RuntimeException(e);<br>        } <span class="hljs-keyword">finally</span> {<br>            BaseDao.close(<span class="hljs-keyword">null</span>, stmt, conn);<br>        }<br>    }<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">modify</span><span class="hljs-params">(Owners owner)</span> </span>{<br>        Connection conn = <span class="hljs-keyword">null</span>;<br>        PreparedStatement stmt = <span class="hljs-keyword">null</span>;<br><br>        <span class="hljs-keyword">try</span> {<br>            conn = BaseDao.getConnection();<br>            stmt = conn.prepareStatement(<span class="hljs-string">"update T_OWNERS_COPY set name =?, addressid=?, housenumber=?, watermeter=?, adddate=?, ownertypeid=? where id=?"</span>);<br>            stmt.setString(<span class="hljs-number">1</span>, owner.getName());<br>            stmt.setLong(<span class="hljs-number">2</span>, owner.getAddressid());<br>            stmt.setString(<span class="hljs-number">3</span>, owner.getHousenumber());<br>            stmt.setString(<span class="hljs-number">4</span>, owner.getWatermeter());<br>            stmt.setDate(<span class="hljs-number">5</span>, <span class="hljs-keyword">new</span> java.sql.Date(owner.getAdddate().getTime()));<br>            stmt.setLong(<span class="hljs-number">6</span>, owner.getOwnertypeid());<br>            stmt.setLong(<span class="hljs-number">7</span>, owner.getId());<br>            stmt.executeUpdate();<br>        } <span class="hljs-keyword">catch</span> (SQLException e) {<br>            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> RuntimeException(e);<br>        } <span class="hljs-keyword">finally</span> {<br>            BaseDao.close(<span class="hljs-keyword">null</span>, stmt, conn);<br>        }<br>    }<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">delete</span><span class="hljs-params">(Owners owner)</span> </span>{<br>        Connection conn = <span class="hljs-keyword">null</span>;<br>        PreparedStatement stmt = <span class="hljs-keyword">null</span>;<br><br>        <span class="hljs-keyword">try</span> {<br>            conn = BaseDao.getConnection();<br>            stmt = conn.prepareStatement(<span class="hljs-string">"delete from T_OWNERS_COPY where id=?"</span>);<br>            stmt.setLong(<span class="hljs-number">1</span>, owner.getId());<br>            stmt.executeUpdate();<br>        } <span class="hljs-keyword">catch</span> (SQLException e) {<br>            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> RuntimeException(e);<br>        } <span class="hljs-keyword">finally</span> {<br>            BaseDao.close(<span class="hljs-keyword">null</span>, stmt, conn);<br>        }<br>    }<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+
+
+<h2 id="实体类Owners"><a href="#实体类Owners" class="headerlink" title="实体类Owners"></a>实体类Owners</h2><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Owners</span> </span>{<br>    <span class="hljs-keyword">private</span> Long id;<span class="hljs-comment">//业主编号</span><br>    <span class="hljs-keyword">private</span> String name;<span class="hljs-comment">// 业主名称</span><br>    <span class="hljs-keyword">private</span> Long addressid;<span class="hljs-comment">// 地址编号</span><br>    <span class="hljs-keyword">private</span> String housenumber;<span class="hljs-comment">// 门牌号</span><br>    <span class="hljs-keyword">private</span> String watermeter;<span class="hljs-comment">// 水表编号</span><br>    <span class="hljs-keyword">private</span> Date adddate;<span class="hljs-comment">// 登记日期</span><br>    <span class="hljs-keyword">private</span> Long ownertypeid;<span class="hljs-comment">// 业主类型 ID</span><br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> Long <span class="hljs-title">getId</span><span class="hljs-params">()</span> </span>{<br>        <span class="hljs-keyword">return</span> id;<br>    }<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setId</span><span class="hljs-params">(Long id)</span> </span>{<br>        <span class="hljs-keyword">this</span>.id = id;<br>    }<br>    <br>    <span class="hljs-comment">/*</span><br><span class="hljs-comment">    其他getter，setter方法，省略</span><br><span class="hljs-comment">    */</span><br>}    <br></code></pre></td></tr></tbody></table></figure>
+
+
+
+
+
+
+
+
+
+<h2 id="测试代码"><a href="#测试代码" class="headerlink" title="测试代码"></a>测试代码</h2><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Test02</span> </span>{<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{<br>        Owners owner = <span class="hljs-keyword">new</span> Owners();<br>        owner.setId(<span class="hljs-number">1L</span>);<br>        owner.setName(<span class="hljs-string">"张三"</span>);<br>        owner.setAddressid(<span class="hljs-number">111L</span>);<br>        owner.setHousenumber(<span class="hljs-string">"111号"</span>);<br>        owner.setWatermeter(<span class="hljs-string">"6666"</span>);<br>        owner.setAdddate(<span class="hljs-keyword">new</span> java.util.Date());<br>        owner.setOwnertypeid(<span class="hljs-number">888L</span>);<br><br>        OwnerDao.modify(owner);<br>    }<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+
+
+<p>执行modify方法之前</p>
+<p><img src="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250707185508957.png" srcset="/img/loading.gif" lazyload alt="image-20250707185508957"></p>
+<p>执行modify方法之后</p>
+<p><img src="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250707185543105.png" srcset="/img/loading.gif" lazyload alt="image-20250707185543105"></p>
+<h1 id="数据导入与导出"><a href="#数据导入与导出" class="headerlink" title="数据导入与导出"></a>数据导入与导出</h1><h2 id="数据库导入与导出"><a href="#数据库导入与导出" class="headerlink" title="数据库导入与导出"></a>数据库导入与导出</h2><h3 id="整库导出"><a href="#整库导出" class="headerlink" title="整库导出"></a>整库导出</h3><figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql">exp system/超级管理员用户system的密码 full=y <span class="hljs-comment">--full=y表示整库导出</span><br></code></pre></td></tr></tbody></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250707191456554.png" srcset="/img/loading.gif" lazyload alt="image-20250707191456554"></p>
+<p>执行命令后会在当前目录下生成一个叫EXPDAT.DMP，此文件为备份文件。</p>
+<p><img src="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250707191409362.png" srcset="/img/loading.gif" lazyload alt="image-20250707191409362"></p>
+<p>添加file参数即可指定备份文件的名称</p>
+<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql">exp system/超级管理员用户system的密码 file=文件名 full=y<br></code></pre></td></tr></tbody></table></figure>
+
+
+
+
+
+<h3 id="整库导入"><a href="#整库导入" class="headerlink" title="整库导入"></a>整库导入</h3><figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql">imp system/超级管理员用户system的密码 full=y<br></code></pre></td></tr></tbody></table></figure>
+
+
+
+<p>如果指定file 参数，则按照file指定的备份文件进行导入</p>
+<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql">imp system/超级管理员用户system的密码 full=y file=water.dmp<br></code></pre></td></tr></tbody></table></figure>
+
+
+
+
+
+
+
+
+
+<h2 id="按用户导入与导出"><a href="#按用户导入与导出" class="headerlink" title="按用户导入与导出"></a>按用户导入与导出</h2><h3 id="导出"><a href="#导出" class="headerlink" title="导出"></a>导出</h3><figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql">exp system/itcast owner=wateruser file=wateruser.dmp<br></code></pre></td></tr></tbody></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250707191636590.png" srcset="/img/loading.gif" lazyload alt="image-20250707191636590"></p>
+<p><img src="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250707191650272.png" srcset="/img/loading.gif" lazyload alt="image-20250707191650272"></p>
+<p><img src="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250707191722469.png" srcset="/img/loading.gif" lazyload alt="image-20250707191722469"></p>
+<h3 id="导入"><a href="#导入" class="headerlink" title="导入"></a>导入</h3><figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql">imp system/itcast file=wateruser.dmp fromuser=wateruser<br></code></pre></td></tr></tbody></table></figure>
+
+
+
+<p>导入前特意删掉T_OWNERS_COPY表</p>
+<p><img src="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250707191857634.png" srcset="/img/loading.gif" lazyload alt="image-20250707191857634"></p>
+<p>导入后刷新，表成功导入</p>
+<p><img src="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250707191954325.png" srcset="/img/loading.gif" lazyload alt="image-20250707191954325"></p>
+<h2 id="按表导入与导出"><a href="#按表导入与导出" class="headerlink" title="按表导入与导出"></a>按表导入与导出</h2><h3 id="导出-1"><a href="#导出-1" class="headerlink" title="导出"></a>导出</h3><figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql">exp wateruser/123456 file=a.dmp tables=t_account,a_area<br></code></pre></td></tr></tbody></table></figure>
+
+
+
+
+
+<h3 id="导入-1"><a href="#导入-1" class="headerlink" title="导入"></a>导入</h3><figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql">imp wateruser/123456 file=a.dmp tables=t_account,a_area<br></code></pre></td></tr></tbody></table></figure>
+
+
+
+
+
+
+
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Oracle/" class="category-chain-item">Oracle</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>Oracle</div>
+      <div>https://xiaofanshutu.github.io/posts/f145fed6.html</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>John Doe</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2025年7月7日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/posts/93ac284c.html" title="事务">
+                        <span class="hidden-mobile">事务</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
