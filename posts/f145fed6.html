@@ -115,8 +115,13 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250719082617814.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250719082736722.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250719082903295.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250721074244020.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250721074402609.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250721075116352.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250721075411176.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250721075805523.png">
 <meta property="article:published_time" content="2025-07-07T09:36:01.015Z">
-<meta property="article:modified_time" content="2025-07-19T00:29:07.957Z">
+<meta property="article:modified_time" content="2025-07-20T23:58:10.593Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250707175858947.png">
@@ -315,7 +320,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          5.6k 字
+          6.1k 字
         
       </span>
     
@@ -326,7 +331,7 @@
         
         
         
-          47 分钟
+          51 分钟
         
       </span>
     
@@ -1316,7 +1321,86 @@
 
 
 <p><img src="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250719082903295.png" srcset="/img/loading.gif" lazyload alt="image-20250719082903295"></p>
-<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1>
+<h1 id=""><a href="#" class="headerlink" title=""></a></h1><h1 id="视图"><a href="#视图" class="headerlink" title="视图"></a>视图</h1><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>视图是一种数据库对象，是从一个或者多个数据库表或视图中导出的虚表，视图所对应的数据不是真正的存在视图中，而是存储在所引用的数据表中，视图的结构和数据是对数据表进行查询的结果。</p>
+<p>根据创建视图时给的条件，视图可以是一个数据表的一部分，也可以是多个基表的联合。</p>
+<h2 id="创建或修改视图"><a href="#创建或修改视图" class="headerlink" title="创建或修改视图"></a>创建或修改视图</h2><figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">CREATE</span> [ <span class="hljs-keyword">OR</span> <span class="hljs-keyword">REPLACE</span> ] [ <span class="hljs-keyword">force</span> ] <span class="hljs-keyword">VIEW</span> view_name <span class="hljs-keyword">AS</span> subquery [ <span class="hljs-keyword">WITH</span> <span class="hljs-keyword">CHECK</span> <span class="hljs-keyword">OPTION</span> ]<br>[ <span class="hljs-keyword">WITH</span> <span class="hljs-keyword">read</span> <span class="hljs-keyword">ONLY</span>]<br></code></pre></td></tr></tbody></table></figure>
+
+
+
+<p>解释：</p>
+<p>OR REPLACE：如果该视图已经存在，Oracle会自动重建该视图</p>
+<p>FORCE: 不管基表是否存在，都会创建该视图</p>
+<p>WITH CHECK OPTION：插入或修改的数据必须满足视图定义的约束</p>
+<p>WITH read ONLY：该视图上不能进行任何DML操作</p>
+<h2 id="删除视图"><a href="#删除视图" class="headerlink" title="删除视图"></a>删除视图</h2><figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">DROP</span> <span class="hljs-keyword">VIEW</span> view_name;<br></code></pre></td></tr></tbody></table></figure>
+
+
+
+
+
+<h2 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h2><h3 id="简单视图的创建和使用"><a href="#简单视图的创建和使用" class="headerlink" title="简单视图的创建和使用"></a>简单视图的创建和使用</h3><p>需求：创建视图：业务类型为1的业主信息</p>
+<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">VIEW</span> view_t_owners <span class="hljs-keyword">AS</span> <span class="hljs-keyword">SELECT</span><br>* <br><span class="hljs-keyword">FROM</span><br>	t_owners <br><span class="hljs-keyword">WHERE</span><br>	OWNERTYPEID = <span class="hljs-number">1</span>;<br></code></pre></td></tr></tbody></table></figure>
+
+
+
+<p>查询视图数据</p>
+<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">SELECT</span><br>	* <br><span class="hljs-keyword">FROM</span><br>	view_t_owners;<br></code></pre></td></tr></tbody></table></figure>
+
+
+
+<p>修改视图数据，基表的数据页会被修改</p>
+<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">UPDATE</span> view_t_owners <br><span class="hljs-keyword">SET</span> <span class="hljs-keyword">name</span> = <span class="hljs-string">'林玲玲'</span> <br><span class="hljs-keyword">WHERE</span><br>	<span class="hljs-keyword">id</span> = <span class="hljs-number">4</span>;<br></code></pre></td></tr></tbody></table></figure>
+
+
+
+
+
+<p><img src="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250721074244020.png" srcset="/img/loading.gif" lazyload alt="image-20250721074244020"></p>
+<p><img src="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250721074402609.png" srcset="/img/loading.gif" lazyload alt="image-20250721074402609"></p>
+<h3 id="带约束检查的视图"><a href="#带约束检查的视图" class="headerlink" title="带约束检查的视图"></a>带约束检查的视图</h3><p>需求：根据地址表（T_ADDRESS）创建视图 VIEW_T_ADDRESS, 内容为区域 ID为 2 的记录。</p>
+<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">CREATE</span> <br>	<span class="hljs-keyword">OR</span> <span class="hljs-keyword">REPLACE</span> <span class="hljs-keyword">VIEW</span> view_T_ADDRESS <span class="hljs-keyword">AS</span> <span class="hljs-keyword">SELECT</span><br>	* <br><span class="hljs-keyword">FROM</span><br>	T_ADDRESS <br><span class="hljs-keyword">WHERE</span><br>	AREAID = <span class="hljs-number">2</span> <span class="hljs-keyword">WITH</span> <span class="hljs-keyword">CHECK</span> <span class="hljs-keyword">OPTION</span>;<br></code></pre></td></tr></tbody></table></figure>
+
+
+
+<p>因为areaid是创建视图时使用的条件，所以不能修改它的值，执行下面的update会报错。</p>
+<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">UPDATE</span> view_t_address <br><span class="hljs-keyword">SET</span> areaid = <span class="hljs-number">1</span> <br><span class="hljs-keyword">WHERE</span><br>	<span class="hljs-keyword">id</span> = <span class="hljs-number">3</span>;<br></code></pre></td></tr></tbody></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250721075116352.png" srcset="/img/loading.gif" lazyload alt="image-20250721075116352"></p>
+<h3 id="只读视图"><a href="#只读视图" class="headerlink" title="只读视图"></a>只读视图</h3><figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">CREATE</span> <br>	<span class="hljs-keyword">OR</span> <span class="hljs-keyword">REPLACE</span> <span class="hljs-keyword">VIEW</span> view_t_owners1 <span class="hljs-keyword">AS</span> <span class="hljs-keyword">SELECT</span><br>	* <br><span class="hljs-keyword">FROM</span><br>	T_OWNERS <br><span class="hljs-keyword">WHERE</span><br>	ownertypeid = <span class="hljs-number">1</span> <span class="hljs-keyword">WITH</span> <span class="hljs-keyword">read</span> <span class="hljs-keyword">ONLY</span><br></code></pre></td></tr></tbody></table></figure>
+
+
+
+<p>执行update的时候会报错</p>
+<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">UPDATE</span> view_t_owners1 <br><span class="hljs-keyword">SET</span> <span class="hljs-keyword">name</span> = <span class="hljs-string">'summer'</span> <br><span class="hljs-keyword">WHERE</span><br>	<span class="hljs-keyword">id</span> = <span class="hljs-number">1</span>;<br></code></pre></td></tr></tbody></table></figure>
+
+
+
+
+
+<p><img src="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250721075411176.png" srcset="/img/loading.gif" lazyload alt="image-20250721075411176"></p>
+<h3 id="创建带错误的视图"><a href="#创建带错误的视图" class="headerlink" title="创建带错误的视图"></a>创建带错误的视图</h3><p>基表不存在，根据这个不存在的基表创建视图</p>
+<p>我这个sql报错了，为什么？？？</p>
+<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">CREATE</span> <br>	<span class="hljs-keyword">OR</span> raplace <span class="hljs-keyword">force</span> <span class="hljs-keyword">VIEW</span> view_t_temp <span class="hljs-keyword">AS</span> <span class="hljs-keyword">SELECT</span><br>	* <br><span class="hljs-keyword">FROM</span><br>	t_temp<br></code></pre></td></tr></tbody></table></figure>
+
+
+
+
+
+<h3 id="复杂视图"><a href="#复杂视图" class="headerlink" title="复杂视图"></a>复杂视图</h3><h4 id="多表关联查询"><a href="#多表关联查询" class="headerlink" title="多表关联查询"></a>多表关联查询</h4><p>需求：创建视图，查询显示业主编号 业主名称，业主类型名称</p>
+<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">CREATE</span> <br>	<span class="hljs-keyword">OR</span> <span class="hljs-keyword">REPLACE</span> <span class="hljs-keyword">VIEW</span> view_owners <span class="hljs-keyword">AS</span> <span class="hljs-keyword">SELECT</span><br>	o.id 业主编号 ,<br>	o.name 业主名称 ,<br>	ot.name 业主类型 <br><span class="hljs-keyword">FROM</span><br>	T_OWNERS o,<br>	T_OWNERTYPE ot <br><span class="hljs-keyword">WHERE</span><br>	o.ownertypeid = ot.id<br></code></pre></td></tr></tbody></table></figure>
+
+
+
+
+
+<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">select</span> * <span class="hljs-keyword">from</span> view_owners<br></code></pre></td></tr></tbody></table></figure>
+
+
+
+
+
+<p><img src="https://raw.githubusercontent.com/growingbambi/typora/master/image-20250721075805523.png" srcset="/img/loading.gif" lazyload alt="image-20250721075805523"></p>
+
                 
               </div>
             
