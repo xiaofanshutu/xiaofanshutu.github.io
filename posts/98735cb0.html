@@ -1,0 +1,1455 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="泛型程序设计在前面我们学习了最重要的类和对象，了解了面向对象编程的思想，注意，非常重要，面向对象是必须要深入理解和掌握的内容，不能草草结束。在本章节，我们还会继续深入了解，从泛型开始，再到数据结构，最后再开始我们的集合类学习，循序渐进。 泛型为了统计学生成绩，要求设计一个Score对象，包括课程名称、课程号、课程成绩，但是成绩分为两种，一种是以优秀、良好、合格 来作为结果，还有一种就是 60.0">
+<meta property="og:type" content="article">
+<meta property="og:title" content="泛型程序设计">
+<meta property="og:url" content="https://xiaofanshutu.github.io/posts/98735cb0.html">
+<meta property="og:site_name" content="caomeidafu">
+<meta property="og:description" content="泛型程序设计在前面我们学习了最重要的类和对象，了解了面向对象编程的思想，注意，非常重要，面向对象是必须要深入理解和掌握的内容，不能草草结束。在本章节，我们还会继续深入了解，从泛型开始，再到数据结构，最后再开始我们的集合类学习，循序渐进。 泛型为了统计学生成绩，要求设计一个Score对象，包括课程名称、课程号、课程成绩，但是成绩分为两种，一种是以优秀、良好、合格 来作为结果，还有一种就是 60.0">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s2.loli.net/2022/09/24/AulBzXWK6JCPMH5.png">
+<meta property="og:image" content="https://s2.loli.net/2022/09/27/RCqAhvMGzNwfH7J.png">
+<meta property="og:image" content="https://s2.loli.net/2022/09/26/gkFs35US9rxo7f2.png">
+<meta property="og:image" content="https://s2.loli.net/2022/09/27/RlHYhPSUJ5ICswG.png">
+<meta property="og:image" content="https://s2.loli.net/2022/09/25/jhekq9ZKHoiT2yI.png">
+<meta property="og:image" content="https://s2.loli.net/2022/09/26/TI6tWwj4vXFdenr.png">
+<meta property="og:image" content="https://s2.loli.net/2022/09/27/BAgmdCkDFL62V8H.png">
+<meta property="og:image" content="https://s2.loli.net/2022/09/27/rLnjHp73tdFSPUM.png">
+<meta property="og:image" content="https://s2.loli.net/2022/09/27/UJg7s41NC9Gn6fX.png">
+<meta property="og:image" content="https://s2.loli.net/2022/09/27/QFZNSCpnAmKG7qr.png">
+<meta property="og:image" content="https://s2.loli.net/2022/09/27/kVCIg3TilOuLFmj.png">
+<meta property="og:image" content="https://s2.loli.net/2022/09/27/q7DQ9lAweJLOFky.png">
+<meta property="og:image" content="https://s2.loli.net/2022/09/27/7tK5APuSZovBLIc.png">
+<meta property="og:image" content="https://s2.loli.net/2022/09/27/upjWbyq9XC5FLDv.png">
+<meta property="og:image" content="https://s2.loli.net/2022/09/27/Pu1jGzKNSvnV9YZ.png">
+<meta property="og:image" content="https://s2.loli.net/2022/07/10/9RwL7pxgyfoB3WT.png">
+<meta property="og:image" content="https://s2.loli.net/2022/07/23/Ve6dlqROzhumD5o.png">
+<meta property="og:image" content="https://s2.loli.net/2022/07/24/elBvx4Zo1AJ2WqT.png">
+<meta property="og:image" content="https://s2.loli.net/2022/09/27/24Glc7UQjLt5Wny.jpg">
+<meta property="og:image" content="https://s2.loli.net/2022/07/23/H67F1crBhqQiXxg.png">
+<meta property="og:image" content="https://s2.loli.net/2022/09/27/rtkRMaWseE2Cm1z.png">
+<meta property="og:image" content="https://s2.loli.net/2022/09/27/6SMZxC5QI3cgXYk.png">
+<meta property="og:image" content="https://s2.loli.net/2022/07/23/uHBjUfKpd9ygScW.png">
+<meta property="og:image" content="https://s2.loli.net/2022/07/23/ruemiRQplVy7q9s.png">
+<meta property="og:image" content="https://s2.loli.net/2022/07/23/gRUEfOqbtrGN2JZ.png">
+<meta property="og:image" content="https://s2.loli.net/2022/07/23/71dgFSWDfoELiXB.png">
+<meta property="og:image" content="https://s2.loli.net/2022/07/23/8MNURYiacWZqwu6.png">
+<meta property="og:image" content="https://s2.loli.net/2022/07/23/ysETUJb6cgBz2Qx.png">
+<meta property="og:image" content="https://s2.loli.net/2022/07/23/Kb7jCiWa3o4AN8D.png">
+<meta property="og:image" content="https://s2.loli.net/2022/09/27/Mpj9azwWciemAZY.png">
+<meta property="og:image" content="https://s2.loli.net/2022/07/23/N5sZx9T2a8lOzoC.png">
+<meta property="og:image" content="https://s2.loli.net/2022/07/23/tNYnBJe9pczUq1Z.png">
+<meta property="og:image" content="https://s2.loli.net/2022/07/23/MFE2gZuS5eOysDW.png">
+<meta property="og:image" content="https://s2.loli.net/2022/07/24/oeXm6nyW7I9lPMf.png">
+<meta property="og:image" content="https://s2.loli.net/2022/07/24/D3heysaM9EpAgS4.png">
+<meta property="og:image" content="https://s2.loli.net/2022/07/24/2NxUpCIRLoZt9Ky.png">
+<meta property="og:image" content="https://s2.loli.net/2022/07/24/outf2S7D3WzQK8c.png">
+<meta property="og:image" content="https://s2.loli.net/2022/07/24/GdBj3g5YRFzSsVw.png">
+<meta property="og:image" content="https://s2.loli.net/2022/09/28/yaWmfPDU63X8BQn.png">
+<meta property="og:image" content="https://s2.loli.net/2022/07/25/xBuZckTNtR54AEq.png">
+<meta property="og:image" content="https://s2.loli.net/2022/07/25/lwGgHXqAV5z2KNk.png">
+<meta property="og:image" content="https://s2.loli.net/2022/07/25/ufmFEwrS9xVKoIZ.png">
+<meta property="og:image" content="https://s2.loli.net/2022/07/25/geJRFwHKhGT69XD.png">
+<meta property="og:image" content="https://s2.loli.net/2022/09/28/FUS1Rc8JuEMT6bq.png">
+<meta property="og:image" content="https://s2.loli.net/2022/08/08/NajFZzXHxUCDQBW.png">
+<meta property="og:image" content="https://s2.loli.net/2022/08/01/aoBjrR5bPqWzCel.png">
+<meta property="og:image" content="https://s2.loli.net/2022/08/01/QGLfnYWFby37deP.png">
+<meta property="og:image" content="https://s2.loli.net/2022/08/01/btfjlJhDuWrSXYi.png">
+<meta property="og:image" content="https://s2.loli.net/2022/08/01/QGLfnYWFby37deP.png">
+<meta property="og:image" content="https://s2.loli.net/2022/07/23/ruemiRQplVy7q9s.png">
+<meta property="og:image" content="https://s2.loli.net/2022/08/06/H9MqkghmAjFJnuO.png">
+<meta property="og:image" content="https://s2.loli.net/2022/08/05/uan6A3ZRLykt289.png">
+<meta property="og:image" content="https://s2.loli.net/2022/09/30/XCkDxVBFz2bWph8.png">
+<meta property="og:image" content="https://s2.loli.net/2022/08/06/G6ujstSVZ2XWJLE.png">
+<meta property="og:image" content="https://s2.loli.net/2022/08/06/qCFMosHtujEZ3U6.png">
+<meta property="og:image" content="https://s2.loli.net/2022/08/06/hZ8qEfWaP5o6L2j.png">
+<meta property="og:image" content="https://s2.loli.net/2022/08/06/W6Yb5M92gQApNJa.png">
+<meta property="og:image" content="https://s2.loli.net/2022/08/06/V2KdMy3T5Beo8vx.png">
+<meta property="og:image" content="https://s2.loli.net/2022/08/06/YE2rODdqpCInUa9.png">
+<meta property="og:image" content="https://s2.loli.net/2022/08/06/6Vx9fmSUcqw51Mp.png">
+<meta property="og:image" content="https://s2.loli.net/2022/08/07/ywF6r9MU1JSPIge.png">
+<meta property="og:image" content="https://s2.loli.net/2022/08/07/ZsNpeVUivEjCymt.png">
+<meta property="og:image" content="https://s2.loli.net/2022/08/07/v8yXWNato3sfeUn.png">
+<meta property="og:image" content="https://s2.loli.net/2022/08/07/Qkprfi5RhAXP7Cd.png">
+<meta property="og:image" content="https://s2.loli.net/2022/08/07/MxQTArlWK2gDjqi.png">
+<meta property="og:image" content="https://s2.loli.net/2022/08/07/YlUfDhPoQrg9TkB.png">
+<meta property="og:image" content="https://s2.loli.net/2022/08/14/k9G7Ad2cqezgEtJ.png">
+<meta property="og:image" content="https://s2.loli.net/2022/08/15/E1Pf2pGv4b9Lj7t.png">
+<meta property="og:image" content="https://s2.loli.net/2022/08/15/k1jzXPoOMp9caHy.png">
+<meta property="og:image" content="https://s2.loli.net/2022/08/15/vaI9qji1KYOP8kt.png">
+<meta property="og:image" content="https://s2.loli.net/2022/08/15/DMnPqGhawy5Z92V.png">
+<meta property="og:image" content="https://s2.loli.net/2022/08/15/KcOQVhlFxzwsIb9.png">
+<meta property="og:image" content="https://s2.loli.net/2022/08/15/KqBaWLJwOj34Ec8.png">
+<meta property="og:image" content="https://s2.loli.net/2022/08/15/q4aYvzrnjdTgAtK.png">
+<meta property="og:image" content="https://s2.loli.net/2022/08/15/fJKz3FWclm9orVT.png">
+<meta property="og:image" content="https://s2.loli.net/2022/08/15/kIl8ZT6Psr7mNSg.png">
+<meta property="og:image" content="https://s2.loli.net/2022/08/15/LB9DOJpyIlxQWTm.png">
+<meta property="og:image" content="https://s2.loli.net/2022/08/15/fwcrEIgBxWLVGXs.png">
+<meta property="og:image" content="https://s2.loli.net/2022/08/15/ukK6C4PNBwoaJbc.png">
+<meta property="og:image" content="https://s2.loli.net/2022/08/15/6Cj8VlgGekULXvP.png">
+<meta property="og:image" content="https://s2.loli.net/2022/08/15/y6WscFPxHuzTiaI.png">
+<meta property="og:image" content="https://s2.loli.net/2022/08/15/t86B7sxvYeP9TiR.png">
+<meta property="og:image" content="https://s2.loli.net/2022/08/16/wIj5qnhxFAHcyG7.png">
+<meta property="og:image" content="https://s2.loli.net/2022/08/16/yHRXgbsvOM27xLr.png">
+<meta property="og:image" content="https://s2.loli.net/2022/08/16/kJiA71fQuKHnIdb.png">
+<meta property="og:image" content="https://s2.loli.net/2022/08/16/VEQLu5mb1tcTyzd.png">
+<meta property="og:image" content="https://s2.loli.net/2022/08/16/kuc1B3lqhNUwaSM.png">
+<meta property="og:image" content="https://s2.loli.net/2022/08/16/dpRX5DGsfWVwnQi.png">
+<meta property="og:image" content="https://s2.loli.net/2022/08/16/4ZAhv7R9YusI8q6.png">
+<meta property="og:image" content="https://s2.loli.net/2022/08/16/n3M6Kfsb4jHtIci.png">
+<meta property="og:image" content="https://s2.loli.net/2022/08/16/POTaBfosmQiceWk.png">
+<meta property="og:image" content="https://s2.loli.net/2022/08/16/XqFr7hJwe38AakK.png">
+<meta property="og:image" content="https://s2.loli.net/2022/08/18/Tcj6Spy2Pt5ZIuW.png">
+<meta property="og:image" content="https://s2.loli.net/2022/08/18/tD8AjiGwvJkdahE.png">
+<meta property="og:image" content="https://s2.loli.net/2022/08/18/M2o1vE7hHasN8DP.png">
+<meta property="og:image" content="https://s2.loli.net/2022/08/19/CAPhlJnQeLjMHfd.png">
+<meta property="og:image" content="https://s2.loli.net/2022/08/19/ovieRjrzlXhKMC2.png">
+<meta property="og:image" content="https://s2.loli.net/2022/08/19/pisuSAIZyf5JE7B.png">
+<meta property="og:image" content="https://s2.loli.net/2022/08/19/H1hAvQPjNui2RYt.png">
+<meta property="og:image" content="https://s2.loli.net/2022/08/19/XqpZd1YP5ulEJRy.png">
+<meta property="og:image" content="https://s2.loli.net/2022/09/30/Hd1LDvkY6ScVTN2.png">
+<meta property="og:image" content="https://s2.loli.net/2022/09/30/kr4CcVEwI72AiDU.png">
+<meta property="og:image" content="https://assets.leetcode.com/uploads/2021/02/19/rev1ex1.jpg">
+<meta property="og:image" content="https://assets.leetcode.com/uploads/2021/02/19/rev1ex2.jpg">
+<meta property="article:published_time" content="2025-09-07T23:26:13.342Z">
+<meta property="article:modified_time" content="2025-09-08T22:48:05.539Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://s2.loli.net/2022/09/24/AulBzXWK6JCPMH5.png">
+  
+  
+  
+  <title>泛型程序设计 - caomeidafu</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"xiaofanshutu.github.io","root":"/","version":"1.9.8","typing":{"enable":false,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 5.2.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="caomeidafu" type="application/atom+xml">
+</head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 30vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle">泛型程序设计</span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-09-08 07:26" pubdate>
+          2025年9月8日 早上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          20k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          169 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">泛型程序设计</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <p><img src="https://s2.loli.net/2022/09/24/AulBzXWK6JCPMH5.png" srcset="/img/loading.gif" lazyload alt="image-20220924223020333"></p>
+<h1 id="泛型程序设计"><a href="#泛型程序设计" class="headerlink" title="泛型程序设计"></a>泛型程序设计</h1><p>在前面我们学习了最重要的类和对象，了解了面向对象编程的思想，注意，非常重要，面向对象是必须要深入理解和掌握的内容，不能草草结束。在本章节，我们还会继续深入了解，从泛型开始，再到数据结构，最后再开始我们的集合类学习，循序渐进。</p>
+<h2 id="泛型"><a href="#泛型" class="headerlink" title="泛型"></a>泛型</h2><p>为了统计学生成绩，要求设计一个Score对象，包括课程名称、课程号、课程成绩，但是成绩分为两种，一种是以<code>优秀、良好、合格</code> 来作为结果，还有一种就是 <code>60.0、75.5、92.5</code> 这样的数字分数，可能高等数学这门课是以数字成绩进行结算，而计算机网络实验这门课是以等级进行结算，这两种分数类型都有可能出现，那么现在该如何去设计这样的一个Score类呢？</p>
+<p>现在的问题就是，成绩可能是<code>String</code>类型，也可能是<code>Integer</code>类型，如何才能很好的去存可能出现的两种类型呢？</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Score</span> </span>{<br>    String name;<br>    String id;<br>    Object value;  <span class="hljs-comment">//因为Object是所有类型的父类，因此既可以存放Integer也能存放String</span><br><br>  	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Score</span><span class="hljs-params">(String name, String id, Object value)</span> </span>{<br>        <span class="hljs-keyword">this</span>.name = name;<br>        <span class="hljs-keyword">this</span>.id = id;<br>        <span class="hljs-keyword">this</span>.value = value;<br>    }<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+<p>以上的方法虽然很好地解决了多种类型存储问题，但是Object类型在编译阶段并不具有良好的类型判断能力，很容易出现以下的情况：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{<br><br>    Score score = <span class="hljs-keyword">new</span> Score(<span class="hljs-string">"数据结构与算法基础"</span>, <span class="hljs-string">"EP074512"</span>, <span class="hljs-string">"优秀"</span>);  <span class="hljs-comment">//是String类型的</span><br><br>    ...<br><br>    Integer number = (Integer) score.score;  <span class="hljs-comment">//获取成绩需要进行强制类型转换，虽然并不是一开始的类型，但是编译不会报错</span><br>}<br></code></pre></td></tr></tbody></table></figure>
+
+<p>使用Object类型作为引用，对于使用者来说，由于是Object类型，所以说并不能直接判断存储的类型到底是String还是Integer，取值只能进行强制类型转换，显然无法在编译期确定类型是否安全，项目中代码量非常之大，进行类型比较又会导致额外的开销和增加代码量，如果不经比较就很容易出现类型转换异常，代码的健壮性有所欠缺</p>
+<p>所以说这种解决办法虽然可行，但并不是最好的方案。</p>
+<p>为了解决以上问题，JDK 5新增了泛型，它能够在编译阶段检查类型安全，大大提升开发效率。</p>
+<h3 id="泛型类"><a href="#泛型类" class="headerlink" title="泛型类"></a>泛型类</h3><p>泛型其实就一个待定类型，我们可以使用一个特殊的名字表示泛型，泛型在定义时并不明确是什么类型，而是需要到使用时才会确定对应的泛型类型。</p>
+<p>我们可以将一个类定义为一个泛型类：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Score</span>&lt;<span class="hljs-title">T</span>&gt; </span>{   <span class="hljs-comment">//泛型类需要使用&lt;&gt;，我们需要在里面添加1 - N个类型变量</span><br>    String name;<br>    String id;<br>    T value;   <span class="hljs-comment">//T会根据使用时提供的类型自动变成对应类型</span><br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Score</span><span class="hljs-params">(String name, String id, T value)</span> </span>{   <span class="hljs-comment">//这里T可以是任何类型，但是一旦确定，那么就不能修改了</span><br>        <span class="hljs-keyword">this</span>.name = name;<br>        <span class="hljs-keyword">this</span>.id = id;<br>        <span class="hljs-keyword">this</span>.value = value;<br>    }<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+<p>我们来看看这是如何使用的：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{<br>    Score&lt;String&gt; score = <span class="hljs-keyword">new</span> Score&lt;String&gt;(<span class="hljs-string">"计算机网络"</span>, <span class="hljs-string">"EP074512"</span>, <span class="hljs-string">"优秀"</span>);<br>  	<span class="hljs-comment">//因为现在有了类型变量，在使用时同样需要跟上&lt;&gt;并在其中填写明确要使用的类型</span><br>  	<span class="hljs-comment">//这样我们就可以根据不同的类型进行选择了</span><br>    String value = score.value;   <span class="hljs-comment">//一旦类型明确，那么泛型就变成对应的类型了</span><br>    System.out.println(value);<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+<p>泛型将数据类型的确定控制在了编译阶段，在编写代码的时候就能明确泛型的类型，如果类型不符合，将无法通过编译！因为是具体使用对象时才会明确具体类型，所以说静态方法中是不能用的：</p>
+<p><img src="https://s2.loli.net/2022/09/27/RCqAhvMGzNwfH7J.png" srcset="/img/loading.gif" lazyload alt="image-20220927135128332"></p>
+<p>只不过这里需要注意一下，我们在方法中使用待确定类型的变量时，因为此时并不明确具体是什么类型，那么默认会认为这个变量是一个Object类型的变量，因为无论具体类型是什么，一定是Object类的子类：</p>
+<p><img src="https://s2.loli.net/2022/09/26/gkFs35US9rxo7f2.png" srcset="/img/loading.gif" lazyload alt="image-20220926235642963"></p>
+<p>我们可以对其进行强制类型转换，但是实际上没多大必要：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">test</span><span class="hljs-params">(T t)</span></span>{<br>    String str = (String) t;   <span class="hljs-comment">//都明确要用String了，那这里定义泛型不是多此一举吗</span><br>}<br></code></pre></td></tr></tbody></table></figure>
+
+<p>因为泛型本身就是对某些待定类型的简单处理，如果都明确要使用什么类型了，那大可不必使用泛型。还有，不能通过这个不确定的类型变量就去直接创建对象和对应的数组：</p>
+<p><img src="https://s2.loli.net/2022/09/27/RlHYhPSUJ5ICswG.png" srcset="/img/loading.gif" lazyload alt="image-20220927134825845"></p>
+<p>注意，具体类型不同的泛型类变量，不能使用不同的变量进行接收：</p>
+<p><img src="https://s2.loli.net/2022/09/25/jhekq9ZKHoiT2yI.png" srcset="/img/loading.gif" lazyload alt="image-20220925170746329"></p>
+<p>如果要让某个变量支持引用确定了任意类型的泛型，那么可以使用<code>?</code>通配符：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{<br>    Test&lt;?&gt; test = <span class="hljs-keyword">new</span> Test&lt;Integer&gt;();<br>    test = <span class="hljs-keyword">new</span> Test&lt;String&gt;();<br>  	Object o = test.value;    <span class="hljs-comment">//但是注意，如果使用通配符，那么由于类型不确定，所以说具体类型同样会变成Object</span><br>}<br></code></pre></td></tr></tbody></table></figure>
+
+<p>当然，泛型变量不止可以只有一个，如果需要使用多个的话，我们也可以定义多个：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Test</span>&lt;<span class="hljs-title">A</span>, <span class="hljs-title">B</span>, <span class="hljs-title">C</span>&gt; </span>{   <span class="hljs-comment">//多个类型变量使用逗号隔开</span><br>    <span class="hljs-keyword">public</span> A a;<br>    <span class="hljs-keyword">public</span> B b;<br>    <span class="hljs-keyword">public</span> C c;<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+<p>那么在使用时，就需要将这三种类型都进行明确指定：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{<br>    Test&lt;String, Integer, Character&gt; test = <span class="hljs-keyword">new</span> Test&lt;&gt;();  <span class="hljs-comment">//使用钻石运算符可以省略其中的类型</span><br>    test.a = <span class="hljs-string">"lbwnb"</span>;<br>    test.b = <span class="hljs-number">10</span>;<br>    test.c = <span class="hljs-string">'淦'</span>;<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+<p>是不是感觉好像还是挺简单的？只要是在类中，都可以使用类型变量：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Test</span>&lt;<span class="hljs-title">T</span>&gt;</span>{<br>    <br>    <span class="hljs-keyword">private</span> T value;<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setValue</span><span class="hljs-params">(T value)</span> </span>{<br>        <span class="hljs-keyword">this</span>.value = value;<br>    }<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> T <span class="hljs-title">getValue</span><span class="hljs-params">()</span> </span>{<br>        <span class="hljs-keyword">return</span> value;<br>    }<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+<p>只不过，泛型只能确定为一个引用类型，基本类型是不支持的：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Test</span>&lt;<span class="hljs-title">T</span>&gt;</span>{<br>    <span class="hljs-keyword">public</span> T value;<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+<p><img src="https://s2.loli.net/2022/09/26/TI6tWwj4vXFdenr.png" srcset="/img/loading.gif" lazyload alt="image-20220926232135111"></p>
+<p>如果要存放基本数据类型的值，我们只能使用对应的包装类：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{<br>    Test&lt;Integer&gt; test = <span class="hljs-keyword">new</span> Test&lt;&gt;();<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+<p>当然，如果是基本类型的数组，因为数组本身是引用类型，所以说是可以的：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{<br>    Test&lt;<span class="hljs-keyword">int</span>[]&gt; test = <span class="hljs-keyword">new</span> Test&lt;&gt;();<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+<p>通过使用泛型，我们就可以将某些不明确的类型在具体使用时再明确。</p>
+<h3 id="泛型与多态"><a href="#泛型与多态" class="headerlink" title="泛型与多态"></a>泛型与多态</h3><p>不只是类，包括接口、抽象类，都是可以支持泛型的：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">Study</span>&lt;<span class="hljs-title">T</span>&gt; </span>{<br>    <span class="hljs-function">T <span class="hljs-title">test</span><span class="hljs-params">()</span></span>;<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+<p>当子类实现此接口时，我们可以选择在实现类明确泛型类型，或是继续使用此泛型让具体创建的对象来确定类型：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Main</span> </span>{<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{<br>        A a = <span class="hljs-keyword">new</span> A();<br>        Integer i = a.test();<br>    }<br><br>    <span class="hljs-keyword">static</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">A</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Study</span>&lt;<span class="hljs-title">Integer</span>&gt; </span>{   <br>      	<span class="hljs-comment">//在实现接口或是继承父类时，如果子类是一个普通类，那么可以直接明确对应类型</span><br>        <span class="hljs-meta">@Override</span><br>        <span class="hljs-function"><span class="hljs-keyword">public</span> Integer <span class="hljs-title">test</span><span class="hljs-params">()</span> </span>{<br>            <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;<br>        }<br>    }<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+<p>或者是继续摆烂，依然使用泛型：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Main</span> </span>{<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{<br>        A&lt;String&gt; a = <span class="hljs-keyword">new</span> A&lt;&gt;();<br>        String i = a.test();<br>    }<br><br>    <span class="hljs-keyword">static</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">A</span>&lt;<span class="hljs-title">T</span>&gt; <span class="hljs-keyword">implements</span> <span class="hljs-title">Study</span>&lt;<span class="hljs-title">T</span>&gt; </span>{   <br>      	<span class="hljs-comment">//让子类继续为一个泛型类，那么可以不用明确</span><br>        <span class="hljs-meta">@Override</span><br>        <span class="hljs-function"><span class="hljs-keyword">public</span> T <span class="hljs-title">test</span><span class="hljs-params">()</span> </span>{<br>            <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;<br>        }<br>    }<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+<p>继承也是同样的：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">static</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">A</span>&lt;<span class="hljs-title">T</span>&gt; </span>{<br>    <br>}<br><br><span class="hljs-keyword">static</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">B</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">A</span>&lt;<span class="hljs-title">String</span>&gt; </span>{<br><br>}<br></code></pre></td></tr></tbody></table></figure>
+
+<h3 id="泛型方法"><a href="#泛型方法" class="headerlink" title="泛型方法"></a>泛型方法</h3><p>当然，类型变量并不是只能在泛型类中才可以使用，我们也可以定义泛型方法。</p>
+<p>当某个方法（无论是是静态方法还是成员方法）需要接受的参数类型并不确定时，我们也可以使用泛型来表示：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Main</span> </span>{<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{<br>        String str = test(<span class="hljs-string">"Hello World!"</span>);<br>    }<br><br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> &lt;T&gt; <span class="hljs-function">T <span class="hljs-title">test</span><span class="hljs-params">(T t)</span></span>{   <span class="hljs-comment">//在返回值类型前添加&lt;&gt;并填写泛型变量表示这个是一个泛型方法</span><br>        <span class="hljs-keyword">return</span> t;<br>    }<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+<p>泛型方法会在使用时自动确定泛型类型，比如上我们定义的是类型T作为参数，同样的类型T作为返回值，实际传入的参数是一个字符串类型的值，那么T就会自动变成String类型，因此返回值也是String类型。</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{<br>    String[] strings = <span class="hljs-keyword">new</span> String[<span class="hljs-number">1</span>];<br>    Main main = <span class="hljs-keyword">new</span> Main();<br>    main.add(strings, <span class="hljs-string">"Hello"</span>);<br>    System.out.println(Arrays.toString(strings));<br>}<br><br><span class="hljs-keyword">private</span> &lt;T&gt; <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">add</span><span class="hljs-params">(T[] arr, T t)</span></span>{<br>    arr[<span class="hljs-number">0</span>] = t;<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+<p>实际上泛型方法在很多工具类中也有，比如说Arrays的排序方法：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs java">Integer[] arr = {<span class="hljs-number">1</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">2</span>, <span class="hljs-number">6</span>, <span class="hljs-number">3</span>, <span class="hljs-number">0</span>, <span class="hljs-number">7</span>, <span class="hljs-number">9</span>, <span class="hljs-number">8</span>};<br>Arrays.sort(arr, <span class="hljs-keyword">new</span> Comparator&lt;Integer&gt;() {   <br>  	<span class="hljs-comment">//通过创建泛型接口的匿名内部类，来自定义排序规则，因为匿名内部类就是接口的实现类，所以说这里就明确了类型</span><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">compare</span><span class="hljs-params">(Integer o1, Integer o2)</span> </span>{   <span class="hljs-comment">//这个方法会在执行排序时被调用（别人来调用我们的实现）</span><br>        <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>    }<br>});<br></code></pre></td></tr></tbody></table></figure>
+
+<p>比如现在我们想要让数据从大到小排列，我们就可以自定义：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{<br>    Integer[] arr = {<span class="hljs-number">1</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">2</span>, <span class="hljs-number">6</span>, <span class="hljs-number">3</span>, <span class="hljs-number">0</span>, <span class="hljs-number">7</span>, <span class="hljs-number">9</span>, <span class="hljs-number">8</span>};<br>    Arrays.sort(arr, <span class="hljs-keyword">new</span> Comparator&lt;Integer&gt;() {<br>        <span class="hljs-meta">@Override</span><br>        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">compare</span><span class="hljs-params">(Integer o1, Integer o2)</span> </span>{   <span class="hljs-comment">//两个需要比较的数会在这里给出</span><br>            <span class="hljs-keyword">return</span> o2 - o1;    <br>          	<span class="hljs-comment">//compare方法要求返回一个int来表示两个数的大小关系，大于0表示大于，小于0表示小于</span><br>          	<span class="hljs-comment">//这里直接o2-o1就行，如果o2比o1大，那么肯定应该排在前面，所以说返回正数表示大于</span><br>        }<br>    });<br>    System.out.println(Arrays.toString(arr));<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+<p>因为我们前面学习了Lambda表达式，像这种只有一个方法需要实现的接口，直接安排了：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{<br>    Integer[] arr = {<span class="hljs-number">1</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">2</span>, <span class="hljs-number">6</span>, <span class="hljs-number">3</span>, <span class="hljs-number">0</span>, <span class="hljs-number">7</span>, <span class="hljs-number">9</span>, <span class="hljs-number">8</span>};<br>    Arrays.sort(arr, (o1, o2) -&gt; o2 - o1);   <span class="hljs-comment">//瞬间变一行，效果跟上面是一样的</span><br>    System.out.println(Arrays.toString(arr));<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+<p>包括数组复制方法：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{<br>    String[] arr = {<span class="hljs-string">"AAA"</span>, <span class="hljs-string">"BBB"</span>, <span class="hljs-string">"CCC"</span>};<br>    String[] newArr = Arrays.copyOf(arr, <span class="hljs-number">3</span>);   <span class="hljs-comment">//这里传入的类型是什么，返回的类型就是什么，也是用到了泛型</span><br>    System.out.println(Arrays.toString(newArr));<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+<p>因此，泛型实际上在很多情况下都能够极大地方便我们对于程序的代码设计。</p>
+<h3 id="泛型的界限"><a href="#泛型的界限" class="headerlink" title="泛型的界限"></a>泛型的界限</h3><p>现在有一个新的需求，现在没有String类型的成绩了，但是成绩依然可能是整数，也可能是小数，这时我们不希望用户将泛型指定为除数字类型外的其他类型，我们就需要使用到泛型的上界定义：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Score</span>&lt;<span class="hljs-title">T</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Number</span>&gt; </span>{   <span class="hljs-comment">//设定类型参数上界，必须是Number或是Number的子类</span><br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> String name;<br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> String id;<br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> T value;<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Score</span><span class="hljs-params">(String name, String id, T value)</span> </span>{<br>        <span class="hljs-keyword">this</span>.name = name;<br>        <span class="hljs-keyword">this</span>.id = id;<br>        <span class="hljs-keyword">this</span>.value = value;<br>    }<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> T <span class="hljs-title">getValue</span><span class="hljs-params">()</span> </span>{<br>        <span class="hljs-keyword">return</span> value;<br>    }<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+<p>只需要在泛型变量的后面添加<code>extends</code>关键字即可指定上界，使用时，具体类型只能是我们指定的上界类型或是上界类型的子类，不得是其他类型。否则一律报错：</p>
+<p><img src="https://s2.loli.net/2022/09/27/BAgmdCkDFL62V8H.png" srcset="/img/loading.gif" lazyload alt="image-20220927000902574"></p>
+<p>实际上就像这样：</p>
+<p><img src="https://s2.loli.net/2022/09/27/rLnjHp73tdFSPUM.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>同样的，当我们在使用变量时，泛型通配符也支持泛型的界限：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{<br>    Score&lt;? extends Integer&gt; score = <span class="hljs-keyword">new</span> Score&lt;&gt;(<span class="hljs-string">"数据结构与算法"</span>, <span class="hljs-string">"EP074512"</span>, <span class="hljs-number">60</span>);<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+<p>那么既然泛型有上界，那么有没有下界呢？肯定的啊：</p>
+<p><img src="https://s2.loli.net/2022/09/27/UJg7s41NC9Gn6fX.png" srcset="/img/loading.gif" lazyload alt="image-20220927002611032"></p>
+<p>只不过下界仅适用于通配符，对于类型变量来说是不支持的。下界限定就像这样：</p>
+<p><img src="https://s2.loli.net/2022/09/27/QFZNSCpnAmKG7qr.png" srcset="/img/loading.gif" lazyload alt="4aa52791-73f4-448f-bab3-9133ea85d850.jpg"></p>
+<p>那么限定了上界后，我们再来使用这个对象的泛型成员，会变成什么类型呢？</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{<br>    Score&lt;? extends Number&gt; score = <span class="hljs-keyword">new</span> Score&lt;&gt;(<span class="hljs-string">"数据结构与算法基础"</span>, <span class="hljs-string">"EP074512"</span>, <span class="hljs-number">10</span>);<br>    Number o = score.getValue();   <span class="hljs-comment">//可以看到，此时虽然使用的是通配符，但是不再是Object类型，而是对应的上界</span><br>}<br></code></pre></td></tr></tbody></table></figure>
+
+<p>但是我们限定下界的话，因为还是有可能是Object，所以说依然是跟之前一样：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{<br>    Score&lt;? <span class="hljs-keyword">super</span> Number&gt; score = <span class="hljs-keyword">new</span> Score&lt;&gt;(<span class="hljs-string">"数据结构与算法基础"</span>, <span class="hljs-string">"EP074512"</span>, <span class="hljs-number">10</span>);<br>    Object o = score.getValue();<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+<p>通过给设定泛型上限，我们就可以更加灵活地控制泛型的具体类型范围。</p>
+<h3 id="类型擦除"><a href="#类型擦除" class="headerlink" title="类型擦除"></a>类型擦除</h3><p>前面我们已经了解如何使用泛型，那么泛型到底是如何实现的呢，程序编译之后的样子是什么样的？</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">A</span> &lt;<span class="hljs-title">T</span>&gt;</span>{<br>    <span class="hljs-function"><span class="hljs-keyword">abstract</span> T <span class="hljs-title">test</span><span class="hljs-params">(T t)</span></span>;<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+<p>实际上在Java中并不是真的有泛型类型（为了兼容之前的Java版本）因为所有的对象都是属于一个普通的类型，一个泛型类型编译之后，实际上会直接使用默认的类型：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">A</span> </span>{<br>    <span class="hljs-function"><span class="hljs-keyword">abstract</span> Object <span class="hljs-title">test</span><span class="hljs-params">(Object t)</span></span>;  <span class="hljs-comment">//默认就是Object</span><br>}<br></code></pre></td></tr></tbody></table></figure>
+
+<p>当然，如果我们给类型变量设定了上界，那么会从默认类型变成上界定义的类型：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">A</span> &lt;<span class="hljs-title">T</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Number</span>&gt;</span>{   <span class="hljs-comment">//设定上界为Number</span><br>    <span class="hljs-function"><span class="hljs-keyword">abstract</span> T <span class="hljs-title">test</span><span class="hljs-params">(T t)</span></span>;<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+<p>那么编译之后：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">A</span> </span>{<br>    <span class="hljs-function"><span class="hljs-keyword">abstract</span> Number <span class="hljs-title">test</span><span class="hljs-params">(Number t)</span></span>;  <span class="hljs-comment">//上界Number，因为现在只可能出现Number的子类</span><br>}<br></code></pre></td></tr></tbody></table></figure>
+
+<p>因此，泛型其实仅仅是在编译阶段进行类型检查，当程序在运行时，并不会真的去检查对应类型，所以说哪怕是我们不去指定类型也可以直接使用：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{<br>    Test test = <span class="hljs-keyword">new</span> Test();    <span class="hljs-comment">//对于泛型类Test，不指定具体类型也是可以的，默认就是原始类型</span><br>}<br></code></pre></td></tr></tbody></table></figure>
+
+<p>只不过此时编译器会给出警告：</p>
+<p><img src="https://s2.loli.net/2022/09/27/kVCIg3TilOuLFmj.png" srcset="/img/loading.gif" lazyload alt="image-20220927131226728"></p>
+<p>同样的，由于类型擦除，实际上我们在使用时，编译后的代码是进行了强制类型转换的：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{<br>    A&lt;String&gt; a = <span class="hljs-keyword">new</span> B();<br>    String  i = a.test(<span class="hljs-string">"10"</span>);     <span class="hljs-comment">//因为类型A只有返回值为原始类型Object的方法</span><br>}<br></code></pre></td></tr></tbody></table></figure>
+
+<p>实际上编译之后：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{<br>    A a = <span class="hljs-keyword">new</span> B();<br>    String i = (String) a.test(<span class="hljs-string">"10"</span>);   <span class="hljs-comment">//依靠强制类型转换完成的</span><br>}<br></code></pre></td></tr></tbody></table></figure>
+
+<p>不过，我们思考一个问题，既然继承泛型类之后可以明确具体类型，那么为什么<code>@Override</code>不会出现错误呢？我们前面说了，重写的条件是需要和父类的返回值类型和形参一致，而泛型默认的原始类型是Object类型，子类明确后变为其他类型，这显然不满足重写的条件，但是为什么依然能编译通过呢？</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">B</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">A</span>&lt;<span class="hljs-title">String</span>&gt;</span>{<br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-function">String <span class="hljs-title">test</span><span class="hljs-params">(String s)</span> </span>{<br>        <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;<br>    }<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+<p>我们来看看编译之后长啥样：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">// Compiled from "B.java"</span><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">com</span>.<span class="hljs-title">test</span>.<span class="hljs-title">entity</span>.<span class="hljs-title">B</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">com</span>.<span class="hljs-title">test</span>.<span class="hljs-title">entity</span>.<span class="hljs-title">A</span>&lt;<span class="hljs-title">java</span>.<span class="hljs-title">lang</span>.<span class="hljs-title">String</span>&gt; </span>{<br>  <span class="hljs-keyword">public</span> com.test.entity.B();<br>  java.lang.<span class="hljs-function">String <span class="hljs-title">test</span><span class="hljs-params">(java.lang.String)</span></span>;<br>  java.lang.<span class="hljs-function">Object <span class="hljs-title">test</span><span class="hljs-params">(java.lang.Object)</span></span>;   <span class="hljs-comment">//桥接方法，这才是真正重写的方法，但是使用时会调用上面的方法</span><br>}<br></code></pre></td></tr></tbody></table></figure>
+
+<p>通过反编译进行观察，实际上是编译器帮助我们生成了一个桥接方法用于支持重写：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">B</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">A</span> </span>{<br>    <br>    <span class="hljs-function"><span class="hljs-keyword">public</span> Object <span class="hljs-title">test</span><span class="hljs-params">(Object obj)</span> </span>{   <span class="hljs-comment">//这才是重写的桥接方法</span><br>        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.test((String) obj);   <span class="hljs-comment">//桥接方法调用我们自己写的方法</span><br>    }<br>    <br>    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">test</span><span class="hljs-params">(String str)</span> </span>{   <span class="hljs-comment">//我们自己写的方法</span><br>        <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;<br>    }<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+<p>类型擦除机制其实就是为了方便使用后面集合类（不然每次都要强制类型转换）同时为了向下兼容采取的方案。因此，泛型的使用会有一些限制：</p>
+<p>首先，在进行类型判断时，不允许使用泛型，只能使用原始类型：</p>
+<p><img src="https://s2.loli.net/2022/09/27/q7DQ9lAweJLOFky.png" srcset="/img/loading.gif" lazyload alt="image-20220927133232627"></p>
+<p>只能判断是不是原始类型，里面的具体类型是不支持的：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs java">Test&lt;String&gt; test = <span class="hljs-keyword">new</span> Test&lt;&gt;();<br>System.out.println(test <span class="hljs-keyword">instanceof</span> Test);   <span class="hljs-comment">//在进行类型判断时，不允许使用泛型，只能使用原始类型</span><br></code></pre></td></tr></tbody></table></figure>
+
+<p>还有，泛型类型是不支持创建参数化类型数组的：</p>
+<p><img src="https://s2.loli.net/2022/09/27/7tK5APuSZovBLIc.png" srcset="/img/loading.gif" lazyload alt="image-20220927133611288"></p>
+<p>要用只能用原始类型：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{<br>    Test[] test = <span class="hljs-keyword">new</span> Test[<span class="hljs-number">10</span>];   <span class="hljs-comment">//同样是因为类型擦除导致的，运行时可不会去检查具体类型是什么</span><br>}<br></code></pre></td></tr></tbody></table></figure>
+
+<p>只不过只是把它当做泛型类型的数组还是可以用的：</p>
+<p><img src="https://s2.loli.net/2022/09/27/upjWbyq9XC5FLDv.png" srcset="/img/loading.gif" lazyload alt="image-20220927134335255"></p>
+<h3 id="函数式接口"><a href="#函数式接口" class="headerlink" title="函数式接口"></a>函数式接口</h3><p>学习了泛型，我们来介绍一下再JDK 1.8中新增的函数式接口。</p>
+<p>函数式接口就是JDK1.8专门为我们提供好的用于Lambda表达式的接口，这些接口都可以直接使用Lambda表达式，非常方便，这里我们主要介绍一下四个主要的函数式接口：</p>
+<p><strong>Supplier供给型函数式接口：</strong>这个接口是专门用于供给使用的，其中只有一个get方法用于获取需要的对象。</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@FunctionalInterface</span>   <span class="hljs-comment">//函数式接口都会打上这样一个注解</span><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">Supplier</span>&lt;<span class="hljs-title">T</span>&gt; </span>{<br>    <span class="hljs-function">T <span class="hljs-title">get</span><span class="hljs-params">()</span></span>;   <span class="hljs-comment">//实现此方法，实现供给功能</span><br>}<br></code></pre></td></tr></tbody></table></figure>
+
+<p>比如我们要实现一个专门供给Student对象Supplier，就可以使用：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Student</span> </span>{<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">hello</span><span class="hljs-params">()</span></span>{<br>        System.out.println(<span class="hljs-string">"我是学生！"</span>);<br>    }<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//专门供给Student对象的Supplier</span><br><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> Supplier&lt;Student&gt; STUDENT_SUPPLIER = Student::<span class="hljs-keyword">new</span>;<br><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{<br>    Student student = STUDENT_SUPPLIER.get();<br>    student.hello();<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+<p><strong>Consumer消费型函数式接口：</strong>这个接口专门用于消费某个对象的。</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@FunctionalInterface</span><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">Consumer</span>&lt;<span class="hljs-title">T</span>&gt; </span>{<br>    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">accept</span><span class="hljs-params">(T t)</span></span>;    <span class="hljs-comment">//这个方法就是用于消费的，没有返回值</span><br><br>    <span class="hljs-function"><span class="hljs-keyword">default</span> Consumer&lt;T&gt; <span class="hljs-title">andThen</span><span class="hljs-params">(Consumer&lt;? <span class="hljs-keyword">super</span> T&gt; after)</span> </span>{   <span class="hljs-comment">//这个方法便于我们连续使用此消费接口</span><br>        Objects.requireNonNull(after);<br>        <span class="hljs-keyword">return</span> (T t) -&gt; { accept(t); after.accept(t); };<br>    }<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+<p>使用起来也是很简单的：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//专门消费Student对象的Consumer</span><br><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> Consumer&lt;Student&gt; STUDENT_CONSUMER = student -&gt; System.out.println(student+<span class="hljs-string">" 真好吃！"</span>);<br><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{<br>    Student student = <span class="hljs-keyword">new</span> Student();<br>    STUDENT_CONSUMER.accept(student);<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+<p>当然，我们也可以使用<code>andThen</code>方法继续调用：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{<br>    Student student = <span class="hljs-keyword">new</span> Student();<br>    STUDENT_CONSUMER   <span class="hljs-comment">//我们可以提前将消费之后的操作以同样的方式预定好</span><br>            .andThen(stu -&gt; System.out.println(<span class="hljs-string">"我是吃完之后的操作！"</span>)) <br>            .andThen(stu -&gt; System.out.println(<span class="hljs-string">"好了好了，吃饱了！"</span>))<br>            .accept(student);   <span class="hljs-comment">//预定好之后，再执行</span><br>}<br></code></pre></td></tr></tbody></table></figure>
+
+<p>这样，就可以在消费之后进行一些其他的处理了，使用很简洁的代码就可以实现：</p>
+<p><img src="https://s2.loli.net/2022/09/27/Pu1jGzKNSvnV9YZ.png" srcset="/img/loading.gif" lazyload alt="image-20220927181706365"></p>
+<p><strong>Function函数型函数式接口：</strong>这个接口消费一个对象，然后会向外供给一个对象（前两个的融合体）</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@FunctionalInterface</span><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">Function</span>&lt;<span class="hljs-title">T</span>, <span class="hljs-title">R</span>&gt; </span>{<br>    <span class="hljs-function">R <span class="hljs-title">apply</span><span class="hljs-params">(T t)</span></span>;   <span class="hljs-comment">//这里一共有两个类型参数，其中一个是接受的参数类型，还有一个是返回的结果类型</span><br><br>    <span class="hljs-keyword">default</span> &lt;V&gt; <span class="hljs-function">Function&lt;V, R&gt; <span class="hljs-title">compose</span><span class="hljs-params">(Function&lt;? <span class="hljs-keyword">super</span> V, ? extends T&gt; before)</span> </span>{<br>        Objects.requireNonNull(before);<br>        <span class="hljs-keyword">return</span> (V v) -&gt; apply(before.apply(v));<br>    }<br><br>    <span class="hljs-keyword">default</span> &lt;V&gt; <span class="hljs-function">Function&lt;T, V&gt; <span class="hljs-title">andThen</span><span class="hljs-params">(Function&lt;? <span class="hljs-keyword">super</span> R, ? extends V&gt; after)</span> </span>{<br>        Objects.requireNonNull(after);<br>        <span class="hljs-keyword">return</span> (T t) -&gt; after.apply(apply(t));<br>    }<br><br>    <span class="hljs-keyword">static</span> &lt;T&gt; <span class="hljs-function">Function&lt;T, T&gt; <span class="hljs-title">identity</span><span class="hljs-params">()</span> </span>{<br>        <span class="hljs-keyword">return</span> t -&gt; t;<br>    }<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+<p>这个接口方法有点多，我们一个一个来看，首先还是最基本的<code>apply</code>方法，这个是我们需要实现的：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//这里实现了一个简单的功能，将传入的int参数转换为字符串的形式</span><br><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> Function&lt;Integer, String&gt; INTEGER_STRING_FUNCTION = Object::toString;<br><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{<br>    String str = INTEGER_STRING_FUNCTION.apply(<span class="hljs-number">10</span>);<br>    System.out.println(str);<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+<p>我们可以使用<code>compose</code>将指定函数式的结果作为当前函数式的实参：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{<br>    String str = INTEGER_STRING_FUNCTION<br>            .compose((String s) -&gt; s.length())   <span class="hljs-comment">//将此函数式的返回值作为当前实现的实参</span><br>            .apply(<span class="hljs-string">"lbwnb"</span>);   <span class="hljs-comment">//传入上面函数式需要的参数</span><br>    System.out.println(str);<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+<p>相反的，<code>andThen</code>可以将当前实现的返回值进行进一步的处理，得到其他类型的值：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{<br>    Boolean str = INTEGER_STRING_FUNCTION<br>            .andThen(String::isEmpty)   <span class="hljs-comment">//在执行完后，返回值作为参数执行andThen内的函数式，最后得到的结果就是最终的结果了</span><br>            .apply(<span class="hljs-number">10</span>);<br>    System.out.println(str);<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+<p>比较有趣的是，Function中还提供了一个将传入参数原样返回的实现：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{<br>    Function&lt;String, String&gt; function = Function.identity();   <span class="hljs-comment">//原样返回</span><br>    System.out.println(function.apply(<span class="hljs-string">"不会吧不会吧，不会有人听到现在还是懵逼的吧"</span>));<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+<p><strong>Predicate断言型函数式接口：</strong>接收一个参数，然后进行自定义判断并返回一个boolean结果。</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@FunctionalInterface</span><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">Predicate</span>&lt;<span class="hljs-title">T</span>&gt; </span>{<br>    <span class="hljs-function"><span class="hljs-keyword">boolean</span> <span class="hljs-title">test</span><span class="hljs-params">(T t)</span></span>;    <span class="hljs-comment">//这个方法就是我们要实现的</span><br><br>    <span class="hljs-function"><span class="hljs-keyword">default</span> Predicate&lt;T&gt; <span class="hljs-title">and</span><span class="hljs-params">(Predicate&lt;? <span class="hljs-keyword">super</span> T&gt; other)</span> </span>{<br>        Objects.requireNonNull(other);<br>        <span class="hljs-keyword">return</span> (t) -&gt; test(t) &amp;&amp; other.test(t);<br>    }<br><br>    <span class="hljs-function"><span class="hljs-keyword">default</span> Predicate&lt;T&gt; <span class="hljs-title">negate</span><span class="hljs-params">()</span> </span>{<br>        <span class="hljs-keyword">return</span> (t) -&gt; !test(t);<br>    }<br><br>    <span class="hljs-function"><span class="hljs-keyword">default</span> Predicate&lt;T&gt; <span class="hljs-title">or</span><span class="hljs-params">(Predicate&lt;? <span class="hljs-keyword">super</span> T&gt; other)</span> </span>{<br>        Objects.requireNonNull(other);<br>        <span class="hljs-keyword">return</span> (t) -&gt; test(t) || other.test(t);<br>    }<br><br>    <span class="hljs-keyword">static</span> &lt;T&gt; <span class="hljs-function">Predicate&lt;T&gt; <span class="hljs-title">isEqual</span><span class="hljs-params">(Object targetRef)</span> </span>{<br>        <span class="hljs-keyword">return</span> (<span class="hljs-keyword">null</span> == targetRef)<br>                ? Objects::isNull<br>                : object -&gt; targetRef.equals(object);<br>    }<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+<p>我们可以来编写一个简单的例子：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Student</span> </span>{<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> score;<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> Predicate&lt;Student&gt; STUDENT_PREDICATE = student -&gt; student.score &gt;= <span class="hljs-number">60</span>;<br><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{<br>    Student student = <span class="hljs-keyword">new</span> Student();<br>    student.score = <span class="hljs-number">80</span>;<br>    <span class="hljs-keyword">if</span>(STUDENT_PREDICATE.test(student)) {  <span class="hljs-comment">//test方法的返回值是一个boolean结果</span><br>        System.out.println(<span class="hljs-string">"及格了，真不错，今晚奖励自己一次"</span>);<br>    } <span class="hljs-keyword">else</span> {<br>        System.out.println(<span class="hljs-string">"不是，Java都考不及格？隔壁初中生都在打ACM了"</span>);<br>    }<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+<p>我们也可以使用组合条件判断：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{<br>    Student student = <span class="hljs-keyword">new</span> Student();<br>    student.score = <span class="hljs-number">80</span>;<br>    <span class="hljs-keyword">boolean</span> b = STUDENT_PREDICATE<br>            .and(stu -&gt; stu.score &gt; <span class="hljs-number">90</span>)   <span class="hljs-comment">//需要同时满足这里的条件，才能返回true</span><br>            .test(student);<br>    <span class="hljs-keyword">if</span>(!b) System.out.println(<span class="hljs-string">"Java到现在都没考到90分？你的室友都拿国家奖学金了"</span>);<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+<p>同样的，这个类型提供了一个对应的实现，用于判断两个对象是否相等：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{<br>    Predicate&lt;String&gt; predicate = Predicate.isEqual(<span class="hljs-string">"Hello World"</span>);   <span class="hljs-comment">//这里传入的对象会和之后的进行比较</span><br>    System.out.println(predicate.test(<span class="hljs-string">"Hello World"</span>));<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+<p>通过使用这四个核心的函数式接口，我们就可以使得代码更加简洁，具体的使用场景会在后面讲解。</p>
+<h3 id="判空包装"><a href="#判空包装" class="headerlink" title="判空包装"></a>判空包装</h3><p>Java8还新增了一个非常重要的判空包装类Optional，这个类可以很有效的处理空指针问题。</p>
+<p>比如对于下面这样一个很简单的方法：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">test</span><span class="hljs-params">(String str)</span></span>{   <span class="hljs-comment">//传入字符串，如果不是空串，那么就打印长度</span><br>    <span class="hljs-keyword">if</span>(!str.isEmpty()) {<br>        System.out.println(<span class="hljs-string">"字符串长度为："</span>+str.length());<br>    }<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+<p>但是如果我们在传入参数时，丢个null进去，直接原地爆炸：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{<br>    test(<span class="hljs-keyword">null</span>);<br>}<br><br><span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">test</span><span class="hljs-params">(String str)</span></span>{ <br>    <span class="hljs-keyword">if</span>(!str.isEmpty()) {   <span class="hljs-comment">//此时传入的值为null，调用方法马上得到空指针异常</span><br>        System.out.println(<span class="hljs-string">"字符串长度为："</span>+str.length());<br>    }<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+<p>因此我们还需要在使用之前进行判空操作：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">test</span><span class="hljs-params">(String str)</span></span>{<br>    <span class="hljs-keyword">if</span>(str == <span class="hljs-keyword">null</span>) <span class="hljs-keyword">return</span>;   <span class="hljs-comment">//这样就可以防止null导致的异常了</span><br>    <span class="hljs-keyword">if</span>(!str.isEmpty()) {<br>        System.out.println(<span class="hljs-string">"字符串长度为："</span>+str.length());<br>    }<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+<p>虽然这种方式很好，但是在Java8之后，有了Optional类，它可以更加优雅地处理这种问题，我们来看看如何使用：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">test</span><span class="hljs-params">(String str)</span></span>{<br>    Optional<br>            .ofNullable(str)   <span class="hljs-comment">//将传入的对象包装进Optional中</span><br>            .ifPresent(s -&gt; System.out.println(<span class="hljs-string">"字符串长度为："</span>+s.length()));  <br>  					<span class="hljs-comment">//如果不为空，则执行这里的Consumer实现</span><br>}<br></code></pre></td></tr></tbody></table></figure>
+
+<p>优雅，真是太优雅了，同样的功能，现在我们只需要两行就搞定了，而且代码相当简洁。如果你学习过JavaScript或是Kotlin等语言，它的语法就像是：</p>
+<figure class="highlight kotlin"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs kotlin"><span class="hljs-keyword">var</span> str : String? = <span class="hljs-literal">null</span><br>str?.upperCase()<br></code></pre></td></tr></tbody></table></figure>
+
+<p>并且，包装之后，我们再获取时可以优雅地处理为空的情况：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">test</span><span class="hljs-params">(String str)</span></span>{<br>    String s = Optional.ofNullable(str).get();   <span class="hljs-comment">//get方法可以获取被包装的对象引用，但是如果为空的话，会抛出异常</span><br>    System.out.println(s);<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+<p>我们可以对于这种有可能为空的情况进行处理，如果为空，那么就返回另一个备选方案：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">test</span><span class="hljs-params">(String str)</span></span>{<br>    String s = Optional.ofNullable(str).orElse(<span class="hljs-string">"我是为null的情况备选方案"</span>);<br>    System.out.println(s);<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+<p>是不是感觉很方便？我们还可以将包装的类型直接转换为另一种类型：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">test</span><span class="hljs-params">(String str)</span></span>{<br>    Integer i = Optional<br>            .ofNullable(str)<br>            .map(String::length)   <span class="hljs-comment">//使用map来进行映射，将当前类型转换为其他类型，或者是进行处理</span><br>            .orElse(-<span class="hljs-number">1</span>);<br>    System.out.println(i);<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+<p>当然，Optional的方法比较多，这里就不一一介绍了。</p>
+<hr>
+<h2 id="数据结构基础"><a href="#数据结构基础" class="headerlink" title="数据结构基础"></a>数据结构基础</h2><p><strong>注意：</strong>本部分内容难度很大，推荐计算机专业课程《数据结构与算法》作为前置学习课程。本部分介绍数据结构只是为了为后面的集合类型做准备。</p>
+<p>学习集合类之前，我们还有最关键的内容需要学习，同第二章一样，自底向上才是最佳的学习方向，比起直接带大家认识集合类，不如先了解一下数据结构，只有了解了数据结构基础，才能更好地学习集合类，同时，数据结构也是你以后深入学习JDK源码的必备条件（学习不要快餐式）当然，我们主要是讲解Java，数据结构作为铺垫作用，所以我们只会讲解关键的部分，其他部分可以在数据结构与算法篇视频教程中详细学习。</p>
+<blockquote>
+<p>在计算机科学中，数据结构是一种数据组织、管理和存储的格式,它可以帮助我们实现对数据高效的访问和修改。更准确地说,数据结构是数据值的集合，可以体现数据值之间的关系，以及可以对数据进行应用的函数或操作。</p>
+</blockquote>
+<p>通俗地说，我们需要去学习在计算机中如何去更好地管理我们的数据，才能让我们对我们的数据控制更加灵活！</p>
+<p><img src="https://s2.loli.net/2022/07/10/9RwL7pxgyfoB3WT.png" srcset="/img/loading.gif" lazyload alt="image-20220710103307583"></p>
+<p>比如现在我们需要保存100个学生的数据，那么你首先想到的肯定是使用数组吧！没错，没有什么比数组更适合存放这100个学生的数据了，但是如果我们现在有了新的需求呢？我们不仅仅是存放这些数据，我们还希望能够将这些数据按顺序存放，支持在某个位置插入一条数据、删除一条数据、修改一条数据等，这时候，数组就显得有些乏力了。</p>
+<p>数组无法做到这么高级的功能，那么我们就需要定义一种更加高级的数据结构来做到，我们可以使用线性表（Linear List）</p>
+<blockquote>
+<p>线性表是由同一类型的数据元素构成的有序序列的线性结构。线性表中元素的个数就是线性表的长度，表的起始位置称为表头，表的结束位置称为表尾，当一个线性表中没有元素时，称为空表。</p>
+</blockquote>
+<p>线性表一般需要包含以下功能：</p>
+<ul>
+<li><strong>获取指定位置上的元素：</strong>直接获取线性表指定位置<code>i</code>上的元素。</li>
+<li><strong>插入元素：</strong>在指定位置<code>i</code>上插入一个元素。</li>
+<li><strong>删除元素：</strong>删除指定位置<code>i</code>上的一个元素。</li>
+<li><strong>获取长度：</strong>返回线性表的长度。</li>
+</ul>
+<p>也就是说，现在我们需要设计的是一种功能完善的表结构，它不像是数组那么低级，而是真正意义上的表：</p>
+<p><img src="https://s2.loli.net/2022/07/23/Ve6dlqROzhumD5o.png" srcset="/img/loading.gif" lazyload alt="image-20220723112639416"></p>
+<p>简单来说它就是列表，比如我们的菜单，我们在点菜时就需要往菜单列表中添加菜品或是删除菜品，这时列表就很有用了，因为数组长度固定、操作简单，而我们添加菜品、删除菜品这些操作又要求长度动态变化、操作多样。</p>
+<p>那么，如此高级的数据结构，我们该如何去实现呢？实现线性表的结构一般有两种，一种是顺序存储实现，还有一种是链式存储实现，我们先来看第一种，也是最简单的的一种。</p>
+<h3 id="线性表：顺序表"><a href="#线性表：顺序表" class="headerlink" title="线性表：顺序表"></a>线性表：顺序表</h3><p>前面我们说到，既然数组无法实现这样的高级表结构，那么我就基于数组，对其进行强化，也就是说，我们存放数据还是使用数组，但是我们可以为其编写一些额外的操作来强化为线性表，像这样底层依然采用顺序存储实现的线性表，我们称为顺序表。</p>
+<p><img src="https://s2.loli.net/2022/07/24/elBvx4Zo1AJ2WqT.png" srcset="/img/loading.gif" lazyload alt="image-20220724150015044"></p>
+<p>这里我们可以先定义一个新的类型：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ArrayList</span>&lt;<span class="hljs-title">E</span>&gt; </span>{   <span class="hljs-comment">//泛型E，因为表中要存的具体数据类型待定</span><br>    <span class="hljs-keyword">int</span> capacity = <span class="hljs-number">10</span>;   <span class="hljs-comment">//当前顺序表的容量</span><br>  	<span class="hljs-keyword">int</span> size = <span class="hljs-number">0</span>;   <span class="hljs-comment">//当前已经存放的元素数量</span><br>    <span class="hljs-keyword">private</span> Object[] array = <span class="hljs-keyword">new</span> Object[capacity];   <span class="hljs-comment">//底层存放数据的数组</span><br>}<br></code></pre></td></tr></tbody></table></figure>
+
+<p>顺序表的插入和删除操作，其实就是：</p>
+<p><img src="https://s2.loli.net/2022/09/27/24Glc7UQjLt5Wny.jpg" srcset="/img/loading.gif" lazyload alt="67813f22-3607-4351-934d-f8127e6ba15a"></p>
+<p>当插入元素时，需要将插入位置给腾出来，也就是将后面的所有元素向后移，同样的，如果要删除元素，那么也需要将所有的元素向前移动，顺序表是紧凑的，不能出现空位。</p>
+<p>所以说我们可以来尝试实现一下，首先是插入方法：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">add</span><span class="hljs-params">(E element, <span class="hljs-keyword">int</span> index)</span></span>{   <span class="hljs-comment">//插入方法需要支持在指定下标位置插入</span><br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = size; i &gt; index; i--)   <span class="hljs-comment">//从后往前，一个一个搬运元素</span><br>        array[i] = array[i - <span class="hljs-number">1</span>];<br>    array[index] = element;   <span class="hljs-comment">//腾出位置之后，直接插入元素放到对应位置上</span><br>    size++;   <span class="hljs-comment">//插入完成之后，记得将size自增</span><br>}<br></code></pre></td></tr></tbody></table></figure>
+
+<p>只不过这样并不完美，因为我们的插入操作并不是在任何位置都支持插入的，我们允许插入的位置只能是 [0, size] 这个范围内</p>
+<p><img src="https://s2.loli.net/2022/07/23/H67F1crBhqQiXxg.png" srcset="/img/loading.gif" lazyload alt="image-20220723153933279"></p>
+<p>所以说我们需要在插入之前进行判断：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">add</span><span class="hljs-params">(E element, <span class="hljs-keyword">int</span> index)</span></span>{<br>    <span class="hljs-keyword">if</span>(index &lt; <span class="hljs-number">0</span> || index &gt; size)    <span class="hljs-comment">//插入之前先判断插入位置是否合法</span><br>        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> IndexOutOfBoundsException(<span class="hljs-string">"插入位置非法，合法的插入位置为：0 ~ "</span>+size);<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = size; i &gt; index; i--)<br>        array[i] = array[i - <span class="hljs-number">1</span>];<br>    array[index] = element;<br>    size++;<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+<p>我们来测试一下吧：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{<br>    ArrayList&lt;Integer&gt; list = <span class="hljs-keyword">new</span> ArrayList&lt;&gt;();<br>    list.add(<span class="hljs-number">10</span>, <span class="hljs-number">1</span>);    <span class="hljs-comment">//一上来只能在第一个位置插入，第二个位置肯定是非法的</span><br>}<br></code></pre></td></tr></tbody></table></figure>
+
+<p>于是就成功得到异常：</p>
+<p><img src="https://s2.loli.net/2022/09/27/rtkRMaWseE2Cm1z.png" srcset="/img/loading.gif" lazyload alt="image-20220927211134905"></p>
+<p>只不过依然不够完美，万一我们的顺序表装满了咋办？所以说，我们在插入元素之前，需要进行判断，如果已经装满了，那么我们需要先扩容之后才能继续插入新的元素：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">add</span><span class="hljs-params">(E element, <span class="hljs-keyword">int</span> index)</span></span>{<br>    <span class="hljs-keyword">if</span>(index &lt; <span class="hljs-number">0</span> || index &gt; size)<br>        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> IndexOutOfBoundsException(<span class="hljs-string">"插入位置非法，合法的插入位置为：0 ~ "</span>+size);<br>    <span class="hljs-keyword">if</span>(capacity == size) {<br>        <span class="hljs-keyword">int</span> newCapacity = capacity + (capacity &gt;&gt; <span class="hljs-number">1</span>);   <span class="hljs-comment">//扩容规则就按照原本容量的1.5倍来吧</span><br>        Object[] newArray = <span class="hljs-keyword">new</span> Object[newCapacity];    <span class="hljs-comment">//创建一个新的数组来存放更多的元素</span><br>        System.arraycopy(array, <span class="hljs-number">0</span>, newArray, <span class="hljs-number">0</span>, size);   <span class="hljs-comment">//使用arraycopy快速拷贝原数组内容到新的数组</span><br>        array = newArray;   <span class="hljs-comment">//更换为新的数组</span><br>      	capacity = newCapacity;   <span class="hljs-comment">//容量变成扩容之后的</span><br>    }<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = size; i &gt; index; i--)<br>        array[i] = array[i - <span class="hljs-number">1</span>];<br>    array[index] = element;<br>    size++;<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+<p>我们来重写一下<code>toString</code>方法打印当前存放的元素：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">toString</span><span class="hljs-params">()</span> </span>{<br>    StringBuilder builder = <span class="hljs-keyword">new</span> StringBuilder();<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; size; i++) builder.append(array[i]).append(<span class="hljs-string">" "</span>);<br>    <span class="hljs-keyword">return</span> builder.toString();<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+<p>可以看到，我们的底层数组会自动扩容，便于我们使用：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{<br>    ArrayList&lt;Integer&gt; list = <span class="hljs-keyword">new</span> ArrayList&lt;&gt;();<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">20</span>; i++)<br>        list.add(i, i);<br>    System.out.println(list);<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+<p><img src="https://s2.loli.net/2022/09/27/6SMZxC5QI3cgXYk.png" srcset="/img/loading.gif" lazyload alt="image-20220927212426959"></p>
+<p>我们接着来看删除操作，其实操作差不多，只需要将后面的覆盖到前面就可以了：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@SuppressWarnings("unchecked")</span>   <span class="hljs-comment">//屏蔽未经检查警告</span><br><span class="hljs-function"><span class="hljs-keyword">public</span> E <span class="hljs-title">remove</span><span class="hljs-params">(<span class="hljs-keyword">int</span> index)</span></span>{   <span class="hljs-comment">//删除对应位置上的元素，注意需要返回被删除的元素</span><br>    E e = (E) array[index];   <span class="hljs-comment">//因为存放的是Object类型，这里需要强制类型转换为E</span><br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = index; i &lt; size; i++)   <span class="hljs-comment">//从前往后，挨个往前搬一位</span><br>        array[i] = array[i + <span class="hljs-number">1</span>];<br>    size--;    <span class="hljs-comment">//删完记得将size--</span><br>    <span class="hljs-keyword">return</span> e;<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+<p>同样的，我们需要对删除的合法范围进行判断：</p>
+<p><img src="https://s2.loli.net/2022/07/23/uHBjUfKpd9ygScW.png" srcset="/img/loading.gif" lazyload alt="image-20220723160901921"></p>
+<p>所以说我们也来进行一下判断：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@SuppressWarnings("unchecked")</span><br><span class="hljs-function"><span class="hljs-keyword">public</span> E <span class="hljs-title">remove</span><span class="hljs-params">(<span class="hljs-keyword">int</span> index)</span></span>{<br>    <span class="hljs-keyword">if</span>(index &lt; <span class="hljs-number">0</span> || index &gt; size - <span class="hljs-number">1</span>)<br>        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> IndexOutOfBoundsException(<span class="hljs-string">"删除位置非法，合法的插入位置为：0 ~ "</span>+(size - <span class="hljs-number">1</span>));<br>    E e = (E) array[index];<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = index; i &lt; size; i++)<br>        array[i] = array[i + <span class="hljs-number">1</span>];<br>    size--;<br>    <span class="hljs-keyword">return</span> e;<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+<p>因为删除不需要考虑容量的问题，所以说这里的删除操作就编写完成了。</p>
+<p>当然，我们还得支持获取指定下标位置上的元素，这个就简单了，直接从数组中那就行了：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@SuppressWarnings("unchecked")</span><br><span class="hljs-function"><span class="hljs-keyword">public</span> E <span class="hljs-title">get</span><span class="hljs-params">(<span class="hljs-keyword">int</span> index)</span></span>{<br>    <span class="hljs-keyword">if</span>(index &lt; <span class="hljs-number">0</span> || index &gt; size - <span class="hljs-number">1</span>)   <span class="hljs-comment">//在插入之前同样要进行范围检查</span><br>        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> IndexOutOfBoundsException(<span class="hljs-string">"非法的位置，合法的位置为：0 ~ "</span>+(size - <span class="hljs-number">1</span>));<br>    <span class="hljs-keyword">return</span> (E) array[index];   <span class="hljs-comment">//直接返回就完事</span><br>}<br><br><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">size</span><span class="hljs-params">()</span></span>{   <span class="hljs-comment">//获取当前存放的元素数量</span><br>    <span class="hljs-keyword">return</span> size;<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+<p>是不是感觉顺便表其实还是挺简单的，也就是一个数组多了一些操作罢了。</p>
+<h3 id="线性表：链表"><a href="#线性表：链表" class="headerlink" title="线性表：链表"></a>线性表：链表</h3><p>前面我们介绍了如何使用数组实现线性表，我们接着来看第二种方式，我们可以使用链表来实现，那么什么是链表呢？</p>
+<p><img src="https://s2.loli.net/2022/07/23/ruemiRQplVy7q9s.png" srcset="/img/loading.gif" lazyload alt="image-20220723171648380"></p>
+<p>链表不同于顺序表，顺序表底层采用数组作为存储容器，需要分配一块连续且完整的内存空间进行使用，而链表则不需要，它通过一个指针来连接各个分散的结点，形成了一个链状的结构，每个结点存放一个元素，以及一个指向下一个结点的指针，通过这样一个一个相连，最后形成了链表。它不需要申请连续的空间，只需要按照顺序连接即可，虽然物理上可能不相邻，但是在逻辑上依然是每个元素相邻存放的，这样的结构叫做链表（单链表）。</p>
+<p>链表分为带头结点的链表和不带头结点的链表，戴头结点的链表就是会有一个头结点指向后续的整个链表，但是头结点不存放数据：</p>
+<p><img src="https://s2.loli.net/2022/07/23/gRUEfOqbtrGN2JZ.png" srcset="/img/loading.gif" lazyload alt="image-20220723180221112"></p>
+<p>而不带头结点的链表就像上面那样，第一个节点就是存放数据的结点，一般设计链表都会采用带头结点的结构，因为操作更加方便。</p>
+<p>我们来尝试定义一下：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">LinkedList</span>&lt;<span class="hljs-title">E</span>&gt; </span>{<br>  	<span class="hljs-comment">//链表的头结点，用于连接之后的所有结点</span><br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> Node&lt;E&gt; head = <span class="hljs-keyword">new</span> Node&lt;&gt;(<span class="hljs-keyword">null</span>);<br>  	<span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> size = <span class="hljs-number">0</span>;   <span class="hljs-comment">//当前的元素数量还是要存一下，方便后面操作</span><br>    <br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Node</span>&lt;<span class="hljs-title">E</span>&gt; </span>{  <span class="hljs-comment">//结点类，仅供内部使用</span><br>        E element;   <span class="hljs-comment">//每个结点都存放元素</span><br>        Node&lt;E&gt; next;   <span class="hljs-comment">//以及指向下一个结点的引用</span><br>      <br>      	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Node</span><span class="hljs-params">(E element)</span> </span>{<br>            <span class="hljs-keyword">this</span>.element = element;<br>        }<br>    }<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+<p>接着我们来设计一下链表的插入和删除，我们前面实现了顺序表的插入，那么链表的插入该怎么做呢？</p>
+<p><img src="https://s2.loli.net/2022/07/23/71dgFSWDfoELiXB.png" srcset="/img/loading.gif" lazyload alt="image-20220723175548491"></p>
+<p>我们可以先修改新插入的结点的后继结点（也就是下一个结点）指向，指向原本在这个位置的结点：</p>
+<p><img src="https://s2.loli.net/2022/07/23/8MNURYiacWZqwu6.png" srcset="/img/loading.gif" lazyload alt="image-20220723220552680"></p>
+<p>接着我们可以将前驱结点（也就是上一个结点）的后继结点指向修改为我们新插入的结点：</p>
+<p><img src="https://s2.loli.net/2022/07/23/ysETUJb6cgBz2Qx.png" srcset="/img/loading.gif" lazyload alt="image-20220723175745472"></p>
+<p>这样，我们就成功插入了一个新的结点，现在新插入的结点到达了原本的第二个位置上：</p>
+<p><img src="https://s2.loli.net/2022/07/23/Kb7jCiWa3o4AN8D.png" srcset="/img/loading.gif" lazyload alt="image-20220723175842075"></p>
+<p>按照这个思路，我们来实现一下，首先设计一下方法：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">add</span><span class="hljs-params">(E element, <span class="hljs-keyword">int</span> index)</span></span>{<br>    Node&lt;E&gt; prev = head;   <span class="hljs-comment">//先找到对应位置的前驱结点</span><br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; index; i++) <br>        prev = prev.next;<br>    Node&lt;E&gt; node = <span class="hljs-keyword">new</span> Node&lt;&gt;(element);   <span class="hljs-comment">//创建新的结点</span><br>    node.next = prev.next;   <span class="hljs-comment">//先让新的节点指向原本在这个位置上的结点</span><br>    prev.next = node;   <span class="hljs-comment">//然后让前驱结点指向当前结点</span><br>    size++;   <span class="hljs-comment">//完事之后一样的，更新size</span><br>}<br></code></pre></td></tr></tbody></table></figure>
+
+<p>我们来重写一下toString方法看看能否正常插入：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@Override</span><br><span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">toString</span><span class="hljs-params">()</span> </span>{<br>    StringBuilder builder = <span class="hljs-keyword">new</span> StringBuilder();<br>    Node&lt;E&gt; node = head.next;   <span class="hljs-comment">//从第一个结点开始，一个一个遍历，遍历一个就拼接到字符串上去</span><br>    <span class="hljs-keyword">while</span> (node != <span class="hljs-keyword">null</span>) {<br>        builder.append(node.element).append(<span class="hljs-string">" "</span>);<br>        node = node.next;<br>    }<br>    <span class="hljs-keyword">return</span> builder.toString();<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+<p>可以看到我们的插入操作是可以正常工作的：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{<br>    LinkedList&lt;Integer&gt; list = <span class="hljs-keyword">new</span> LinkedList&lt;&gt;();<br>    list.add(<span class="hljs-number">10</span>, <span class="hljs-number">0</span>);<br>    list.add(<span class="hljs-number">30</span>, <span class="hljs-number">0</span>);<br>    list.add(<span class="hljs-number">20</span>, <span class="hljs-number">1</span>);<br>    System.out.println(list);<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+<p><img src="https://s2.loli.net/2022/09/27/Mpj9azwWciemAZY.png" srcset="/img/loading.gif" lazyload alt="image-20220927235051844"></p>
+<p>只不过还不够完美，跟之前一样，我们还得考虑插入位置是否合法：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">add</span><span class="hljs-params">(E element, <span class="hljs-keyword">int</span> index)</span></span>{<br>    <span class="hljs-keyword">if</span>(index &lt; <span class="hljs-number">0</span> || index &gt; size)<br>        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> IndexOutOfBoundsException(<span class="hljs-string">"插入位置非法，合法的插入位置为：0 ~ "</span>+size);<br>    Node&lt;E&gt; prev = head;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; index; i++)<br>        prev = prev.next;<br>    Node&lt;E&gt; node = <span class="hljs-keyword">new</span> Node&lt;&gt;(element);<br>    node.next = prev.next;<br>    prev.next = node;<br>    size++;<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+<p>插入操作完成之后，我们接着来看删除操作，那么我们如何实现删除操作呢？实际上也会更简单一些，我们可以直接将待删除节点的前驱结点指向修改为待删除节点的下一个：</p>
+<p><img src="https://s2.loli.net/2022/07/23/N5sZx9T2a8lOzoC.png" srcset="/img/loading.gif" lazyload alt="image-20220723222922058"></p>
+<p><img src="https://s2.loli.net/2022/07/23/tNYnBJe9pczUq1Z.png" srcset="/img/loading.gif" lazyload alt="image-20220723223103306"></p>
+<p>这样，在逻辑上来说，待删除结点其实已经不在链表中了，所以我们只需要释放掉待删除结点占用的内存空间就行了：</p>
+<p><img src="https://s2.loli.net/2022/07/23/MFE2gZuS5eOysDW.png" srcset="/img/loading.gif" lazyload alt="image-20220723223216420"></p>
+<p>那么我们就按照这个思路来编写一下程序：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> E <span class="hljs-title">remove</span><span class="hljs-params">(<span class="hljs-keyword">int</span> index)</span></span>{<br>    <span class="hljs-keyword">if</span>(index &lt; <span class="hljs-number">0</span> || index &gt; size - <span class="hljs-number">1</span>)   <span class="hljs-comment">//同样的，先判断位置是否合法</span><br>        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> IndexOutOfBoundsException(<span class="hljs-string">"删除位置非法，合法的删除位置为：0 ~ "</span>+(size - <span class="hljs-number">1</span>));<br>    Node&lt;E&gt; prev = head;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; index; i++)   <span class="hljs-comment">//同样需要先找到前驱结点</span><br>        prev = prev.next;<br>    E e = prev.next.element;   <span class="hljs-comment">//先把待删除结点存放的元素取出来</span><br>    prev.next = prev.next.next;  <span class="hljs-comment">//可以删了</span><br>    size--;   <span class="hljs-comment">//记得size--</span><br>    <span class="hljs-keyword">return</span> e;<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+<p>是不是感觉还是挺简单的？这样，我们就成功完成了链表的删除操作。</p>
+<p>我们接着来实现一下获取对应位置上的元素：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> E <span class="hljs-title">get</span><span class="hljs-params">(<span class="hljs-keyword">int</span> index)</span></span>{<br>    <span class="hljs-keyword">if</span>(index &lt; <span class="hljs-number">0</span> || index &gt; size - <span class="hljs-number">1</span>)<br>        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> IndexOutOfBoundsException(<span class="hljs-string">"非法的位置，合法的位置为：0 ~ "</span>+(size - <span class="hljs-number">1</span>));<br>    Node&lt;E&gt; node = head;<br>    <span class="hljs-keyword">while</span> (index-- &gt;= <span class="hljs-number">0</span>)   <span class="hljs-comment">//这里直接让index减到-1为止</span><br>        node = node.next;<br>    <span class="hljs-keyword">return</span> node.element;<br>}<br><br><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">size</span><span class="hljs-params">()</span></span>{<br>    <span class="hljs-keyword">return</span> size;<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+<p>这样，我们的链表就编写完成了，实际上只要理解了那种结构，其实还是挺简单的。</p>
+<p><strong>问题</strong>：什么情况下使用顺序表，什么情况下使用链表呢？</p>
+<ul>
+<li>通过分析顺序表和链表的特性我们不难发现，链表在随机访问元素时，需要通过遍历来完成，而顺序表则利用数组的特性直接访问得到，所以，当我们读取数据多于插入或是删除数据的情况下时，使用顺序表会更好。</li>
+<li>而顺序表在插入元素时就显得有些鸡肋了，因为需要移动后续元素，整个移动操作会浪费时间，而链表则不需要，只需要修改结点 指向即可完成插入，所以在频繁出现插入或删除的情况下，使用链表会更好。</li>
+</ul>
+<p>虽然单链表使用起来也比较方便，不过有一个问题就是，如果我们想要操作某一个结点，比如删除或是插入，那么由于单链表的性质，我们只能先去找到它的前驱结点，才能进行。为了解决这种查找前驱结点非常麻烦的问题，我们可以让结点不仅保存指向后续结点的指针，同时也保存指向前驱结点的指针：</p>
+<p><img src="https://s2.loli.net/2022/07/24/oeXm6nyW7I9lPMf.png" srcset="/img/loading.gif" lazyload alt="image-20220724123947104"></p>
+<p>这样我们无论在哪个结点，都能够快速找到对应的前驱结点，就很方便了，这样的链表我们成为双向链表（双链表）</p>
+<h3 id="线性表：栈"><a href="#线性表：栈" class="headerlink" title="线性表：栈"></a>线性表：栈</h3><p>栈（也叫堆栈，Stack）是一种特殊的线性表，它只能在在表尾进行插入和删除操作，就像下面这样：</p>
+<p><img src="https://s2.loli.net/2022/07/24/D3heysaM9EpAgS4.png" srcset="/img/loading.gif" lazyload alt="image-20220724210955622"></p>
+<p>也就是说，我们只能在一端进行插入和删除，当我们依次插入1、2、3、4这四个元素后，连续进行四次删除操作，删除的顺序刚好相反：4、3、2、1，我们一般将其竖着看：</p>
+<p><img src="https://s2.loli.net/2022/07/24/2NxUpCIRLoZt9Ky.png" srcset="/img/loading.gif" lazyload alt="image-20220724211442421"></p>
+<p>底部称为栈底，顶部称为栈顶，所有的操作只能在栈顶进行，也就是说，被压在下方的元素，只能等待其上方的元素出栈之后才能取出，就像我们往箱子里里面放的书一样，因为只有一个口取出里面的物品，所以被压在下面的书只能等上面的书被拿出来之后才能取出，这就是栈的思想，它是一种先进后出的数据结构（FILO，First In, Last Out）</p>
+<p>实现栈也是非常简单的，可以基于我们前面的顺序表或是链表，这里我们需要实现两个新的操作：</p>
+<ul>
+<li>pop：出栈操作，从栈顶取出一个元素。</li>
+<li>push：入栈操作，向栈中压入一个新的元素。</li>
+</ul>
+<p>栈可以使用顺序表实现，也可以使用链表实现，这里我们就使用链表，实际上使用链表会更加的方便，我们可以直接将头结点指向栈顶结点，而栈顶结点连接后续的栈内结点：</p>
+<p><img src="https://s2.loli.net/2022/07/24/outf2S7D3WzQK8c.png" srcset="/img/loading.gif" lazyload alt="image-20220724222836333"></p>
+<p>当有新的元素入栈，只需要在链表头部插入新的结点即可，我们来尝试编写一下：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">LinkedStack</span>&lt;<span class="hljs-title">E</span>&gt; </span>{<br><br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> Node&lt;E&gt; head = <span class="hljs-keyword">new</span> Node&lt;&gt;(<span class="hljs-keyword">null</span>);   <span class="hljs-comment">//大体内容跟链表类似</span><br><br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Node</span>&lt;<span class="hljs-title">E</span>&gt; </span>{<br>        E element;<br>        Node&lt;E&gt; next;<br><br>        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Node</span><span class="hljs-params">(E element)</span> </span>{<br>            <span class="hljs-keyword">this</span>.element = element;<br>        }<br>    }<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+<p>接着我们来编写一下入栈操作：</p>
+<p><img src="https://s2.loli.net/2022/07/24/GdBj3g5YRFzSsVw.png" srcset="/img/loading.gif" lazyload alt="image-20220724223550553"></p>
+<p>代码如下：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">push</span><span class="hljs-params">(E element)</span></span>{<br>    Node&lt;E&gt; node = <span class="hljs-keyword">new</span> Node&lt;&gt;(element);   <span class="hljs-comment">//直接创建新结点</span><br>    node.next = head.next;    <span class="hljs-comment">//新结点的下一个变成原本的栈顶结点</span><br>    head.next = node;     <span class="hljs-comment">//头结点的下一个改成新的结点</span><br>}<br></code></pre></td></tr></tbody></table></figure>
+
+<p>这样，我们就可以轻松实现入栈操作了。其实出栈也是同理，所以我们只需要将第一个元素移除即可：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> E <span class="hljs-title">pop</span><span class="hljs-params">()</span></span>{<br>  	<span class="hljs-keyword">if</span>(head.next == <span class="hljs-keyword">null</span>)   <span class="hljs-comment">//如果栈已经没有元素了，那么肯定是没办法取的</span><br>      	<span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> NoSuchElementException(<span class="hljs-string">"栈为空"</span>);<br>    E e = head.next.element;   <span class="hljs-comment">//先把待出栈元素取出来</span><br>    head.next = head.next.next;   <span class="hljs-comment">//直接让头结点的下一个指向下一个的下一个</span><br>    <span class="hljs-keyword">return</span> e;<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+<p>我们来测试一下吧：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{<br>    LinkedStack&lt;String&gt; stack = <span class="hljs-keyword">new</span> LinkedStack&lt;&gt;();<br>    stack.push(<span class="hljs-string">"AAA"</span>);<br>    stack.push(<span class="hljs-string">"BBB"</span>);<br>    stack.push(<span class="hljs-string">"CCC"</span>);<br>    System.out.println(stack.pop());<br>    System.out.println(stack.pop());<br>    System.out.println(stack.pop());<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+<p>可以看到，入栈顺序和出栈顺序是完全相反的：</p>
+<p><img src="https://s2.loli.net/2022/09/28/yaWmfPDU63X8BQn.png" srcset="/img/loading.gif" lazyload alt="image-20220928101152179"></p>
+<p>其实还是挺简单的。</p>
+<h3 id="线性表：队列"><a href="#线性表：队列" class="headerlink" title="线性表：队列"></a>线性表：队列</h3><p>前面我们学习了栈，栈中元素只能栈顶出入，它是一种特殊的线性表，同样的，队列（Queue）也是一种特殊的线性表。</p>
+<p>就像我们在超市、食堂需要排队一样，我们总是排成一列，先到的人就排在前面，后来的人就排在后面，越前面的人越先完成任务，这就是队列，队列有队头和队尾：</p>
+<p><img src="https://s2.loli.net/2022/07/25/xBuZckTNtR54AEq.png" srcset="/img/loading.gif" lazyload alt="image-20220725103600318"></p>
+<p>秉承先来后到的原则，队列中的元素只能从队尾进入，只能从队首出去，也就是说，入队顺序为1、2、3、4，那么出队顺序也一定是1、2、3、4，所以队列是一种先进先出（FIFO，First In, First Out）的数据结构。</p>
+<p>队列也可以使用链表和顺序表来实现，只不过使用链表的话就不需要关心容量之类的问题了，会更加灵活一些：</p>
+<p><img src="https://s2.loli.net/2022/07/25/lwGgHXqAV5z2KNk.png" srcset="/img/loading.gif" lazyload alt="image-20220725145214955"></p>
+<p>注意我们需要同时保存队首和队尾两个指针，因为是单链表，所以队首需要存放指向头结点的指针，因为需要的是前驱结点，而队尾则直接是指向尾结点的指针即可，后面只需要直接在后面拼接就行。</p>
+<p>当有新的元素入队时，只需要拼在队尾就行了，同时队尾指针也要后移一位：</p>
+<p><img src="https://s2.loli.net/2022/07/25/ufmFEwrS9xVKoIZ.png" srcset="/img/loading.gif" lazyload alt="image-20220725145608827"></p>
+<p>出队时，只需要移除队首指向的下一个元素即可：</p>
+<p><img src="https://s2.loli.net/2022/07/25/geJRFwHKhGT69XD.png" srcset="/img/loading.gif" lazyload alt="image-20220725145707707"></p>
+<p>那么我们就按照这个思路，来编写一下代码吧：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">LinkedQueue</span>&lt;<span class="hljs-title">E</span>&gt; </span>{<br><br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> Node&lt;E&gt; head = <span class="hljs-keyword">new</span> Node&lt;&gt;(<span class="hljs-keyword">null</span>);<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">offer</span><span class="hljs-params">(E element)</span></span>{  <span class="hljs-comment">//入队操作</span><br>        Node&lt;E&gt; last = head;<br>        <span class="hljs-keyword">while</span> (last.next != <span class="hljs-keyword">null</span>)   <span class="hljs-comment">//入队直接丢到最后一个结点的屁股后面就行了</span><br>            last = last.next;<br>        last.next = <span class="hljs-keyword">new</span> Node&lt;&gt;(element);<br>    }<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> E <span class="hljs-title">poll</span><span class="hljs-params">()</span></span>{   <span class="hljs-comment">//出队操作</span><br>        <span class="hljs-keyword">if</span>(head.next == <span class="hljs-keyword">null</span>)   <span class="hljs-comment">//如果队列已经没有元素了，那么肯定是没办法取的</span><br>            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> NoSuchElementException(<span class="hljs-string">"队列为空"</span>);<br>        E e = head.next.element;<br>        head.next = head.next.next;   <span class="hljs-comment">//直接从队首取出</span><br>        <span class="hljs-keyword">return</span> e;<br>    }<br><br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Node</span>&lt;<span class="hljs-title">E</span>&gt; </span>{<br>        E element;<br>        Node&lt;E&gt; next;<br><br>        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Node</span><span class="hljs-params">(E element)</span> </span>{<br>            <span class="hljs-keyword">this</span>.element = element;<br>        }<br>    }<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+<p>其实使用起来还是挺简单的，我们来测试一下吧：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{<br>    LinkedQueue&lt;String&gt; stack = <span class="hljs-keyword">new</span> LinkedQueue&lt;&gt;();<br>    stack.offer(<span class="hljs-string">"AAA"</span>);<br>    stack.offer(<span class="hljs-string">"BBB"</span>);<br>    stack.offer(<span class="hljs-string">"CCC"</span>);<br>    System.out.println(stack.poll());<br>    System.out.println(stack.poll());<br>    System.out.println(stack.poll());<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+<p><img src="https://s2.loli.net/2022/09/28/FUS1Rc8JuEMT6bq.png" srcset="/img/loading.gif" lazyload alt="image-20220928154121872"></p>
+<p>可以看到，队列遵从先进先出，入队顺序和出队顺序是一样的。</p>
+<h3 id="树：二叉树"><a href="#树：二叉树" class="headerlink" title="树：二叉树"></a>树：二叉树</h3><p>树是一种全新的数据结构，它就像一棵树的树枝一样，不断延伸。</p>
+<p><img src="https://s2.loli.net/2022/08/08/NajFZzXHxUCDQBW.png" srcset="/img/loading.gif" lazyload alt="树枝666"></p>
+<p>在我们的程序中，想要表示出一棵树，就可以像下面这样连接：</p>
+<p><img src="https://s2.loli.net/2022/08/01/aoBjrR5bPqWzCel.png" srcset="/img/loading.gif" lazyload alt="image-20220801210920230"></p>
+<p>可以看到，现在一个结点下面可能会连接多个节点，并不断延伸，就像树枝一样，每个结点都有可能是一个分支点，延伸出多个分支，从位于最上方的结点开始不断向下，而这种数据结构，我们就称为<strong>树</strong>（Tree）注意分支只能向后单独延伸，之后就分道扬镳了，<strong>不能与其他分支上的结点相交！</strong></p>
+<ul>
+<li>我们一般称位于最上方的结点为树的<strong>根结点</strong>（Root）因为整棵树正是从这里开始延伸出去的。</li>
+<li>每个结点连接的子结点数目（分支的数目），我们称为结点的<strong>度</strong>（Degree），而各个结点度的最大值称为树的度。</li>
+<li>每个结点延伸下去的下一个结点都可以称为一棵<strong>子树</strong>（SubTree）比如结点<code>B</code>及其之后延伸的所有分支合在一起，就是一棵<code>A</code>的子树。</li>
+<li>每个<strong>结点的层次</strong>（Level）按照从上往下的顺序，树的根结点为<code>1</code>，每向下一层<code>+1</code>，比如<code>G</code>的层次就是<code>3</code>，整棵树中所有结点的最大层次，就是这颗<strong>树的深度</strong>（Depth），比如上面这棵树的深度为4，因为最大层次就是4。</li>
+</ul>
+<p>由于整棵树错综复杂，所以说我们需要先规定一下结点之间的称呼，就像族谱那样：</p>
+<ul>
+<li>与当前结点直接向下相连的结点，我们称为<strong>子结点</strong>（Child），比如<code>B、C、D</code>结点，都是<code>A</code>的子结点，就像族谱中的父子关系一样，下一代一定是子女，相反的，那么<code>A</code>就是<code>B、C、D</code>的<strong>父结点</strong>（Parent），也可以叫双亲结点。</li>
+<li>如果某个节点没有任何的子结点（结点度为0时）那么我们称这个结点为<strong>叶子结点</strong>（因为已经到头了，后面没有分支了，这时就该树枝上长叶子了那样）比如<code>K、L、F、G、M、I、J</code>结点，都是叶子结点。</li>
+<li>如果两个结点的父结点是同一个，那么称这两个节点为<strong>兄弟结点</strong>（Sibling）比如<code>B</code>和<code>C</code>就是兄弟结点，因为都是<code>A</code>的孩子。</li>
+<li>从根结点开始一直到某个结点的整条路径的所有结点，都是这个结点的<strong>祖先结点</strong>（Ancestor）比如<code>L</code>的祖先结点就是<code>A、B、E</code></li>
+</ul>
+<p>那么在了解了树的相关称呼之后，相信各位就应该对树有了一定的了解，虽然概念比较多，但是还请各位一定记住，不然后面就容易听懵。</p>
+<p>而我们本章需要着重讨论的是<strong>二叉树</strong>（Binary Tree）它是一种特殊的树，它的度最大只能为<code>2</code>，所以我们称其为二叉树，一棵二叉树大概长这样：</p>
+<p><img src="https://s2.loli.net/2022/08/01/QGLfnYWFby37deP.png" srcset="/img/loading.gif" lazyload alt="image-20220801224008266"></p>
+<p>并且二叉树任何结点的子树是有左右之分的，不能颠倒顺序，比如A结点左边的子树，称为左子树，右边的子树称为右子树。</p>
+<p>当然，对于某些二叉树我们有特别的称呼，比如，在一棵二叉树中，所有分支结点都存在左子树和右子树，且叶子结点都在同一层：</p>
+<p><img src="https://s2.loli.net/2022/08/01/btfjlJhDuWrSXYi.png" srcset="/img/loading.gif" lazyload alt="image-20220801231216578"></p>
+<p>这样的二叉树我们称为<strong>满二叉树</strong>，可以看到整棵树都是很饱满的，没有出现任何度为1的结点，当然，还有一种特殊情况：</p>
+<p><img src="https://s2.loli.net/2022/08/01/QGLfnYWFby37deP.png" srcset="/img/loading.gif" lazyload alt="image-20220801224008266"></p>
+<p>可以看到只有最后一层有空缺，并且所有的叶子结点是按照从左往右的顺序排列的，这样的二叉树我们一般称其为<strong>完全二叉树</strong>，所以，一棵满二叉树，一定是一棵完全二叉树。</p>
+<p>我们接着来看看二叉树在程序中的表示形式，我们在前面使用链表的时候，每个结点不仅存放对应的数据，而且会存放一个指向下一个结点的引用：</p>
+<p><img src="https://s2.loli.net/2022/07/23/ruemiRQplVy7q9s.png" srcset="/img/loading.gif" lazyload alt="image-20220723171648380"></p>
+<p>而二叉树也可以使用这样的链式存储形式，只不过现在一个结点需要存放一个指向左子树的引用和一个指向右子树的引用了：</p>
+<p><img src="https://s2.loli.net/2022/08/06/H9MqkghmAjFJnuO.png" srcset="/img/loading.gif" lazyload alt="image-20220806111610082"></p>
+<p>通过这种方式，我们就可以通过连接不同的结点形成一颗二叉树了，这样也更便于我们去理解它，我们首先定义一个类：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TreeNode</span>&lt;<span class="hljs-title">E</span>&gt; </span>{<br>    <span class="hljs-keyword">public</span> E element;<br>    <span class="hljs-keyword">public</span> TreeNode&lt;E&gt; left, right;<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">TreeNode</span><span class="hljs-params">(E element)</span></span>{<br>        <span class="hljs-keyword">this</span>.element = element;<br>    }<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+<p>比如我们现在想要构建一颗像这样的二叉树：</p>
+<p><img src="https://s2.loli.net/2022/08/05/uan6A3ZRLykt289.png" srcset="/img/loading.gif" lazyload alt="image-20220805231744693"></p>
+<p>首先我们需要创建好这几个结点：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{<br>    TreeNode&lt;Character&gt; a = <span class="hljs-keyword">new</span> TreeNode&lt;&gt;(<span class="hljs-string">'A'</span>);<br>    TreeNode&lt;Character&gt; b = <span class="hljs-keyword">new</span> TreeNode&lt;&gt;(<span class="hljs-string">'B'</span>);<br>    TreeNode&lt;Character&gt; c = <span class="hljs-keyword">new</span> TreeNode&lt;&gt;(<span class="hljs-string">'C'</span>);<br>    TreeNode&lt;Character&gt; d = <span class="hljs-keyword">new</span> TreeNode&lt;&gt;(<span class="hljs-string">'D'</span>);<br>    TreeNode&lt;Character&gt; e = <span class="hljs-keyword">new</span> TreeNode&lt;&gt;(<span class="hljs-string">'E'</span>);<br>    <br>}<br></code></pre></td></tr></tbody></table></figure>
+
+<p>接着我们从最上面开始，挨着进行连接，首先是A这个结点：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{<br>    ...<br>    a.left = b;<br>    a.right = c;<br>    b.left = d;<br>    b.right = e;<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+<p>这样的话，我们就成功构建好了这棵二叉树，比如现在我们想通过根结点访问到D：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java">System.out.println(a.left.left.element);<br></code></pre></td></tr></tbody></table></figure>
+
+<p>断点调试也可以看的很清楚：</p>
+<p><img src="https://s2.loli.net/2022/09/30/XCkDxVBFz2bWph8.png" srcset="/img/loading.gif" lazyload alt="image-20220930160452608"></p>
+<p>这样，我们就通过使用链式结构，成功构建出了一棵二叉树。</p>
+<p>接着我们来看看如何遍历一棵二叉树，也就是说我们想要访问二叉树的每一个结点，由于树形结构特殊，遍历顺序并不唯一，所以一共有四种访问方式：<strong>前序遍历、中序遍历、后序遍历、层序遍历。</strong>不同的访问方式输出都结点顺序也不同。</p>
+<p>首先我们来看最简单的前序遍历：</p>
+<p><img src="https://s2.loli.net/2022/08/06/G6ujstSVZ2XWJLE.png" srcset="/img/loading.gif" lazyload alt="image-20220806171459056"></p>
+<p>前序遍历是一种勇往直前的态度，走到哪就遍历到那里，先走左边再走右边，比如上面的这个图，首先会从根节点开始：</p>
+<p><img src="https://s2.loli.net/2022/08/06/qCFMosHtujEZ3U6.png" srcset="/img/loading.gif" lazyload alt="image-20220806171431845"></p>
+<p>从A开始，先左后右，那么下一个就是B，然后继续走左边，是D，现在ABD走完之后，B的左边结束了，那么就要开始B的右边了，所以下一个是E，E结束之后，现在A的左子树已经全部遍历完成了，然后就是右边，接着就是C，C没有左子树了，那么只能走右边了，最后输出F，所以上面这个二叉树的前序遍历结果为：ABDECF</p>
+<ol>
+<li>打印根节点</li>
+<li>前序遍历左子树</li>
+<li>前序遍历右子树</li>
+</ol>
+<p>我们不难发现规律，整棵二叉树（包括子树）的根节点一定是出现在最前面的，比如A在最前面，A的左子树根结点B也是在最前面的。我们现在就来尝试编写一下代码实现一下，先把二叉树构建出来：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{<br>    TreeNode&lt;Character&gt; a = <span class="hljs-keyword">new</span> TreeNode&lt;&gt;(<span class="hljs-string">'A'</span>);<br>    TreeNode&lt;Character&gt; b = <span class="hljs-keyword">new</span> TreeNode&lt;&gt;(<span class="hljs-string">'B'</span>);<br>    TreeNode&lt;Character&gt; c = <span class="hljs-keyword">new</span> TreeNode&lt;&gt;(<span class="hljs-string">'C'</span>);<br>    TreeNode&lt;Character&gt; d = <span class="hljs-keyword">new</span> TreeNode&lt;&gt;(<span class="hljs-string">'D'</span>);<br>    TreeNode&lt;Character&gt; e = <span class="hljs-keyword">new</span> TreeNode&lt;&gt;(<span class="hljs-string">'E'</span>);<br>    TreeNode&lt;Character&gt; f = <span class="hljs-keyword">new</span> TreeNode&lt;&gt;(<span class="hljs-string">'F'</span>);<br>    a.left = b;<br>    a.right = c;<br>    b.left = d;<br>    b.right = e;<br>    c.right = f;<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+<p>组装好之后，我们来实现一下前序遍历的方法：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> &lt;T&gt; <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">preOrder</span><span class="hljs-params">(TreeNode&lt;T&gt; root)</span></span>{<br>    System.out.print(root.element + <span class="hljs-string">" "</span>);   <span class="hljs-comment">//首先肯定要打印，这个是必须的</span><br>}<br></code></pre></td></tr></tbody></table></figure>
+
+<p>打印完成之后，我们就按照先左后右的规则往后遍历下一个结点，这里我们就直接使用递归来完成：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> &lt;T&gt; <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">preOrder</span><span class="hljs-params">(TreeNode&lt;T&gt; root)</span></span>{<br>    System.out.print(root.element + <span class="hljs-string">" "</span>);<br>    preOrder(root.left);    <span class="hljs-comment">//先走左边</span><br>    preOrder(root.right);   <span class="hljs-comment">//再走右边</span><br>}<br></code></pre></td></tr></tbody></table></figure>
+
+<p>不过还没完，我们的递归肯定是需要一个终止条件的，不可能无限地进行下去，如果已经走到底了，那么就不能再往下走了，所以：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> &lt;T&gt; <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">preOrder</span><span class="hljs-params">(TreeNode&lt;T&gt; root)</span></span>{<br>    <span class="hljs-keyword">if</span>(root == <span class="hljs-keyword">null</span>) <span class="hljs-keyword">return</span>;<br>    System.out.print(root.element);<br>    preOrder(root.left);<br>    preOrder(root.right);<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+<p>最后我们来测试一下吧：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{<br>    ...<br>    preOrder(a);<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+<p>可以看到结果为：</p>
+<p><img src="https://s2.loli.net/2022/08/06/hZ8qEfWaP5o6L2j.png" srcset="/img/loading.gif" lazyload alt="image-20220806173227580"></p>
+<p>这样我们就通过一个简单的递归操作完成了对一棵二叉树的前序遍历，如果不太好理解，建议结合调试进行观察。</p>
+<p>那么前序遍历我们了解完了，接着就是中序遍历了，中序遍历在顺序上与前序遍历不同，前序遍历是走到哪就打印到哪，而中序遍历需要先完成整个左子树的遍历后再打印，然后再遍历其右子树。</p>
+<p>我们还是以上面的二叉树为例：</p>
+<p><img src="https://s2.loli.net/2022/08/06/W6Yb5M92gQApNJa.png" srcset="/img/loading.gif" lazyload alt="image-20220806230603967"></p>
+<p>首先需要先不断遍历左子树，走到最底部，但是沿途并不进行打印，而是到底之后，再打印，所以第一个打印的是D，接着由于没有右子树，所以我们回到B，此时再打印B，然后再去看B的右结点E，由于没有左子树和右子树了，所以直接打印E，左边遍历完成，接着回到A，打印A，然后对A的右子树重复上述操作。所以说遍历的基本规则还是一样的，只是打印值的时机发生了改变。</p>
+<ol>
+<li>中序遍历左子树</li>
+<li>打印结点</li>
+<li>中序遍历右子树</li>
+</ol>
+<p>所以这棵二叉树的中序遍历结果为：DBEACF，我们可以发现一个规律，就是在某个结点的左子树中所有结点，其中序遍历结果也是按照这样的规律排列的，比如A的左子树中所有结点，中序遍历结果中全部都在A的左边，右子树中所有的结点，全部都在A的右边（这个规律很关键，后面在做一些算法题时会用到）</p>
+<p>那么怎么才能将打印调整到左子树全部遍历结束之后呢？其实很简单：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> &lt;T&gt; <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">inOrder</span><span class="hljs-params">(TreeNode&lt;T&gt; root)</span></span>{<br>    <span class="hljs-keyword">if</span>(root == <span class="hljs-keyword">null</span>) <span class="hljs-keyword">return</span>;<br>    inOrder(root.left);    <span class="hljs-comment">//先完成全部左子树的遍历</span><br>    System.out.print(root.element);    <span class="hljs-comment">//等待左子树遍历完成之后再打印</span><br>    inOrder(root.right);    <span class="hljs-comment">//然后就是对右子树进行遍历</span><br>}<br></code></pre></td></tr></tbody></table></figure>
+
+<p>我们只需要将打印放到左子树遍历之后即可，这样打印出来的结果就是中序遍历的结果了：</p>
+<p><img src="https://s2.loli.net/2022/08/06/V2KdMy3T5Beo8vx.png" srcset="/img/loading.gif" lazyload alt="image-20220806231752418"></p>
+<p>这样，我们就实现了二叉树的中序遍历，实际上还是很好理解的。</p>
+<p>接着我们来看一下后序遍历，后序遍历继续将打印的时机延后，需要等待左右子树全部遍历完成，才会去进行打印。</p>
+<p><img src="https://s2.loli.net/2022/08/06/YE2rODdqpCInUa9.png" srcset="/img/loading.gif" lazyload alt="image-20220806233407910"></p>
+<p>首先还是一路向左，到达结点D，此时结点D没有左子树了，接着看结点D还有没有右子树，发现也没有，左右子树全部遍历完成，那么此时再打印D，同样的，D完事之后就回到B了，此时接着看B的右子树，发现有结点E，重复上述操作，E也打印出来了，接着B的左右子树全部OK，那么再打印B，接着A的左子树就完事了，现在回到A，看到A的右子树，继续重复上述步骤，当A的右子树也遍历结束后，最后再打印A结点。</p>
+<ol>
+<li>后序遍历左子树</li>
+<li>后序遍历右子树</li>
+<li>打印结点</li>
+</ol>
+<p>所以最后的遍历顺序为：DEBFCA，不难发现，整棵二叉树（包括子树）根结点一定是在后面的，比如A在所有的结点的后面，B在其子节点D、E的后面，这一点恰恰和前序遍历相反（注意不是得到的结果相反，是规律相反）</p>
+<p>所以，按照这个思路，我们来编写一下后序遍历：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> &lt;T&gt; <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">postOrder</span><span class="hljs-params">(TreeNode&lt;T&gt; root)</span></span>{<br>    <span class="hljs-keyword">if</span>(root == <span class="hljs-keyword">null</span>) <span class="hljs-keyword">return</span>;<br>    postOrder(root.left);<br>    postOrder(root.right);<br>    System.out.print(root.element);  <span class="hljs-comment">//时机延迟到最后</span><br>}<br></code></pre></td></tr></tbody></table></figure>
+
+<p>结果如下：</p>
+<p><img src="https://s2.loli.net/2022/08/06/6Vx9fmSUcqw51Mp.png" srcset="/img/loading.gif" lazyload alt="image-20220806234428922"></p>
+<p>最后我们来看层序遍历，实际上这种遍历方式是我们人脑最容易理解的，它是按照每一层在进行遍历：</p>
+<p><img src="https://s2.loli.net/2022/08/07/ywF6r9MU1JSPIge.png" srcset="/img/loading.gif" lazyload alt="image-20220807205135936"></p>
+<p>层序遍历实际上就是按照从上往下每一层，从左到右的顺序打印每个结点，比如上面的这棵二叉树，那么层序遍历的结果就是：ABCDEF，像这样一层一层的挨个输出。</p>
+<p>虽然理解起来比较简单，但是如果让你编程写出来，该咋搞？是不是感觉有点无从下手？</p>
+<p>我们可以利用队列来实现层序遍历，首先将根结点存入队列中，接着循环执行以下步骤：</p>
+<ul>
+<li>进行出队操作，得到一个结点，并打印结点的值。</li>
+<li>将此结点的左右孩子结点依次入队。</li>
+</ul>
+<p>不断重复以上步骤，直到队列为空。</p>
+<p>我们来分析一下，首先肯定一开始A在里面：</p>
+<p><img src="https://s2.loli.net/2022/08/07/ZsNpeVUivEjCymt.png" srcset="/img/loading.gif" lazyload alt="image-20220807211522409"></p>
+<p>接着开始不断重复上面的步骤，首先是将队首元素出队，打印A，然后将A的左右孩子依次入队：</p>
+<p><img src="https://s2.loli.net/2022/08/07/v8yXWNato3sfeUn.png" srcset="/img/loading.gif" lazyload alt="image-20220807211631110"></p>
+<p>现在队列中有B、C两个结点，继续重复上述操作，B先出队，打印B，然后将B的左右孩子依次入队：</p>
+<p><img src="https://s2.loli.net/2022/08/07/Qkprfi5RhAXP7Cd.png" srcset="/img/loading.gif" lazyload alt="image-20220807211723776"></p>
+<p>现在队列中有C、D、E这三个结点，继续重复，C出队并打印，然后将F入队：</p>
+<p><img src="https://s2.loli.net/2022/08/07/MxQTArlWK2gDjqi.png" srcset="/img/loading.gif" lazyload alt="image-20220807211800852"></p>
+<p>我们发现，这个过程中，打印的顺序正好就是我们层序遍历的顺序，所以说队列还是非常有用的，这里我们可以直接把之前的队列拿来用。那么现在我们就来上代码吧，首先是之前的队列：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">LinkedQueue</span>&lt;<span class="hljs-title">E</span>&gt; </span>{<br><br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> Node&lt;E&gt; head = <span class="hljs-keyword">new</span> Node&lt;&gt;(<span class="hljs-keyword">null</span>);<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">offer</span><span class="hljs-params">(E element)</span></span>{<br>        Node&lt;E&gt; last = head;<br>        <span class="hljs-keyword">while</span> (last.next != <span class="hljs-keyword">null</span>)<br>            last = last.next;<br>        last.next = <span class="hljs-keyword">new</span> Node&lt;&gt;(element);<br>    }<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> E <span class="hljs-title">poll</span><span class="hljs-params">()</span></span>{<br>        <span class="hljs-keyword">if</span>(head.next == <span class="hljs-keyword">null</span>)<br>            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> NoSuchElementException(<span class="hljs-string">"队列为空"</span>);<br>        E e = head.next.element;<br>        head.next = head.next.next;<br>        <span class="hljs-keyword">return</span> e;<br>    }<br>    <br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">isEmpty</span><span class="hljs-params">()</span></span>{   <span class="hljs-comment">//这里多写了一个判断队列为空的操作，方便之后使用</span><br>        <span class="hljs-keyword">return</span> head.next == <span class="hljs-keyword">null</span>;   <span class="hljs-comment">//直接看头结点后面还有没有东西就行了</span><br>    }<br><br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Node</span>&lt;<span class="hljs-title">E</span>&gt; </span>{<br>        E element;<br>        Node&lt;E&gt; next;<br><br>        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Node</span><span class="hljs-params">(E element)</span> </span>{<br>            <span class="hljs-keyword">this</span>.element = element;<br>        }<br>    }<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+<p>我们来尝试编写一下层序遍历：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> &lt;T&gt; <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">levelOrder</span><span class="hljs-params">(TreeNode&lt;T&gt; root)</span></span>{<br>    LinkedQueue&lt;TreeNode&lt;T&gt;&gt; queue = <span class="hljs-keyword">new</span> LinkedQueue&lt;&gt;();  <span class="hljs-comment">//创建一个队列</span><br>    queue.offer(root);    <span class="hljs-comment">//将根结点丢进队列</span><br>    <span class="hljs-keyword">while</span> (!queue.isEmpty()) {   <span class="hljs-comment">//如果队列不为空，就一直不断地取出来</span><br>        TreeNode&lt;T&gt; node = queue.poll();   <span class="hljs-comment">//取一个出来</span><br>        System.out.print(node.element);  <span class="hljs-comment">//打印</span><br>        <span class="hljs-keyword">if</span>(node.left != <span class="hljs-keyword">null</span>) queue.offer(node.left);   <span class="hljs-comment">//如果左右孩子不为空，直接将左右孩子丢进队列</span><br>        <span class="hljs-keyword">if</span>(node.right != <span class="hljs-keyword">null</span>) queue.offer(node.right);<br>    }<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+<p>可以看到结果就是层序遍历的结果：</p>
+<p><img src="https://s2.loli.net/2022/08/07/YlUfDhPoQrg9TkB.png" srcset="/img/loading.gif" lazyload alt="image-20220807215630429"></p>
+<p>当然，使用递归也可以实现，但是需要单独存放结果然后单独输出，不是很方便，所以说这里就不演示了。</p>
+<h3 id="树：二叉查找树和平衡二叉树"><a href="#树：二叉查找树和平衡二叉树" class="headerlink" title="树：二叉查找树和平衡二叉树"></a>树：二叉查找树和平衡二叉树</h3><p><strong>注意：</strong>本部分只进行理论介绍，不做代码实现。</p>
+<p>还记得我们开篇讲到的二分搜索算法吗？通过不断缩小查找范围，最终我们可以以很高的效率找到有序数组中的目标位置。而二叉查找树则利用了类似的思想，我们可以借助其来像二分搜索那样快速查找。</p>
+<p><strong>二叉查找树</strong>也叫二叉搜索树或是二叉排序树，它具有一定的规则：</p>
+<ul>
+<li>左子树中所有结点的值，均小于其根结点的值。</li>
+<li>右子树中所有结点的值，均大于其根结点的值。</li>
+<li>二叉搜索树的子树也是二叉搜索树。</li>
+</ul>
+<p>一棵二叉搜索树长这样：</p>
+<p><img src="https://s2.loli.net/2022/08/14/k9G7Ad2cqezgEtJ.png" srcset="/img/loading.gif" lazyload alt="image-20220814191444130"></p>
+<p>这棵树的根结点为18，而其根结点左边子树的根结点为10，包括后续结点，都是满足上述要求的。二叉查找树满足左边一定比当前结点小，右边一定比当前结点大的规则，比如我们现在需要在这颗树种查找值为15的结点：</p>
+<ol>
+<li>从根结点18开始，因为15小于18，所以从左边开始找。</li>
+<li>接着来到10，发现10比15小，所以继续往右边走。</li>
+<li>来到15，成功找到。</li>
+</ol>
+<p>实际上，我们在对普通二叉树进行搜索时，可能需要挨个进行查看比较，而有了二叉搜索树，查找效率就大大提升了，它就像我们前面的二分搜索那样。</p>
+<p>利用二叉查找树，我们在搜索某个值的时候，效率会得到巨大提升。但是虽然看起来比较完美，也是存在缺陷的，比如现在我们依次将下面的值插入到这棵二叉树中：</p>
+<figure class="highlight basic"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs basic"><span class="hljs-symbol">20 </span><span class="hljs-number">15</span> <span class="hljs-number">13</span> <span class="hljs-number">8</span> <span class="hljs-number">6</span> <span class="hljs-number">3</span><br></code></pre></td></tr></tbody></table></figure>
+
+<p>在插入完成后，我们会发现这棵二叉树竟然长这样：</p>
+<p><img src="https://s2.loli.net/2022/08/15/E1Pf2pGv4b9Lj7t.png" srcset="/img/loading.gif" lazyload alt="image-20220815113242191"></p>
+<p>因为根据我们之前编写的插入规则，小的一律往左边放，现在正好来的就是这样一串递减的数字，最后就组成了这样的一棵只有一边的二叉树，这种情况，与其说它是一棵二叉树，不如说就是一个链表，如果这时我们想要查找某个结点，那么实际上查找的时间并没有得到任何优化，直接就退化成线性查找了。</p>
+<p>所以，二叉查找树只有在理想情况下，查找效率才是最高的，而像这种极端情况，就性能而言几乎没有任何的提升。我们理想情况下，这样的效率是最高的：</p>
+<p><img src="https://s2.loli.net/2022/08/15/k1jzXPoOMp9caHy.png" srcset="/img/loading.gif" lazyload alt="image-20220815113705827"></p>
+<p>所以，我们在进行结点插入时，需要尽可能地避免这种一边倒的情况，这里就需要引入<strong>平衡二叉树</strong>的概念了。实际上我们发现，在插入时如果不去维护二叉树的平衡，某一边只会无限制地延伸下去，出现极度不平衡的情况，而我们理想中的二叉查找树左右是尽可能保持平衡的，<strong>平衡二叉树</strong>（AVL树）就是为了解决这样的问题而生的。</p>
+<p>它的性质如下：</p>
+<ul>
+<li>平衡二叉树一定是一棵二叉查找树。</li>
+<li>任意结点的左右子树也是一棵平衡二叉树。</li>
+<li>从根节点开始，左右子树都高度差不能超过1，否则视为不平衡。</li>
+</ul>
+<p>可以看到，这些性质规定了平衡二叉树需要保持高度平衡，这样我们的查找效率才不会因为数据的插入而出现降低的情况。二叉树上节点的左子树高度 减去 右子树高度， 得到的结果称为该节点的<strong>平衡因子</strong>（Balance Factor），比如：</p>
+<p><img src="https://s2.loli.net/2022/08/15/vaI9qji1KYOP8kt.png" srcset="/img/loading.gif" lazyload alt="image-20220815210652973"></p>
+<p>通过计算平衡因子，我们就可以快速得到是否出现失衡的情况。比如下面的这棵二叉树，正在执行插入操作：</p>
+<p><img src="https://s2.loli.net/2022/08/15/DMnPqGhawy5Z92V.png" srcset="/img/loading.gif" lazyload alt="image-20220815115219250"></p>
+<p>可以看到，当插入之后，不再满足平衡二叉树的定义时，就出现了失衡的情况，而对于这种失衡情况，为了继续保持平衡状态，我们就需要进行处理了。我们可能会遇到以下几种情况导致失衡：</p>
+<p><img src="https://s2.loli.net/2022/08/15/KcOQVhlFxzwsIb9.png" srcset="/img/loading.gif" lazyload alt="image-20220815115836604"></p>
+<p>根据插入结点的不同偏向情况，分为LL型、LR型、RR型、RL型。针对于上面这几种情况，我们依次来看一下如何进行调整，使得这棵二叉树能够继续保持平衡：</p>
+<p>动画网站：<a target="_blank" rel="noopener" href="https://www.cs.usfca.edu/~galles/visualization/AVLtree.html%EF%BC%88%E5%AE%9E%E5%9C%A8%E4%B8%8D%E7%90%86%E8%A7%A3%E5%8F%AF%E4%BB%A5%E7%9C%8B%E7%9C%8B%E5%8A%A8%E7%94%BB%E6%98%AF%E6%80%8E%E4%B9%88%E8%B5%B0%E7%9A%84%EF%BC%89">https://www.cs.usfca.edu/~galles/visualization/AVLtree.html（实在不理解可以看看动画是怎么走的）</a></p>
+<ol>
+<li><p><strong>LL型调整</strong>（右旋）</p>
+<p><img src="https://s2.loli.net/2022/08/15/KqBaWLJwOj34Ec8.png" srcset="/img/loading.gif" lazyload alt="image-20220815211641144"></p>
+<p>首先我们来看这种情况，这是典型的LL型失衡，为了能够保证二叉树的平衡，我们需要将其进行<strong>旋转</strong>来维持平衡，去纠正最小不平衡子树即可。那么怎么进行旋转呢？对于LL型失衡，我们只需要进行右旋操作，首先我们先找到最小不平衡子树，注意是最小的那一个：</p>
+<p><img src="https://s2.loli.net/2022/08/15/q4aYvzrnjdTgAtK.png" srcset="/img/loading.gif" lazyload alt="image-20220815212552176"></p>
+<p>可以看到根结点的平衡因子是2，是目前最小的出现不平衡的点，所以说从根结点开始向左的三个结点需要进行右旋操作，右旋需要将这三个结点中间的结点作为新的根结点，而其他两个结点现在变成左右子树：</p>
+<p><img src="https://s2.loli.net/2022/08/15/fJKz3FWclm9orVT.png" srcset="/img/loading.gif" lazyload alt="image-20220815213222964"></p>
+<p>这样，我们就完成了右旋操作，可以看到右旋之后，所有的结点继续保持平衡，并且依然是一棵二叉查找树。</p>
+</li>
+<li><p><strong>RR型调整</strong>（左旋）</p>
+<p>前面我们介绍了LL型以及右旋解决方案，相反的，当遇到RR型时，我们只需要进行左旋操作即可：</p>
+<p><img src="https://s2.loli.net/2022/08/15/kIl8ZT6Psr7mNSg.png" srcset="/img/loading.gif" lazyload alt="image-20220815214026710"></p>
+<p>操作和上面是一样的，只不过现在反过来了而已：</p>
+<p><img src="https://s2.loli.net/2022/08/15/LB9DOJpyIlxQWTm.png" srcset="/img/loading.gif" lazyload alt="image-20220815214408651"></p>
+<p>这样，我们就完成了左旋操作，使得这棵二叉树继续保持平衡状态了。</p>
+</li>
+<li><p><strong>RL型调整</strong>（先右旋，再左旋）</p>
+<p>剩下两种类型比较麻烦，需要旋转两次才行。我们来看看RL型长啥样：</p>
+<p><img src="https://s2.loli.net/2022/08/15/fwcrEIgBxWLVGXs.png" srcset="/img/loading.gif" lazyload alt="image-20220815214859501"></p>
+<p>可以看到现在的形状是一个回旋镖形状的，先右后左的一个状态，也就是RL型，针对于这种情况，我们需要先进行右旋操作，注意这里的右旋操作针对的是后两个结点：</p>
+<p><img src="https://s2.loli.net/2022/08/15/ukK6C4PNBwoaJbc.png" srcset="/img/loading.gif" lazyload alt="image-20220815215929303"></p>
+<p>其中右旋和左旋的操作，与之前一样，该怎么分配左右子树就怎么分配，完成两次旋转后，可以看到二叉树重新变回了平衡状态。</p>
+</li>
+<li><p><strong>LR型调整</strong>（先左旋，再右旋）</p>
+<p>和上面一样，我们来看看LR型长啥样，其实就是反着的：</p>
+<p><img src="https://s2.loli.net/2022/08/15/6Cj8VlgGekULXvP.png" srcset="/img/loading.gif" lazyload alt="image-20220815220609357"></p>
+<p>形状是先向左再向右，这就是典型的LR型了，我们同样需要对其进行两次旋转：</p>
+<p><img src="https://s2.loli.net/2022/08/15/y6WscFPxHuzTiaI.png" srcset="/img/loading.gif" lazyload alt="image-20220815221349044"></p>
+<p>这里我们先进行的是左旋，然后再进行的右旋，这样二叉树就能继续保持平衡了。</p>
+</li>
+</ol>
+<p>这样，我们只需要在插入结点时注意维护整棵树的平衡因子，保证其处于稳定状态，这样就可以让这棵树一直处于高度平衡的状态，不会再退化了。</p>
+<h3 id="树：红黑树"><a href="#树：红黑树" class="headerlink" title="树：红黑树"></a>树：红黑树</h3><p><strong>注意：</strong>本部分只进行理论介绍，不做代码实现。</p>
+<p>很多人都说红黑树难，其实就那几条规则，跟着我推一遍其实还是很简单的，当然前提是一定要把前面的平衡二叉树搞明白。</p>
+<p>前面我们讲解了二叉平衡树，通过在插入结点时维护树的平衡，这样就不会出现极端情况使得整棵树的查找效率急剧降低了。但是这样是否开销太大了一点，因为一旦平衡因子的绝对值超过1那么就失衡，这样每插入一个结点，就有很大的概率会导致失衡，我们能否不这么严格，但同时也要在一定程度上保证平衡呢？这就要提到红黑树了。</p>
+<p>在线动画网站：<a target="_blank" rel="noopener" href="https://www.cs.usfca.edu/~galles/visualization/RedBlack.html">https://www.cs.usfca.edu/~galles/visualization/RedBlack.html</a></p>
+<p>红黑树也是二叉查找树的一种，它大概长这样，可以看到结点有红有黑：</p>
+<p><img src="https://s2.loli.net/2022/08/15/t86B7sxvYeP9TiR.png" srcset="/img/loading.gif" lazyload alt="image-20220815222810537"></p>
+<p>它并不像平衡二叉树那样严格要求高度差不能超过1，而是只需要满足五个规则即可，它的规则如下：</p>
+<ul>
+<li>规则1：每个结点可以是黑色或是红色。</li>
+<li>规则2：根结点一定是黑色。</li>
+<li>规则3：红色结点的父结点和子结点不能为红色，也就是说不能有两个连续的红色。</li>
+<li>规则4：所有的空结点都是黑色（空结点视为NIL，红黑树中是将空节点视为叶子结点）</li>
+<li>规则5：每个结点到空节点（NIL）路径上出现的黑色结点的个数都相等。</li>
+</ul>
+<p>它相比平衡二叉树，通过不严格平衡和改变颜色，就能在一定程度上减少旋转次数，这样的话对于整体性能是有一定提升的，只不过我们在插入结点时，就有点麻烦了，我们需要同时考虑变色和旋转这两个操作了，但是会比平衡二叉树更简单。</p>
+<p>那么什么时候需要变色，什么时候需要旋转呢？我们通过一个简单例子来看看：</p>
+<p><img src="https://s2.loli.net/2022/08/16/wIj5qnhxFAHcyG7.png" srcset="/img/loading.gif" lazyload alt="image-20220816104917851"></p>
+<p>首先这棵红黑树只有一个根结点，因为根结点必须是黑色，所以说直接变成黑色。现在我们要插入一个新的结点了，所有新插入的结点，默认情况下都是红色：</p>
+<p><img src="https://s2.loli.net/2022/08/16/yHRXgbsvOM27xLr.png" srcset="/img/loading.gif" lazyload alt="image-20220816105119178"></p>
+<p>所以新来的结点7根据规则就直接放到11的左边就行了，然后注意7的左右两边都是NULL，那么默认都是黑色，这里就不画出来了。同样的，我们往右边也来一个：</p>
+<p><img src="https://s2.loli.net/2022/08/16/kJiA71fQuKHnIdb.png" srcset="/img/loading.gif" lazyload alt="image-20220816105553070"></p>
+<p>现在我们继续插入一个结点：</p>
+<p><img src="https://s2.loli.net/2022/08/16/VEQLu5mb1tcTyzd.png" srcset="/img/loading.gif" lazyload alt="image-20220816105656320"></p>
+<p>插入结点4之后，此时违反了红黑树的规则3，因为红色结点的父结点和子结点不能为红色，此时为了保持以红黑树的性质，我们就需要进行<strong>颜色变换</strong>才可以，那么怎么进行颜色变换呢？我们只需要直接将父结点和其兄弟结点同时修改为黑色（为啥兄弟结点也需要变成黑色？因为要满足性质5）然后将爷爷结点改成红色即可：</p>
+<p><img src="https://s2.loli.net/2022/08/16/kuc1B3lqhNUwaSM.png" srcset="/img/loading.gif" lazyload alt="image-20220816113259643"></p>
+<p>当然这里还需注意一下，因为爷爷结点正常情况会变成红色，相当于新来了个红色的，这时还得继续往上看有没有破坏红黑树的规则才可以，直到没有为止，比如这里就破坏了性质一，爷爷结点现在是根结点（不是根结点就不需要管了），必须是黑色，所以说还要给它改成黑色才算结束：</p>
+<p><img src="https://s2.loli.net/2022/08/16/dpRX5DGsfWVwnQi.png" srcset="/img/loading.gif" lazyload alt="image-20220816113339344"></p>
+<p>接着我们继续插入结点：</p>
+<p><img src="https://s2.loli.net/2022/08/16/4ZAhv7R9YusI8q6.png" srcset="/img/loading.gif" lazyload alt="image-20220816113939172"></p>
+<p>此时又来了一个插在4左边的结点，同样是连续红色，我们需要进行变色才可以讲解问题，但是我们发现，如果变色的话，那么从11开始到所有NIL结点经历的黑色结点数量就不对了：</p>
+<p><img src="https://s2.loli.net/2022/08/16/n3M6Kfsb4jHtIci.png" srcset="/img/loading.gif" lazyload alt="image-20220816114245996"></p>
+<p>所以说对于这种<strong>父结点为红色，父结点的兄弟结点为黑色</strong>（NIL视为黑色）的情况，变色无法解决问题了，那么我们只能考虑旋转了，旋转规则和我们之前讲解的平衡二叉树是一样的，这实际上是一种LL型失衡：</p>
+<p><img src="https://s2.loli.net/2022/08/16/POTaBfosmQiceWk.png" srcset="/img/loading.gif" lazyload alt="image-20220816115015892"></p>
+<p>同样的，如果遇到了LR型失衡，跟前面一样，先左旋在右旋，然后进行变色即可：</p>
+<p><img src="https://s2.loli.net/2022/08/16/XqFr7hJwe38AakK.png" srcset="/img/loading.gif" lazyload alt="image-20220816115924938"></p>
+<p>而RR型和RL型同理，这里就不进行演示了，可以看到，红黑树实际上也是通过颜色规则在进行旋转调整的，当然旋转和变色的操作顺序可以交换。所以，在插入时比较关键的判断点如下：</p>
+<ul>
+<li>如果整棵树为NULL，直接作为根结点，变成黑色。</li>
+<li>如果父结点是黑色，直接插入就完事。</li>
+<li>如果父结点为红色，且父结点的兄弟结点也是红色，直接变色即可（但是注意得继续往上看有没有破坏之前的结构）</li>
+<li>如果父结点为红色，但父结点的兄弟结点为黑色，需要先根据情况（LL、RR、LR、RL）进行旋转，然后再变色。</li>
+</ul>
+<p>在了解这些步骤之后，我们其实已经可以尝试去编写一棵红黑树出来了，当然代码太过复杂，这里就不演示了。</p>
+<h3 id="哈希表"><a href="#哈希表" class="headerlink" title="哈希表"></a>哈希表</h3><p>在之前，我们已经学习了多种查找数据的方式，比如最简单的，如果数据量不大的情况下，我们可以直接通过顺序查找的方式在集合中搜索我们想要的元素；当数据量较大时，我们可以使用二分搜索来快速找到我们想要的数据，不过需要要求数据按照顺序排列，并且不允许中途对集合进行修改。</p>
+<p>在学习完树形结构篇之后，我们可以利用二叉查找树来建立一个便于我们查找的树形结构，甚至可以将其优化为平衡二叉树或是红黑树来进一步提升稳定性。</p>
+<p>这些都能够极大地帮助我们查找数据，而散列表，则是我们数据结构系列内容的最后一块重要知识。</p>
+<p>散列（Hashing）通过散列函数（哈希函数）将要参与检索的数据与散列值（哈希值）关联起来，生成一种便于搜索的数据结构，我们称其为散列表（哈希表），也就是说，现在我们需要将一堆数据保存起来，这些数据会通过哈希函数进行计算，得到与其对应的哈希值，当我们下次需要查找这些数据时，只需要再次计算哈希值就能快速找到对应的元素了：</p>
+<p><img src="https://s2.loli.net/2022/08/18/Tcj6Spy2Pt5ZIuW.png" srcset="/img/loading.gif" lazyload alt="image-20220818214145347"></p>
+<p>散列函数也叫哈希函数，哈希函数可以对一个目标计算出其对应的哈希值，并且，只要是同一个目标，无论计算多少次，得到的哈希值都是一样的结果，不同的目标计算出的结果介乎都不同。哈希函数在现实生活中应用十分广泛，比如很多下载网站都提供下载文件的MD5码校验，可以用来判别文件是否完整，哈希函数多种多样，目前应用最为广泛的是SHA-1和MD5，比如我们在下载IDEA之后，会看到有一个验证文件SHA-256校验和的选项，我们可以点进去看看：</p>
+<p><img src="https://s2.loli.net/2022/08/18/tD8AjiGwvJkdahE.png" srcset="/img/loading.gif" lazyload alt="image-20220818214908458"></p>
+<p>点进去之后，得到：</p>
+<figure class="highlight apache"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">e54a026da11d05d9bb0172f4ef936ba2366f985b5424e7eecf9e9341804d65bf</span> *ideaIU-<span class="hljs-number">2022</span>.<span class="hljs-number">2</span>.<span class="hljs-number">1</span>.dmg<br></code></pre></td></tr></tbody></table></figure>
+
+<p>这一串由数字和小写字母随意组合的一个字符串，就是安装包文件通过哈希算法计算得到的结果，那么这个东西有什么用呢？我们的网络可能有时候会出现卡顿的情况，导致我们下载的文件可能会出现不完整的情况，因为哈希函数对同一个文件计算得到的结果是一样的，我们可以在本地使用同样的哈希函数去计算下载文件的哈希值，如果与官方一致，那么就说明是同一个文件，如果不一致，那么说明文件在传输过程中出现了损坏。</p>
+<p>可见，哈希函数在这些地方就显得非常实用，在我们的生活中起了很大的作用，它也可以用于布隆过滤器和负载均衡等场景，这里不多做介绍了。</p>
+<p>前面我们介绍了散列函数，我们知道可以通过散列函数计算一个目标的哈希值，那么这个哈希值计算出来有什么用呢，对我们的程序设计有什么意义呢？我们可以利用哈希值的特性，设计一张全新的表结构，这种表结构是专为哈希设立的，我们称其为哈希表（散列表）</p>
+<p><img src="https://s2.loli.net/2022/08/18/M2o1vE7hHasN8DP.png" srcset="/img/loading.gif" lazyload alt="image-20220818220944783"></p>
+<p>我们可以将这些元素保存到哈希表中，而保存的位置则与其对应的哈希值有关，哈希值是通过哈希函数计算得到的，我们只需要将对应元素的关键字（一般是整数）提供给哈希函数就可以进行计算了，一般比较简单的哈希函数就是取模操作，哈希表长度是多少（长度最好是一个素数），模就是多少：</p>
+<p><img src="https://s2.loli.net/2022/08/19/CAPhlJnQeLjMHfd.png" srcset="/img/loading.gif" lazyload alt="image-20220819170355221"></p>
+<p>比如现在我们需要插入一个新的元素（关键字为17）到哈希表中：</p>
+<p><img src="https://s2.loli.net/2022/08/19/ovieRjrzlXhKMC2.png" srcset="/img/loading.gif" lazyload alt="image-20220819171430332"></p>
+<p>插入的位置为计算出来的哈希值，比如上面是8，那么就在下标位置8插入元素，同样的，我们继续插入27：</p>
+<p><img src="https://s2.loli.net/2022/08/19/pisuSAIZyf5JE7B.png" srcset="/img/loading.gif" lazyload alt="image-20220819210336314"></p>
+<p>这样，我们就可以将多种多样的数据保存到哈希表中了，注意保存的数据是无序的，因为我们也不清楚计算完哈希值最后会放到哪个位置。那么如果现在我们想要从哈希表中查找数据呢？比如我们现在需要查找哈希表中是否有14这个元素：</p>
+<p><img src="https://s2.loli.net/2022/08/19/H1hAvQPjNui2RYt.png" srcset="/img/loading.gif" lazyload alt="image-20220819211656628"></p>
+<p>同样的，直接去看哈希值对应位置上看看有没有这个元素，如果没有，那么就说明哈希表中没有这个元素。可以看到，哈希表在查找时只需要进行一次哈希函数计算就能直接找到对应元素的存储位置，效率极高。</p>
+<p>我们来尝试编写一下：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">HashTable</span>&lt;<span class="hljs-title">E</span>&gt; </span>{<br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> TABLE_SIZE = <span class="hljs-number">10</span>;<br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> Object[] TABLE = <span class="hljs-keyword">new</span> Object[TABLE_SIZE];<br>    <br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">insert</span><span class="hljs-params">(E element)</span></span>{<br>        <span class="hljs-keyword">int</span> index = hash(element);<br>        TABLE[index] = element;<br>    }<br>    <br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">contains</span><span class="hljs-params">(E element)</span></span>{<br>        <span class="hljs-keyword">int</span> index = hash(element);<br>        <span class="hljs-keyword">return</span> TABLE[index] == element;<br>    }<br>    <br>    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> <span class="hljs-title">hash</span><span class="hljs-params">(Object object)</span></span>{   <span class="hljs-comment">//哈希函数，计算出存放的位置</span><br>        <span class="hljs-keyword">int</span> hashCode = object.hashCode();  <br>      	<span class="hljs-comment">//每一个对象都有一个独一无二的哈希值，可以通过hashCode方法得到（只有极小的概率会出现相同的情况）</span><br>        <span class="hljs-keyword">return</span> hashCode % TABLE_SIZE;<br>    }<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+<p>这样，我们就实现了一个简单的哈希表和哈希函数，通过哈希表，我们可以将数据的查找时间复杂度提升到常数阶。</p>
+<p>前面我介绍了哈希函数，通过哈希函数计算得到一个目标的哈希值，但是在某些情况下，哈希值可能会出现相同的情况：</p>
+<p><img src="https://s2.loli.net/2022/08/19/XqpZd1YP5ulEJRy.png" srcset="/img/loading.gif" lazyload alt="image-20220819215004653"></p>
+<p>比如现在同时插入14和23这两个元素，他们两个计算出来的哈希值是一样的，都需要在5号下标位置插入，这时就出现了打架的情况，那么到底是把哪一个放进去呢？这种情况，我们称为<strong>哈希碰撞</strong>（哈希冲突）</p>
+<p>这种问题是很严重的，因为哈希函数的设计不同，难免会出现这种情况，这种情况是不可避免的，我们只能通过使用更加高级的哈希函数来尽可能避免这种情况，但是无法完全避免。当然，如果要完全解决这种问题，我们还需要去寻找更好的方法。这里我们只介绍一种比较重要的，会在后面集合类中用到的方案。</p>
+<p>实际上常见的哈希冲突解决方案是<strong>链地址法</strong>，当出现哈希冲突时，我们依然将其保存在对应的位置上，我们可以将其连接为一个链表的形式：</p>
+<p><img src="https://s2.loli.net/2022/09/30/Hd1LDvkY6ScVTN2.png" srcset="/img/loading.gif" lazyload alt="image-20220820220237535"></p>
+<p>当表中元素变多时，差不多就变成了这样，我们一般将其横过来看：</p>
+<p><img src="https://s2.loli.net/2022/09/30/kr4CcVEwI72AiDU.png" srcset="/img/loading.gif" lazyload alt="image-20220820221104298"></p>
+<p>通过结合链表的形式，哈希冲突问题就可以得到解决了，但是同时也会出现一定的查找开销，因为现在有了链表，我们得挨个往后看才能找到，当链表变得很长时，查找效率也会变低，此时我们可以考虑结合其他的数据结构来提升效率。比如当链表长度达到8时，自动转换为一棵平衡二叉树或是红黑树，这样就可以在一定程度上缓解查找的压力了。</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">HashTable</span>&lt;<span class="hljs-title">E</span>&gt; </span>{<br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> TABLE_SIZE = <span class="hljs-number">10</span>;<br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> Node&lt;E&gt;[] TABLE = <span class="hljs-keyword">new</span> Node[TABLE_SIZE];<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">HashTable</span><span class="hljs-params">()</span></span>{<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; TABLE_SIZE; i++)<br>            TABLE[i] = <span class="hljs-keyword">new</span> Node&lt;&gt;(<span class="hljs-keyword">null</span>);<br>    }<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">insert</span><span class="hljs-params">(E element)</span></span>{<br>        <span class="hljs-keyword">int</span> index = hash(element);<br>        Node&lt;E&gt; prev = TABLE[index];<br>        <span class="hljs-keyword">while</span> (prev.next != <span class="hljs-keyword">null</span>)<br>            prev = prev.next;<br>        prev.next = <span class="hljs-keyword">new</span> Node&lt;&gt;(element);<br>    }<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">contains</span><span class="hljs-params">(E element)</span></span>{<br>        <span class="hljs-keyword">int</span> index = hash(element);<br>        Node&lt;E&gt; node = TABLE[index].next;<br>        <span class="hljs-keyword">while</span> (node != <span class="hljs-keyword">null</span>) {<br>            <span class="hljs-keyword">if</span>(node.element == element)<br>                <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;<br>            node = node.next;<br>        }<br>        <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;<br>    }<br><br>    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> <span class="hljs-title">hash</span><span class="hljs-params">(Object object)</span></span>{<br>        <span class="hljs-keyword">int</span> hashCode = object.hashCode();<br>        <span class="hljs-keyword">return</span> hashCode % TABLE_SIZE;<br>    }<br><br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Node</span>&lt;<span class="hljs-title">E</span>&gt; </span>{<br>        <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> E element;<br>        <span class="hljs-keyword">private</span> Node&lt;E&gt; next;<br><br>        <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-title">Node</span><span class="hljs-params">(E element)</span></span>{<br>            <span class="hljs-keyword">this</span>.element = element;<br>        }<br>    }<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+<p>实际上这种方案代码写起来也会更简单，使用也更方便一些。</p>
+<p>至此，数据结构相关内容，我们就讲解到这里，学习这些数据结构，实际上也是为了方便各位小伙伴对于后续结合类的学习，因为集合类的底层实现就是这些数据结构。</p>
+<hr>
+<h2 id="实战练习"><a href="#实战练习" class="headerlink" title="实战练习"></a>实战练习</h2><p>合理利用集合类，我们可以巧妙地解决各种各样的难题。</p>
+<h3 id="反转链表"><a href="#反转链表" class="headerlink" title="反转链表"></a>反转链表</h3><p>本题来自LeetCode：<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/reverse-linked-list/">206. 反转链表</a></p>
+<p>给你单链表的头节点 head ，请你反转链表，并返回反转后的链表。</p>
+<p>示例 1：</p>
+<p><img src="https://assets.leetcode.com/uploads/2021/02/19/rev1ex1.jpg" srcset="/img/loading.gif" lazyload alt="img"></p>
+<blockquote>
+<p>输入：head = [1,2,3,4,5]<br>输出：[5,4,3,2,1]</p>
+</blockquote>
+<p>示例 2：</p>
+<p><img src="https://assets.leetcode.com/uploads/2021/02/19/rev1ex2.jpg" srcset="/img/loading.gif" lazyload alt="img"></p>
+<blockquote>
+<p>输入：head = [1,2]<br>输出：[2,1]</p>
+</blockquote>
+<p>这道题依然是考察各位小伙伴对于链表相关操作的掌握程度，我们如何才能将一个链表的顺序进行反转，关键就在于如何修改每个节点的指针指向。</p>
+<h3 id="括号匹配问题"><a href="#括号匹配问题" class="headerlink" title="括号匹配问题"></a>括号匹配问题</h3><p>本题来自LeetCode：<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/valid-parentheses/">20. 有效的括号</a></p>
+<p>给定一个只包括 ‘(‘，’)’，’{‘，’}’，’[‘，’]’ 的字符串 s ，判断字符串是否有效。</p>
+<p>有效字符串需满足：</p>
+<ol>
+<li>左括号必须用相同类型的右括号闭合。</li>
+<li>左括号必须以正确的顺序闭合。</li>
+</ol>
+<p>示例 1：</p>
+<blockquote>
+<p>输入：s = “()”<br>输出：true</p>
+</blockquote>
+<p>示例 2：</p>
+<blockquote>
+<p>输入：s = “()[]{}”<br>输出：true</p>
+</blockquote>
+<p>示例 3：</p>
+<blockquote>
+<p>输入：s = “(]”<br>输出：false</p>
+</blockquote>
+<p><strong>示例 4：</strong></p>
+<blockquote>
+<p>输入：s = “([)]”<br>输出：false</p>
+</blockquote>
+<p><strong>示例 5：</strong></p>
+<blockquote>
+<p>输入：s = “{[]}”<br>输出：true</p>
+</blockquote>
+<p>题干很明确，就是需要我们去对这些括号完成匹配，如果给定字符串中的括号无法完成一一匹配的话，那么就表示匹配失败。实际上这种问题我们就可以利用前面学习的栈这种数据结构来解决，我们可以将所有括号的左半部分放入栈中，当遇到右半部分时，进行匹配，如果匹配失败，那么就失败，如果匹配成功，那么就消耗一个左半部分，直到括号消耗完毕。</p>
+<h3 id="实现计算器"><a href="#实现计算器" class="headerlink" title="实现计算器"></a>实现计算器</h3><p>输入一个计算公式（含加减乘除运算符，没有负数但是有小数）得到结果，比如输入：1+4*3/1.321，得到结果为：2.2</p>
+<p>现在请你设计一个Java程序，实现计算器。</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Java/" class="category-chain-item">Java</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>泛型程序设计</div>
+      <div>https://xiaofanshutu.github.io/posts/98735cb0.html</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>John Doe</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2025年9月8日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/posts/96c516fa.html" title="多线程与反射">
+                        <span class="hidden-mobile">多线程与反射</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
